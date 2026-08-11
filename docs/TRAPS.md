@@ -1,0 +1,121 @@
+# Traps — Things That Are Wrong In A Way That Sounds Right
+
+**[← Roadmap](ROADMAP.md)** · **[README](index.md)**
+
+> This is the highest signal-per-minute file in the repo. Every ⚠️ marker in the roadmap
+> lands here, in one line each, with the correction.
+>
+> Interviewers use these deliberately. A candidate who's read blog posts gives the
+> plausible answer; a candidate who's shipped gives the correct one. That gap is the
+> whole point of the question.
+
+**Read this twice the day before. Then once more in the morning.**
+
+---
+
+## Async and threading
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "`async` makes code run on another thread" | `async`/`await` is about *not blocking a thread*, not about using more of them. A truly async I/O call uses **no** thread while it waits. | [2.11](notes/02-collections-linq-async/2.11-async-await-internals.md) |
+| "`.Result` is fine if I know the task is done" | In any context with a synchronization context it can deadlock, and in ASP.NET Core it blocks a thread-pool thread. Under load this cascades into thread-pool starvation. | [2.13](notes/02-collections-linq-async/2.13-async-deadlocks.md) |
+| "`async void` is fine for event handlers" | It's *tolerable* for UI event handlers and wrong everywhere else — exceptions can't be caught by the caller and will crash the process. | [2.15](notes/02-collections-linq-async/2.15-async-void.md) |
+| "`ConfigureAwait(false)` is needed in ASP.NET Core" | ASP.NET Core has no synchronization context, so it changes nothing in app code. It still matters in **libraries**, which may run on other platforms. | [2.13](notes/02-collections-linq-async/2.13-async-deadlocks.md) |
+
+## Dependency injection
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "Scoped means one instance per class" | Scoped means one instance per **scope**, which in a web app is one per HTTP request. Background services have no ambient scope — you must create one. | [6.5](notes/06-dependency-injection/6.05-scopes.md) |
+| "Injecting a scoped service into a singleton is fine" | The singleton captures that instance forever. Your `DbContext` becomes an app-lifetime object shared across all requests — non-thread-safe and leaking. | [6.4](notes/06-dependency-injection/6.04-captive-dependency.md) |
+| "Transient services are always safe" | A transient registered into a singleton lives as long as the singleton. Lifetime is determined by the *consumer*, not the registration. | [6.4](notes/06-dependency-injection/6.04-captive-dependency.md) |
+| "The container disposes everything I give it" | It disposes instances **it created**. If you pass an already-constructed instance to `AddSingleton(instance)`, you own disposal. | [6.10](notes/06-dependency-injection/6.10-disposal.md) |
+
+## Middleware and pipeline
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "Middleware order doesn't really matter" | `UseAuthorization` before `UseAuthentication` means `User` is never populated — the app silently 401s or, worse, silently allows. | [5.2](notes/05-middleware-pipeline/5.02-middleware-order.md) |
+| "I can inject a scoped service into middleware's constructor" | Conventional middleware is a **singleton**. Scoped services go in the `InvokeAsync` parameters, or use `IMiddleware` factory-based middleware. | [5.6](notes/05-middleware-pipeline/5.06-imiddleware-factory.md) |
+| "I can read the request body in middleware and the controller still gets it" | The body is a forward-only stream and is consumed. You need `EnableBuffering()` and to rewind it. | [5.9](notes/05-middleware-pipeline/5.09-request-body-buffering.md) |
+| "Modify the response after `await next()`" | By then the response may already be sent. Headers can't be changed once the response has started — use `OnStarting`. | [5.8](notes/05-middleware-pipeline/5.08-httpcontext.md) |
+
+## EF Core
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "`DbContext` should be a singleton for performance" | It is **not thread-safe** and its change tracker grows unbounded. Scoped is the correct lifetime; use `AddDbContextPool` if you want the pooling win. | [13.2](notes/13-entity-framework-core/13.02-dbcontext.md) |
+| "`.ToList()` then filter — same thing" | `ToList()` executes the query. Everything after it filters **in memory** after pulling the whole table across the wire. | [13.10](notes/13-entity-framework-core/13.10-client-vs-server-eval.md) |
+| "Lazy loading is convenient and harmless" | It's the primary cause of N+1 queries, and it fires queries at serialization time, long after the context you expected. | [13.9](notes/13-entity-framework-core/13.09-n-plus-one.md) |
+| "`FromSqlRaw` with string interpolation is fine" | That's SQL injection. `FromSqlInterpolated` (or `FromSqlRaw` with parameters) parameterizes; `FromSqlRaw($"...{x}")` does not. | [13.11](notes/13-entity-framework-core/13.11-raw-sql.md) |
+| "`AsNoTracking` is a micro-optimization" | On read-heavy endpoints returning many rows it's often a large win, and it prevents accidental updates. Default to it for reads. | [13.7](notes/13-entity-framework-core/13.07-change-tracking.md) |
+| "The InMemory provider is fine for testing" | It doesn't enforce relational constraints, transactions, or SQL translation — tests pass that production fails. Use SQLite in-memory or Testcontainers. | [13.20](notes/13-entity-framework-core/13.20-testing-data-access.md) |
+
+## Security
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "JWTs are encrypted" | A standard JWT is **signed, not encrypted**. The payload is base64 — anyone can read it. Never put secrets in a JWT. | [15.5](notes/15-authentication/15.05-jwt-structure.md) |
+| "Store the JWT in localStorage" | localStorage is readable by any XSS payload. An `HttpOnly`, `Secure`, `SameSite` cookie is safer for browser clients. | [15.12](notes/15-authentication/15.12-token-storage.md) |
+| "You can't revoke a JWT, so it's insecure" | You *can't* revoke a stateless token — that's why access tokens are short-lived and revocation happens at the refresh-token layer. | [15.7](notes/15-authentication/15.07-refresh-tokens.md) |
+| "APIs don't need CSRF protection" | Cookie-authenticated APIs absolutely do. Bearer-token APIs don't, because the browser doesn't attach the token automatically. The distinction is *how you authenticate*, not *whether you're an API*. | [17.4](notes/17-application-security/17.04-csrf.md) |
+| "CORS protects my API" | CORS is a **browser** restriction, not a server-side access control. `curl` ignores it entirely. It is not authorization. | [10.10](notes/10-web-api-rest/10.10-cors.md) |
+| "EF Core makes SQL injection impossible" | Only for LINQ. `FromSqlRaw`, `ExecuteSqlRaw`, and dynamic SQL are all still injectable. | [17.2](notes/17-application-security/17.02-sql-injection.md) |
+| "Auth works locally, so it works in the farm" | Data Protection keys are per-machine by default. Two servers means cookies and antiforgery tokens issued by one are rejected by the other. | [17.6](notes/17-application-security/17.06-data-protection.md) |
+
+## Web API
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "PUT and PATCH are basically the same" | PUT **replaces** the whole resource and is idempotent. PATCH applies a partial change and is not necessarily idempotent. | [10.2](notes/10-web-api-rest/10.02-http-verbs-idempotency.md) |
+| "POST is idempotent if I write it carefully" | POST is *defined* as non-idempotent. Making a POST endpoint safe to retry requires an explicit idempotency key. | [10.13](notes/10-web-api-rest/10.13-idempotency-etags.md) |
+| "I need to check `ModelState.IsValid` in every action" | With `[ApiController]`, invalid models are auto-rejected with a 400 before your action runs. The manual check is dead code. | [10.4](notes/10-web-api-rest/10.04-apicontroller-attribute.md) |
+| "Return the entity — a DTO is boilerplate" | Entities leak your schema, invite over-posting, and cause lazy-loading serialization cycles. The DTO is the boundary. | [10.11](notes/10-web-api-rest/10.11-dtos-and-mapping.md) |
+| "404 means the route was wrong" | It also means "resource not found" — and returning 404 vs 403 for an unauthorized resource is a deliberate choice about information disclosure. | [10.3](notes/10-web-api-rest/10.03-status-codes.md) |
+
+## Performance
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "`new HttpClient()` per call, wrapped in `using`" | Sockets stay in `TIME_WAIT` after disposal. Under load this exhausts ports. Use `IHttpClientFactory`. | [19.10](notes/19-caching-performance/19.10-httpclientfactory.md) |
+| "A static `HttpClient` fixes it" | It fixes socket exhaustion but never picks up DNS changes. `IHttpClientFactory` handles both via handler rotation. | [19.10](notes/19-caching-performance/19.10-httpclientfactory.md) |
+| "`IMemoryCache` works fine when we scale out" | Each instance has its own cache. Users get inconsistent reads depending on which server they hit. | [19.3](notes/19-caching-performance/19.03-distributed-cache-redis.md) |
+| "Adding a cache made it faster, done" | Without stampede protection, a cache miss on a hot key sends every concurrent request to the database at once. | [19.4](notes/19-caching-performance/19.04-hybridcache.md) |
+
+## C#
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "`throw ex;` and `throw;` are the same" | `throw ex;` resets the stack trace, destroying the original throw site. Use bare `throw;`. | [1.20](notes/01-csharp-fundamentals/1.20-exceptions.md) |
+| "Structs are always faster than classes" | Large structs are expensive to copy, and boxing them undoes the benefit entirely. The guidance is small, immutable, and short-lived. | [1.2](notes/01-csharp-fundamentals/1.02-struct-class-record.md) |
+| "Nullable reference types stop null reference exceptions" | They're **compile-time hints only**. Nothing is enforced at runtime, and data crossing a serialization boundary ignores them completely. | [1.15](notes/01-csharp-fundamentals/1.15-nullability.md) |
+| "Value types always live on the stack" | Only as locals. As class fields, captured lambda variables, or async locals they live on the heap. | [1.1](notes/01-csharp-fundamentals/1.01-value-vs-reference-types.md) |
+| "Passing a class means pass by reference" | It passes a *reference*, but **by value**. Reassigning the parameter does not change the caller's variable. | [1.1](notes/01-csharp-fundamentals/1.01-value-vs-reference-types.md) |
+| "`record` means immutable" | It means **value equality plus `with`**. Immutability comes from `init`, which the positional form happens to generate. | [1.2](notes/01-csharp-fundamentals/1.02-struct-class-record.md) |
+| "`name.Trim();` trims the string" | Strings are immutable. Every method returns a *new* string — you must assign the result. | [1.3](notes/01-csharp-fundamentals/1.03-strings-and-stringbuilder.md) |
+| "`StringBuilder` is always faster than `+`" | For a fixed handful of joins the compiler emits one `String.Concat`, which beats a `StringBuilder`. Use it for loops and unknown counts. | [1.3](notes/01-csharp-fundamentals/1.03-strings-and-stringbuilder.md) |
+| "`protected internal` is the restrictive one" | Backwards. `protected internal` = assembly **OR** derived (wider). `private protected` = derived **AND** same assembly (narrower). | [1.4](notes/01-csharp-fundamentals/1.04-access-modifiers.md) |
+| "Changing a `const` in a library updates consumers" | `const` values are **inlined into the consuming assembly**. They keep the old value until recompiled. Use `static readonly`. | [1.6](notes/01-csharp-fundamentals/1.06-const-readonly-init-required.md) |
+| "`readonly` makes the object immutable" | It only stops the **field** being reassigned. A `readonly List<T>` can still be added to. | [1.6](notes/01-csharp-fundamentals/1.06-const-readonly-init-required.md) |
+| "`new` and `override` do the same thing" | `override` dispatches on the **runtime object**; `new` dispatches on the **declared variable type**. Same object, two answers. | [1.7](notes/01-csharp-fundamentals/1.07-inheritance.md) |
+| "You can call a virtual method from a constructor" | Base constructors run first, so the derived override runs before the derived fields are initialised. Null reference exceptions that look impossible. | [1.7](notes/01-csharp-fundamentals/1.07-inheritance.md) |
+| "A `for` loop lambda captures the value" | It captures the **variable**, and a `for` loop has only one. All lambdas see the final value. `foreach` is safe since C# 5; `for` is not. | [1.13](notes/01-csharp-fundamentals/1.13-lambdas-closures.md) |
+| "An extension method with the same name overrides the real one" | The real instance method always wins, silently. No warning that your extension was ignored. | [1.14](notes/01-csharp-fundamentals/1.14-extension-methods.md) |
+| "`a?.B.C` protects the whole chain" | Only `a`. If `B` is null you still get a `NullReferenceException`. Every link needs its own `?.`. | [1.16](notes/01-csharp-fundamentals/1.16-null-operators.md) |
+| "`??` handles empty strings" | It only checks **null**. `""`, `0` and `false` all pass through as real values. | [1.16](notes/01-csharp-fundamentals/1.16-null-operators.md) |
+| "`var` and `dynamic` are similar" | `var` is compile-time inference with full type safety and zero runtime cost. `dynamic` disables type checking entirely. Nothing alike. | [1.22](notes/01-csharp-fundamentals/1.22-anonymous-dynamic-var.md) |
+| "A finalizer is how you clean up" | A finalizer makes the object survive an **extra GC cycle** and runs at an unpredictable time. It's a last-resort safety net. Use `IDisposable`. | [1.21](notes/01-csharp-fundamentals/1.21-idisposable.md) |
+| "A class primary constructor parameter is a property" | In a **record** it is. In a **class** it's a private, mutable captured field — not exposed, not readonly. | [1.26](notes/01-csharp-fundamentals/1.26-modern-csharp-versions.md) |
+| "`Single()` and `First()` differ only in style" | `Single()` throws if there's more than one match — and to know that, it must scan further. Different semantics *and* different cost. | [2.9](notes/02-collections-linq-async/2.09-first-single-default.md) |
+| "Enumerating an `IEnumerable` twice is free" | For a deferred query it executes twice. Against a database, that's two round trips. | [2.6](notes/02-collections-linq-async/2.06-deferred-execution.md) |
+
+---
+
+## Add your own
+
+The traps you personally get wrong are worth ten of the ones above. Every time you fumble
+something in a mock or a real interview, add a row here the same day.
+
+| ⚠️ What I said | ✅ What's actually true | Date |
+|---|---|---|
+| | | |

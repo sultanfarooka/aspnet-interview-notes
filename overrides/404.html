@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 40rem; margin: 2rem auto; text-align: center;">
+
+  <div style="font-size: 4rem; line-height: 1; margin-bottom: 0.5rem;">📝</div>
+
+  <h1 style="margin-top: 0;">This note isn't written yet</h1>
+
+  <p style="font-size: 0.9rem; opacity: 0.85;">
+    The roadmap deliberately links to every topic ahead of time, so links turn into real
+    pages as each note gets written. You've landed on one that's still to come.
+  </p>
+
+  <p style="font-size: 0.9rem; opacity: 0.85;">
+    It's also possible the page moved, or the address was mistyped.
+  </p>
+
+  <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+    <a class="md-button md-button--primary" href="{{ config.site_url }}ROADMAP/">
+      Open the roadmap
+    </a>
+    <a class="md-button" href="{{ config.site_url }}">
+      Home
+    </a>
+  </div>
+
+  <hr style="margin: 2rem 0; opacity: 0.2;">
+
+  <p style="font-size: 0.85rem; opacity: 0.75;">
+    Looking for something to revise right now? Try
+    <a href="{{ config.site_url }}CHEATSHEET/">the cheat sheet</a>,
+    <a href="{{ config.site_url }}TRAPS/">the traps list</a>, or use the search box at the
+    top of the page.
+  </p>
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+# MkDocs build output (site_dir points outside the repo, but ignore both to be safe)
+site/
+_aspnet-notes-site/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Generated PDFs from Markdown Preview Enhanced
+*.pdf
