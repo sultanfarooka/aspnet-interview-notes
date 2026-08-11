@@ -36,8 +36,24 @@ Then open <http://127.0.0.1:8000>.
 
 ## Deploying
 
-Automatic. Every push to `main` triggers `.github/workflows/deploy.yml`, which builds the
-site and publishes it to GitHub Pages in about 60–90 seconds.
+```bash
+mkdocs gh-deploy
+```
+
+That builds the site and pushes it to the `gh-pages` branch, which GitHub Pages serves.
+Takes about a minute to go live.
+
+> **Why not automatic?**
+> `.github/workflows/deploy.yml` does exactly this on every push, but it is currently
+> **disabled** because GitHub Actions is blocked on this account by a billing issue
+> ("your account is locked due to a billing issue"). Once that is resolved at
+> <https://github.com/settings/billing>, re-enable it with
+> `gh workflow enable "Deploy notes site"` and switch Pages back to the Actions source
+> with:
+> ```bash
+> gh api -X PUT repos/sultanfarooka/aspnet-interview-notes/pages -f build_type=workflow
+> ```
+> Until then, `mkdocs gh-deploy` is the deploy step and does not need Actions at all.
 
 ## A note on what is published
 

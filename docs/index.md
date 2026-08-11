@@ -132,15 +132,21 @@ Then do three things:
 
 ## How this gets published
 
-Every push to `main` rebuilds the site and deploys it automatically — about 60–90 seconds.
-There is nothing to run by hand.
-
-To preview locally before pushing:
+Preview locally:
 
 ```bash
 pip install -r requirements.txt
 mkdocs serve          # then open http://127.0.0.1:8000
 ```
+
+Publish:
+
+```bash
+mkdocs gh-deploy      # live in about a minute
+```
+
+(Automatic deploy on push is set up in `.github/workflows/deploy.yml` but currently
+disabled — see the repo README for why and how to switch it back on.)
 
 `MY-PROJECTS.md` and `PROGRESS.md` are deliberately **excluded** from the published site —
 they hold personal project details and a self-assessment of weak topics, and the site is
