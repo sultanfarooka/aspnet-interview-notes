@@ -2029,12 +2029,15 @@ straight to "Traps" on a file you've never opened and know exactly what you're g
 </ol>
 <hr />
 <h2 id="how-this-gets-published">How this gets published<a class="headerlink" href="#how-this-gets-published" title="Permanent link">&para;</a></h2>
-<p>Every push to <code>main</code> rebuilds the site and deploys it automatically — about 60–90 seconds.
-There is nothing to run by hand.</p>
-<p>To preview locally before pushing:</p>
+<p>Preview locally:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdocs<span class="w"> </span>serve<span class="w">          </span><span class="c1"># then open http://127.0.0.1:8000</span>
 </span></code></pre></div>
+<p>Publish:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs<span class="w"> </span>gh-deploy<span class="w">      </span><span class="c1"># live in about a minute</span>
+</span></code></pre></div>
+<p>(Automatic deploy on push is set up in <code>.github/workflows/deploy.yml</code> but currently
+disabled — see the repo README for why and how to switch it back on.)</p>
 <p><code>MY-PROJECTS.md</code> and <code>PROGRESS.md</code> are deliberately <strong>excluded</strong> from the published site —
 they hold personal project details and a self-assessment of weak topics, and the site is
 public. That exclusion is the <code>exclude_docs:</code> block in <code>mkdocs.yml</code>. Deleting those two
