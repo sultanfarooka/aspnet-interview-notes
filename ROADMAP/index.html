@@ -1,0 +1,2317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Study notes and interview preparation for ASP.NET Core, from C# fundamentals to distributed systems.">
+      
+      
+      
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/ROADMAP/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../CHEATSHEET/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Roadmap - ASP.NET Core Interview Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aspnet-core-interview-preparation-master-roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ASP.NET Core Interview Notes" class="md-header__button md-logo" aria-label="ASP.NET Core Interview Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ASP.NET Core Interview Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sultanfarooka/aspnet-interview-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aspnet-interview-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ASP.NET Core Interview Notes" class="md-nav__button md-logo" aria-label="ASP.NET Core Interview Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ASP.NET Core Interview Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sultanfarooka/aspnet-interview-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aspnet-interview-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick revision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick revision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TRAPS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DIAGRAMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VERSIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's new in .NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. C# Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. C# Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.01-value-vs-reference-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 Value vs reference types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.02-struct-class-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 struct vs class vs record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.03-strings-and-stringbuilder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Strings and StringBuilder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.04-access-modifiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.4 Access modifiers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.05-static/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.5 static
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.06-const-readonly-init-required/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.6 const, readonly, init, required
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.07-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.7 Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.08-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.8 Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.09-polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.9 Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.10-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.10 Generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.11-delegates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.11 Delegates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.12-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.12 Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.13-lambdas-closures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.13 Lambdas and closures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.14-extension-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.14 Extension methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.15-nullability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.15 Nullability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.16-null-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.16 Null-handling operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.17-pattern-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.17 Pattern matching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.18-tuples-ref-out-in/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.18 Tuples, ref, out, in
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.19-indexers-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.19 Indexers and operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.20-exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.20 Exception handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.21-idisposable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.21 IDisposable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.22-anonymous-dynamic-var/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.22 Anonymous types, dynamic, var
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.23-attributes-reflection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.23 Attributes and reflection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.24-partial-local-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.24 Partial classes and local functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.25-span-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.25 Span and Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/01-csharp-fundamentals/1.26-modern-csharp-versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.26 Modern C# by version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Dependency Injection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.03-service-lifetimes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3 Service lifetimes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../practice/system-design/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practice
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Practice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice/QUESTION-BANK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Question Bank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aspnet-core-interview-preparation-master-roadmap">ASP.NET Core Interview Preparation — Master Roadmap<a class="headerlink" href="#aspnet-core-interview-preparation-master-roadmap" title="Permanent link">&para;</a></h1>
+<p><strong><a href="../">README</a></strong> · <strong><a href="../CHEATSHEET/">Cheat Sheet</a></strong> · <strong><a href="../TRAPS/">Traps</a></strong> · <strong><a href="../PROGRESS/">Progress Tracker</a></strong> · <strong><a href="../practice/QUESTION-BANK/">Question Bank</a></strong> · <strong><a href="../DIAGRAMS/">Diagrams</a></strong></p>
+<hr />
+<h2 id="legend">Legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Marker</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">🔥</td>
+<td><strong>Near-certain.</strong> Asked in almost every ASP.NET Core interview. If you know nothing else, know these.</td>
+</tr>
+<tr>
+<td style="text-align: center;">⭐</td>
+<td><strong>Common.</strong> Shows up regularly. Expect at least a few of these per interview.</td>
+</tr>
+<tr>
+<td style="text-align: center;">💻</td>
+<td><strong>Hands-on.</strong> You must be able to <em>write</em> this on a whiteboard or in a live-coding round — describing it is not enough.</td>
+</tr>
+<tr>
+<td style="text-align: center;">⚠️</td>
+<td><strong>Trap.</strong> A classic gotcha. Interviewers use these to separate people who've read a blog from people who've shipped.</td>
+</tr>
+<tr>
+<td style="text-align: center;">🧠</td>
+<td><strong>Senior.</strong> Only needed if you're targeting senior/lead/architect roles. Safe to skip for junior interviews.</td>
+</tr>
+<tr>
+<td style="text-align: center;">🎯</td>
+<td><strong>Diagram.</strong> Worth being able to draw. Practise it on paper.</td>
+</tr>
+</tbody>
+</table>
+<p>Checkboxes track <strong>"notes written and read."</strong> Track your <em>recall confidence</em> separately in <strong><a href="../PROGRESS/">PROGRESS.md</a></strong> — the two are not the same thing, and confidence is what actually decays.</p>
+<blockquote>
+<p>Topic numbers are permanent. Once a note file exists at a number, that number never changes.
+Links below are pre-wired — they will be dead until the corresponding note is written.</p>
+</blockquote>
+<hr />
+<h1 id="phase-0-prerequisites">Phase 0 — Prerequisites<a class="headerlink" href="#phase-0-prerequisites" title="Permanent link">&para;</a></h1>
+<h2 id="1-c-language-fundamentals">1. C# Language Fundamentals<a class="headerlink" href="#1-c-language-fundamentals" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] <strong>1.1</strong> <a href="../notes/01-csharp-fundamentals/1.01-value-vs-reference-types/">Value types vs reference types, stack vs heap, boxing/unboxing</a> 🔥 ⚠️ 🎯</li>
+<li>[x] <strong>1.2</strong> <a href="../notes/01-csharp-fundamentals/1.02-struct-class-record/"><code>struct</code> vs <code>class</code> vs <code>record</code> vs <code>record struct</code></a> ⭐ 💻</li>
+<li>[x] <strong>1.3</strong> <a href="../notes/01-csharp-fundamentals/1.03-strings-and-stringbuilder/">String immutability, <code>StringBuilder</code>, interning</a> ⭐</li>
+<li>[x] <strong>1.4</strong> <a href="../notes/01-csharp-fundamentals/1.04-access-modifiers/">Access modifiers, including <code>protected internal</code> and <code>private protected</code></a></li>
+<li>[x] <strong>1.5</strong> <a href="../notes/01-csharp-fundamentals/1.05-static/"><code>static</code> — classes, members, constructors, local functions</a></li>
+<li>[x] <strong>1.6</strong> <a href="../notes/01-csharp-fundamentals/1.06-const-readonly-init-required/"><code>const</code> vs <code>readonly</code> vs <code>init</code> vs <code>required</code></a> ⭐ ⚠️</li>
+<li>[x] <strong>1.7</strong> <a href="../notes/01-csharp-fundamentals/1.07-inheritance/">Inheritance — <code>virtual</code> / <code>override</code> / <code>new</code> / <code>sealed</code> / <code>abstract</code></a> 🔥 ⚠️</li>
+<li>[x] <strong>1.8</strong> <a href="../notes/01-csharp-fundamentals/1.08-interfaces/">Interfaces — explicit implementation, default methods, vs abstract class</a> 🔥 💻</li>
+<li>[x] <strong>1.9</strong> <a href="../notes/01-csharp-fundamentals/1.09-polymorphism/">Polymorphism — overloading vs overriding</a> ⭐</li>
+<li>[x] <strong>1.10</strong> <a href="../notes/01-csharp-fundamentals/1.10-generics/">Generics — constraints, covariance and contravariance</a> ⭐ 🧠</li>
+<li>[x] <strong>1.11</strong> <a href="../notes/01-csharp-fundamentals/1.11-delegates/">Delegates, <code>Func</code>, <code>Action</code>, <code>Predicate</code>, multicast</a> ⭐ 💻</li>
+<li>[x] <strong>1.12</strong> <a href="../notes/01-csharp-fundamentals/1.12-events/">Events — and the memory leak from unsubscribed handlers</a> ⭐ ⚠️</li>
+<li>[x] <strong>1.13</strong> <a href="../notes/01-csharp-fundamentals/1.13-lambdas-closures/">Lambdas and closures — the captured-loop-variable trap</a> ⭐ ⚠️</li>
+<li>[x] <strong>1.14</strong> <a href="../notes/01-csharp-fundamentals/1.14-extension-methods/">Extension methods — resolution rules and appropriate use</a> ⭐ 💻</li>
+<li>[x] <strong>1.15</strong> <a href="../notes/01-csharp-fundamentals/1.15-nullability/">Nullable value types vs nullable reference types</a> 🔥 ⚠️</li>
+<li>[x] <strong>1.16</strong> <a href="../notes/01-csharp-fundamentals/1.16-null-operators/">Null-handling operators — <code>??</code>, <code>??=</code>, <code>?.</code>, <code>?[]</code></a></li>
+<li>[x] <strong>1.17</strong> <a href="../notes/01-csharp-fundamentals/1.17-pattern-matching/">Pattern matching and switch expressions</a> ⭐ 💻</li>
+<li>[x] <strong>1.18</strong> <a href="../notes/01-csharp-fundamentals/1.18-tuples-ref-out-in/">Tuples, deconstruction, <code>out</code> / <code>ref</code> / <code>in</code></a> ⭐</li>
+<li>[x] <strong>1.19</strong> <a href="../notes/01-csharp-fundamentals/1.19-indexers-operators/">Indexers, operator overloading, conversion operators</a></li>
+<li>[x] <strong>1.20</strong> <a href="../notes/01-csharp-fundamentals/1.20-exceptions/">Exception handling — filters, custom exceptions, <code>throw</code> vs <code>throw ex</code></a> 🔥 ⚠️ 💻</li>
+<li>[x] <strong>1.21</strong> <a href="../notes/01-csharp-fundamentals/1.21-idisposable/"><code>IDisposable</code>, <code>using</code>, <code>IAsyncDisposable</code>, finalizers</a> 🔥 💻</li>
+<li>[x] <strong>1.22</strong> <a href="../notes/01-csharp-fundamentals/1.22-anonymous-dynamic-var/">Anonymous types, <code>dynamic</code>, <code>var</code> — and when each is wrong</a></li>
+<li>[x] <strong>1.23</strong> <a href="../notes/01-csharp-fundamentals/1.23-attributes-reflection/">Attributes and reflection basics</a> ⭐</li>
+<li>[x] <strong>1.24</strong> <a href="../notes/01-csharp-fundamentals/1.24-partial-local-functions/">Partial classes, partial methods, local functions</a></li>
+<li>[x] <strong>1.25</strong> <a href="../notes/01-csharp-fundamentals/1.25-span-memory/"><code>Span&lt;T&gt;</code>, <code>Memory&lt;T&gt;</code>, <code>stackalloc</code></a> 🧠</li>
+<li>[x] <strong>1.26</strong> <a href="../notes/01-csharp-fundamentals/1.26-modern-csharp-versions/">Modern C# by version (C# 8 → 14)</a> ⭐</li>
+</ul>
+<h2 id="2-collections-linq-and-async">2. Collections, LINQ and Async<a class="headerlink" href="#2-collections-linq-and-async" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>2.1</strong> <a href="notes/02-collections-linq-async/2.01-collection-interfaces.md"><code>IEnumerable</code> vs <code>ICollection</code> vs <code>IList</code> vs <code>IQueryable</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>2.2</strong> <a href="notes/02-collections-linq-async/2.02-collections-and-big-o.md">Core collections and their Big-O</a> ⭐ 🎯</li>
+<li>[ ] <strong>2.3</strong> <a href="notes/02-collections-linq-async/2.03-concurrent-collections.md">Concurrent collections</a> ⭐</li>
+<li>[ ] <strong>2.4</strong> <a href="notes/02-collections-linq-async/2.04-yield-and-iterators.md"><code>IEnumerator</code>, <code>yield return</code>, deferred execution</a> ⭐ 💻</li>
+<li>[ ] <strong>2.5</strong> <a href="notes/02-collections-linq-async/2.05-linq-basics.md">LINQ query vs method syntax; the standard operators</a> ⭐ 💻</li>
+<li>[ ] <strong>2.6</strong> <a href="notes/02-collections-linq-async/2.06-deferred-execution.md">Deferred vs immediate execution; multiple-enumeration pitfalls</a> 🔥 ⚠️</li>
+<li>[ ] <strong>2.7</strong> <a href="notes/02-collections-linq-async/2.07-expression-trees.md"><code>IQueryable</code> and expression trees — how LINQ becomes SQL</a> ⭐ 🧠</li>
+<li>[ ] <strong>2.8</strong> <a href="notes/02-collections-linq-async/2.08-linq-advanced-operators.md"><code>GroupBy</code>, <code>Join</code>, <code>SelectMany</code>, <code>Aggregate</code>, <code>Zip</code></a> ⭐ 💻</li>
+<li>[ ] <strong>2.9</strong> <a href="notes/02-collections-linq-async/2.09-first-single-default.md"><code>First</code> vs <code>FirstOrDefault</code> vs <code>Single</code> vs <code>SingleOrDefault</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>2.10</strong> <a href="notes/02-collections-linq-async/2.10-threads-vs-tasks.md">Threads, <code>ThreadPool</code>, <code>Task</code> vs <code>Thread</code></a> 🔥 🎯</li>
+<li>[ ] <strong>2.11</strong> <a href="notes/02-collections-linq-async/2.11-async-await-internals.md"><code>async</code> / <code>await</code> — the state machine underneath</a> 🔥 🎯 🧠</li>
+<li>[ ] <strong>2.12</strong> <a href="notes/02-collections-linq-async/2.12-task-valuetask.md"><code>Task</code> vs <code>ValueTask</code>, <code>WhenAll</code>, <code>WhenAny</code>, <code>Task.Run</code></a> ⭐ 💻</li>
+<li>[ ] <strong>2.13</strong> <a href="notes/02-collections-linq-async/2.13-async-deadlocks.md">Deadlocks — <code>.Result</code>, <code>.Wait()</code>, <code>ConfigureAwait(false)</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>2.14</strong> <a href="notes/02-collections-linq-async/2.14-cancellation.md"><code>CancellationToken</code> and cooperative cancellation</a> 🔥 💻</li>
+<li>[ ] <strong>2.15</strong> <a href="notes/02-collections-linq-async/2.15-async-void.md"><code>async void</code> — why it is almost always wrong</a> 🔥 ⚠️</li>
+<li>[ ] <strong>2.16</strong> <a href="notes/02-collections-linq-async/2.16-async-exceptions.md">Exceptions in async code, <code>AggregateException</code></a> ⭐ ⚠️</li>
+<li>[ ] <strong>2.17</strong> <a href="notes/02-collections-linq-async/2.17-async-streams.md"><code>IAsyncEnumerable&lt;T&gt;</code> and <code>await foreach</code></a> ⭐</li>
+<li>[ ] <strong>2.18</strong> <a href="notes/02-collections-linq-async/2.18-thread-safety.md">Thread safety — <code>lock</code>, <code>SemaphoreSlim</code>, <code>Interlocked</code>, <code>volatile</code></a> ⭐ ⚠️</li>
+<li>[ ] <strong>2.19</strong> <a href="notes/02-collections-linq-async/2.19-parallel-programming.md"><code>Parallel.For</code>, PLINQ — and when not to use them</a> ⭐ ⚠️</li>
+</ul>
+<h2 id="3-net-runtime-and-platform">3. .NET Runtime and Platform<a class="headerlink" href="#3-net-runtime-and-platform" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>3.1</strong> <a href="notes/03-dotnet-runtime/3.01-dotnet-history.md">.NET Framework vs .NET Core vs .NET 5+</a> 🔥</li>
+<li>[ ] <strong>3.2</strong> <a href="notes/03-dotnet-runtime/3.02-clr-and-compilation.md">CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun</a> ⭐ 🎯</li>
+<li>[ ] <strong>3.3</strong> <a href="notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md">Managed vs unmanaged code, <code>unsafe</code>, P/Invoke</a></li>
+<li>[ ] <strong>3.4</strong> <a href="notes/03-dotnet-runtime/3.04-garbage-collection.md">Garbage collection — generations, LOH, GC modes</a> 🔥 🎯</li>
+<li>[ ] <strong>3.5</strong> <a href="notes/03-dotnet-runtime/3.05-memory-leaks.md">Memory leaks in managed code</a> 🔥 ⚠️</li>
+<li>[ ] <strong>3.6</strong> <a href="notes/03-dotnet-runtime/3.06-assemblies-nuget.md">Assemblies, load contexts, NuGet packaging</a></li>
+<li>[ ] <strong>3.7</strong> <a href="notes/03-dotnet-runtime/3.07-csproj-and-tfm.md">SDK-style <code>.csproj</code>, target frameworks, multi-targeting</a> ⭐</li>
+<li>[ ] <strong>3.8</strong> <a href="notes/03-dotnet-runtime/3.08-dotnet-cli.md">.NET CLI essentials</a> ⭐ 💻</li>
+<li>[ ] <strong>3.9</strong> <a href="notes/03-dotnet-runtime/3.09-dotnet-standard.md">.NET Standard — what it was, why it's mostly history</a></li>
+<li>[ ] <strong>3.10</strong> <a href="notes/03-dotnet-runtime/3.10-release-cadence.md">Release cadence — LTS vs STS, current support matrix</a> ⭐</li>
+</ul>
+<hr />
+<h1 id="phase-1-aspnet-core-core-concepts">Phase 1 — ASP.NET Core Core Concepts<a class="headerlink" href="#phase-1-aspnet-core-core-concepts" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>This is the highest-value phase in the entire roadmap.</strong> Sections 4–8 are what
+"ASP.NET Core interview" actually means. Do not skip ahead to EF Core until these are solid.</p>
+</blockquote>
+<h2 id="4-fundamentals-and-application-startup">4. Fundamentals and Application Startup<a class="headerlink" href="#4-fundamentals-and-application-startup" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>4.1</strong> <a href="notes/04-fundamentals-startup/4.01-what-is-aspnet-core.md">What ASP.NET Core is; differences from ASP.NET (System.Web)</a> 🔥</li>
+<li>[ ] <strong>4.2</strong> <a href="notes/04-fundamentals-startup/4.02-hosting-model.md">Cross-platform hosting, Kestrel, the reverse-proxy model</a> ⭐ 🎯</li>
+<li>[ ] <strong>4.3</strong> <a href="notes/04-fundamentals-startup/4.03-program-cs-hosting.md"><code>Program.cs</code> — Generic Host vs Minimal Hosting</a> 🔥 💻</li>
+<li>[ ] <strong>4.4</strong> <a href="notes/04-fundamentals-startup/4.04-startup-cs-legacy.md">The legacy <code>Startup.cs</code> model</a> ⭐</li>
+<li>[ ] <strong>4.5</strong> <a href="notes/04-fundamentals-startup/4.05-host-interfaces.md"><code>IHost</code>, <code>IHostBuilder</code>, <code>IWebHostEnvironment</code>, lifetime interfaces</a> ⭐</li>
+<li>[ ] <strong>4.6</strong> <a href="notes/04-fundamentals-startup/4.06-app-lifecycle.md">Application lifecycle — start, run, graceful shutdown</a> ⭐ 🎯</li>
+<li>[ ] <strong>4.7</strong> <a href="notes/04-fundamentals-startup/4.07-environments.md">Environments and <code>ASPNETCORE_ENVIRONMENT</code></a> 🔥</li>
+<li>[ ] <strong>4.8</strong> <a href="notes/04-fundamentals-startup/4.08-launchsettings.md"><code>launchSettings.json</code> — and why it is dev-only</a> ⚠️</li>
+<li>[ ] <strong>4.9</strong> <a href="notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys.md">Kestrel vs IIS vs HTTP.sys; in-process vs out-of-process</a> ⭐ 🎯</li>
+<li>[ ] <strong>4.10</strong> <a href="notes/04-fundamentals-startup/4.10-static-files.md"><code>wwwroot</code> and static file serving</a> ⭐</li>
+<li>[ ] <strong>4.11</strong> <a href="notes/04-fundamentals-startup/4.11-project-structure.md">Project structure conventions for a Web API</a> ⭐</li>
+</ul>
+<h2 id="5-middleware-and-the-request-pipeline">5. Middleware and the Request Pipeline<a class="headerlink" href="#5-middleware-and-the-request-pipeline" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>5.1</strong> <a href="notes/05-middleware-pipeline/5.01-what-is-middleware.md">What middleware is; the pipeline model</a> 🔥 🎯</li>
+<li>[ ] <strong>5.2</strong> <a href="notes/05-middleware-pipeline/5.02-middleware-order.md">Middleware order — and the canonical ordering</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>5.3</strong> <a href="notes/05-middleware-pipeline/5.03-use-run-map.md"><code>Use</code> vs <code>Run</code> vs <code>Map</code> vs <code>MapWhen</code> vs <code>UseWhen</code></a> 🔥 💻</li>
+<li>[ ] <strong>5.4</strong> <a href="notes/05-middleware-pipeline/5.04-inline-middleware.md">Inline custom middleware</a> ⭐ 💻</li>
+<li>[ ] <strong>5.5</strong> <a href="notes/05-middleware-pipeline/5.05-conventional-middleware.md">Conventional middleware class with <code>InvokeAsync</code></a> 🔥 💻</li>
+<li>[ ] <strong>5.6</strong> <a href="notes/05-middleware-pipeline/5.06-imiddleware-factory.md">Factory-based middleware (<code>IMiddleware</code>) and scoped services</a> ⭐ ⚠️</li>
+<li>[ ] <strong>5.7</strong> <a href="notes/05-middleware-pipeline/5.07-short-circuiting.md">Short-circuiting and terminal middleware</a> ⭐</li>
+<li>[ ] <strong>5.8</strong> <a href="notes/05-middleware-pipeline/5.08-httpcontext.md"><code>HttpContext</code> — Request, Response, Items, Features, User</a> 🔥</li>
+<li>[ ] <strong>5.9</strong> <a href="notes/05-middleware-pipeline/5.09-request-body-buffering.md">Reading and rewinding the request body (<code>EnableBuffering</code>)</a> ⚠️ 💻</li>
+<li>[ ] <strong>5.10</strong> <a href="notes/05-middleware-pipeline/5.10-builtin-middleware.md">Tour of the built-in middleware</a> ⭐</li>
+<li>[ ] <strong>5.11</strong> <a href="notes/05-middleware-pipeline/5.11-exception-middleware.md">Global exception-handling middleware</a> 🔥 💻</li>
+<li>[ ] <strong>5.12</strong> <a href="notes/05-middleware-pipeline/5.12-iexceptionhandler.md"><code>IExceptionHandler</code> (.NET 8+) vs developer exception page</a> ⭐ 💻</li>
+<li>[ ] <strong>5.13</strong> <a href="notes/05-middleware-pipeline/5.13-middleware-vs-filters.md">Middleware vs filters — when to use which</a> 🔥 🎯</li>
+<li>[ ] <strong>5.14</strong> <a href="notes/05-middleware-pipeline/5.14-logging-middleware.md">Request/response logging middleware and its pitfalls</a> ⭐ ⚠️</li>
+</ul>
+<h2 id="6-dependency-injection">6. Dependency Injection<a class="headerlink" href="#6-dependency-injection" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>6.1</strong> <a href="notes/06-dependency-injection/6.01-ioc-and-di.md">Inversion of Control and Dependency Injection</a> 🔥 🎯</li>
+<li>[ ] <strong>6.2</strong> <a href="notes/06-dependency-injection/6.02-builtin-container.md">The built-in container, <code>IServiceCollection</code>, <code>IServiceProvider</code></a> 🔥 💻</li>
+<li>[ ] <strong>6.3</strong> <a href="../notes/06-dependency-injection/6.03-service-lifetimes/">Service lifetimes — Transient, Scoped, Singleton</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>6.4</strong> <a href="notes/06-dependency-injection/6.04-captive-dependency.md">The captive dependency problem</a> 🔥 ⚠️</li>
+<li>[ ] <strong>6.5</strong> <a href="notes/06-dependency-injection/6.05-scopes.md">What a scope is; creating manual scopes</a> 🔥 💻</li>
+<li>[ ] <strong>6.6</strong> <a href="notes/06-dependency-injection/6.06-registration-apis.md"><code>Add</code> vs <code>TryAdd</code> vs <code>TryAddEnumerable</code>; keyed services</a> ⭐</li>
+<li>[ ] <strong>6.7</strong> <a href="notes/06-dependency-injection/6.07-multiple-implementations.md">Multiple implementations and <code>IEnumerable&lt;TService&gt;</code></a> ⭐ 💻</li>
+<li>[ ] <strong>6.8</strong> <a href="notes/06-dependency-injection/6.08-factories-open-generics.md">Factory registrations and open generics</a> ⭐</li>
+<li>[ ] <strong>6.9</strong> <a href="notes/06-dependency-injection/6.09-injection-styles.md">Constructor injection vs <code>[FromServices]</code> vs service locator</a> ⭐ ⚠️</li>
+<li>[ ] <strong>6.10</strong> <a href="notes/06-dependency-injection/6.10-disposal.md">Who disposes what — container-managed disposal</a> ⭐ ⚠️</li>
+<li>[ ] <strong>6.11</strong> <a href="notes/06-dependency-injection/6.11-third-party-containers.md">Third-party containers — Autofac, Scrutor</a> 🧠</li>
+<li>[ ] <strong>6.12</strong> <a href="notes/06-dependency-injection/6.12-di-and-testability.md">Designing for testability through DI</a> ⭐</li>
+<li>[ ] <strong>6.13</strong> <a href="notes/06-dependency-injection/6.13-di-traps.md">Classic DI interview traps</a> 🔥 ⚠️</li>
+</ul>
+<h2 id="7-configuration-and-options">7. Configuration and Options<a class="headerlink" href="#7-configuration-and-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>7.1</strong> <a href="notes/07-configuration-options/7.01-configuration-system.md">The configuration system — providers and precedence</a> 🔥 ⚠️</li>
+<li>[ ] <strong>7.2</strong> <a href="notes/07-configuration-options/7.02-appsettings.md"><code>appsettings.json</code> and environment overrides</a> 🔥</li>
+<li>[ ] <strong>7.3</strong> <a href="notes/07-configuration-options/7.03-env-args-usersecrets.md">Environment variables, CLI args, User Secrets</a> ⭐</li>
+<li>[ ] <strong>7.4</strong> <a href="notes/07-configuration-options/7.04-secret-providers.md">Key Vault / Secrets Manager providers</a> ⭐</li>
+<li>[ ] <strong>7.5</strong> <a href="notes/07-configuration-options/7.05-iconfiguration-api.md"><code>IConfiguration</code> API — sections, <code>GetValue</code>, connection strings</a> ⭐ 💻</li>
+<li>[ ] <strong>7.6</strong> <a href="notes/07-configuration-options/7.06-options-pattern.md"><code>IOptions</code> vs <code>IOptionsSnapshot</code> vs <code>IOptionsMonitor</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>7.7</strong> <a href="notes/07-configuration-options/7.07-binding-to-poco.md">Binding configuration to POCOs</a> ⭐ 💻</li>
+<li>[ ] <strong>7.8</strong> <a href="notes/07-configuration-options/7.08-options-validation.md">Options validation and <code>ValidateOnStart</code></a> ⭐ 💻</li>
+<li>[ ] <strong>7.9</strong> <a href="notes/07-configuration-options/7.09-reload-on-change.md">Reloadable configuration and its limits</a> ⚠️</li>
+<li>[ ] <strong>7.10</strong> <a href="notes/07-configuration-options/7.10-custom-provider.md">Writing a custom configuration provider</a> 🧠 💻</li>
+<li>[ ] <strong>7.11</strong> <a href="notes/07-configuration-options/7.11-feature-flags.md">Feature flags and feature management</a> ⭐</li>
+</ul>
+<h2 id="8-routing">8. Routing<a class="headerlink" href="#8-routing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>8.1</strong> <a href="notes/08-routing/8.01-endpoint-routing.md">Endpoint routing fundamentals</a> 🔥 🎯</li>
+<li>[ ] <strong>8.2</strong> <a href="notes/08-routing/8.02-userouting-useendpoints.md"><code>UseRouting</code> and <code>UseEndpoints</code> — what happens between them</a> 🔥 ⚠️</li>
+<li>[ ] <strong>8.3</strong> <a href="notes/08-routing/8.03-conventional-vs-attribute.md">Conventional vs attribute routing</a> 🔥 💻</li>
+<li>[ ] <strong>8.4</strong> <a href="notes/08-routing/8.04-route-templates.md">Route templates, parameters, optionals, defaults</a> ⭐ 💻</li>
+<li>[ ] <strong>8.5</strong> <a href="notes/08-routing/8.05-route-constraints.md">Route constraints, including custom ones</a> ⭐ 💻</li>
+<li>[ ] <strong>8.6</strong> <a href="notes/08-routing/8.06-link-generation.md">Route tokens, named routes, link generation</a> ⭐</li>
+<li>[ ] <strong>8.7</strong> <a href="notes/08-routing/8.07-endpoint-precedence.md">Endpoint selection and precedence — how ties break</a> ⭐ ⚠️</li>
+<li>[ ] <strong>8.8</strong> <a href="notes/08-routing/8.08-areas.md">Areas</a></li>
+<li>[ ] <strong>8.9</strong> <a href="notes/08-routing/8.09-route-groups.md">Route groups (<code>MapGroup</code>)</a> ⭐ 💻</li>
+<li>[ ] <strong>8.10</strong> <a href="notes/08-routing/8.10-catchall-and-slugs.md">Catch-all routes, slugs, SEO-friendly URLs</a></li>
+</ul>
+<hr />
+<h1 id="phase-2-building-web-apis-and-web-apps">Phase 2 — Building Web APIs and Web Apps<a class="headerlink" href="#phase-2-building-web-apis-and-web-apps" title="Permanent link">&para;</a></h1>
+<h2 id="9-mvc-razor-pages-and-views">9. MVC, Razor Pages and Views<a class="headerlink" href="#9-mvc-razor-pages-and-views" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>9.1</strong> <a href="notes/09-mvc-razor-views/9.01-mvc-pattern.md">The MVC pattern in ASP.NET Core</a> 🔥 🎯</li>
+<li>[ ] <strong>9.2</strong> <a href="notes/09-mvc-razor-views/9.02-controllers.md"><code>Controller</code> vs <code>ControllerBase</code>; action conventions</a> 🔥</li>
+<li>[ ] <strong>9.3</strong> <a href="notes/09-mvc-razor-views/9.03-action-results.md"><code>IActionResult</code> vs <code>ActionResult&lt;T&gt;</code>; result types</a> 🔥 💻</li>
+<li>[ ] <strong>9.4</strong> <a href="notes/09-mvc-razor-views/9.04-razor-and-layouts.md">Razor syntax, layouts, <code>_ViewStart</code>, <code>_ViewImports</code></a> ⭐</li>
+<li>[ ] <strong>9.5</strong> <a href="notes/09-mvc-razor-views/9.05-partials-components-taghelpers.md">Partial views, View Components, Tag Helpers vs HTML Helpers</a> ⭐</li>
+<li>[ ] <strong>9.6</strong> <a href="notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md">ViewData vs ViewBag vs TempData</a> 🔥 ⚠️</li>
+<li>[ ] <strong>9.7</strong> <a href="notes/09-mvc-razor-views/9.07-razor-pages.md">Razor Pages and <code>PageModel</code></a> ⭐ 💻</li>
+<li>[ ] <strong>9.8</strong> <a href="notes/09-mvc-razor-views/9.08-viewmodels.md">ViewModels vs entities; strongly-typed views</a> ⭐</li>
+<li>[ ] <strong>9.9</strong> <a href="notes/09-mvc-razor-views/9.09-blazor-overview.md">Blazor overview — Server vs WASM vs Auto</a> ⭐</li>
+<li>[ ] <strong>9.10</strong> <a href="notes/09-mvc-razor-views/9.10-frontend-integration.md">Front-end integration, bundling, minification</a></li>
+</ul>
+<h2 id="10-web-api-design-and-rest">10. Web API Design and REST<a class="headerlink" href="#10-web-api-design-and-rest" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>10.1</strong> <a href="notes/10-web-api-rest/10.01-rest-principles.md">REST principles — resources, statelessness, uniform interface</a> 🔥 🎯</li>
+<li>[ ] <strong>10.2</strong> <a href="notes/10-web-api-rest/10.02-http-verbs-idempotency.md">HTTP verbs; idempotency and safety</a> 🔥 ⚠️</li>
+<li>[ ] <strong>10.3</strong> <a href="notes/10-web-api-rest/10.03-status-codes.md">HTTP status codes that actually get asked about</a> 🔥</li>
+<li>[ ] <strong>10.4</strong> <a href="notes/10-web-api-rest/10.04-apicontroller-attribute.md"><code>[ApiController]</code> — what it changes</a> 🔥 ⚠️</li>
+<li>[ ] <strong>10.5</strong> <a href="notes/10-web-api-rest/10.05-content-negotiation-json.md">Content negotiation and JSON serialization</a> 🔥 ⚠️</li>
+<li>[ ] <strong>10.6</strong> <a href="notes/10-web-api-rest/10.06-api-versioning.md">API versioning strategies</a> ⭐ 💻</li>
+<li>[ ] <strong>10.7</strong> <a href="notes/10-web-api-rest/10.07-pagination-filtering.md">Pagination, filtering, sorting conventions</a> ⭐ 💻</li>
+<li>[ ] <strong>10.8</strong> <a href="notes/10-web-api-rest/10.08-problem-details.md"><code>ProblemDetails</code> / RFC 7807 and consistent error contracts</a> ⭐ 💻</li>
+<li>[ ] <strong>10.9</strong> <a href="notes/10-web-api-rest/10.09-openapi-swagger.md">OpenAPI / Swagger — Swashbuckle, NSwag, built-in OpenAPI</a> ⭐</li>
+<li>[ ] <strong>10.10</strong> <a href="notes/10-web-api-rest/10.10-cors.md">CORS — preflight, policies, common misconfigurations</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>10.11</strong> <a href="notes/10-web-api-rest/10.11-dtos-and-mapping.md">DTOs vs entities; mapping approaches</a> 🔥</li>
+<li>[ ] <strong>10.12</strong> <a href="notes/10-web-api-rest/10.12-minimal-apis.md">Minimal APIs — syntax, filters, when to choose them</a> ⭐ 💻</li>
+<li>[ ] <strong>10.13</strong> <a href="notes/10-web-api-rest/10.13-idempotency-etags.md">Idempotency keys, <code>ETag</code>, <code>If-Match</code></a> 🧠</li>
+<li>[ ] <strong>10.14</strong> <a href="notes/10-web-api-rest/10.14-rest-vs-grpc-vs-graphql.md">REST vs gRPC vs GraphQL vs SOAP</a> ⭐ 🎯</li>
+</ul>
+<h2 id="11-model-binding-and-validation">11. Model Binding and Validation<a class="headerlink" href="#11-model-binding-and-validation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>11.1</strong> <a href="notes/11-model-binding-validation/11.01-binding-sources.md">Binding sources — <code>[FromBody]</code>, <code>[FromQuery]</code>, <code>[FromRoute]</code>, …</a> 🔥 ⚠️</li>
+<li>[ ] <strong>11.2</strong> <a href="notes/11-model-binding-validation/11.02-how-binding-works.md">How binding works — value providers, prefixes, collections</a> ⭐</li>
+<li>[ ] <strong>11.3</strong> <a href="notes/11-model-binding-validation/11.03-custom-model-binders.md">Custom model binders</a> ⭐ 💻</li>
+<li>[ ] <strong>11.4</strong> <a href="notes/11-model-binding-validation/11.04-dataannotations.md">DataAnnotations validation attributes</a> 🔥 💻</li>
+<li>[ ] <strong>11.5</strong> <a href="notes/11-model-binding-validation/11.05-modelstate.md"><code>ModelState</code> and automatic 400 responses</a> 🔥 💻</li>
+<li>[ ] <strong>11.6</strong> <a href="notes/11-model-binding-validation/11.06-custom-validation.md">Custom validation attributes and <code>IValidatableObject</code></a> ⭐ 💻</li>
+<li>[ ] <strong>11.7</strong> <a href="notes/11-model-binding-validation/11.07-fluentvalidation.md">FluentValidation</a> ⭐ 💻</li>
+<li>[ ] <strong>11.8</strong> <a href="notes/11-model-binding-validation/11.08-client-vs-server-validation.md">Client-side vs server-side validation</a> ⭐</li>
+<li>[ ] <strong>11.9</strong> <a href="notes/11-model-binding-validation/11.09-file-uploads.md">File uploads — <code>IFormFile</code>, streaming, limits, security</a> ⭐ ⚠️</li>
+<li>[ ] <strong>11.10</strong> <a href="notes/11-model-binding-validation/11.10-over-posting.md">Over-posting / mass assignment</a> 🔥 ⚠️</li>
+</ul>
+<h2 id="12-filters-and-cross-cutting-concerns">12. Filters and Cross-Cutting Concerns<a class="headerlink" href="#12-filters-and-cross-cutting-concerns" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>12.1</strong> <a href="notes/12-filters/12.01-filter-pipeline.md">The filter pipeline and the five filter types</a> 🔥 🎯</li>
+<li>[ ] <strong>12.2</strong> <a href="notes/12-filters/12.02-filter-order.md">Execution order, scopes, and <code>IOrderedFilter</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>12.3</strong> <a href="notes/12-filters/12.03-sync-vs-async-filters.md">Sync vs async filter interfaces</a> ⭐ 💻</li>
+<li>[ ] <strong>12.4</strong> <a href="notes/12-filters/12.04-servicefilter-typefilter.md"><code>ServiceFilter</code> vs <code>TypeFilter</code> vs plain attribute</a> 🔥 ⚠️</li>
+<li>[ ] <strong>12.5</strong> <a href="notes/12-filters/12.05-exception-filters.md">Exception filters vs exception middleware</a> ⭐ ⚠️</li>
+<li>[ ] <strong>12.6</strong> <a href="notes/12-filters/12.06-result-filters.md">Result filters and response shaping</a> ⭐ 💻</li>
+<li>[ ] <strong>12.7</strong> <a href="notes/12-filters/12.07-endpoint-filters.md">Endpoint filters in Minimal APIs</a> ⭐ 💻</li>
+<li>[ ] <strong>12.8</strong> <a href="notes/12-filters/12.08-practical-filters.md">Practical filters — logging, validation, caching, auditing</a> ⭐ 💻</li>
+</ul>
+<hr />
+<h1 id="phase-3-data-access">Phase 3 — Data Access<a class="headerlink" href="#phase-3-data-access" title="Permanent link">&para;</a></h1>
+<h2 id="13-entity-framework-core">13. Entity Framework Core<a class="headerlink" href="#13-entity-framework-core" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>13.1</strong> <a href="notes/13-entity-framework-core/13.01-orm-comparison.md">ORM concepts; EF Core vs Dapper vs ADO.NET</a> 🔥 🎯</li>
+<li>[ ] <strong>13.2</strong> <a href="notes/13-entity-framework-core/13.02-dbcontext.md"><code>DbContext</code>, <code>DbSet&lt;T&gt;</code>, and context lifetime</a> 🔥 ⚠️</li>
+<li>[ ] <strong>13.3</strong> <a href="notes/13-entity-framework-core/13.03-code-first-db-first.md">Code First vs Database First</a> ⭐</li>
+<li>[ ] <strong>13.4</strong> <a href="notes/13-entity-framework-core/13.04-entity-configuration.md">DataAnnotations vs Fluent API; <code>IEntityTypeConfiguration</code></a> 🔥 💻</li>
+<li>[ ] <strong>13.5</strong> <a href="notes/13-entity-framework-core/13.05-relationships.md">Relationships and conventions</a> 🔥 💻</li>
+<li>[ ] <strong>13.6</strong> <a href="notes/13-entity-framework-core/13.06-migrations.md">Migrations — create, apply, roll back, script</a> 🔥 💻</li>
+<li>[ ] <strong>13.7</strong> <a href="notes/13-entity-framework-core/13.07-change-tracking.md">Change tracking, entity states, <code>AsNoTracking</code></a> 🔥 ⚠️</li>
+<li>[ ] <strong>13.8</strong> <a href="notes/13-entity-framework-core/13.08-loading-strategies.md">Eager vs lazy vs explicit loading</a> 🔥 ⚠️</li>
+<li>[ ] <strong>13.9</strong> <a href="notes/13-entity-framework-core/13.09-n-plus-one.md">The N+1 query problem</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>13.10</strong> <a href="notes/13-entity-framework-core/13.10-client-vs-server-eval.md">Client vs server evaluation</a> 🔥 ⚠️</li>
+<li>[ ] <strong>13.11</strong> <a href="notes/13-entity-framework-core/13.11-raw-sql.md">Raw SQL safely — <code>FromSqlRaw</code> vs <code>FromSqlInterpolated</code></a> 🔥 ⚠️ 💻</li>
+<li>[ ] <strong>13.12</strong> <a href="notes/13-entity-framework-core/13.12-transactions-savechanges.md">Transactions and <code>SaveChanges</code> semantics</a> ⭐ 💻</li>
+<li>[ ] <strong>13.13</strong> <a href="notes/13-entity-framework-core/13.13-concurrency.md">Concurrency — optimistic vs pessimistic</a> ⭐ 💻</li>
+<li>[ ] <strong>13.14</strong> <a href="notes/13-entity-framework-core/13.14-bulk-operations.md">Bulk operations — <code>ExecuteUpdate</code> / <code>ExecuteDelete</code></a> ⭐</li>
+<li>[ ] <strong>13.15</strong> <a href="notes/13-entity-framework-core/13.15-query-performance.md">Query performance — projections, split queries, compiled queries</a> ⭐ ⚠️</li>
+<li>[ ] <strong>13.16</strong> <a href="notes/13-entity-framework-core/13.16-advanced-modeling.md">Query filters, shadow properties, value converters, owned types</a> ⭐</li>
+<li>[ ] <strong>13.17</strong> <a href="notes/13-entity-framework-core/13.17-seeding.md">Seeding data</a></li>
+<li>[ ] <strong>13.18</strong> <a href="notes/13-entity-framework-core/13.18-resiliency.md">Connection resiliency and retries</a> ⭐</li>
+<li>[ ] <strong>13.19</strong> <a href="notes/13-entity-framework-core/13.19-repository-unit-of-work.md">Repository and Unit of Work — and the case against them</a> 🔥 🧠</li>
+<li>[ ] <strong>13.20</strong> <a href="notes/13-entity-framework-core/13.20-testing-data-access.md">Testing data access — InMemory vs SQLite vs Testcontainers</a> ⭐ ⚠️</li>
+</ul>
+<h2 id="14-databases-and-beyond-ef">14. Databases and Beyond EF<a class="headerlink" href="#14-databases-and-beyond-ef" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>14.1</strong> <a href="notes/14-databases/14.01-sql-fundamentals.md">SQL fundamentals — joins, grouping, subqueries, window functions</a> 🔥 💻</li>
+<li>[ ] <strong>14.2</strong> <a href="notes/14-databases/14.02-indexes.md">Indexes — clustered vs non-clustered, covering, and when they hurt</a> 🔥 🎯</li>
+<li>[ ] <strong>14.3</strong> <a href="notes/14-databases/14.03-isolation-levels.md">Transactions and isolation levels</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>14.4</strong> <a href="notes/14-databases/14.04-deadlocks.md">Deadlocks — causes and mitigation</a> ⭐</li>
+<li>[ ] <strong>14.5</strong> <a href="notes/14-databases/14.05-stored-procedures.md">Stored procedures, views, functions from EF Core</a> ⭐</li>
+<li>[ ] <strong>14.6</strong> <a href="notes/14-databases/14.06-query-plans.md">Query plans and basic tuning</a> ⭐ 🧠</li>
+<li>[ ] <strong>14.7</strong> <a href="notes/14-databases/14.07-dapper.md">Dapper — usage and when it beats EF</a> ⭐ 💻</li>
+<li>[ ] <strong>14.8</strong> <a href="notes/14-databases/14.08-nosql-overview.md">NoSQL overview — Mongo, Cosmos, Redis</a> ⭐</li>
+<li>[ ] <strong>14.9</strong> <a href="notes/14-databases/14.09-migrations-in-cicd.md">Migrations in CI/CD; zero-downtime schema change</a> 🧠</li>
+<li>[ ] <strong>14.10</strong> <a href="notes/14-databases/14.10-connection-pooling.md">Connection pooling and <code>DbContext</code> pooling</a> ⭐</li>
+</ul>
+<hr />
+<h1 id="phase-4-security">Phase 4 — Security<a class="headerlink" href="#phase-4-security" title="Permanent link">&para;</a></h1>
+<h2 id="15-authentication">15. Authentication<a class="headerlink" href="#15-authentication" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>15.1</strong> <a href="notes/15-authentication/15.01-authn-vs-authz.md">Authentication vs Authorization, stated precisely</a> 🔥</li>
+<li>[ ] <strong>15.2</strong> <a href="notes/15-authentication/15.02-schemes-and-claims.md">Schemes, handlers, <code>ClaimsPrincipal</code>, <code>ClaimsIdentity</code></a> 🔥 🎯</li>
+<li>[ ] <strong>15.3</strong> <a href="notes/15-authentication/15.03-cookie-auth.md">Cookie authentication</a> ⭐ 🎯</li>
+<li>[ ] <strong>15.4</strong> <a href="notes/15-authentication/15.04-aspnet-identity.md">ASP.NET Core Identity</a> ⭐ 💻</li>
+<li>[ ] <strong>15.5</strong> <a href="notes/15-authentication/15.05-jwt-structure.md">JWT structure — header, payload, signature</a> 🔥 🎯</li>
+<li>[ ] <strong>15.6</strong> <a href="notes/15-authentication/15.06-jwt-bearer-setup.md">JWT bearer authentication and <code>TokenValidationParameters</code></a> 🔥 💻</li>
+<li>[ ] <strong>15.7</strong> <a href="notes/15-authentication/15.07-refresh-tokens.md">Access vs refresh tokens; rotation and revocation</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>15.8</strong> <a href="notes/15-authentication/15.08-oauth2.md">OAuth 2.0 — roles, grants, authorization code + PKCE</a> 🔥 🎯</li>
+<li>[ ] <strong>15.9</strong> <a href="notes/15-authentication/15.09-openid-connect.md">OpenID Connect over OAuth 2.0</a> 🔥 🎯</li>
+<li>[ ] <strong>15.10</strong> <a href="notes/15-authentication/15.10-external-identity-providers.md">External logins, Duende IdentityServer, Entra ID, Auth0</a> ⭐</li>
+<li>[ ] <strong>15.11</strong> <a href="notes/15-authentication/15.11-api-keys-hmac-mtls.md">API keys, HMAC signing, mutual TLS</a> ⭐</li>
+<li>[ ] <strong>15.12</strong> <a href="notes/15-authentication/15.12-token-storage.md">Where to store tokens client-side — cookie vs localStorage</a> 🔥 ⚠️</li>
+<li>[ ] <strong>15.13</strong> <a href="notes/15-authentication/15.13-multi-tenant-auth.md">Multi-tenant authentication basics</a> 🧠</li>
+</ul>
+<h2 id="16-authorization">16. Authorization<a class="headerlink" href="#16-authorization" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>16.1</strong> <a href="notes/16-authorization/16.01-authorize-attribute.md"><code>[Authorize]</code> and <code>[AllowAnonymous]</code></a> 🔥 💻</li>
+<li>[ ] <strong>16.2</strong> <a href="notes/16-authorization/16.02-role-based.md">Role-based authorization</a> 🔥 💻</li>
+<li>[ ] <strong>16.3</strong> <a href="notes/16-authorization/16.03-claims-based.md">Claims-based authorization</a> 🔥 💻</li>
+<li>[ ] <strong>16.4</strong> <a href="notes/16-authorization/16.04-policy-based.md">Policy-based authorization</a> 🔥 💻</li>
+<li>[ ] <strong>16.5</strong> <a href="notes/16-authorization/16.05-custom-requirements.md">Custom requirements and handlers</a> 🔥 💻</li>
+<li>[ ] <strong>16.6</strong> <a href="notes/16-authorization/16.06-resource-based.md">Resource-based authorization</a> ⭐ 💻</li>
+<li>[ ] <strong>16.7</strong> <a href="notes/16-authorization/16.07-schemes-and-fallback.md">Multiple schemes, fallback and default policies</a> ⭐ ⚠️</li>
+<li>[ ] <strong>16.8</strong> <a href="notes/16-authorization/16.08-authz-everywhere.md">Authorization in views, Razor Pages, Minimal APIs</a> ⭐</li>
+<li>[ ] <strong>16.9</strong> <a href="notes/16-authorization/16.09-permission-based.md">Permission-based authorization at scale</a> 🧠</li>
+</ul>
+<h2 id="17-application-security">17. Application Security<a class="headerlink" href="#17-application-security" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>17.1</strong> <a href="notes/17-application-security/17.01-owasp-top-10.md">OWASP Top 10 mapped to ASP.NET Core defences</a> 🔥 🎯</li>
+<li>[ ] <strong>17.2</strong> <a href="notes/17-application-security/17.02-sql-injection.md">SQL injection and how parameterization stops it</a> 🔥 ⚠️</li>
+<li>[ ] <strong>17.3</strong> <a href="notes/17-application-security/17.03-xss.md">XSS — Razor encoding, <code>HtmlString</code>, CSP</a> 🔥 ⚠️</li>
+<li>[ ] <strong>17.4</strong> <a href="notes/17-application-security/17.04-csrf.md">CSRF — antiforgery tokens and SameSite</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>17.5</strong> <a href="notes/17-application-security/17.05-https-hsts-tls.md">HTTPS, HSTS, certificates, TLS termination</a> ⭐</li>
+<li>[ ] <strong>17.6</strong> <a href="notes/17-application-security/17.06-data-protection.md">Data Protection API — and why it breaks in web farms</a> ⭐ ⚠️</li>
+<li>[ ] <strong>17.7</strong> <a href="notes/17-application-security/17.07-secrets-management.md">Secrets management</a> 🔥</li>
+<li>[ ] <strong>17.8</strong> <a href="notes/17-application-security/17.08-password-hashing.md">Password hashing — salting, PBKDF2, bcrypt, Argon2</a> ⭐ ⚠️</li>
+<li>[ ] <strong>17.9</strong> <a href="notes/17-application-security/17.09-security-headers.md">Security headers</a> ⭐</li>
+<li>[ ] <strong>17.10</strong> <a href="notes/17-application-security/17.10-rate-limiting.md">Rate limiting and throttling</a> ⭐ 💻</li>
+<li>[ ] <strong>17.11</strong> <a href="notes/17-application-security/17.11-input-and-upload-security.md">Input sanitization, upload security, path traversal</a> ⭐ ⚠️</li>
+<li>[ ] <strong>17.12</strong> <a href="notes/17-application-security/17.12-deserialization-ssrf-idor.md">Insecure deserialization, SSRF, IDOR</a> ⭐ 🧠</li>
+<li>[ ] <strong>17.13</strong> <a href="notes/17-application-security/17.13-audit-and-pii.md">Audit logging, PII and GDPR</a> ⭐</li>
+</ul>
+<hr />
+<h1 id="phase-5-quality-performance-and-operations">Phase 5 — Quality, Performance and Operations<a class="headerlink" href="#phase-5-quality-performance-and-operations" title="Permanent link">&para;</a></h1>
+<h2 id="18-logging-monitoring-and-diagnostics">18. Logging, Monitoring and Diagnostics<a class="headerlink" href="#18-logging-monitoring-and-diagnostics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>18.1</strong> <a href="notes/18-logging-monitoring/18.01-ilogger-and-levels.md"><code>ILogger&lt;T&gt;</code>, log levels, structured logging</a> 🔥 💻</li>
+<li>[ ] <strong>18.2</strong> <a href="notes/18-logging-monitoring/18.02-logging-providers.md">Logging providers</a> ⭐</li>
+<li>[ ] <strong>18.3</strong> <a href="notes/18-logging-monitoring/18.03-serilog-nlog.md">Serilog and NLog</a> ⭐ 💻</li>
+<li>[ ] <strong>18.4</strong> <a href="notes/18-logging-monitoring/18.04-scopes-correlation-ids.md">Log scopes and correlation IDs</a> ⭐ 💻</li>
+<li>[ ] <strong>18.5</strong> <a href="notes/18-logging-monitoring/18.05-health-checks.md">Health checks — liveness vs readiness</a> 🔥 💻</li>
+<li>[ ] <strong>18.6</strong> <a href="notes/18-logging-monitoring/18.06-metrics.md">Metrics and dashboards</a> ⭐</li>
+<li>[ ] <strong>18.7</strong> <a href="notes/18-logging-monitoring/18.07-opentelemetry.md">Distributed tracing and OpenTelemetry</a> ⭐ 🎯 🧠</li>
+<li>[ ] <strong>18.8</strong> <a href="notes/18-logging-monitoring/18.08-apm-tooling.md">Application Insights and APM tooling</a> ⭐</li>
+<li>[ ] <strong>18.9</strong> <a href="notes/18-logging-monitoring/18.09-production-debugging.md">Debugging production — dumps and <code>dotnet-*</code> diagnostic tools</a> ⭐ 🧠</li>
+<li>[ ] <strong>18.10</strong> <a href="notes/18-logging-monitoring/18.10-what-not-to-log.md">What to log — and what never to log</a> ⭐ ⚠️</li>
+</ul>
+<h2 id="19-caching-and-performance">19. Caching and Performance<a class="headerlink" href="#19-caching-and-performance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>19.1</strong> <a href="notes/19-caching-performance/19.01-caching-strategies.md">Caching strategies — cache-aside, read/write-through, write-behind</a> 🔥 🎯</li>
+<li>[ ] <strong>19.2</strong> <a href="notes/19-caching-performance/19.02-memory-cache.md"><code>IMemoryCache</code></a> 🔥 💻</li>
+<li>[ ] <strong>19.3</strong> <a href="notes/19-caching-performance/19.03-distributed-cache-redis.md"><code>IDistributedCache</code> and Redis</a> 🔥 💻</li>
+<li>[ ] <strong>19.4</strong> <a href="notes/19-caching-performance/19.04-hybridcache.md"><code>HybridCache</code> and stampede protection</a> ⭐ 🧠</li>
+<li>[ ] <strong>19.5</strong> <a href="notes/19-caching-performance/19.05-response-caching.md">Response caching and <code>Cache-Control</code></a> ⭐</li>
+<li>[ ] <strong>19.6</strong> <a href="notes/19-caching-performance/19.06-output-caching.md">Output caching and tag-based invalidation</a> ⭐ 💻</li>
+<li>[ ] <strong>19.7</strong> <a href="notes/19-caching-performance/19.07-cache-invalidation.md">Cache invalidation strategies and TTL design</a> 🔥 ⚠️</li>
+<li>[ ] <strong>19.8</strong> <a href="notes/19-caching-performance/19.08-etags.md">ETags and conditional requests</a> ⭐</li>
+<li>[ ] <strong>19.9</strong> <a href="notes/19-caching-performance/19.09-compression.md">Response compression</a></li>
+<li>[ ] <strong>19.10</strong> <a href="notes/19-caching-performance/19.10-httpclientfactory.md"><code>HttpClientFactory</code> and socket exhaustion</a> 🔥 ⚠️</li>
+<li>[ ] <strong>19.11</strong> <a href="notes/19-caching-performance/19.11-polly-resilience.md">Resilience with Polly — retry, circuit breaker, timeout, bulkhead</a> 🔥 💻 🎯</li>
+<li>[ ] <strong>19.12</strong> <a href="notes/19-caching-performance/19.12-threadpool-starvation.md">Async all the way; thread-pool starvation</a> 🔥 ⚠️</li>
+<li>[ ] <strong>19.13</strong> <a href="notes/19-caching-performance/19.13-allocations.md">Reducing allocations — pooling, <code>ArrayPool</code>, source-generated JSON</a> 🧠</li>
+<li>[ ] <strong>19.14</strong> <a href="notes/19-caching-performance/19.14-benchmarking-load-testing.md">Benchmarking and load testing</a> ⭐</li>
+<li>[ ] <strong>19.15</strong> <a href="notes/19-caching-performance/19.15-slow-endpoint-playbook.md">Systematic method for diagnosing a slow endpoint</a> 🔥 🎯</li>
+</ul>
+<h2 id="20-testing">20. Testing<a class="headerlink" href="#20-testing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>20.1</strong> <a href="notes/20-testing/20.01-testing-pyramid.md">The testing pyramid</a> 🔥 🎯</li>
+<li>[ ] <strong>20.2</strong> <a href="notes/20-testing/20.02-test-frameworks.md">xUnit vs NUnit vs MSTest; <code>[Fact]</code>, <code>[Theory]</code>, <code>[InlineData]</code></a> 🔥 💻</li>
+<li>[ ] <strong>20.3</strong> <a href="notes/20-testing/20.03-test-structure.md">AAA, naming, and test independence</a> ⭐</li>
+<li>[ ] <strong>20.4</strong> <a href="notes/20-testing/20.04-mocking.md">Mocking — Moq / NSubstitute; mocks vs stubs vs fakes</a> 🔥 💻</li>
+<li>[ ] <strong>20.5</strong> <a href="notes/20-testing/20.05-assertion-libraries.md">FluentAssertions and Shouldly</a> ⭐</li>
+<li>[ ] <strong>20.6</strong> <a href="notes/20-testing/20.06-unit-testing-aspnet.md">Unit-testing controllers, services, filters, middleware</a> 🔥 💻</li>
+<li>[ ] <strong>20.7</strong> <a href="notes/20-testing/20.07-integration-testing.md">Integration testing with <code>WebApplicationFactory</code></a> 🔥 💻</li>
+<li>[ ] <strong>20.8</strong> <a href="notes/20-testing/20.08-database-testing.md">Testing against a real database — Testcontainers, Respawn</a> ⭐ 💻</li>
+<li>[ ] <strong>20.9</strong> <a href="notes/20-testing/20.09-test-data.md">Test data builders, AutoFixture, Bogus</a> ⭐</li>
+<li>[ ] <strong>20.10</strong> <a href="notes/20-testing/20.10-code-coverage.md">Code coverage — and why 100% is not the goal</a> ⭐</li>
+<li>[ ] <strong>20.11</strong> <a href="notes/20-testing/20.11-tdd-bdd.md">TDD and BDD</a> ⭐</li>
+<li>[ ] <strong>20.12</strong> <a href="notes/20-testing/20.12-testing-async-and-time.md">Testing async code, time (<code>TimeProvider</code>), and randomness</a> ⭐ 💻</li>
+</ul>
+<hr />
+<h1 id="phase-6-advanced-and-architecture">Phase 6 — Advanced and Architecture<a class="headerlink" href="#phase-6-advanced-and-architecture" title="Permanent link">&para;</a></h1>
+<h2 id="21-advanced-aspnet-core-features">21. Advanced ASP.NET Core Features<a class="headerlink" href="#21-advanced-aspnet-core-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>21.1</strong> <a href="notes/21-advanced-features/21.01-background-services.md"><code>IHostedService</code> and <code>BackgroundService</code></a> 🔥 💻</li>
+<li>[ ] <strong>21.2</strong> <a href="notes/21-advanced-features/21.02-scoped-in-background.md">Scoped services inside background services</a> 🔥 ⚠️</li>
+<li>[ ] <strong>21.3</strong> <a href="notes/21-advanced-features/21.03-job-schedulers.md">Hangfire, Quartz.NET, and scheduled jobs</a> ⭐</li>
+<li>[ ] <strong>21.4</strong> <a href="notes/21-advanced-features/21.04-signalr.md">SignalR — hubs, groups, Redis backplane</a> ⭐ 🎯</li>
+<li>[ ] <strong>21.5</strong> <a href="notes/21-advanced-features/21.05-realtime-transports.md">WebSockets vs SSE vs long polling</a> ⭐ 🎯</li>
+<li>[ ] <strong>21.6</strong> <a href="notes/21-advanced-features/21.06-grpc.md">gRPC in ASP.NET Core</a> ⭐ 💻</li>
+<li>[ ] <strong>21.7</strong> <a href="notes/21-advanced-features/21.07-minimal-apis-deep.md">Minimal APIs deep dive — <code>TypedResults</code>, AOT</a> ⭐ 🧠</li>
+<li>[ ] <strong>21.8</strong> <a href="notes/21-advanced-features/21.08-localization.md">Localization and globalization</a> ⭐</li>
+<li>[ ] <strong>21.9</strong> <a href="notes/21-advanced-features/21.09-istartupfilter.md"><code>IStartupFilter</code> and startup work</a> 🧠</li>
+<li>[ ] <strong>21.10</strong> <a href="notes/21-advanced-features/21.10-native-aot.md">Native AOT and trimming</a> 🧠</li>
+<li>[ ] <strong>21.11</strong> <a href="notes/21-advanced-features/21.11-streaming.md">Streaming requests and responses; large payloads</a> ⭐ 🧠</li>
+<li>[ ] <strong>21.12</strong> <a href="notes/21-advanced-features/21.12-httpcontextaccessor.md"><code>IHttpContextAccessor</code> — legitimate uses and dangers</a> ⭐ ⚠️</li>
+<li>[ ] <strong>21.13</strong> <a href="notes/21-advanced-features/21.13-source-generators.md">Source generators</a> 🧠</li>
+<li>[ ] <strong>21.14</strong> <a href="notes/21-advanced-features/21.14-dotnet-aspire.md">.NET Aspire</a> ⭐</li>
+</ul>
+<h2 id="22-architecture-patterns-and-design">22. Architecture, Patterns and Design<a class="headerlink" href="#22-architecture-patterns-and-design" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>22.1</strong> <a href="notes/22-architecture-patterns/22.01-solid.md">SOLID with concrete C# examples</a> 🔥 💻 🎯</li>
+<li>[ ] <strong>22.2</strong> <a href="notes/22-architecture-patterns/22.02-design-principles.md">DRY, KISS, YAGNI, composition over inheritance</a> ⭐</li>
+<li>[ ] <strong>22.3</strong> <a href="notes/22-architecture-patterns/22.03-creational-patterns.md">Creational patterns</a> 🔥 💻</li>
+<li>[ ] <strong>22.4</strong> <a href="notes/22-architecture-patterns/22.04-structural-patterns.md">Structural patterns</a> 🔥 💻</li>
+<li>[ ] <strong>22.5</strong> <a href="notes/22-architecture-patterns/22.05-behavioural-patterns.md">Behavioural patterns</a> 🔥 💻</li>
+<li>[ ] <strong>22.6</strong> <a href="notes/22-architecture-patterns/22.06-layered-architecture.md">Layered / N-tier architecture</a> ⭐ 🎯</li>
+<li>[ ] <strong>22.7</strong> <a href="notes/22-architecture-patterns/22.07-clean-architecture.md">Clean / Onion / Hexagonal architecture</a> 🔥 🎯</li>
+<li>[ ] <strong>22.8</strong> <a href="notes/22-architecture-patterns/22.08-ddd.md">Domain-Driven Design building blocks</a> ⭐ 🧠 🎯</li>
+<li>[ ] <strong>22.9</strong> <a href="notes/22-architecture-patterns/22.09-cqrs.md">CQRS, with and without event sourcing</a> ⭐ 🎯</li>
+<li>[ ] <strong>22.10</strong> <a href="notes/22-architecture-patterns/22.10-mediatr.md">MediatR and the in-process mediator — plus the criticism</a> ⭐ 💻</li>
+<li>[ ] <strong>22.11</strong> <a href="notes/22-architecture-patterns/22.11-vertical-slice.md">Vertical slice architecture</a> 🧠</li>
+<li>[ ] <strong>22.12</strong> <a href="notes/22-architecture-patterns/22.12-event-sourcing.md">Event sourcing</a> 🧠</li>
+<li>[ ] <strong>22.13</strong> <a href="notes/22-architecture-patterns/22.13-specification-result.md">Specification pattern; Result pattern vs exceptions</a> ⭐ 🧠</li>
+<li>[ ] <strong>22.14</strong> <a href="notes/22-architecture-patterns/22.14-anti-patterns.md">Anti-patterns — anemic model, God object, service locator</a> 🔥 ⚠️</li>
+</ul>
+<h2 id="23-microservices-and-distributed-systems">23. Microservices and Distributed Systems<a class="headerlink" href="#23-microservices-and-distributed-systems" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>23.1</strong> <a href="notes/23-microservices/23.01-monolith-vs-microservices.md">Monolith vs modular monolith vs microservices</a> 🔥 🎯</li>
+<li>[ ] <strong>23.2</strong> <a href="notes/23-microservices/23.02-service-boundaries.md">Service boundaries and bounded contexts</a> ⭐ 🧠</li>
+<li>[ ] <strong>23.3</strong> <a href="notes/23-microservices/23.03-sync-communication.md">Synchronous communication and service discovery</a> ⭐</li>
+<li>[ ] <strong>23.4</strong> <a href="notes/23-microservices/23.04-async-messaging.md">Async messaging — RabbitMQ, Kafka, Service Bus</a> ⭐ 🎯</li>
+<li>[ ] <strong>23.5</strong> <a href="notes/23-microservices/23.05-masstransit.md">MassTransit / NServiceBus</a> ⭐</li>
+<li>[ ] <strong>23.6</strong> <a href="notes/23-microservices/23.06-message-patterns.md">Message patterns — pub/sub, competing consumers, request/reply</a> ⭐ 🎯</li>
+<li>[ ] <strong>23.7</strong> <a href="notes/23-microservices/23.07-delivery-guarantees.md">Delivery guarantees, idempotent consumers, dead-letter queues</a> ⭐ ⚠️</li>
+<li>[ ] <strong>23.8</strong> <a href="notes/23-microservices/23.08-saga-outbox.md">Saga and Outbox patterns</a> ⭐ 🎯 🧠</li>
+<li>[ ] <strong>23.9</strong> <a href="notes/23-microservices/23.09-cap-eventual-consistency.md">Eventual consistency and CAP</a> ⭐ 🎯</li>
+<li>[ ] <strong>23.10</strong> <a href="notes/23-microservices/23.10-api-gateway-bff.md">API Gateway and BFF — YARP, Ocelot, APIM</a> ⭐ 🎯</li>
+<li>[ ] <strong>23.11</strong> <a href="notes/23-microservices/23.11-resilience-patterns.md">Resilience patterns in a distributed system</a> ⭐ 🎯</li>
+<li>[ ] <strong>23.12</strong> <a href="notes/23-microservices/23.12-distributed-locking.md">Distributed caching and distributed locking</a> 🧠</li>
+<li>[ ] <strong>23.13</strong> <a href="notes/23-microservices/23.13-observability.md">Cross-service observability</a> ⭐</li>
+<li>[ ] <strong>23.14</strong> <a href="notes/23-microservices/23.14-distributed-config.md">Configuration and secrets across services</a> ⭐</li>
+<li>[ ] <strong>23.15</strong> <a href="notes/23-microservices/23.15-service-versioning.md">Versioning and backward compatibility between services</a> ⭐ ⚠️</li>
+</ul>
+<h2 id="24-devops-hosting-and-cloud">24. DevOps, Hosting and Cloud<a class="headerlink" href="#24-devops-hosting-and-cloud" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>24.1</strong> <a href="notes/24-devops-hosting/24.01-publishing.md">Publishing — framework-dependent vs self-contained, RIDs</a> ⭐ 💻</li>
+<li>[ ] <strong>24.2</strong> <a href="notes/24-devops-hosting/24.02-deployment-targets.md">Deploying to IIS, Linux + Nginx, Windows Services</a> ⭐</li>
+<li>[ ] <strong>24.3</strong> <a href="notes/24-devops-hosting/24.03-dockerfile.md">A good multi-stage <code>Dockerfile</code> for ASP.NET Core</a> 🔥 💻</li>
+<li>[ ] <strong>24.4</strong> <a href="notes/24-devops-hosting/24.04-docker-compose.md">Docker Compose for local multi-service dev</a> ⭐ 💻</li>
+<li>[ ] <strong>24.5</strong> <a href="notes/24-devops-hosting/24.05-kubernetes-basics.md">Kubernetes basics</a> ⭐ 🎯</li>
+<li>[ ] <strong>24.6</strong> <a href="notes/24-devops-hosting/24.06-probes-and-shutdown.md">Probes, graceful shutdown, readiness in containers</a> ⭐ ⚠️</li>
+<li>[ ] <strong>24.7</strong> <a href="notes/24-devops-hosting/24.07-ci-cd.md">CI/CD pipelines for .NET</a> ⭐ 💻</li>
+<li>[ ] <strong>24.8</strong> <a href="notes/24-devops-hosting/24.08-pipeline-config.md">Environment-specific config in pipelines</a> ⭐</li>
+<li>[ ] <strong>24.9</strong> <a href="notes/24-devops-hosting/24.09-azure-hosting.md">Azure hosting options compared</a> ⭐</li>
+<li>[ ] <strong>24.10</strong> <a href="notes/24-devops-hosting/24.10-aws-hosting.md">AWS equivalents</a></li>
+<li>[ ] <strong>24.11</strong> <a href="notes/24-devops-hosting/24.11-deployment-strategies.md">Blue-green, canary, and feature-flag releases</a> ⭐ 🎯</li>
+<li>[ ] <strong>24.12</strong> <a href="notes/24-devops-hosting/24.12-scaling.md">Scaling — horizontal vs vertical, statelessness, sticky sessions</a> 🔥 ⚠️ 🎯</li>
+<li>[ ] <strong>24.13</strong> <a href="notes/24-devops-hosting/24.13-forwarded-headers.md">Load balancers, <code>ForwardedHeaders</code>, real client IP</a> ⭐ ⚠️</li>
+</ul>
+<hr />
+<h1 id="phase-7-interview-execution">Phase 7 — Interview Execution<a class="headerlink" href="#phase-7-interview-execution" title="Permanent link">&para;</a></h1>
+<h2 id="25-interview-preparation-and-practice">25. Interview Preparation and Practice<a class="headerlink" href="#25-interview-preparation-and-practice" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <strong>25.1</strong> <a href="../practice/QUESTION-BANK/">The 50 most-asked questions — write out your own answers</a> 🔥</li>
+<li>[ ] <strong>25.2</strong> <a href="notes/25-interview-practice/25.02-request-lifecycle-narrative.md">Narrate the full request lifecycle, end to end</a> 🔥 🎯</li>
+<li>[ ] <strong>25.3</strong> <a href="notes/25-interview-practice/25.03-live-coding-drill.md">Live-coding drill — CRUD API with validation, auth and tests in 45 minutes</a> 🔥 💻</li>
+<li>[ ] <strong>25.4</strong> <a href="notes/25-interview-practice/25.04-code-review-exercises.md">Code-review exercises — spot the bug</a> ⭐ 💻</li>
+<li>[ ] <strong>25.5</strong> <a href="../practice/system-design/">System design worked examples</a> 🔥 🎯</li>
+<li>[ ] <strong>25.6</strong> <a href="notes/25-interview-practice/25.06-debugging-scenarios.md">Debugging scenarios — slow API, memory growth, random 500s</a> 🔥 🎯</li>
+<li>[ ] <strong>25.7</strong> <a href="../MY-PROJECTS/">Talking about your own projects</a> 🔥</li>
+<li>[ ] <strong>25.8</strong> <a href="notes/25-interview-practice/25.08-behavioural-star.md">Behavioural questions in STAR format</a> 🔥</li>
+<li>[ ] <strong>25.9</strong> <a href="notes/25-interview-practice/25.09-questions-to-ask.md">Questions to ask the interviewer</a> ⭐</li>
+<li>[ ] <strong>25.10</strong> <a href="../VERSIONS/">What's new in .NET 6 → 10</a> 🔥</li>
+<li>[ ] <strong>25.11</strong> <a href="../DIAGRAMS/">Diagrams worth memorizing</a> 🔥 🎯</li>
+<li>[ ] <strong>25.12</strong> <a href="notes/25-interview-practice/25.12-final-week-plan.md">Final-week revision plan and mock checklist</a> 🔥</li>
+</ul>
+<hr />
+<h2 id="suggested-study-order">Suggested study order<a class="headerlink" href="#suggested-study-order" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Sections</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1–2</td>
+<td>1, 2, 3</td>
+<td>C#, LINQ, async, runtime</td>
+</tr>
+<tr>
+<td>Week 3–4</td>
+<td>4, 5, 6, 7, 8</td>
+<td>Pipeline, DI, config, routing — the heart of the framework</td>
+</tr>
+<tr>
+<td>Week 5</td>
+<td>9, 10, 11, 12</td>
+<td>Building APIs properly</td>
+</tr>
+<tr>
+<td>Week 6</td>
+<td>13, 14</td>
+<td>EF Core and SQL</td>
+</tr>
+<tr>
+<td>Week 7</td>
+<td>15, 16, 17</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>Week 8</td>
+<td>18, 19, 20</td>
+<td>Logging, performance, testing</td>
+</tr>
+<tr>
+<td>Week 9</td>
+<td>21, 22</td>
+<td>Advanced features and architecture</td>
+</tr>
+<tr>
+<td>Week 10</td>
+<td>23, 24</td>
+<td>Distributed systems and DevOps</td>
+</tr>
+<tr>
+<td>Week 11–12</td>
+<td>25</td>
+<td>Practice, mocks, revision</td>
+</tr>
+</tbody>
+</table>
+<h3 id="if-you-only-have-one-week">If you only have one week<a class="headerlink" href="#if-you-only-have-one-week" title="Permanent link">&para;</a></h3>
+<p>Do every 🔥 topic in sections <strong>4, 5, 6, 8, 10, 11, 12, 13, 15, 16, 19</strong>, then read
+<a href="../CHEATSHEET/">CHEATSHEET.md</a> and <a href="../TRAPS/">TRAPS.md</a> twice, and rehearse
+<a href="notes/25-interview-practice/25.02-request-lifecycle-narrative.md">25.2 the request lifecycle narrative</a> out loud until it's fluent.</p>
+<h3 id="if-you-have-one-hour">If you have one hour<a class="headerlink" href="#if-you-have-one-hour" title="Permanent link">&para;</a></h3>
+<p><a href="../CHEATSHEET/">CHEATSHEET.md</a> → <a href="../TRAPS/">TRAPS.md</a> → <a href="../DIAGRAMS/">DIAGRAMS.md</a>. Nothing else.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../CHEATSHEET/" class="md-footer__link md-footer__link--next" aria-label="Next: Cheat Sheet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Cheat Sheet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sultanfarooka/aspnet-interview-notes" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
