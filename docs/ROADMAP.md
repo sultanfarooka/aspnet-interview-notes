@@ -55,25 +55,25 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 2. Collections, LINQ and Async
 
-- [ ] **2.1** [`IEnumerable` vs `ICollection` vs `IList` vs `IQueryable`](notes/02-collections-linq-async/2.01-collection-interfaces.md) 🔥 ⚠️
-- [ ] **2.2** [Core collections and their Big-O](notes/02-collections-linq-async/2.02-collections-and-big-o.md) ⭐ 🎯
-- [ ] **2.3** [Concurrent collections](notes/02-collections-linq-async/2.03-concurrent-collections.md) ⭐
-- [ ] **2.4** [`IEnumerator`, `yield return`, deferred execution](notes/02-collections-linq-async/2.04-yield-and-iterators.md) ⭐ 💻
-- [ ] **2.5** [LINQ query vs method syntax; the standard operators](notes/02-collections-linq-async/2.05-linq-basics.md) ⭐ 💻
-- [ ] **2.6** [Deferred vs immediate execution; multiple-enumeration pitfalls](notes/02-collections-linq-async/2.06-deferred-execution.md) 🔥 ⚠️
-- [ ] **2.7** [`IQueryable` and expression trees — how LINQ becomes SQL](notes/02-collections-linq-async/2.07-expression-trees.md) ⭐ 🧠
-- [ ] **2.8** [`GroupBy`, `Join`, `SelectMany`, `Aggregate`, `Zip`](notes/02-collections-linq-async/2.08-linq-advanced-operators.md) ⭐ 💻
-- [ ] **2.9** [`First` vs `FirstOrDefault` vs `Single` vs `SingleOrDefault`](notes/02-collections-linq-async/2.09-first-single-default.md) 🔥 ⚠️
-- [ ] **2.10** [Threads, `ThreadPool`, `Task` vs `Thread`](notes/02-collections-linq-async/2.10-threads-vs-tasks.md) 🔥 🎯
-- [ ] **2.11** [`async` / `await` — the state machine underneath](notes/02-collections-linq-async/2.11-async-await-internals.md) 🔥 🎯 🧠
-- [ ] **2.12** [`Task` vs `ValueTask`, `WhenAll`, `WhenAny`, `Task.Run`](notes/02-collections-linq-async/2.12-task-valuetask.md) ⭐ 💻
-- [ ] **2.13** [Deadlocks — `.Result`, `.Wait()`, `ConfigureAwait(false)`](notes/02-collections-linq-async/2.13-async-deadlocks.md) 🔥 ⚠️
-- [ ] **2.14** [`CancellationToken` and cooperative cancellation](notes/02-collections-linq-async/2.14-cancellation.md) 🔥 💻
-- [ ] **2.15** [`async void` — why it is almost always wrong](notes/02-collections-linq-async/2.15-async-void.md) 🔥 ⚠️
-- [ ] **2.16** [Exceptions in async code, `AggregateException`](notes/02-collections-linq-async/2.16-async-exceptions.md) ⭐ ⚠️
-- [ ] **2.17** [`IAsyncEnumerable<T>` and `await foreach`](notes/02-collections-linq-async/2.17-async-streams.md) ⭐
-- [ ] **2.18** [Thread safety — `lock`, `SemaphoreSlim`, `Interlocked`, `volatile`](notes/02-collections-linq-async/2.18-thread-safety.md) ⭐ ⚠️
-- [ ] **2.19** [`Parallel.For`, PLINQ — and when not to use them](notes/02-collections-linq-async/2.19-parallel-programming.md) ⭐ ⚠️
+- [x] **2.1** [`IEnumerable` vs `ICollection` vs `IList` vs `IQueryable`](notes/02-collections-linq-async/2.01-collection-interfaces.md) 🔥 ⚠️
+- [x] **2.2** [Core collections and their Big-O](notes/02-collections-linq-async/2.02-collections-and-big-o.md) ⭐ 🎯
+- [x] **2.3** [Concurrent collections](notes/02-collections-linq-async/2.03-concurrent-collections.md) ⭐
+- [x] **2.4** [`IEnumerator`, `yield return`, deferred execution](notes/02-collections-linq-async/2.04-yield-and-iterators.md) ⭐ 💻
+- [x] **2.5** [LINQ query vs method syntax; the standard operators](notes/02-collections-linq-async/2.05-linq-basics.md) ⭐ 💻
+- [x] **2.6** [Deferred vs immediate execution; multiple-enumeration pitfalls](notes/02-collections-linq-async/2.06-deferred-execution.md) 🔥 ⚠️
+- [x] **2.7** [`IQueryable` and expression trees — how LINQ becomes SQL](notes/02-collections-linq-async/2.07-expression-trees.md) ⭐ 🧠
+- [x] **2.8** [`GroupBy`, `Join`, `SelectMany`, `Aggregate`, `Zip`](notes/02-collections-linq-async/2.08-linq-advanced-operators.md) ⭐ 💻
+- [x] **2.9** [`First` vs `FirstOrDefault` vs `Single` vs `SingleOrDefault`](notes/02-collections-linq-async/2.09-first-single-default.md) 🔥 ⚠️
+- [x] **2.10** [Threads, `ThreadPool`, `Task` vs `Thread`](notes/02-collections-linq-async/2.10-threads-vs-tasks.md) 🔥 🎯
+- [x] **2.11** [`async` / `await` — the state machine underneath](notes/02-collections-linq-async/2.11-async-await-internals.md) 🔥 🎯 🧠
+- [x] **2.12** [`Task` vs `ValueTask`, `WhenAll`, `WhenAny`, `Task.Run`](notes/02-collections-linq-async/2.12-task-valuetask.md) ⭐ 💻
+- [x] **2.13** [Deadlocks — `.Result`, `.Wait()`, `ConfigureAwait(false)`](notes/02-collections-linq-async/2.13-async-deadlocks.md) 🔥 ⚠️
+- [x] **2.14** [`CancellationToken` and cooperative cancellation](notes/02-collections-linq-async/2.14-cancellation.md) 🔥 💻
+- [x] **2.15** [`async void` — why it is almost always wrong](notes/02-collections-linq-async/2.15-async-void.md) 🔥 ⚠️
+- [x] **2.16** [Exceptions in async code, `AggregateException`](notes/02-collections-linq-async/2.16-async-exceptions.md) ⭐ ⚠️
+- [x] **2.17** [`IAsyncEnumerable<T>` and `await foreach`](notes/02-collections-linq-async/2.17-async-streams.md) ⭐
+- [x] **2.18** [Thread safety — `lock`, `SemaphoreSlim`, `Interlocked`, `volatile`](notes/02-collections-linq-async/2.18-thread-safety.md) ⭐ ⚠️
+- [x] **2.19** [`Parallel.For`, PLINQ — and when not to use them](notes/02-collections-linq-async/2.19-parallel-programming.md) ⭐ ⚠️
 
 ## 3. .NET Runtime and Platform
 

@@ -109,6 +109,48 @@
 | "`Single()` and `First()` differ only in style" | `Single()` throws if there's more than one match — and to know that, it must scan further. Different semantics *and* different cost. | [2.9](notes/02-collections-linq-async/2.09-first-single-default.md) |
 | "Enumerating an `IEnumerable` twice is free" | For a deferred query it executes twice. Against a database, that's two round trips. | [2.6](notes/02-collections-linq-async/2.06-deferred-execution.md) |
 
+## Collections and LINQ
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "Returning `IEnumerable<T>` from a repository is good practice" | It **silently kills SQL translation**. Every later `Where` runs in memory over the whole table. Return `IReadOnlyList<T>` after materialising. | [2.1](notes/02-collections-linq-async/2.01-collection-interfaces.md) |
+| "`.Count()` and `.Count` are the same" | `.Count()` on an `IEnumerable` **walks the entire sequence**. `.Count` on an `ICollection` is an instant property. | [2.1](notes/02-collections-linq-async/2.01-collection-interfaces.md) |
+| "`list.Contains(x)` is fine inside a loop" | That's O(n×m). Two lists of 10,000 = 100 million comparisons. Convert to a `HashSet` first — one character, ~10,000× faster. | [2.2](notes/02-collections-linq-async/2.02-collections-and-big-o.md) |
+| "`Dictionary` iteration order is stable" | **No order is guaranteed**, ever. It looks stable in testing and changes when the internal array resizes. | [2.2](notes/02-collections-linq-async/2.02-collections-and-big-o.md) |
+| "A `ConcurrentDictionary` makes my code thread-safe" | Each *operation* is safe; a *sequence* of them is not. `if (!d.ContainsKey(k)) d[k]=v` still races. Use `GetOrAdd`. | [2.3](notes/02-collections-linq-async/2.03-concurrent-collections.md) |
+| "`GetOrAdd`'s factory runs once" | Only the **store** is atomic. The factory can run on several threads at once. Wrap in `Lazy<T>` if it's expensive or has side effects. | [2.3](notes/02-collections-linq-async/2.03-concurrent-collections.md) |
+| "Argument validation in an iterator method throws when called" | The whole body is deferred, **including the validation**. It throws at the `foreach`, far from the cause. Split into an outer method + local iterator. | [2.4](notes/02-collections-linq-async/2.04-yield-and-iterators.md) |
+| "A second `OrderBy` adds a secondary sort" | It **discards the first sort entirely**. Use `ThenBy`. | [2.5](notes/02-collections-linq-async/2.05-linq-basics.md) |
+| "`Count() > 0` and `Any()` are equivalent" | `Any()` stops at the first match; `Count()` walks everything. Against a DB that's `EXISTS` vs `COUNT(*)`. | [2.5](notes/02-collections-linq-async/2.05-linq-basics.md) |
+| "A LINQ query runs when you write it" | It's a **recipe, not a meal**. It runs on enumeration — and runs *again* every time you enumerate. | [2.6](notes/02-collections-linq-async/2.06-deferred-execution.md) |
+| "`Func<T,bool>` and `Expression<Func<T,bool>>` are interchangeable" | `Func` is compiled code you can only run. `Expression` is **data describing code**, which is the only reason EF Core can emit SQL. | [2.7](notes/02-collections-linq-async/2.07-expression-trees.md) |
+| "'Could not be translated' is EF Core being unhelpful" | It's the **good** outcome. The old behaviour was silent client evaluation — downloading the whole table. | [2.7](notes/02-collections-linq-async/2.07-expression-trees.md) |
+| "`Sum`, `Max` and `Average` behave the same on an empty sequence" | `Sum` returns 0. `Max`, `Min` and `Average` **throw**. | [2.8](notes/02-collections-linq-async/2.08-linq-advanced-operators.md) |
+| "`FirstOrDefault` returns null when nothing matches" | For a **value type** it returns `0` / `false`. You cannot tell "missing" from "legitimately zero". | [2.9](notes/02-collections-linq-async/2.09-first-single-default.md) |
+
+## Async and threading (section 2)
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "A `Task` runs on a separate thread" | Not for I/O. During an async network call **no thread exists for that operation** — the hardware does the work. | [2.10](notes/02-collections-linq-async/2.10-threads-vs-tasks.md) |
+| "`Task.Run` makes I/O faster" | It **blocks a pool thread** on something designed not to need one. Just `await` the async method. | [2.10](notes/02-collections-linq-async/2.10-threads-vs-tasks.md) |
+| "`await` pauses the method" | It **returns to the caller** and registers a callback. Nothing is paused; the thread is released. | [2.11](notes/02-collections-linq-async/2.11-async-await-internals.md) |
+| "Three awaits in a row run concurrently" | They're strictly sequential. Capture the tasks *first*, then `await Task.WhenAll` — 600 ms becomes 200 ms. | [2.12](notes/02-collections-linq-async/2.12-task-valuetask.md) |
+| "`Task.WhenAll` gives you all the exceptions" | Awaiting rethrows only the **first**. The rest are on `task.Exception.InnerExceptions`. | [2.12](notes/02-collections-linq-async/2.12-task-valuetask.md) |
+| "`ValueTask` is a faster `Task`, use it everywhere" | Await it **once only**, never block on it, never pass it to `WhenAll`. It's a library-author optimisation. | [2.12](notes/02-collections-linq-async/2.12-task-valuetask.md) |
+| "`.Result` is safe in ASP.NET Core since there's no deadlock" | True about deadlock, but it **blocks a pool thread** → thread-pool starvation. Signature: huge latency with idle CPU. | [2.13](notes/02-collections-linq-async/2.13-async-deadlocks.md) |
+| "Add `ConfigureAwait(false)` everywhere" | In ASP.NET Core app code it does **nothing** — there's no context. It matters in **libraries**. | [2.13](notes/02-collections-linq-async/2.13-async-deadlocks.md) |
+| "Accepting a `CancellationToken` makes a method cancellable" | Only if you **pass it down and check it**. An ignored token is worse than none — it advertises a capability that doesn't exist. | [2.14](notes/02-collections-linq-async/2.14-cancellation.md) |
+| "`OperationCanceledException` should be logged as an error" | It's **routine traffic** — a user closed a tab. Logging it as an error buries real failures. | [2.14](notes/02-collections-linq-async/2.14-cancellation.md) |
+| "A try/catch around an `async void` call catches its exceptions" | It catches nothing — the method already returned. The exception **crashes the process**. | [2.15](notes/02-collections-linq-async/2.15-async-void.md) |
+| "`list.ForEach(async x => await F(x))` awaits each item" | `ForEach` takes an `Action`, so every lambda is **`async void`**. Use `foreach` or `Task.WhenAll`. | [2.15](notes/02-collections-linq-async/2.15-async-void.md) |
+| "`catch (SqlException)` works the same either way" | With `await`, yes. With `.Result`, the exception is wrapped in **`AggregateException`** and the typed catch is dead code. | [2.16](notes/02-collections-linq-async/2.16-async-exceptions.md) |
+| "`[EnumeratorCancellation]` is optional boilerplate" | Without it, `WithCancellation` is **silently ignored** and your async stream cannot be cancelled. | [2.17](notes/02-collections-linq-async/2.17-async-streams.md) |
+| "`count++` is one operation" | It's read, add, write. Two threads interleave and an increment is lost. Use `Interlocked.Increment`. | [2.18](notes/02-collections-linq-async/2.18-thread-safety.md) |
+| "`volatile` makes a field thread-safe" | It only stops caching and reordering. It does **not** make operations atomic — `volatile` `count++` still races. | [2.18](notes/02-collections-linq-async/2.18-thread-safety.md) |
+| "`Parallel.ForEach` speeds up my API endpoint" | The server is **already parallel**. It steals threads from other requests, so one request gets faster and total throughput drops. | [2.19](notes/02-collections-linq-async/2.19-parallel-programming.md) |
+| "Adding to a `List<T>` inside `Parallel.ForEach` is fine" | `List<T>` is not thread-safe — you get lost items, corruption, or `IndexOutOfRangeException`. Use a concurrent collection. | [2.19](notes/02-collections-linq-async/2.19-parallel-programming.md) |
+
 ---
 
 ## Add your own
