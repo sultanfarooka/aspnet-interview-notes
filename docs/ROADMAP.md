@@ -79,14 +79,14 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 - [x] **3.1** [.NET Framework vs .NET Core vs .NET 5+](notes/03-dotnet-runtime/3.01-dotnet-history.md) 🔥
 - [x] **3.2** [CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) ⭐ 🎯
-- [ ] **3.3** [Managed vs unmanaged code, `unsafe`, P/Invoke](notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md)
+- [x] **3.3** [Managed vs unmanaged code, `unsafe`, P/Invoke](notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md)
 - [x] **3.4** [Garbage collection — generations, LOH, GC modes](notes/03-dotnet-runtime/3.04-garbage-collection.md) 🔥 🎯
-- [ ] **3.5** [Memory leaks in managed code](notes/03-dotnet-runtime/3.05-memory-leaks.md) 🔥 ⚠️
-- [ ] **3.6** [Assemblies, load contexts, NuGet packaging](notes/03-dotnet-runtime/3.06-assemblies-nuget.md)
-- [ ] **3.7** [SDK-style `.csproj`, target frameworks, multi-targeting](notes/03-dotnet-runtime/3.07-csproj-and-tfm.md) ⭐
-- [ ] **3.8** [.NET CLI essentials](notes/03-dotnet-runtime/3.08-dotnet-cli.md) ⭐ 💻
-- [ ] **3.9** [.NET Standard — what it was, why it's mostly history](notes/03-dotnet-runtime/3.09-dotnet-standard.md)
-- [ ] **3.10** [Release cadence — LTS vs STS, current support matrix](notes/03-dotnet-runtime/3.10-release-cadence.md) ⭐
+- [x] **3.5** [Memory leaks in managed code](notes/03-dotnet-runtime/3.05-memory-leaks.md) 🔥 ⚠️
+- [x] **3.6** [Assemblies, load contexts, NuGet packaging](notes/03-dotnet-runtime/3.06-assemblies-nuget.md)
+- [x] **3.7** [SDK-style `.csproj`, target frameworks, multi-targeting](notes/03-dotnet-runtime/3.07-csproj-and-tfm.md) ⭐
+- [x] **3.8** [.NET CLI essentials](notes/03-dotnet-runtime/3.08-dotnet-cli.md) ⭐ 💻
+- [x] **3.9** [.NET Standard — what it was, why it's mostly history](notes/03-dotnet-runtime/3.09-dotnet-standard.md)
+- [x] **3.10** [Release cadence — LTS vs STS, current support matrix](notes/03-dotnet-runtime/3.10-release-cadence.md) ⭐
 
 ---
 

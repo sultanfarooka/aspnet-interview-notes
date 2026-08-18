@@ -51,6 +51,34 @@
 | "`AsNoTracking` is a micro-optimization" | On read-heavy endpoints returning many rows it's often a large win, and it prevents accidental updates. Default to it for reads. | [13.7](notes/13-entity-framework-core/13.07-change-tracking.md) |
 | "The InMemory provider is fine for testing" | It doesn't enforce relational constraints, transactions, or SQL translation — tests pass that production fails. Use SQLite in-memory or Testcontainers. | [13.20](notes/13-entity-framework-core/13.20-testing-data-access.md) |
 
+## .NET runtime and platform
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| ".NET 4.8 is just an older .NET 8" | **Unrelated products.** 4.8 is the final Windows-only Framework; 8 is the modern cross-platform one. The close numbers are why version 4 was skipped. | [3.1](notes/03-dotnet-runtime/3.01-dotnet-history.md) |
+| "The name 'Core' was dropped everywhere" | The runtime dropped it; **ASP.NET Core kept it**. ASP.NET Core 10 runs on .NET 10. | [3.1](notes/03-dotnet-runtime/3.01-dotnet-history.md) |
+| "C# compiles to machine code" | It compiles to **IL**. Machine code is produced later by the JIT, per method, on first call. | [3.2](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) |
+| "CTS and CLS are the same thing" | CTS is the **full** type system. CLS is the **subset** every .NET language supports — which is why C# allows `Process()` and `process()` but that isn't CLS-compliant. | [3.2](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) |
+| "Benchmark the first few calls" | Those measure **Tier 0** unoptimised code plus the compilation itself. You must warm up first. | [3.2](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) |
+| "Native AOT is just a faster build" | It **silently breaks reflection**, `Expression.Compile` and `Reflection.Emit`. Compiles fine, fails at runtime. | [3.2](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) |
+| "The GC frees everything eventually" | It frees **memory**. File handles, sockets and DB connections need `Dispose` — the GC has no idea what they are. | [3.3](notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md) |
+| "You can take a pointer to a managed array" | Not without `fixed`. The GC **moves objects** during compaction and cannot update a raw pointer. | [3.3](notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md) |
+| "The GC counts references" | It uses **reachability from roots**, not counting. That's why circular references are collected fine. | [3.4](notes/03-dotnet-runtime/3.04-garbage-collection.md) |
+| "`GC.Collect()` will fix my memory usage" | If the object is still reachable, no collection frees it. Forcing one triggers an expensive **Gen 2** pass and **promotes** objects that would have died cheaply. | [3.4](notes/03-dotnet-runtime/3.04-garbage-collection.md) |
+| "Large objects are handled like any other" | ≥ **85,000 bytes** go to the LOH, collected only on Gen 2 and **not compacted** — so memory climbs from fragmentation with no actual leak. | [3.4](notes/03-dotnet-runtime/3.04-garbage-collection.md) |
+| "Server GC is strictly better" | It uses **one heap per core**. In a small container that extra memory can breach the limit and get you OOM-killed. | [3.4](notes/03-dotnet-runtime/3.04-garbage-collection.md) |
+| "You can't leak memory in .NET" | You can't forget to free — but you can **keep a reference**, which the GC must honour. Static collections, unremoved event handlers, captured closures. | [3.5](notes/03-dotnet-runtime/3.05-memory-leaks.md) |
+| "One memory dump will show the leak" | One dump shows what's **large**. Two dumps minutes apart show what's **growing**, which is what you need. Then `gcroot` to find what holds it. | [3.5](notes/03-dotnet-runtime/3.05-memory-leaks.md) |
+| "`IMemoryCache` can't leak, it has eviction" | Without an explicit **`SizeLimit`** it only evicts under memory pressure, which may arrive too late. | [3.5](notes/03-dotnet-runtime/3.05-memory-leaks.md) |
+| "Copy the DLL into the output folder and it'll load" | The runtime resolves from **`deps.json`**, not by scanning folders. Not listed there = `FileNotFoundException`. | [3.6](notes/03-dotnet-runtime/3.06-assemblies-nuget.md) |
+| "Version conflicts fail the build" | They fail at **runtime** with `MethodNotFoundException`. .NET picks the highest version and hopes it's compatible. | [3.6](notes/03-dotnet-runtime/3.06-assemblies-nuget.md) |
+| "`#if NET8_0` covers .NET 8 and later" | It's **false** once you add a `net10.0` target. Use `NET8_0_OR_GREATER`. | [3.7](notes/03-dotnet-runtime/3.07-csproj-and-tfm.md) |
+| "`linux-x64` runs in any Linux container" | **Not Alpine.** Alpine uses musl, so it needs `linux-musl-x64`. Fails at startup with a confusing missing-library error. | [3.7](notes/03-dotnet-runtime/3.07-csproj-and-tfm.md) |
+| "`dotnet build` output is deployable" | It isn't. `publish` gathers all dependencies plus `deps.json` and `runtimeconfig.json`. Build output may start, then fail on an uncopied package. | [3.8](notes/03-dotnet-runtime/3.08-dotnet-cli.md) |
+| "`netstandard2.1` is the better .NET Standard" | .NET Framework **never supported it**, which removes the only reason to target Standard. Target `net10.0` instead. | [3.9](notes/03-dotnet-runtime/3.09-dotnet-standard.md) |
+| "STS releases are previews" | They're **full production releases**. The only difference is 18 months of support versus 3 years. | [3.10](notes/03-dotnet-runtime/3.10-release-cadence.md) |
+| "A newer .NET is always supported longer" | .NET 7 (STS) went **out of support before** .NET 6 (LTS), despite shipping a year later. | [3.10](notes/03-dotnet-runtime/3.10-release-cadence.md) |
+
 ## Security
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |
