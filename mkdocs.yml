@@ -165,6 +165,10 @@ nav:
       - 2.17 IAsyncEnumerable: notes/02-collections-linq-async/2.17-async-streams.md
       - 2.18 Thread safety: notes/02-collections-linq-async/2.18-thread-safety.md
       - 2.19 Parallel programming: notes/02-collections-linq-async/2.19-parallel-programming.md
+  - 3. .NET Runtime (in progress):
+      - 3.1 .NET history: notes/03-dotnet-runtime/3.01-dotnet-history.md
+      - 3.2 CLR and compilation: notes/03-dotnet-runtime/3.02-clr-and-compilation.md
+      - 3.4 Garbage collection: notes/03-dotnet-runtime/3.04-garbage-collection.md
   - 6. Dependency Injection:
       - 6.3 Service lifetimes: notes/06-dependency-injection/6.03-service-lifetimes.md
   - Practice:

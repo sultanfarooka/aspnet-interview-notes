@@ -77,10 +77,10 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 3. .NET Runtime and Platform
 
-- [ ] **3.1** [.NET Framework vs .NET Core vs .NET 5+](notes/03-dotnet-runtime/3.01-dotnet-history.md) 🔥
-- [ ] **3.2** [CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) ⭐ 🎯
+- [x] **3.1** [.NET Framework vs .NET Core vs .NET 5+](notes/03-dotnet-runtime/3.01-dotnet-history.md) 🔥
+- [x] **3.2** [CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun](notes/03-dotnet-runtime/3.02-clr-and-compilation.md) ⭐ 🎯
 - [ ] **3.3** [Managed vs unmanaged code, `unsafe`, P/Invoke](notes/03-dotnet-runtime/3.03-managed-vs-unmanaged.md)
-- [ ] **3.4** [Garbage collection — generations, LOH, GC modes](notes/03-dotnet-runtime/3.04-garbage-collection.md) 🔥 🎯
+- [x] **3.4** [Garbage collection — generations, LOH, GC modes](notes/03-dotnet-runtime/3.04-garbage-collection.md) 🔥 🎯
 - [ ] **3.5** [Memory leaks in managed code](notes/03-dotnet-runtime/3.05-memory-leaks.md) 🔥 ⚠️
 - [ ] **3.6** [Assemblies, load contexts, NuGet packaging](notes/03-dotnet-runtime/3.06-assemblies-nuget.md)
 - [ ] **3.7** [SDK-style `.csproj`, target frameworks, multi-targeting](notes/03-dotnet-runtime/3.07-csproj-and-tfm.md) ⭐
