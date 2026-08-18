@@ -176,6 +176,18 @@ nav:
       - 3.8 The .NET CLI: notes/03-dotnet-runtime/3.08-dotnet-cli.md
       - 3.9 .NET Standard: notes/03-dotnet-runtime/3.09-dotnet-standard.md
       - 3.10 Release cadence (LTS vs STS): notes/03-dotnet-runtime/3.10-release-cadence.md
+  - 4. Fundamentals & Startup:
+      - 4.1 What ASP.NET Core is: notes/04-fundamentals-startup/4.01-what-is-aspnet-core.md
+      - 4.2 Hosting model and Kestrel: notes/04-fundamentals-startup/4.02-hosting-model.md
+      - 4.3 Program.cs and hosting: notes/04-fundamentals-startup/4.03-program-cs-hosting.md
+      - 4.4 The legacy Startup.cs: notes/04-fundamentals-startup/4.04-startup-cs-legacy.md
+      - 4.5 Host interfaces: notes/04-fundamentals-startup/4.05-host-interfaces.md
+      - 4.6 Application lifecycle: notes/04-fundamentals-startup/4.06-app-lifecycle.md
+      - 4.7 Environments: notes/04-fundamentals-startup/4.07-environments.md
+      - 4.8 launchSettings.json: notes/04-fundamentals-startup/4.08-launchsettings.md
+      - 4.9 Kestrel vs IIS vs HTTP.sys: notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys.md
+      - 4.10 Static files and wwwroot: notes/04-fundamentals-startup/4.10-static-files.md
+      - 4.11 Project structure: notes/04-fundamentals-startup/4.11-project-structure.md
   - 6. Dependency Injection:
       - 6.3 Service lifetimes: notes/06-dependency-injection/6.03-service-lifetimes.md
   - Practice:

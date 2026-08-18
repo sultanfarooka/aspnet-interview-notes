@@ -31,6 +31,35 @@
 | "Transient services are always safe" | A transient registered into a singleton lives as long as the singleton. Lifetime is determined by the *consumer*, not the registration. | [6.4](notes/06-dependency-injection/6.04-captive-dependency.md) |
 | "The container disposes everything I give it" | It disposes instances **it created**. If you pass an already-constructed instance to `AddSingleton(instance)`, you own disposal. | [6.10](notes/06-dependency-injection/6.10-disposal.md) |
 
+## Fundamentals and startup
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "ASP.NET Core is ASP.NET with a new version number" | It's a **rewrite**. `System.Web` doesn't exist, `HttpContext.Current` is gone, and Web Forms never ported. | [4.1](notes/04-fundamentals-startup/4.01-what-is-aspnet-core.md) |
+| "IIS hosts my ASP.NET Core app" | The relationship **inverted**. Your app hosts Kestrel; IIS is a reverse proxy in front of it. | [4.2](notes/04-fundamentals-startup/4.02-hosting-model.md) |
+| "Behind a load balancer I still see the client IP" | You see the **proxy's** IP. You need `UseForwardedHeaders`, registered **first**, and only loopback proxies are trusted by default — so it works locally and silently fails in Kubernetes. | [4.2](notes/04-fundamentals-startup/4.02-hosting-model.md) |
+| "`UseHttpsRedirection` is always correct" | Behind a TLS-terminating proxy it causes an **infinite redirect loop** — the app sees `http`, redirects, the proxy forwards `http` again. | [4.2](notes/04-fundamentals-startup/4.02-hosting-model.md) |
+| "Binding to `localhost` works in a container" | The app starts, looks healthy, and **refuses every external connection**. Use `http://+:8080`. | [4.2](notes/04-fundamentals-startup/4.02-hosting-model.md) |
+| "I can register a service anywhere in `Program.cs`" | Not after `builder.Build()` — the collection is **frozen**. | [4.3](notes/04-fundamentals-startup/4.03-program-cs-hosting.md) |
+| "I can resolve `DbContext` from `app.Services` at startup" | It's scoped and there's **no ambient scope** at startup. Call `CreateScope()` first. | [4.3](notes/04-fundamentals-startup/4.03-program-cs-hosting.md) |
+| "`WebApplicationFactory<Program>` just works" | The generated `Program` is **internal**. Add `public partial class Program { }` or `InternalsVisibleTo`. | [4.3](notes/04-fundamentals-startup/4.03-program-cs-hosting.md) |
+| "`Startup.cs` implements an interface" | It implements **nothing** — methods are found by **name** via reflection. Misspell `ConfigureServices` and it compiles and silently never runs. | [4.4](notes/04-fundamentals-startup/4.04-startup-cs-legacy.md) |
+| "`ValidateScopes` protects me in production" | It's **Development-only by default**, which is exactly why captive dependencies survive to production. | [4.5](notes/04-fundamentals-startup/4.05-host-interfaces.md) |
+| "`IHostedService.StartAsync` runs in the background" | It **blocks application startup**. Slow work there delays readiness. Use `BackgroundService.ExecuteAsync`. | [4.5](notes/04-fundamentals-startup/4.05-host-interfaces.md) |
+| "Shutdown is fine by default" | You get **5 seconds**. Any request slower than that is cut off — on **every deployment**. | [4.6](notes/04-fundamentals-startup/4.06-app-lifecycle.md) |
+| "Longer shutdown timeout is always safer" | It must be **shorter** than the orchestrator's grace period, or Kubernetes SIGKILLs you mid-drain — and SIGKILL can't be caught. | [4.6](notes/04-fundamentals-startup/4.06-app-lifecycle.md) |
+| "Kubernetes stops traffic before sending SIGTERM" | Both happen **at the same time** and endpoint removal propagates asynchronously, so requests arrive after you've stopped accepting. Delay shutdown or fail readiness first. | [4.6](notes/04-fundamentals-startup/4.06-app-lifecycle.md) |
+| "`Environment.Exit` shuts down cleanly" | It **skips every shutdown handler**. Use `lifetime.StopApplication()`. | [4.6](notes/04-fundamentals-startup/4.06-app-lifecycle.md) |
+| "No `ASPNETCORE_ENVIRONMENT` means Development" | It defaults to **Production** — deliberately safe in deployment, confusing locally. | [4.7](notes/04-fundamentals-startup/4.07-environments.md) |
+| "The developer exception page is just verbose errors" | It shows **all environment variables** in the browser — connection strings and API keys included. One stray `ASPNETCORE_ENVIRONMENT=Development` in prod exposes them. | [4.7](notes/04-fundamentals-startup/4.07-environments.md) |
+| "`appsettings.production.json` works fine" | Environment names are case-insensitive in code, but **file names are case-sensitive on Linux**. That file is silently ignored. | [4.7](notes/04-fundamentals-startup/4.07-environments.md) |
+| "I set the environment in `launchSettings.json`" | That file is **never deployed**. It has zero effect on production. | [4.8](notes/04-fundamentals-startup/4.08-launchsettings.md) |
+| "In-process IIS hosting uses Kestrel" | It uses **`IISHttpServer`**, a different implementation that talks to IIS directly. | [4.9](notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys.md) |
+| "Static files respect `[Authorize]`" | **No.** `UseStaticFiles` runs before authentication, so anything in `wwwroot` is downloadable by anyone with the URL. | [4.10](notes/04-fundamentals-startup/4.10-static-files.md) |
+| "Put `UseStaticFiles` wherever" | After authentication, every image runs JWT validation first. Forty assets = forty wasted auth cycles per page. | [4.10](notes/04-fundamentals-startup/4.10-static-files.md) |
+| "The file is in `wwwroot` but returns 404" | Unknown **MIME types are not served** by default. Register the extension rather than enabling `ServeUnknownFileTypes`. | [4.10](notes/04-fundamentals-startup/4.10-static-files.md) |
+| "Clean Architecture is the professional choice" | Four projects for six endpoints is cost with no benefit. Start with one project and folders; split when the pain is **real**. | [4.11](notes/04-fundamentals-startup/4.11-project-structure.md) |
+
 ## Middleware and pipeline
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |

@@ -97,17 +97,17 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 4. Fundamentals and Application Startup
 
-- [ ] **4.1** [What ASP.NET Core is; differences from ASP.NET (System.Web)](notes/04-fundamentals-startup/4.01-what-is-aspnet-core.md) 🔥
-- [ ] **4.2** [Cross-platform hosting, Kestrel, the reverse-proxy model](notes/04-fundamentals-startup/4.02-hosting-model.md) ⭐ 🎯
-- [ ] **4.3** [`Program.cs` — Generic Host vs Minimal Hosting](notes/04-fundamentals-startup/4.03-program-cs-hosting.md) 🔥 💻
-- [ ] **4.4** [The legacy `Startup.cs` model](notes/04-fundamentals-startup/4.04-startup-cs-legacy.md) ⭐
-- [ ] **4.5** [`IHost`, `IHostBuilder`, `IWebHostEnvironment`, lifetime interfaces](notes/04-fundamentals-startup/4.05-host-interfaces.md) ⭐
-- [ ] **4.6** [Application lifecycle — start, run, graceful shutdown](notes/04-fundamentals-startup/4.06-app-lifecycle.md) ⭐ 🎯
-- [ ] **4.7** [Environments and `ASPNETCORE_ENVIRONMENT`](notes/04-fundamentals-startup/4.07-environments.md) 🔥
-- [ ] **4.8** [`launchSettings.json` — and why it is dev-only](notes/04-fundamentals-startup/4.08-launchsettings.md) ⚠️
-- [ ] **4.9** [Kestrel vs IIS vs HTTP.sys; in-process vs out-of-process](notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys.md) ⭐ 🎯
-- [ ] **4.10** [`wwwroot` and static file serving](notes/04-fundamentals-startup/4.10-static-files.md) ⭐
-- [ ] **4.11** [Project structure conventions for a Web API](notes/04-fundamentals-startup/4.11-project-structure.md) ⭐
+- [x] **4.1** [What ASP.NET Core is; differences from ASP.NET (System.Web)](notes/04-fundamentals-startup/4.01-what-is-aspnet-core.md) 🔥
+- [x] **4.2** [Cross-platform hosting, Kestrel, the reverse-proxy model](notes/04-fundamentals-startup/4.02-hosting-model.md) ⭐ 🎯
+- [x] **4.3** [`Program.cs` — Generic Host vs Minimal Hosting](notes/04-fundamentals-startup/4.03-program-cs-hosting.md) 🔥 💻
+- [x] **4.4** [The legacy `Startup.cs` model](notes/04-fundamentals-startup/4.04-startup-cs-legacy.md) ⭐
+- [x] **4.5** [`IHost`, `IHostBuilder`, `IWebHostEnvironment`, lifetime interfaces](notes/04-fundamentals-startup/4.05-host-interfaces.md) ⭐
+- [x] **4.6** [Application lifecycle — start, run, graceful shutdown](notes/04-fundamentals-startup/4.06-app-lifecycle.md) ⭐ 🎯
+- [x] **4.7** [Environments and `ASPNETCORE_ENVIRONMENT`](notes/04-fundamentals-startup/4.07-environments.md) 🔥
+- [x] **4.8** [`launchSettings.json` — and why it is dev-only](notes/04-fundamentals-startup/4.08-launchsettings.md) ⚠️
+- [x] **4.9** [Kestrel vs IIS vs HTTP.sys; in-process vs out-of-process](notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys.md) ⭐ 🎯
+- [x] **4.10** [`wwwroot` and static file serving](notes/04-fundamentals-startup/4.10-static-files.md) ⭐
+- [x] **4.11** [Project structure conventions for a Web API](notes/04-fundamentals-startup/4.11-project-structure.md) ⭐
 
 ## 5. Middleware and the Request Pipeline
 
