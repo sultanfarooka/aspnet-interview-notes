@@ -249,6 +249,50 @@
          <lastmod>2026-08-18</lastmod>
     </url>
     <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.01-what-is-aspnet-core/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.02-hosting-model/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.03-program-cs-hosting/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.04-startup-cs-legacy/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.05-host-interfaces/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.06-app-lifecycle/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.07-environments/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.08-launchsettings/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.09-kestrel-iis-httpsys/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.10-static-files/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/04-fundamentals-startup/4.11-project-structure/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/06-dependency-injection/6.03-service-lifetimes/</loc>
          <lastmod>2026-08-18</lastmod>
     </url>
