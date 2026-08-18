@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.03-concurrent-collections/">
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.03-managed-vs-unmanaged/">
       
       
-        <link rel="prev" href="../2.02-collections-and-big-o/">
+        <link rel="prev" href="../3.02-clr-and-compilation/">
       
       
-        <link rel="next" href="../2.04-yield-and-iterators/">
+        <link rel="next" href="../3.04-garbage-collection/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>2.3 Concurrent collections - ASP.NET Core Interview Notes</title>
+        <title>3.3 Managed vs unmanaged - ASP.NET Core Interview Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#23-concurrent-collections" class="md-skip">
+        <a href="#33-managed-vs-unmanaged-code-unsafe-pinvoke" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3 Concurrent collections
+              3.3 Managed vs unmanaged
             
           </span>
         </div>
@@ -1370,8 +1370,6 @@
       
   
   
-    
-  
   
   
     
@@ -1394,6 +1392,616 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Collections, LINQ & Async
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Collections, LINQ & Async
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.01-collection-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Collection interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.02-collections-and-big-o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Collections and Big-O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.03-concurrent-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Concurrent collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.04-yield-and-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 yield and iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.05-linq-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 LINQ basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.06-deferred-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.6 Deferred execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.07-expression-trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.7 Expression trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.08-linq-advanced-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.8 Advanced LINQ operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.09-first-single-default/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.9 First vs Single
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.10-threads-vs-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.10 Threads vs Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.11-async-await-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.11 async/await internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.12-task-valuetask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.12 Task vs ValueTask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.13-async-deadlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.13 Async deadlocks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.14-cancellation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.14 CancellationToken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.15-async-void/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.15 async void
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.16-async-exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.16 Async exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.17-async-streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.17 IAsyncEnumerable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.18-thread-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.18 Thread safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.19-parallel-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.19 Parallel programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
       
         
       
@@ -1423,17 +2031,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    2. Collections, LINQ & Async
+    3. .NET Runtime & Platform
   
 
     
@@ -1444,12 +2052,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    2. Collections, LINQ & Async
+    3. .NET Runtime & Platform
   
 
           </label>
@@ -1462,14 +2070,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.01-collection-interfaces/" class="md-nav__link">
+      <a href="../3.01-dotnet-history/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.1 Collection interfaces
+    3.1 .NET history
   
 
     
@@ -1490,14 +2098,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.02-collections-and-big-o/" class="md-nav__link">
+      <a href="../3.02-clr-and-compilation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.2 Collections and Big-O
+    3.2 CLR and compilation
   
 
     
@@ -1534,7 +2142,7 @@
   <span class="md-ellipsis">
     
   
-    2.3 Concurrent collections
+    3.3 Managed vs unmanaged
   
 
     
@@ -1552,7 +2160,7 @@
   <span class="md-ellipsis">
     
   
-    2.3 Concurrent collections
+    3.3 Managed vs unmanaged
   
 
     
@@ -1589,6 +2197,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1596,6 +2215,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-managed-actually-buys-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "managed" actually buys you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-you-would-ever-leave-the-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why you would ever leave the safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1612,10 +2259,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-types" class="md-nav__link">
+  <a href="#the-simple-version-managed-vs-unmanaged-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The types
+        The simple version — managed vs unmanaged resources
       
     </span>
   </a>
@@ -1623,10 +2270,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#concurrentdictionary-the-important-one" class="md-nav__link">
+  <a href="#how-it-actually-works-pinvoke" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConcurrentDictionary — the important one
+        How it actually works — P/Invoke
       
     </span>
   </a>
@@ -1634,10 +2281,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-factory-can-run-more-than-once" class="md-nav__link">
+  <a href="#the-deeper-detail-unsafe-pointers-and-pinning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ The factory can run more than once
+        The deeper detail — unsafe, pointers and pinning
       
     </span>
   </a>
@@ -1645,10 +2292,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockingcollectiont-producer-and-consumer" class="md-nav__link">
+  <a href="#the-right-way-to-hold-a-native-handle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BlockingCollection&lt;T&gt; — producer and consumer
+        The right way to hold a native handle
       
     </span>
   </a>
@@ -1731,615 +2378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.04-yield-and-iterators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.4 yield and iterators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.05-linq-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.5 LINQ basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.06-deferred-execution/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.6 Deferred execution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.07-expression-trees/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.7 Expression trees
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.08-linq-advanced-operators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.8 Advanced LINQ operators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.09-first-single-default/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.9 First vs Single
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.10-threads-vs-tasks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.10 Threads vs Tasks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.11-async-await-internals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.11 async/await internals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.12-task-valuetask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.12 Task vs ValueTask
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.13-async-deadlocks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.13 Async deadlocks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.14-cancellation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.14 CancellationToken
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.15-async-void/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.15 async void
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.16-async-exceptions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.16 Async exceptions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.17-async-streams/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.17 IAsyncEnumerable
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.18-thread-safety/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.18 Thread safety
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.19-parallel-programming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.19 Parallel programming
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3. .NET Runtime & Platform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    3. .NET Runtime & Platform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.01-dotnet-history/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.1 .NET history
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.02-clr-and-compilation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.2 CLR and compilation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.03-managed-vs-unmanaged/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.3 Managed vs unmanaged
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.04-garbage-collection/" class="md-nav__link">
+      <a href="../3.04-garbage-collection/" class="md-nav__link">
         
   
   
@@ -2367,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.05-memory-leaks/" class="md-nav__link">
+      <a href="../3.05-memory-leaks/" class="md-nav__link">
         
   
   
@@ -2395,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.06-assemblies-nuget/" class="md-nav__link">
+      <a href="../3.06-assemblies-nuget/" class="md-nav__link">
         
   
   
@@ -2423,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.07-csproj-and-tfm/" class="md-nav__link">
+      <a href="../3.07-csproj-and-tfm/" class="md-nav__link">
         
   
   
@@ -2451,7 +2490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.08-dotnet-cli/" class="md-nav__link">
+      <a href="../3.08-dotnet-cli/" class="md-nav__link">
         
   
   
@@ -2479,7 +2518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.09-dotnet-standard/" class="md-nav__link">
+      <a href="../3.09-dotnet-standard/" class="md-nav__link">
         
   
   
@@ -2507,7 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.10-release-cadence/" class="md-nav__link">
+      <a href="../3.10-release-cadence/" class="md-nav__link">
         
   
   
@@ -2758,6 +2797,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2765,6 +2815,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-managed-actually-buys-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "managed" actually buys you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-you-would-ever-leave-the-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why you would ever leave the safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2781,10 +2859,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-types" class="md-nav__link">
+  <a href="#the-simple-version-managed-vs-unmanaged-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The types
+        The simple version — managed vs unmanaged resources
       
     </span>
   </a>
@@ -2792,10 +2870,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#concurrentdictionary-the-important-one" class="md-nav__link">
+  <a href="#how-it-actually-works-pinvoke" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConcurrentDictionary — the important one
+        How it actually works — P/Invoke
       
     </span>
   </a>
@@ -2803,10 +2881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-factory-can-run-more-than-once" class="md-nav__link">
+  <a href="#the-deeper-detail-unsafe-pointers-and-pinning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ The factory can run more than once
+        The deeper detail — unsafe, pointers and pinning
       
     </span>
   </a>
@@ -2814,10 +2892,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockingcollectiont-producer-and-consumer" class="md-nav__link">
+  <a href="#the-right-way-to-hold-a-native-handle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BlockingCollection&lt;T&gt; — producer and consumer
+        The right way to hold a native handle
       
     </span>
   </a>
@@ -2904,247 +2982,322 @@
   
 
 
-<h1 id="23-concurrent-collections">2.3 — Concurrent Collections<a class="headerlink" href="#23-concurrent-collections" title="Permanent link">&para;</a></h1>
+<h1 id="33-managed-vs-unmanaged-code-unsafe-pinvoke">3.3 — Managed vs Unmanaged Code, unsafe, P/Invoke<a class="headerlink" href="#33-managed-vs-unmanaged-code-unsafe-pinvoke" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#2-collections-linq-and-async">2. Collections, LINQ and Async</a>
-<strong>Prev:</strong> <a href="../2.02-collections-and-big-o/">2.2 Collections and Big-O</a> · <strong>Next:</strong> <a href="../2.04-yield-and-iterators/">2.4 yield and iterators</a></p>
+<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
+<strong>Prev:</strong> <a href="../3.02-clr-and-compilation/">3.2 CLR and compilation</a> · <strong>Next:</strong> <a href="../3.04-garbage-collection/">3.4 Garbage collection</a></p>
 </blockquote>
-<p><strong>Markers:</strong> ⭐ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
+<p><strong>Markers:</strong> — · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p><strong>Managed code</strong> is code the CLR runs and looks after — it handles the memory, checks the
+types, and catches mistakes like reading past the end of an array. <strong>Unmanaged code</strong> is
+everything else: C, C++, operating system calls. Nobody is watching it for you.</p>
 <ul>
-<li>The normal collections (<code>List</code>, <code>Dictionary</code>) are <strong>not safe</strong> when several threads write to them at once. They can corrupt themselves or hang forever.</li>
-<li><code>ConcurrentDictionary&lt;K,V&gt;</code> is the one you will actually use. In ASP.NET Core, every request runs on its own thread, so any shared collection needs this.</li>
-<li><strong>Thread-safe on each operation is not the same as thread-safe overall.</strong> Two safe calls in a row can still race.</li>
+<li>Almost all C# you write is managed. You only meet unmanaged code when calling something
+  outside .NET.</li>
+<li><strong>P/Invoke</strong> is how you call an unmanaged function from C#.</li>
+<li><strong><code>unsafe</code></strong> lets you use raw pointers in C#. You will rarely need it.</li>
 </ul>
 <hr />
-<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<p>In a web application, many requests are handled <strong>at the same time</strong>, on different threads.
-If they all touch the same <code>Dictionary</code>, they are all reaching into the same object at once.</p>
-<p>Why is that dangerous? Because operations that look like one step are really several. Adding
-to a <code>Dictionary</code> might mean: work out the slot, check if it is full, resize the internal
-array, copy everything across, write the value. If a second thread interrupts halfway
-through, it sees a half-rebuilt structure.</p>
-<p>A picture: <strong>two people editing the same paper address book at the same time.</strong> One is
-midway through copying every entry onto a bigger sheet because the old one filled up. The
-other writes a new entry onto the old sheet. That entry vanishes. Or worse, the book ends
-up with a page pointing at itself and anyone reading it walks in circles forever.</p>
-<p>That last one is real. A corrupted <code>Dictionary</code> in .NET Framework could put a thread into an
-<strong>infinite loop</strong>, pinning a CPU core at 100% until the process was restarted.</p>
-<p>The <code>System.Collections.Concurrent</code> namespace has replacements that handle this properly.</p>
-<hr />
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="the-types">The types<a class="headerlink" href="#the-types" title="Permanent link">&para;</a></h3>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concurrent type</th>
-<th>Replaces</th>
-<th>Use it for</th>
+<th>Term</th>
+<th>What it is in .NET</th>
+<th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>ConcurrentDictionary&lt;K,V&gt;</code></td>
-<td><code>Dictionary&lt;K,V&gt;</code></td>
-<td>Shared lookups. <strong>By far the most used.</strong></td>
+<td><strong>Managed code</strong></td>
+<td><em>code the CLR executes</em></td>
+<td>Your C#. The CLR handles memory, garbage collection, type safety and bounds checking.</td>
 </tr>
 <tr>
-<td><code>ConcurrentQueue&lt;T&gt;</code></td>
-<td><code>Queue&lt;T&gt;</code></td>
-<td>Work items processed oldest-first</td>
+<td><strong>Unmanaged code</strong></td>
+<td><em>code outside the CLR</em></td>
+<td>Compiled C or C++, Windows API functions, native libraries. No GC, no safety checks.</td>
 </tr>
 <tr>
-<td><code>ConcurrentStack&lt;T&gt;</code></td>
-<td><code>Stack&lt;T&gt;</code></td>
-<td>Work items processed newest-first</td>
+<td><strong>Managed resource</strong></td>
+<td><em>an object on the .NET heap</em></td>
+<td>Cleaned up automatically by the garbage collector.</td>
 </tr>
 <tr>
-<td><code>ConcurrentBag&lt;T&gt;</code></td>
-<td><code>List&lt;T&gt;</code> (unordered)</td>
-<td>Many threads adding, order irrelevant</td>
+<td><strong>Unmanaged resource</strong></td>
+<td><em>something the OS gave you</em></td>
+<td>A file handle, socket, or window handle. The GC knows nothing about it — you must release it.</td>
 </tr>
 <tr>
-<td><code>BlockingCollection&lt;T&gt;</code></td>
-<td>—</td>
-<td>Producer/consumer with a size limit</td>
+<td><strong>P/Invoke</strong></td>
+<td><em>a mechanism</em></td>
+<td>Platform Invoke. Calling a function in a native <code>.dll</code> or <code>.so</code> from C#.</td>
+</tr>
+<tr>
+<td><strong><code>DllImport</code></strong></td>
+<td>an <strong>attribute</strong></td>
+<td>Marks a C# method as actually living in a native library. The classic P/Invoke syntax.</td>
+</tr>
+<tr>
+<td><strong><code>LibraryImport</code></strong></td>
+<td>an <strong>attribute</strong> (.NET 7+)</td>
+<td>The modern replacement. A source generator writes the interop code at build time, so it works with AOT.</td>
+</tr>
+<tr>
+<td><strong>Marshalling</strong></td>
+<td><em>a conversion step</em></td>
+<td>Translating data between .NET's layout and the native layout — for example a C# <code>string</code> to a C <code>char*</code>.</td>
+</tr>
+<tr>
+<td><strong><code>unsafe</code></strong></td>
+<td>a <strong>C# keyword</strong></td>
+<td>Allows pointer syntax (<code>*</code>, <code>&amp;</code>) inside a block or method. Must be enabled in the <code>.csproj</code>.</td>
+</tr>
+<tr>
+<td><strong><code>fixed</code></strong></td>
+<td>a <strong>C# statement</strong></td>
+<td>Pins an object so the GC cannot move it while you hold a pointer to it.</td>
+</tr>
+<tr>
+<td><strong>Pinning</strong></td>
+<td><em>what <code>fixed</code> does</em></td>
+<td>Telling the GC "do not relocate this object during compaction".</td>
+</tr>
+<tr>
+<td><strong><code>IntPtr</code> / <code>nint</code></strong></td>
+<td>a <strong>struct</strong></td>
+<td>A raw pointer-sized integer. How native handles are represented in C#.</td>
+</tr>
+<tr>
+<td><strong><code>SafeHandle</code></strong></td>
+<td>an <strong>abstract class</strong></td>
+<td>A wrapper around a native handle that releases it reliably. The correct way to hold one.</td>
 </tr>
 </tbody>
 </table>
-<p>There is deliberately <strong>no <code>ConcurrentList&lt;T&gt;</code></strong>. A list is about position, and positions
-stop being meaningful when other threads are inserting and removing underneath you. If you
-need a shared ordered list, either lock around it or use <code>ImmutableList&lt;T&gt;</code>.</p>
-<h3 id="concurrentdictionary-the-important-one"><code>ConcurrentDictionary</code> — the important one<a class="headerlink" href="#concurrentdictionary-the-important-one" title="Permanent link">&para;</a></h3>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">_cache</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">                       </span><span class="c1">// safe</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">_cache</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">found</span><span class="p">);</span><span class="w">   </span><span class="c1">// safe</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">_cache</span><span class="p">.</span><span class="n">TryRemove</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">removed</span><span class="p">);</span><span class="w">   </span><span class="c1">// safe</span>
-</span></code></pre></div>
-<p>The methods that make it genuinely useful are the combined ones:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// GetOrAdd — if the key exists return it, otherwise create, store and return it.</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// The whole check-and-add is ONE atomic operation.</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">LoadUserFromDatabase</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// AddOrUpdate — insert if new, otherwise compute a new value from the old one</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">_cache</span><span class="p">.</span><span class="n">AddOrUpdate</span><span class="p">(</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">addValue</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                        </span><span class="c1">// if not present, store 1</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">updateValueFactory</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">old</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// if present, add 1 to it</span>
-</span></code></pre></div>
-<p>Without <code>GetOrAdd</code>, you would write this — and it is broken:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// BROKEN even with a ConcurrentDictionary</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">_cache</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">         </span><span class="c1">// thread A: not there</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span><span class="w">                                    </span><span class="c1">// thread B: also not there</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">_cache</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Load</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">           </span><span class="c1">// BOTH load. Both write. Wasted work,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span><span class="w">                                    </span><span class="c1">// and possibly two different objects.</span>
-</span></code></pre></div>
-<p>Each individual call is thread-safe. The <strong>sequence</strong> is not. This is the single most
-important idea in this note.</p>
-<h3 id="the-factory-can-run-more-than-once">⚠️ The factory can run more than once<a class="headerlink" href="#the-factory-can-run-more-than-once" title="Permanent link">&para;</a></h3>
-<p><code>GetOrAdd</code> is atomic in what it <em>stores</em> — only one value ever wins. But the factory
-function you pass in <strong>is not locked</strong>, and can be executed by several threads at the same
-time:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Loading...&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// this CAN print twice for the same key</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">LoadFromDatabase</span><span class="p">(</span><span class="n">key</span><span class="p">);</span><span class="w">       </span><span class="c1">// only one result is kept</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">});</span>
-</span></code></pre></div>
-<p>That is a deliberate design choice — holding a lock while running arbitrary user code is how
-you get deadlocks. But it means:</p>
+<hr />
+<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
+<h3 id="what-managed-actually-buys-you">What "managed" actually buys you<a class="headerlink" href="#what-managed-actually-buys-you" title="Permanent link">&para;</a></h3>
+<p>When the CLR runs your code, it does a lot of work in the background that you never see:</p>
 <ul>
-<li>If the factory is <strong>expensive</strong>, you may pay for it several times.</li>
-<li>If the factory has <strong>side effects</strong> (writes a file, sends an email), those happen more
-  than once.</li>
+<li><strong>Memory is allocated and freed for you</strong> by the garbage collector.</li>
+<li><strong>Array bounds are checked.</strong> Reading <code>array[10]</code> on a 5-element array throws an exception
+  rather than silently reading whatever memory happens to be next.</li>
+<li><strong>Types are verified.</strong> You cannot treat a <code>string</code> as an <code>int</code> by lying about it.</li>
+<li><strong>Pointers are not exposed</strong>, so you cannot accidentally read freed memory.</li>
 </ul>
-<p>The fix when it matters is to store a <code>Lazy&lt;T&gt;</code>, because <code>Lazy</code> guarantees its factory runs
-only once:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">LoadFromDatabase</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Value</span><span class="p">;</span><span class="w">      </span><span class="c1">// only the winning Lazy is ever evaluated</span>
+<p>That collection of guarantees is what "managed" means. It removes an entire category of bug —
+buffer overruns, use-after-free, memory corruption — that has caused a large share of the
+security vulnerabilities in software history.</p>
+<p><strong>Unmanaged code has none of that.</strong> C and C++ let you write past the end of a buffer, use a
+pointer after freeing it, or interpret one type as another. Faster and more flexible, and far
+easier to get catastrophically wrong.</p>
+<p>A picture: <strong>managed code is driving a car with seatbelts, airbags and lane assist.</strong>
+Unmanaged code is a racing car with none of it. The racing car can be faster, and a small
+mistake is much more expensive.</p>
+<h3 id="why-you-would-ever-leave-the-safety">Why you would ever leave the safety<a class="headerlink" href="#why-you-would-ever-leave-the-safety" title="Permanent link">&para;</a></h3>
+<p>Three reasons, and only three:</p>
+<ol>
+<li><strong>The functionality only exists natively.</strong> Windows API calls, hardware drivers, a C
+   library like SQLite or FFmpeg with no .NET equivalent.</li>
+<li><strong>Extreme performance in a very narrow spot</strong>, where even the small cost of bounds checking
+   matters. This is rare and should always be measured first.</li>
+<li><strong>You are given a handle by the operating system</strong> — a file, socket or window — and must
+   release it yourself.</li>
+</ol>
+<p>Number three is the one that touches ordinary application code, and it is why <code>IDisposable</code>
+exists at all.</p>
+<hr />
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="the-simple-version-managed-vs-unmanaged-resources">The simple version — managed vs unmanaged resources<a class="headerlink" href="#the-simple-version-managed-vs-unmanaged-resources" title="Permanent link">&para;</a></h3>
+<p>This distinction matters far more day to day than pointers do.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">_buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w">   </span><span class="c1">// MANAGED — the GC frees this</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">FileStream</span><span class="w"> </span><span class="n">_file</span><span class="p">;</span><span class="w">                  </span><span class="c1">// holds an UNMANAGED file handle inside</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="blockingcollectiont-producer-and-consumer"><code>BlockingCollection&lt;T&gt;</code> — producer and consumer<a class="headerlink" href="#blockingcollectiont-producer-and-consumer" title="Permanent link">&para;</a></h3>
-<p>Useful when one part of your code produces work and another consumes it, and you want the
-producer to slow down if the consumer falls behind:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockingCollection</span><span class="o">&lt;</span><span class="n">Job</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boundedCapacity</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Producer — blocks if there are already 100 waiting</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">GetJobs</span><span class="p">())</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">job</span><span class="p">);</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="n">CompleteAdding</span><span class="p">();</span><span class="w">      </span><span class="c1">// signals &quot;no more coming&quot;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">});</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">// Consumer — blocks until an item arrives, exits when adding is complete</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">{</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="n">GetConsumingEnumerable</span><span class="p">())</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="n">Process</span><span class="p">(</span><span class="n">job</span><span class="p">);</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">});</span>
+<p>The <code>byte[]</code> is a normal .NET object. When nothing references it, the garbage collector
+reclaims it and you do nothing.</p>
+<p>The <code>FileStream</code> is also a .NET object, but <strong>inside it is a file handle given out by the
+operating system</strong>. The GC knows how to free the <code>FileStream</code> object's own memory. It has no
+idea what a file handle is or how to close one.</p>
+<p>So the handle stays open — and the file stays locked — until something calls <code>Dispose</code>. That
+is the entire reason for <code>IDisposable</code> and <code>using</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">   </span><span class="c1">// Dispose closes the OS handle</span>
 </span></code></pre></div>
-<p>The capacity limit is the point. Without it, a fast producer builds an unbounded queue in
-memory until the process runs out.</p>
-<p><strong>In modern ASP.NET Core, prefer <code>System.Threading.Channels</code></strong> for this. It does the same
-job with proper async support, so consumers <code>await</code> instead of blocking a thread. See
-<a href="../21-advanced-features/21.01-background-services.md">21.1</a>.</p>
+<p>Covered fully in <a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</p>
+<h3 id="how-it-actually-works-pinvoke">How it actually works — P/Invoke<a class="headerlink" href="#how-it-actually-works-pinvoke" title="Permanent link">&para;</a></h3>
+<p>To call a native function you declare it in C# and tell the runtime where it lives.</p>
+<p>The classic form uses <code>DllImport</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Runtime.InteropServices</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Native</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="na">[DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Unicode)]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">MessageBox</span><span class="p">(</span><span class="n">IntPtr</span><span class="w"> </span><span class="n">hWnd</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">caption</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">Native</span><span class="p">.</span><span class="n">MessageBox</span><span class="p">(</span><span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Note <code>extern</code> and no body. You are describing a function that lives elsewhere; the runtime
+finds it and wires up the call.</p>
+<p><strong>Modern .NET prefers <code>LibraryImport</code></strong> (.NET 7+), which uses a source generator to write the
+interop code at build time:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Native</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="na">[LibraryImport(&quot;user32.dll&quot;, StringMarshalling = StringMarshalling.Utf16)]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">MessageBox</span><span class="p">(</span><span class="n">IntPtr</span><span class="w"> </span><span class="n">hWnd</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">caption</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Two differences worth knowing: the class and method must be <code>partial</code> so the generator can
+fill them in, and because the code is generated at build time it <strong>works with Native AOT</strong>,
+whereas <code>DllImport</code> relies on runtime generation that AOT removes. See
+<a href="../3.02-clr-and-compilation/">3.2</a>.</p>
+<p><strong>Marshalling</strong> is the conversion in between. A C# <code>string</code> is UTF-16 and length-prefixed; a C
+<code>char*</code> is a pointer to null-terminated bytes. The runtime converts, and telling it exactly
+how is most of the work in real interop.</p>
+<h3 id="the-deeper-detail-unsafe-pointers-and-pinning">The deeper detail — <code>unsafe</code>, pointers and pinning<a class="headerlink" href="#the-deeper-detail-unsafe-pointers-and-pinning" title="Permanent link">&para;</a></h3>
+<p><code>unsafe</code> lets you use C-style pointers in C#. You must opt in per project:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;AllowUnsafeBlocks&gt;</span>true<span class="nt">&lt;/AllowUnsafeBlocks&gt;</span>
+</span></code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">unsafe</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">value</span><span class="p">;</span><span class="w">      </span><span class="c1">// address of value</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="o">*</span><span class="n">pointer</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42 — read through the pointer</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Now the important part, and it connects directly to garbage collection.</p>
+<p><strong>The GC moves objects.</strong> During the compact phase it slides survivors together to remove gaps
+(<a href="../3.04-garbage-collection/">3.4</a>). So an object's address is not stable.</p>
+<p>That is fine normally, because the CLR updates every reference when it moves something. But it
+cannot update a raw pointer — it does not know the pointer exists.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">unsafe</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">fixed</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w">          </span><span class="c1">// PIN it — the GC may not move it</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="n">NativeFunction</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="c1">// unpinned here — the GC may move it again</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>fixed</code> pins the object for the duration of the block. Without it, a collection mid-call could
+relocate the array and leave your native function writing to memory that no longer holds it —
+which corrupts the heap in ways that surface much later and are extremely hard to diagnose.</p>
+<p>⚠️ <strong>Keep <code>fixed</code> blocks short.</strong> A pinned object cannot be moved, so it creates a hole in the
+heap that compaction has to work around. Long-lived pins cause fragmentation.</p>
+<h3 id="the-right-way-to-hold-a-native-handle">The right way to hold a native handle<a class="headerlink" href="#the-right-way-to-hold-a-native-handle" title="Permanent link">&para;</a></h3>
+<p>Do not store raw <code>IntPtr</code> handles. Use <code>SafeHandle</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFileHandle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SafeHandleZeroOrMinusOneIsInvalid</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyFileHandle</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">ownsHandle</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ReleaseHandle</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CloseHandle</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="na">[LibraryImport(&quot;kernel32.dll&quot;)]</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="na">[return: MarshalAs(UnmanagedType.Bool)]</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">CloseHandle</span><span class="p">(</span><span class="n">IntPtr</span><span class="w"> </span><span class="n">handle</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>SafeHandle</code> gives you three things a raw <code>IntPtr</code> does not: guaranteed release even if the
+process is being torn down, protection against the handle being recycled while in use, and
+correct behaviour with the finalizer pattern. This is the reason you almost never need to
+write the full dispose pattern by hand — see
+<a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>The realistic ASP.NET Core case — a shared in-memory cache in a singleton service:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">ExchangeRateService</span><span class="p">(</span><span class="n">IHttpClientFactory</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c1">// Singleton service, so this dictionary is shared by EVERY request</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="c1">// happening at the same time. It MUST be concurrent.</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">_rates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetRateAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currency</span><span class="p">)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_rates</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="n">currency</span><span class="p">,</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">FetchRateAsync</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">).</span><span class="n">Value</span><span class="p">;</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FetchRateAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currency</span><span class="p">)</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">CreateClient</span><span class="p">(</span><span class="s">&quot;rates&quot;</span><span class="p">);</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">GetFromJsonAsync</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="p">(</span><span class="s">$&quot;/rate/{currency}&quot;</span><span class="p">);</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="p">}</span>
+<p>The realistic version of this in ASP.NET Core: <strong>you will almost never write any of it.</strong></p>
+<p>What you actually do is release unmanaged resources properly:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportService</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">byte</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenerateAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="c1">// Every one of these holds an unmanaged resource internally:</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="c1">//   FileStream  → an OS file handle</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="c1">//   SqlConnection → a network socket</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="c1">// &#39;await using&#39; releases them even if something throws.</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqlConnection</span><span class="p">(</span><span class="n">_connectionString</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">connection</span><span class="p">.</span><span class="n">OpenAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">);</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">_tempPath</span><span class="p">);</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="c1">// ... work ...</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllBytesAsync</span><span class="p">(</span><span class="n">_tempPath</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Why <code>Lazy&lt;Task&lt;decimal&gt;&gt;</code> and not just <code>Task&lt;decimal&gt;</code>? Because without <code>Lazy</code>, fifty
-simultaneous requests for the same currency could each start their own HTTP call before any
-of them finished. With <code>Lazy</code>, only one call is ever made and the other forty-nine <code>await</code>
-the same task. That pattern is called <strong>stampede protection</strong> —
-<a href="../19-caching-performance/19.04-hybridcache.md">19.4</a> covers it properly.</p>
-<p><strong>But in a real ASP.NET Core app, reach for <code>IMemoryCache</code> first.</strong> It gives you expiry,
-size limits and eviction, which a raw <code>ConcurrentDictionary</code> does not — a dictionary that
-only ever grows is a memory leak. See <a href="../19-caching-performance/19.02-memory-cache.md">19.2</a>.</p>
+<p><strong>The takeaway:</strong> managed versus unmanaged mostly reaches you as "which things do I have to
+dispose?" The answer is anything wrapping an OS resource — files, sockets, database
+connections, HTTP handlers, cryptography objects.</p>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why can't you just use a <code>Dictionary</code> in a multi-threaded application?</strong></p>
-<p>Because its operations are not atomic. Adding an item can involve resizing the internal
-array and copying everything into it, and if another thread reads or writes partway through
-that, it sees an inconsistent structure. In the worst case the internal links become
-circular and a reading thread spins forever at 100% CPU. In ASP.NET Core this matters
-constantly, because requests are handled concurrently on different threads, so anything
-stored in a singleton is shared across all of them.</p>
-<p><strong>Q: What does <code>GetOrAdd</code> do, and what is the catch?</strong></p>
-<p>It returns the existing value for a key, or creates one with the factory you supply, stores
-it and returns that — as a single atomic operation, so you avoid the classic check-then-add
-race. The catch is that only the <em>storing</em> is atomic. The factory itself is not locked, so
-several threads can run it simultaneously for the same key even though only one result is
-kept. If the factory is expensive or has side effects, you wrap the value in a <code>Lazy&lt;T&gt;</code>,
-because <code>Lazy</code> does guarantee its factory runs once.</p>
-<p><strong>Q: Is a <code>ConcurrentDictionary</code> enough to make my code thread-safe?</strong></p>
-<p>No, and this is the important distinction. Each individual method on it is thread-safe, but
-a <em>sequence</em> of calls is not. Writing <code>if (!dict.ContainsKey(k)) dict[k] = value</code> is still
-racy, because another thread can insert between the check and the write. That is exactly why
-the combined methods like <code>GetOrAdd</code> and <code>AddOrUpdate</code> exist — they collapse the sequence
-into one atomic step.</p>
-<p><strong>Q: Why is there no <code>ConcurrentList&lt;T&gt;</code>?</strong></p>
-<p>Because a list is defined by position, and position is meaningless once other threads can
-insert and remove concurrently — index 5 could refer to a different item by the time you use
-it, and an index that was valid when you checked could be out of range a moment later. There
-is no sensible way to make that safe. If you need shared ordered data, you either lock
-around a normal list or use an immutable collection where every change produces a new
-version.</p>
+<p><strong>Q: What is the difference between managed and unmanaged code?</strong></p>
+<p>Managed code runs under the CLR, which handles memory allocation and garbage collection,
+verifies types, and checks array bounds — so a whole class of bugs like buffer overruns and
+use-after-free simply cannot happen. Unmanaged code is compiled native code such as C or C++,
+or operating system functions, running outside the CLR with none of those guarantees. Almost
+all C# is managed; you meet unmanaged code when calling into the OS or a native library, or
+when holding a resource the OS gave you.</p>
+<p><strong>Q: What is the difference between a managed and an unmanaged resource?</strong></p>
+<p>A managed resource is an ordinary .NET object on the heap — the garbage collector reclaims it
+automatically. An unmanaged resource is something the operating system handed you, like a file
+handle, socket or window handle. The GC can free the .NET object that wraps it, but it has no
+idea what the handle is or how to close it. So the file stays locked until something calls
+<code>Dispose</code>. That gap is exactly why <code>IDisposable</code> and <code>using</code> exist.</p>
+<p><strong>Q: What is P/Invoke?</strong></p>
+<p>Platform Invoke — the mechanism for calling a function in a native library from C#. You declare
+a method with no body marked <code>extern</code>, and attribute it with <code>DllImport</code> or, in .NET 7 and
+later, <code>LibraryImport</code>. The runtime locates the function and handles marshalling, which is
+converting data between .NET's representation and the native one. <code>LibraryImport</code> is preferred
+now because it uses a source generator to produce the interop code at build time, which means
+it works under Native AOT, whereas <code>DllImport</code> relies on runtime generation that AOT strips
+out.</p>
+<p><strong>Q: Why do you need the <code>fixed</code> statement?</strong></p>
+<p>Because the garbage collector moves objects. During the compaction phase it slides surviving
+objects together to remove gaps, and it updates every managed reference to match. It cannot
+update a raw pointer, because it has no idea the pointer exists. So if you take a pointer to a
+managed array and a collection happens mid-call, your pointer now refers to memory that no
+longer holds that array. <code>fixed</code> pins the object so the GC will not relocate it for the
+duration of the block. Pins should be short, because a pinned object blocks compaction and
+causes fragmentation.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Thread-safe operations do not make thread-safe logic.</strong> Check-then-act across two calls
-  is still a race, even on a concurrent collection.</li>
-<li><strong>The <code>GetOrAdd</code> factory can run several times.</strong> Only one result is stored, but the work
-  may be done more than once. Wrap in <code>Lazy&lt;T&gt;</code> if that matters.</li>
-<li><strong>Concurrent collections are slower for single-threaded use.</strong> They pay for
-  synchronisation you are not using. Do not use them "just in case".</li>
-<li><strong><code>Count</code> on a concurrent collection is a snapshot and may be stale</strong> the instant you read
-  it. Never use it for a decision that must be exact.</li>
-<li><strong>Enumerating a concurrent collection gives you a moment-in-time view.</strong> Items may be
-  added or removed while you loop; you will not see a consistent snapshot.</li>
-<li><strong>A <code>ConcurrentDictionary</code> that only grows is a memory leak.</strong> It has no eviction. Use
-  <code>IMemoryCache</code> for anything cache-shaped.</li>
-<li><strong><code>ConcurrentBag</code> is optimised for the same thread adding and removing.</strong> If one thread
-  produces and another consumes, <code>ConcurrentQueue</code> is usually faster.</li>
+<li><strong>Forgetting that a managed object can hold an unmanaged resource.</strong> <code>FileStream</code> is a .NET
+  object, but the file handle inside it needs disposing.</li>
+<li><strong>Taking a pointer without <code>fixed</code>.</strong> The GC can move the object underneath you and corrupt
+  memory in a way that surfaces much later.</li>
+<li><strong>Long-lived <code>fixed</code> blocks fragment the heap</strong>, because pinned objects cannot be moved
+  during compaction.</li>
+<li><strong><code>DllImport</code> breaks under Native AOT.</strong> Use <code>LibraryImport</code> for anything new.</li>
+<li><strong>Marshalling mistakes are silent.</strong> Getting a struct layout or string encoding wrong reads
+  garbage rather than throwing.</li>
+<li><strong>Raw <code>IntPtr</code> handles can leak or be recycled.</strong> Use <code>SafeHandle</code>.</li>
+<li><strong><code>unsafe</code> needs enabling in the <code>.csproj</code>.</strong> It is off by default on purpose.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../2.02-collections-and-big-o/">2.2 Collections and Big-O</a> — the non-thread-safe originals</li>
-<li><a href="../2.18-thread-safety/">2.18 Thread safety</a> — <code>lock</code>, <code>Interlocked</code> and the alternatives</li>
-<li><a href="../../01-csharp-fundamentals/1.05-static/">1.5 static</a> — why static mutable state needs this</li>
-<li><a href="../../06-dependency-injection/6.03-service-lifetimes/">6.3 Service lifetimes</a> — singletons are shared across requests</li>
-<li><a href="../19-caching-performance/19.02-memory-cache.md">19.2 IMemoryCache</a> — the right tool for caching</li>
-<li><a href="../21-advanced-features/21.01-background-services.md">21.1 Background services</a> — Channels instead of <code>BlockingCollection</code></li>
+<li><a href="../3.02-clr-and-compilation/">3.2 CLR and compilation</a> — what the CLR manages</li>
+<li><a href="../3.04-garbage-collection/">3.4 Garbage collection</a> — why objects move</li>
+<li><a href="../3.05-memory-leaks/">3.5 Memory leaks</a> — undisposed handles as a leak</li>
+<li><a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21 IDisposable</a> — the practical consequence</li>
+<li><a href="../../01-csharp-fundamentals/1.25-span-memory/">1.25 Span and stackalloc</a> — safe alternatives to pointers</li>
+<li><a href="../21-advanced-features/21.10-native-aot.md">21.10 Native AOT</a> — why <code>LibraryImport</code> matters</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/dotnet/standard/collections/thread-safe/">Microsoft Learn — Thread-safe collections</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">Microsoft Learn — ConcurrentDictionary&lt;TKey,TValue&gt;</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/native-interop/">Microsoft Learn — Native interoperability</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/unsafe-code">Microsoft Learn — unsafe code and pointers</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.safehandle">Microsoft Learn — SafeHandle</a></li>
 </ul>
 
 
@@ -3181,7 +3334,7 @@ version.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../2.02-collections-and-big-o/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2.2 Collections and Big-O">
+          <a href="../3.02-clr-and-compilation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.2 CLR and compilation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3191,20 +3344,20 @@ version.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                2.2 Collections and Big-O
+                3.2 CLR and compilation
               </div>
             </div>
           </a>
         
         
           
-          <a href="../2.04-yield-and-iterators/" class="md-footer__link md-footer__link--next" aria-label="Next: 2.4 yield and iterators">
+          <a href="../3.04-garbage-collection/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.4 Garbage collection">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2.4 yield and iterators
+                3.4 Garbage collection
               </div>
             </div>
             <div class="md-footer__button md-icon">

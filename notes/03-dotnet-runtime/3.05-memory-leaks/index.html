@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.02-clr-and-compilation/">
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.05-memory-leaks/">
       
       
-        <link rel="prev" href="../3.01-dotnet-history/">
+        <link rel="prev" href="../3.04-garbage-collection/">
       
       
-        <link rel="next" href="../3.03-managed-vs-unmanaged/">
+        <link rel="next" href="../3.06-assemblies-nuget/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>3.2 CLR and compilation - ASP.NET Core Interview Notes</title>
+        <title>3.5 Memory leaks - ASP.NET Core Interview Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#32-clr-cts-cls-il-jit-aot-readytorun" class="md-skip">
+        <a href="#35-memory-leaks-in-managed-code" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2 CLR and compilation
+              3.5 Memory leaks
             
           </span>
         </div>
@@ -2095,6 +2095,90 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.02-clr-and-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 CLR and compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.03-managed-vs-unmanaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Managed vs unmanaged
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.04-garbage-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 Garbage collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2114,7 +2198,7 @@
   <span class="md-ellipsis">
     
   
-    3.2 CLR and compilation
+    3.5 Memory leaks
   
 
     
@@ -2132,7 +2216,7 @@
   <span class="md-ellipsis">
     
   
-    3.2 CLR and compilation
+    3.5 Memory leaks
   
 
     
@@ -2192,10 +2276,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-one-story-that-explains-all-seven-acronyms" class="md-nav__link">
+  <a href="#you-cannot-leak-memory-in-net-is-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The one story that explains all seven acronyms
+        "You cannot leak memory in .NET" is wrong
       
     </span>
   </a>
@@ -2203,10 +2287,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-bother-with-two-stages" class="md-nav__link">
+  <a href="#why-it-matters-more-in-a-web-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why bother with two stages?
+        Why it matters more in a web app
       
     </span>
   </a>
@@ -2231,10 +2315,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-simple-version-what-il-looks-like" class="md-nav__link">
+  <a href="#the-simple-version-the-big-four-causes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The simple version — what IL looks like
+        The simple version — the big four causes
       
     </span>
   </a>
@@ -2242,10 +2326,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cts-and-cls-the-two-people-mix-up" class="md-nav__link">
+  <a href="#how-it-actually-works-the-aspnet-core-specific-ones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CTS and CLS — the two people mix up
+        How it actually works — the ASP.NET Core specific ones
       
     </span>
   </a>
@@ -2253,10 +2337,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-it-actually-works-jit-and-tiered-compilation" class="md-nav__link">
+  <a href="#the-deeper-detail-finding-a-leak-in-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How it actually works — JIT and tiered compilation
+        The deeper detail — finding a leak in production
       
     </span>
   </a>
@@ -2264,10 +2348,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-deeper-detail-aot-and-readytorun" class="md-nav__link">
+  <a href="#weakreferencet-occasionally-the-right-tool" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The deeper detail — AOT and ReadyToRun
+        WeakReference&lt;T&gt; — occasionally the right tool
       
     </span>
   </a>
@@ -2338,90 +2422,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.03-managed-vs-unmanaged/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.3 Managed vs unmanaged
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.04-garbage-collection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.4 Garbage collection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.05-memory-leaks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.5 Memory leaks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2820,10 +2820,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-one-story-that-explains-all-seven-acronyms" class="md-nav__link">
+  <a href="#you-cannot-leak-memory-in-net-is-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The one story that explains all seven acronyms
+        "You cannot leak memory in .NET" is wrong
       
     </span>
   </a>
@@ -2831,10 +2831,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-bother-with-two-stages" class="md-nav__link">
+  <a href="#why-it-matters-more-in-a-web-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why bother with two stages?
+        Why it matters more in a web app
       
     </span>
   </a>
@@ -2859,10 +2859,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-simple-version-what-il-looks-like" class="md-nav__link">
+  <a href="#the-simple-version-the-big-four-causes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The simple version — what IL looks like
+        The simple version — the big four causes
       
     </span>
   </a>
@@ -2870,10 +2870,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cts-and-cls-the-two-people-mix-up" class="md-nav__link">
+  <a href="#how-it-actually-works-the-aspnet-core-specific-ones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CTS and CLS — the two people mix up
+        How it actually works — the ASP.NET Core specific ones
       
     </span>
   </a>
@@ -2881,10 +2881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-it-actually-works-jit-and-tiered-compilation" class="md-nav__link">
+  <a href="#the-deeper-detail-finding-a-leak-in-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How it actually works — JIT and tiered compilation
+        The deeper detail — finding a leak in production
       
     </span>
   </a>
@@ -2892,10 +2892,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-deeper-detail-aot-and-readytorun" class="md-nav__link">
+  <a href="#weakreferencet-occasionally-the-right-tool" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The deeper detail — AOT and ReadyToRun
+        WeakReference&lt;T&gt; — occasionally the right tool
       
     </span>
   </a>
@@ -2982,21 +2982,21 @@
   
 
 
-<h1 id="32-clr-cts-cls-il-jit-aot-readytorun">3.2 — CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun<a class="headerlink" href="#32-clr-cts-cls-il-jit-aot-readytorun" title="Permanent link">&para;</a></h1>
+<h1 id="35-memory-leaks-in-managed-code">3.5 — Memory Leaks in Managed Code<a class="headerlink" href="#35-memory-leaks-in-managed-code" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
-<strong>Prev:</strong> <a href="../3.01-dotnet-history/">3.1 .NET history</a> · <strong>Next:</strong> <a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a></p>
+<strong>Prev:</strong> <a href="../3.04-garbage-collection/">3.4 Garbage collection</a> · <strong>Next:</strong> <a href="../3.06-assemblies-nuget/">3.6 Assemblies and NuGet</a></p>
 </blockquote>
-<p><strong>Markers:</strong> ⭐ 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
+<p><strong>Markers:</strong> 🔥 ⚠️ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p>C# is compiled in <strong>two stages</strong>. First your source becomes <strong>IL</strong>, a CPU-independent middle
-language — that is what goes in the <code>.dll</code>. Then, while the app runs, the <strong>CLR</strong> turns that
-IL into real machine code for the actual processor.</p>
+<p>A <strong>memory leak in .NET</strong> is not forgetting to free memory — you cannot do that. It is
+<strong>accidentally keeping a reference to something you have finished with</strong>, so the garbage
+collector is not allowed to reclaim it.</p>
 <ul>
-<li>The second stage happens <strong>one method at a time, as each is first called</strong>. That is <strong>JIT</strong>.</li>
-<li><strong>AOT</strong> and <strong>ReadyToRun</strong> move that second stage to build time, trading flexibility for startup speed.</li>
-<li><strong>CTS</strong> and <strong>CLS</strong> are the rules that let C#, VB.NET and F# share compiled code.</li>
+<li>The GC only frees what is <strong>unreachable</strong>. Anything still reachable from a root is kept, forever if necessary.</li>
+<li>The big four causes: <strong>static collections</strong>, <strong>event handlers never unsubscribed</strong>, <strong>undisposed resources</strong>, and <strong>captured variables in long-lived closures</strong>.</li>
+<li>The symptom is memory that climbs steadily and never comes back down, ending in an out-of-memory crash or a container restart.</li>
 </ul>
 <hr />
 <h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
@@ -3010,293 +3010,340 @@ IL into real machine code for the actual processor.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Roslyn</strong></td>
-<td><em>the C# compiler</em></td>
-<td>What runs when you press Build. Turns <code>.cs</code> files into IL.</td>
+<td><strong>Memory leak (managed)</strong></td>
+<td><em>a bug</em></td>
+<td>Memory that is still <strong>reachable</strong> but will never be used again, so the GC cannot free it.</td>
 </tr>
 <tr>
-<td><strong>IL</strong></td>
-<td><em>a language</em></td>
-<td>Intermediate Language. A simple instruction set <strong>not tied to any CPU</strong>. Your <code>.dll</code> contains this, not machine code.</td>
+<td><strong>Memory leak (unmanaged)</strong></td>
+<td><em>a different bug</em></td>
+<td>An OS resource — file handle, socket — never released because nothing called <code>Dispose</code>.</td>
 </tr>
 <tr>
-<td><strong>Assembly</strong></td>
+<td><strong>Reachable</strong></td>
+<td><em>a property of an object</em></td>
+<td>The GC can get to it by following references from a root. Reachable objects are never freed.</td>
+</tr>
+<tr>
+<td><strong>Root</strong></td>
+<td><em>a starting point</em></td>
+<td>Static fields, local variables of running methods, CPU registers. See <a href="../3.04-garbage-collection/">3.4</a>.</td>
+</tr>
+<tr>
+<td><strong>Retention path</strong></td>
+<td><em>a chain of references</em></td>
+<td>The route from a root to the leaked object. Finding this is how you fix a leak.</td>
+</tr>
+<tr>
+<td><strong><code>WeakReference&lt;T&gt;</code></strong></td>
+<td>a <strong>class</strong></td>
+<td>Holds a reference that does <strong>not</strong> stop the GC collecting the target.</td>
+</tr>
+<tr>
+<td><strong>Memory dump</strong></td>
 <td><em>a file</em></td>
-<td>The <code>.dll</code> or <code>.exe</code> Roslyn produces. Holds IL plus metadata describing every type inside.</td>
+<td>A snapshot of everything in the process's memory, for offline analysis.</td>
 </tr>
 <tr>
-<td><strong>Metadata</strong></td>
-<td><em>data inside the assembly</em></td>
-<td>A description of every type, method and field. Reflection reads this.</td>
+<td><strong><code>dotnet-counters</code></strong></td>
+<td><em>a CLI tool</em></td>
+<td>Shows live metrics — heap size, GC counts, thread-pool queue. First thing to run.</td>
 </tr>
 <tr>
-<td><strong>CLR</strong></td>
-<td><em>the runtime engine</em></td>
-<td>Common Language Runtime. Runs your code — JIT compilation, memory, garbage collection, exceptions.</td>
+<td><strong><code>dotnet-dump</code></strong></td>
+<td><em>a CLI tool</em></td>
+<td>Captures and analyses memory dumps. Finds what is holding an object alive.</td>
 </tr>
 <tr>
-<td><strong>JIT</strong></td>
-<td><em>a compilation step</em></td>
-<td>Just-In-Time. The CLR turning IL into machine code <strong>the moment a method is first called</strong>, then caching it.</td>
-</tr>
-<tr>
-<td><strong>Tiered compilation</strong></td>
-<td><em>a JIT strategy</em></td>
-<td>Compile fast first for quick startup, then recompile hot methods with full optimisation.</td>
-</tr>
-<tr>
-<td><strong>Managed code</strong></td>
-<td><em>code the CLR runs</em></td>
-<td>Your C#. The CLR handles its memory and safety.</td>
-</tr>
-<tr>
-<td><strong>CTS</strong></td>
-<td><em>a specification</em></td>
-<td>Common Type System. The shared rules for what a <em>type</em> is across all .NET languages.</td>
-</tr>
-<tr>
-<td><strong>CLS</strong></td>
-<td><em>a specification</em></td>
-<td>Common Language Specification. A <strong>subset</strong> of CTS containing only what every .NET language supports.</td>
-</tr>
-<tr>
-<td><strong>AOT</strong></td>
-<td><em>a compilation step</em></td>
-<td>Ahead-Of-Time. Compiling straight to native machine code at <strong>build</strong> time, leaving no IL and no JIT.</td>
-</tr>
-<tr>
-<td><strong>ReadyToRun (R2R)</strong></td>
-<td><em>a compilation step</em></td>
-<td>A middle ground. Pre-compiles to machine code but <strong>keeps the IL</strong> as a fallback.</td>
-</tr>
-<tr>
-<td><strong>Trimming</strong></td>
-<td><em>a build step</em></td>
-<td>Removing unused code to shrink output. Used with AOT, and the reason reflection breaks there.</td>
+<td><strong><code>dotnet-gcdump</code></strong></td>
+<td><em>a CLI tool</em></td>
+<td>Captures just the object graph. Much smaller than a full dump and usually enough.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<h3 id="the-one-story-that-explains-all-seven-acronyms">The one story that explains all seven acronyms<a class="headerlink" href="#the-one-story-that-explains-all-seven-acronyms" title="Permanent link">&para;</a></h3>
-<p>A CPU only understands machine code, and machine code differs by processor. An Intel laptop
-and an ARM phone speak different languages.</p>
-<p>Most older languages compile straight to machine code. That works, but it means one build per
-CPU type, decided when you build.</p>
-<p>.NET does something different. It compiles in <strong>two stages</strong>:</p>
-<pre class="mermaid"><code>flowchart LR
-    A["Your C# code&lt;br/&gt;Program.cs"] --&gt;|"Roslyn compiler&lt;br/&gt;at BUILD time"| B["IL&lt;br/&gt;MyApp.dll"]
-    B --&gt;|"JIT compiler&lt;br/&gt;at RUN time"| C["Machine code&lt;br/&gt;for THIS computer"]</code></pre>
-<p><strong>Stage one, when you build.</strong> Roslyn turns your C# into <strong>IL</strong> — a simple, CPU-independent
-instruction set. Your <code>.dll</code> contains IL, not machine code.</p>
-<p><strong>Stage two, when you run.</strong> The <strong>CLR</strong> reads that IL and converts it to machine code for
-whatever CPU it finds. It does this <strong>just in time</strong>, hence <strong>JIT</strong>.</p>
-<p>Every acronym in this note is a piece of that story.</p>
-<h3 id="why-bother-with-two-stages">Why bother with two stages?<a class="headerlink" href="#why-bother-with-two-stages" title="Permanent link">&para;</a></h3>
-<p>Three real benefits:</p>
+<h3 id="you-cannot-leak-memory-in-net-is-wrong">"You cannot leak memory in .NET" is wrong<a class="headerlink" href="#you-cannot-leak-memory-in-net-is-wrong" title="Permanent link">&para;</a></h3>
+<p>People say this because the garbage collector frees things automatically. And it is true you
+cannot make the C-style mistake of forgetting to call <code>free</code>.</p>
+<p>But the GC has one rule: <strong>free anything that is unreachable</strong>
+(<a href="../3.04-garbage-collection/">3.4</a>). It never asks "is this still <em>needed</em>?" — only "can this
+still be <em>reached</em>?"</p>
+<p>So if you keep a reference to something you have finished with, the GC dutifully keeps it
+alive. Forever, if the reference lives in a static field.</p>
+<p><strong>That is a memory leak.</strong> The memory is not lost — it is being deliberately protected by your
+own code.</p>
+<p>A picture: <strong>a warehouse where the rule is "throw away anything nobody has a claim ticket
+for".</strong> You cannot lose items. But if you keep handing out claim tickets and never collect
+them back, the warehouse fills up with things nobody actually wants — and the rule says every
+one of them must be kept.</p>
+<h3 id="why-it-matters-more-in-a-web-app">Why it matters more in a web app<a class="headerlink" href="#why-it-matters-more-in-a-web-app" title="Permanent link">&para;</a></h3>
+<p>A desktop app gets restarted regularly. A web server is meant to run for weeks.</p>
+<p>A leak of a few kilobytes per request sounds trivial. At 100 requests per second it is
+<strong>35 gigabytes a day</strong>. In practice what happens is:</p>
 <ol>
-<li><strong>One build runs anywhere.</strong> The same <code>.dll</code> works on Windows, Linux, x64 and ARM, because
-   the machine-specific step waits until the machine is known.</li>
-<li><strong>The JIT knows things the build machine could not.</strong> It sees the actual CPU and can use
-   instructions specific to it.</li>
-<li><strong>It improves while running.</strong> The runtime notices which methods are hot and recompiles
-   them with heavier optimisation. This is why a .NET service often gets faster in its first
-   minute of traffic.</li>
+<li>Memory climbs steadily over hours.</li>
+<li>Gen 2 collections become more frequent and take longer, because the heap is huge.</li>
+<li>Latency gets worse as those pauses grow.</li>
+<li>Eventually the process hits its memory limit and is killed, or throws
+   <code>OutOfMemoryException</code>.</li>
+<li>In Kubernetes the container restarts, memory resets, and the cycle begins again.</li>
 </ol>
-<p>The cost is startup time. The first call to every method pays for its compilation.</p>
+<p>The classic signature is a <strong>sawtooth graph</strong> — memory rising steadily, dropping vertically at
+each restart. If you see that, you have a leak, not a tuning problem.</p>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="the-simple-version-what-il-looks-like">The simple version — what IL looks like<a class="headerlink" href="#the-simple-version-what-il-looks-like" title="Permanent link">&para;</a></h3>
-<p>This C#:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<h3 id="the-simple-version-the-big-four-causes">The simple version — the big four causes<a class="headerlink" href="#the-simple-version-the-big-four-causes" title="Permanent link">&para;</a></h3>
+<p><strong>1. Static collections that only grow</strong> ⚠️ <em>the most common by far</em></p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderService</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="c1">// static = a GC root. Everything in here is reachable FOREVER.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_processed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="n">Order</span><span class="w"> </span><span class="n">order</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">_processed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">order</span><span class="p">);</span><span class="w">      </span><span class="c1">// nothing ever removes it</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="c1">// ...</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>becomes roughly this IL:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ldarg.1        // load the first argument
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ldarg.2        // load the second argument
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>add            // add them
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ret            // return the result
+<p>Every order ever processed stays in memory for the life of the process. And because <code>Order</code>
+holds a <code>Customer</code>, which holds an address, which holds..., you are retaining a whole object
+graph per order.</p>
+<p><strong>The fix</strong> is either to not keep it, or to use something with eviction:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// IMemoryCache has size limits and expiry. A raw dictionary does not.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">_cache</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
 </span></code></pre></div>
-<p>Simple, readable, tied to no CPU. Tools like ILSpy or <a href="https://sharplab.io">sharplab.io</a> let
-you inspect this for any code you write — genuinely useful for seeing what the compiler does
-with <code>async</code>, <code>yield</code> and records.</p>
-<p>This is also why decompilers exist. A <code>.dll</code> full of IL plus metadata can be turned back into
-readable C#, which is why commercial software often ships obfuscated.</p>
-<h3 id="cts-and-cls-the-two-people-mix-up">CTS and CLS — the two people mix up<a class="headerlink" href="#cts-and-cls-the-two-people-mix-up" title="Permanent link">&para;</a></h3>
-<p>These exist because .NET was designed for <strong>several languages</strong>. VB.NET and F# compile to the
-same IL and can use each other's libraries. For that, they must agree on some things.</p>
-<p><strong>CTS — Common Type System</strong> defines what a type <em>is</em>. Every type derives from <code>object</code>, there
-are value types and reference types, interfaces work a certain way. It is the shared model.</p>
-<p><strong>CLS — Common Language Specification</strong> is a <em>subset</em> of CTS: the features <strong>every</strong> .NET
-language is guaranteed to support.</p>
-<p>Why a subset? Because languages differ. C# is case-sensitive, so this is legal:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Process</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">process</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// legal C#, but NOT CLS-compliant</span>
+<p>See <a href="../19-caching-performance/19.02-memory-cache.md">19.2</a>.</p>
+<p><strong>2. Event handlers never unsubscribed</strong> ⚠️</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderPage</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">OrderPage</span><span class="p">(</span><span class="n">OrderService</span><span class="w"> </span><span class="n">longLivedService</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">longLivedService</span><span class="p">.</span><span class="n">OrderCompleted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnCompleted</span><span class="p">;</span><span class="w">   </span><span class="c1">// subscribe</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnCompleted</span><span class="p">(</span><span class="kt">object?</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>VB.NET is case-insensitive. It cannot tell those apart, so it could never use your library
-properly.</p>
-<p>If you publish a library other .NET languages might consume, ask the compiler to check:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[assembly: CLSCompliant(true)]</span><span class="w">     </span><span class="c1">// warns about anything outside the safe subset</span>
+<p>Subscribing means the <strong>publisher stores a reference to the subscriber</strong>. The long-lived
+service now holds the short-lived page alive. Create a thousand pages and all thousand stay in
+memory, still receiving events.</p>
+<p>The fix is to unsubscribe in <code>Dispose</code> — covered fully in
+<a href="../../01-csharp-fundamentals/1.12-events/">1.12</a>, including the trap that you cannot
+unsubscribe a lambda unless you stored it in a variable.</p>
+<p><strong>3. Undisposed resources</strong></p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">    </span><span class="c1">// never disposed</span>
 </span></code></pre></div>
-<p>If your library is only ever used from C#, you can ignore CLS entirely.</p>
-<p><strong>The memory aid:</strong> <em>CTS is the full rulebook. CLS is the part every language agreed to follow.</em></p>
-<h3 id="how-it-actually-works-jit-and-tiered-compilation">How it actually works — JIT and tiered compilation<a class="headerlink" href="#how-it-actually-works-jit-and-tiered-compilation" title="Permanent link">&para;</a></h3>
-<p>The JIT does not compile your program at startup. It compiles <strong>one method, the first time
-that method is called</strong>, then caches the result. A method you never call is never compiled.</p>
-<p>Modern .NET adds <strong>tiered compilation</strong>:</p>
-<ul>
-<li><strong>Tier 0</strong> — first run: compile <em>quickly</em> with few optimisations. Startup stays fast.</li>
-<li><strong>Tier 1</strong> — if a method is called many times, recompile it in the background with full
-  optimisation and swap it in.</li>
-</ul>
-<p>So the app starts fast and gets faster as the hot paths reveal themselves.</p>
-<p>This matters practically: <strong>benchmarks must warm up first.</strong> Measuring the first few calls
-measures Tier 0 code plus the compilation itself, not your real throughput. BenchmarkDotNet
-handles that automatically, which is one reason to use it over a stopwatch — see
-<a href="../19-caching-performance/19.14-benchmarking-load-testing.md">19.14</a>.</p>
-<h3 id="the-deeper-detail-aot-and-readytorun">The deeper detail — AOT and ReadyToRun<a class="headerlink" href="#the-deeper-detail-aot-and-readytorun" title="Permanent link">&para;</a></h3>
-<p>JIT costs startup time. For a serverless function that runs for 200 milliseconds, a large
-fraction of its life is compilation.</p>
-<p>Two options move that work earlier.</p>
-<p><strong>ReadyToRun (R2R)</strong> pre-compiles IL to machine code at publish time but <strong>keeps the IL too</strong>.
-If the pre-compiled version cannot be used, the JIT compiles normally. Faster startup, bigger
-file, everything still works everywhere.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;PublishReadyToRun&gt;</span>true<span class="nt">&lt;/PublishReadyToRun&gt;</span>
+<p>This is an <strong>unmanaged</strong> leak. The GC eventually frees the <code>FileStream</code> object's memory, but
+the operating system's file handle stays open until <code>Dispose</code> runs. Handles are a limited
+resource — run out and every subsequent file operation fails.</p>
+<p>The fix is <code>using</code> — see <a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</p>
+<p><strong>4. Captured variables in long-lived closures</strong></p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Registry</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Action</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_callbacks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">(</span><span class="n">HugeObject</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="c1">// The lambda captures &#39;data&#39;, so the closure object holds it.</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="c1">// The static list holds the closure. So &#39;data&#39; lives forever.</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">_callbacks</span><span class="p">.</span><span class="n">Add</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">Name</span><span class="p">));</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>Native AOT</strong> goes all the way — a real native executable, with <strong>no IL and no JIT at all</strong>.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;PublishAot&gt;</span>true<span class="nt">&lt;/PublishAot&gt;</span>
+<p>A closure is a hidden object holding every captured variable
+(<a href="../../01-csharp-fundamentals/1.13-lambdas-closures/">1.13</a>). Store the lambda somewhere
+long-lived and you have stored everything it captured.</p>
+<p>Worse, capturing <em>any</em> field of <code>this</code> captures <strong>the entire containing object</strong>, not just
+that field.</p>
+<h3 id="how-it-actually-works-the-aspnet-core-specific-ones">How it actually works — the ASP.NET Core specific ones<a class="headerlink" href="#how-it-actually-works-the-aspnet-core-specific-ones" title="Permanent link">&para;</a></h3>
+<p><strong>Injecting a scoped service into a singleton</strong> — the captive dependency problem:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CacheService</span><span class="w">                    </span><span class="c1">// registered as a SINGLETON</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">AppDbContext</span><span class="w"> </span><span class="n">_db</span><span class="p">;</span><span class="w">       </span><span class="c1">// SCOPED — meant to live one request</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">CacheService</span><span class="p">(</span><span class="n">AppDbContext</span><span class="w"> </span><span class="n">db</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>The gains are dramatic: startup in single-digit milliseconds, much lower memory, a
-self-contained binary needing no installed runtime. What you give up:</p>
-<ul>
-<li><strong>Reflection over types the compiler could not see.</strong> Trimming removes unused code, and
-  anything reached only by reflection looks unused. See
-  <a href="../../01-csharp-fundamentals/1.23-attributes-reflection/">1.23</a>.</li>
-<li><strong>Runtime code generation.</strong> <code>Expression.Compile()</code> and <code>Reflection.Emit</code> do not work,
-  ruling out some ORMs and serializers.</li>
-<li><strong>One build per platform.</strong> A Linux x64 build runs only on Linux x64.</li>
-</ul>
-<p>This is a large part of why source generators became popular — they do at build time what
-reflection used to do at runtime, which keeps AOT working. See
-<a href="../21-advanced-features/21.10-native-aot.md">21.10</a>.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>JIT</th>
-<th>ReadyToRun</th>
-<th>Native AOT</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Startup</td>
-<td>Slowest</td>
-<td>Faster</td>
-<td>Fastest</td>
-</tr>
-<tr>
-<td>Peak speed</td>
-<td>Best</td>
-<td>Best</td>
-<td>Slightly lower</td>
-</tr>
-<tr>
-<td>File size</td>
-<td>Smallest</td>
-<td>Larger</td>
-<td>Largest</td>
-</tr>
-<tr>
-<td>Reflection</td>
-<td>Full</td>
-<td>Full</td>
-<td><strong>Limited</strong></td>
-</tr>
-<tr>
-<td>Build per platform</td>
-<td>No</td>
-<td>Partly</td>
-<td><strong>Yes</strong></td>
-</tr>
-</tbody>
-</table>
+<p>The singleton captures the first request's <code>DbContext</code> and holds it for the life of the
+application. That context's change tracker keeps every entity it has ever loaded, so it grows
+without limit. This is a leak <em>and</em> a correctness bug, since <code>DbContext</code> is not thread-safe.
+See <a href="../06-dependency-injection/6.04-captive-dependency.md">6.4</a>.</p>
+<p><strong>Creating <code>HttpClient</code> per request:</strong></p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span><span class="w">     </span><span class="c1">// looks correct. Is not.</span>
+</span></code></pre></div>
+<p>Disposing does not immediately release the underlying socket — it sits in <code>TIME_WAIT</code> for a
+couple of minutes. Under load you exhaust available ports. Use <code>IHttpClientFactory</code> —
+<a href="../19-caching-performance/19.10-httpclientfactory.md">19.10</a>.</p>
+<p><strong>Long-lived <code>DbContext</code> in a background service:</strong></p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_factory</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">();</span><span class="w">          </span><span class="c1">// ONE scope for the whole loop</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ct</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Orders</span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">);</span><span class="w">   </span><span class="c1">// tracker grows every iteration</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The scope must be created <strong>inside</strong> the loop, not outside — see
+<a href="../21-advanced-features/21.02-scoped-in-background.md">21.2</a>.</p>
+<h3 id="the-deeper-detail-finding-a-leak-in-production">The deeper detail — finding a leak in production<a class="headerlink" href="#the-deeper-detail-finding-a-leak-in-production" title="Permanent link">&para;</a></h3>
+<p>The method matters more than the tools, and this is a genuinely common interview scenario.</p>
+<p><strong>Step 1 — confirm it is actually a leak.</strong> Watch the heap size across several Gen 2
+collections. A leak keeps climbing <em>after</em> a full collection. Normal load fluctuation drops
+back down.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dotnet-counters<span class="w"> </span>monitor<span class="w"> </span>--process-id<span class="w"> </span>&lt;pid&gt;<span class="w"> </span>--counters<span class="w"> </span>System.Runtime
+</span></code></pre></div>
+<p>Look at <code>gen-2-gc-count</code> and <code>gc-heap-size</code>. Rising heap with rising Gen 2 count means a leak.</p>
+<p><strong>Step 2 — capture the object graph.</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>dotnet-gcdump<span class="w"> </span>collect<span class="w"> </span>--process-id<span class="w"> </span>&lt;pid&gt;
+</span></code></pre></div>
+<p>Take <strong>two</strong>, several minutes apart. The difference between them is far more informative than
+either alone — it shows what is <em>growing</em> rather than what is merely large.</p>
+<p><strong>Step 3 — find the retention path.</strong> Open the dumps in Visual Studio or <code>dotnet-dump</code>, sort
+by object count, and find what grew. Then ask the crucial question: <strong>what is holding this
+alive?</strong> The chain from a root down to the leaked object is the retention path, and it points
+straight at the bug.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dotnet-dump<span class="w"> </span>analyze<span class="w"> </span>core_dump
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>&gt;<span class="w"> </span>dumpheap<span class="w"> </span>-stat<span class="w">              </span><span class="c1"># what is on the heap, by count and size</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>&gt;<span class="w"> </span>gcroot<span class="w"> </span>&lt;address&gt;<span class="w">            </span><span class="c1"># THE key command: what is keeping this alive</span>
+</span></code></pre></div>
+<p><code>gcroot</code> is the one to remember. It answers the only question that matters.</p>
+<h3 id="weakreferencet-occasionally-the-right-tool"><code>WeakReference&lt;T&gt;</code> — occasionally the right tool<a class="headerlink" href="#weakreferencet-occasionally-the-right-tool" title="Permanent link">&para;</a></h3>
+<p>A weak reference lets you point at an object <strong>without</strong> stopping the GC collecting it:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">WeakReference</span><span class="o">&lt;</span><span class="n">ExpensiveThing</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_cached</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">thing</span><span class="p">);</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_cached</span><span class="p">.</span><span class="n">TryGetTarget</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">thing</span><span class="p">))</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">Use</span><span class="p">(</span><span class="n">thing</span><span class="p">);</span><span class="w">            </span><span class="c1">// still alive</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">else</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">thing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rebuild</span><span class="p">();</span><span class="w">     </span><span class="c1">// was collected, rebuild it</span>
+</span></code></pre></div>
+<p>Genuinely useful for caches where losing an entry is acceptable. <strong>Not</strong> a general fix for
+leaks — if you need the object, a weak reference just moves the bug. Reach for <code>IMemoryCache</code>
+first; it has proper eviction policies.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>Publishing with each strategy:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Normal — IL only, JIT at runtime. Needs .NET installed on the target.</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># ReadyToRun — pre-compiled, IL kept as a fallback</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-r<span class="w"> </span>linux-x64<span class="w"> </span>-p:PublishReadyToRun<span class="o">=</span><span class="nb">true</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Native AOT — a real native binary, no runtime needed</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-r<span class="w"> </span>linux-x64<span class="w"> </span>-p:PublishAot<span class="o">=</span><span class="nb">true</span>
+<p>The most common real leak, and its fix:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// LEAK — a singleton with an unbounded dictionary</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PriceCache</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Get</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">sku</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">_prices</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">sku</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">price</span><span class="p">))</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LookUp</span><span class="p">(</span><span class="n">sku</span><span class="p">);</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">            </span><span class="n">_prices</span><span class="p">[</span><span class="n">sku</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w">      </span><span class="c1">// never removed, never expires</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Turning off tiered compilation, which you would only do while measuring:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;TieredCompilation&gt;</span>false<span class="nt">&lt;/TieredCompilation&gt;</span>
+<p>Three problems, and being able to name all three is a strong answer:</p>
+<ol>
+<li><strong>It only grows.</strong> New SKUs are added forever. This is the leak.</li>
+<li><strong>It is not thread-safe.</strong> A <code>Dictionary</code> written from concurrent requests can corrupt —
+   see <a href="../../02-collections-linq-async/2.03-concurrent-collections/">2.3</a>.</li>
+<li><strong>It is per-instance.</strong> Scale to three servers and you have three inconsistent caches.</li>
+</ol>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// FIXED — bounded, expiring, thread-safe</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">PriceCache</span><span class="p">(</span><span class="n">IMemoryCache</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">IPriceApi</span><span class="w"> </span><span class="n">api</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">sku</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">cache</span><span class="p">.</span><span class="n">GetOrCreateAsync</span><span class="p">(</span><span class="n">sku</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">=&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="n">entry</span><span class="p">.</span><span class="n">AbsoluteExpirationRelativeToNow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">            </span><span class="n">entry</span><span class="p">.</span><span class="n">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                       </span><span class="c1">// counts against the cache size limit</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="n">LookUpAsync</span><span class="p">(</span><span class="n">sku</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">}</span>
 </span></code></pre></div>
+<p>Registered with a hard ceiling so it can never grow without limit:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddMemoryCache</span><span class="p">(</span><span class="n">options</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">SizeLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="n">_000</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>That <code>SizeLimit</code> is the line that turns a potential leak into a bounded cache.</strong> Without it,
+<code>IMemoryCache</code> will also grow indefinitely — it only evicts on memory pressure, which may
+arrive too late.</p>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What happens when you compile and run a C# program?</strong></p>
-<p>Two stages. At build time the C# compiler turns your source into IL, an intermediate language
-not tied to any CPU, and that is what goes into the <code>.dll</code>. At run time the CLR compiles that
-IL into machine code for the actual processor, one method at a time as each is first called —
-JIT compilation. The benefit is that a single build runs on any platform and the JIT can
-optimise for the specific CPU. The cost is that the first call to each method pays for its
-compilation, which is why startup is slower than a natively compiled language.</p>
-<p><strong>Q: What is the difference between CTS and CLS?</strong></p>
-<p>CTS, the Common Type System, is the shared model of what a type is across all .NET languages —
-value types versus reference types, everything deriving from <code>object</code>, how interfaces work.
-CLS, the Common Language Specification, is a subset of that: the features every .NET language
-is guaranteed to support. The subset exists because languages differ — C# is case-sensitive
-and permits two methods differing only by case, but VB.NET is case-insensitive and could never
-call them. So CTS is the full rulebook and CLS is the part everyone agreed to follow. It only
-matters if you publish a library for other .NET languages.</p>
-<p><strong>Q: What is tiered compilation?</strong></p>
-<p>The JIT compiles a method twice with different priorities. The first time it runs, the method
-is compiled quickly with minimal optimisation, keeping startup fast. If the runtime then sees
-that method called frequently, it recompiles it in the background with full optimisation and
-swaps it in. So the app starts quickly and gets faster as the hot paths emerge. It matters
-practically when benchmarking, because measuring the first calls measures unoptimised code
-plus the compilation cost rather than real steady-state performance.</p>
-<p><strong>Q: What is Native AOT, and what does it cost?</strong></p>
-<p>Native AOT compiles all the way to a native executable at build time, with no IL and no JIT.
-Startup drops to a few milliseconds, memory falls, and you get a self-contained binary needing
-no installed runtime — very attractive for serverless and short-lived containers. The
-trade-off is that dynamic behaviour breaks: reflection over types the compiler could not see,
-<code>Expression.Compile</code>, and <code>Reflection.Emit</code>. That rules out some serializers and ORMs. You
-also build separately per platform. It is a large part of why .NET has moved towards source
-generators.</p>
+<p><strong>Q: Can you have a memory leak in .NET?</strong></p>
+<p>Yes, though not in the C sense of forgetting to free memory. The garbage collector frees
+anything unreachable, but it never asks whether an object is still <em>needed</em> — only whether it
+can still be <em>reached</em>. So if you hold a reference to something you have finished with, the GC
+is obliged to keep it. A static collection that only grows, an event subscription never
+removed, or a lambda stored somewhere long-lived that captured a large object — all of those
+keep memory alive indefinitely. There is also the separate case of unmanaged resources like
+file handles, which the GC cannot release at all without <code>Dispose</code>.</p>
+<p><strong>Q: What are the most common causes?</strong></p>
+<p>Four, in roughly that order of frequency. Static collections that only ever get added to.
+Event handlers where the subscriber never unsubscribes, so a long-lived publisher pins a
+short-lived object. Undisposed resources holding operating system handles. And closures
+capturing large objects that are then stored somewhere long-lived — worth remembering that
+capturing any field implicitly captures the whole containing object. In ASP.NET Core
+specifically, injecting a scoped service like <code>DbContext</code> into a singleton is a very common
+one, because the singleton pins that context for the life of the app and its change tracker
+grows forever.</p>
+<p><strong>Q: How would you find a memory leak in production?</strong></p>
+<p>First confirm it is a leak rather than normal load, by watching whether the heap keeps growing
+<em>after</em> full Gen 2 collections — <code>dotnet-counters</code> shows heap size and Gen 2 count live. Then
+capture two <code>dotnet-gcdump</code> snapshots several minutes apart, because the difference tells you
+what is growing rather than just what is big. Then find the retention path: open the dump, sort
+by object count, identify what grew, and use <code>gcroot</code> to ask what is keeping it alive. That
+chain from root to object points at the bug. The mistake is jumping straight to a dump without
+first confirming there is actually a leak.</p>
+<p><strong>Q: What is a <code>WeakReference</code> and when would you use it?</strong></p>
+<p>A reference that does not prevent the garbage collector from collecting its target — you ask
+for the object with <code>TryGetTarget</code> and it may tell you it has gone. It suits caches where
+losing an entry is acceptable and rebuilding is cheaper than the memory cost of guaranteed
+retention. It is not a general fix for leaks though. If your code genuinely needs the object,
+making the reference weak just relocates the bug. For caching in ASP.NET Core I would reach
+for <code>IMemoryCache</code> with an explicit size limit first, because it gives you real eviction
+policies rather than depending on GC timing.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>"C# compiles to machine code."</strong> It compiles to IL. Machine code comes later, from the JIT.</li>
-<li><strong>The <code>.dll</code> contains IL, not machine code.</strong> That is why decompilers work and obfuscators
-  exist.</li>
-<li><strong>Confusing CTS and CLS.</strong> CTS is the whole type system; CLS is the smaller safe subset.</li>
-<li><strong>Benchmarking without warm-up measures Tier 0 code</strong>, not real performance.</li>
-<li><strong>Native AOT silently breaks reflection.</strong> It compiles fine, then fails at runtime with a
-  missing type — often not until production.</li>
-<li><strong>ReadyToRun does not remove the JIT</strong>, it just gives it less to do. AOT removes it entirely.</li>
-<li><strong>AOT builds are platform-specific</strong>, unlike normal .NET output.</li>
+<li><strong>"The GC means no leaks."</strong> The GC frees unreachable objects. Reachable-but-unwanted is the
+  entire problem.</li>
+<li><strong><code>static</code> is a GC root.</strong> Anything a static field points to lives for the whole process.</li>
+<li><strong>Capturing one field captures the whole object.</strong> A lambda using <code>this.Name</code> retains <code>this</code>.</li>
+<li><strong>Event subscribers are held by the publisher.</strong> Long-lived publisher plus short-lived
+  subscriber equals a leak.</li>
+<li><strong><code>IMemoryCache</code> without a <code>SizeLimit</code> can still grow indefinitely.</strong> It evicts on memory
+  pressure, which may arrive too late.</li>
+<li><strong>Scoped services in singletons</strong> pin a request-lifetime object forever. See
+  <a href="../06-dependency-injection/6.04-captive-dependency.md">6.4</a>.</li>
+<li><strong>A <code>DbContext</code> held open accumulates every entity it has tracked.</strong> Use <code>AsNoTracking</code> for
+  reads and short-lived contexts everywhere.</li>
+<li><strong><code>GC.Collect()</code> will not fix a leak.</strong> The object is still reachable, which is exactly the
+  problem.</li>
+<li><strong>One dump is much less useful than two.</strong> You need the delta to see what is growing.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../3.01-dotnet-history/">3.1 .NET history</a> — which runtime you are on</li>
-<li><a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a> — what "managed" means</li>
-<li><a href="../3.04-garbage-collection/">3.4 Garbage collection</a> — the CLR's other main job</li>
-<li><a href="../3.06-assemblies-nuget/">3.6 Assemblies</a> — what is inside a <code>.dll</code></li>
-<li><a href="../../01-csharp-fundamentals/1.23-attributes-reflection/">1.23 Reflection</a> — why AOT restricts it</li>
-<li><a href="../21-advanced-features/21.10-native-aot.md">21.10 Native AOT</a> — using it in ASP.NET Core</li>
-<li><a href="../19-caching-performance/19.14-benchmarking-load-testing.md">19.14 Benchmarking</a> — why warm-up matters</li>
+<li><a href="../3.04-garbage-collection/">3.4 Garbage collection</a> — reachability, the rule this all rests on</li>
+<li><a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a> — the other kind of leak</li>
+<li><a href="../../01-csharp-fundamentals/1.05-static/">1.5 static</a> — static state as a root</li>
+<li><a href="../../01-csharp-fundamentals/1.12-events/">1.12 Events</a> — the subscription leak in detail</li>
+<li><a href="../../01-csharp-fundamentals/1.13-lambdas-closures/">1.13 Closures</a> — what a lambda retains</li>
+<li><a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21 IDisposable</a> — releasing handles</li>
+<li><a href="../06-dependency-injection/6.04-captive-dependency.md">6.4 Captive dependencies</a> — the DI version</li>
+<li><a href="../19-caching-performance/19.02-memory-cache.md">19.2 IMemoryCache</a> — bounded caching</li>
+<li><a href="../18-logging-monitoring/18.09-production-debugging.md">18.9 Production debugging</a> — the tooling</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/dotnet/standard/components">Microsoft Learn — .NET architectural components</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/standard/managed-execution-process">Microsoft Learn — Managed execution process</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/core/runtime-config/compilation">Microsoft Learn — Tiered compilation</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/core/diagnostics/debug-memory-leak">Microsoft Learn — Debug a memory leak</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/core/diagnostics/dotnet-gcdump">Microsoft Learn — dotnet-gcdump</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/api/system.weakreference-1">Microsoft Learn — WeakReference</a></li>
 </ul>
 
 
@@ -3333,7 +3380,7 @@ generators.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../3.01-dotnet-history/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.1 .NET history">
+          <a href="../3.04-garbage-collection/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.4 Garbage collection">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3343,20 +3390,20 @@ generators.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                3.1 .NET history
+                3.4 Garbage collection
               </div>
             </div>
           </a>
         
         
           
-          <a href="../3.03-managed-vs-unmanaged/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.3 Managed vs unmanaged">
+          <a href="../3.06-assemblies-nuget/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.6 Assemblies and NuGet">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                3.3 Managed vs unmanaged
+                3.6 Assemblies and NuGet
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -2194,6 +2194,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2212,7 +2226,7 @@
   <span class="md-ellipsis">
     
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
     
@@ -2228,7 +2242,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
           </label>
@@ -2297,6 +2311,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.03-managed-vs-unmanaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Managed vs unmanaged
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../03-dotnet-runtime/3.04-garbage-collection/" class="md-nav__link">
         
   
@@ -2305,6 +2347,174 @@
     
   
     3.4 Garbage collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.05-memory-leaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.5 Memory leaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.06-assemblies-nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Assemblies and NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.07-csproj-and-tfm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 csproj and target frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.08-dotnet-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.8 The .NET CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.09-dotnet-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.9 .NET Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-dotnet-runtime/3.10-release-cadence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.10 Release cadence (LTS vs STS)
   
 
     
@@ -2876,7 +3086,7 @@ whenever the local function does not need anything from outside.</p>
   thread-safe type.</li>
 <li><strong>Anything a static field points to can never be garbage collected.</strong> A static <code>List</code>
   that only ever gets added to is a guaranteed leak. See
-  <a href="../03-dotnet-runtime/3.05-memory-leaks.md">3.5</a>.</li>
+  <a href="../../03-dotnet-runtime/3.05-memory-leaks/">3.5</a>.</li>
 <li><strong>Static makes code hard to test.</strong> You cannot swap a static call for a fake one. This
   is exactly why <code>DateTime.Now</code> scattered through a codebase makes time-based logic
   untestable — and why <code>TimeProvider</code> was added. See
@@ -2893,7 +3103,7 @@ whenever the local function does not need anything from outside.</p>
 <ul>
 <li><a href="../1.06-const-readonly-init-required/">1.6 <code>const</code> and <code>readonly</code></a> — <code>static readonly</code> fields</li>
 <li><a href="../1.13-lambdas-closures/">1.13 Lambdas and closures</a> — what <code>static</code> local functions prevent</li>
-<li><a href="../03-dotnet-runtime/3.05-memory-leaks.md">3.5 Memory leaks</a> — static is the usual culprit</li>
+<li><a href="../../03-dotnet-runtime/3.05-memory-leaks/">3.5 Memory leaks</a> — static is the usual culprit</li>
 <li><a href="../../06-dependency-injection/6.03-service-lifetimes/">6.3 Service lifetimes</a> — the better alternative</li>
 <li><a href="../22-architecture-patterns/22.03-creational-patterns.md">22.3 Singleton pattern</a> — static vs singleton</li>
 </ul>

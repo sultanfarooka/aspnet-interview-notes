@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.03-concurrent-collections/">
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.09-dotnet-standard/">
       
       
-        <link rel="prev" href="../2.02-collections-and-big-o/">
+        <link rel="prev" href="../3.08-dotnet-cli/">
       
       
-        <link rel="next" href="../2.04-yield-and-iterators/">
+        <link rel="next" href="../3.10-release-cadence/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>2.3 Concurrent collections - ASP.NET Core Interview Notes</title>
+        <title>3.9 .NET Standard - ASP.NET Core Interview Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#23-concurrent-collections" class="md-skip">
+        <a href="#39-net-standard" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3 Concurrent collections
+              3.9 .NET Standard
             
           </span>
         </div>
@@ -1370,8 +1370,6 @@
       
   
   
-    
-  
   
   
     
@@ -1394,6 +1392,616 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Collections, LINQ & Async
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Collections, LINQ & Async
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.01-collection-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Collection interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.02-collections-and-big-o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Collections and Big-O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.03-concurrent-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Concurrent collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.04-yield-and-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 yield and iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.05-linq-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 LINQ basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.06-deferred-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.6 Deferred execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.07-expression-trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.7 Expression trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.08-linq-advanced-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.8 Advanced LINQ operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.09-first-single-default/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.9 First vs Single
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.10-threads-vs-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.10 Threads vs Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.11-async-await-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.11 async/await internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.12-task-valuetask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.12 Task vs ValueTask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.13-async-deadlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.13 Async deadlocks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.14-cancellation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.14 CancellationToken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.15-async-void/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.15 async void
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.16-async-exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.16 Async exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.17-async-streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.17 IAsyncEnumerable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.18-thread-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.18 Thread safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-collections-linq-async/2.19-parallel-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.19 Parallel programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
       
         
       
@@ -1423,17 +2031,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    2. Collections, LINQ & Async
+    3. .NET Runtime & Platform
   
 
     
@@ -1444,12 +2052,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    2. Collections, LINQ & Async
+    3. .NET Runtime & Platform
   
 
           </label>
@@ -1462,14 +2070,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.01-collection-interfaces/" class="md-nav__link">
+      <a href="../3.01-dotnet-history/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.1 Collection interfaces
+    3.1 .NET history
   
 
     
@@ -1490,14 +2098,182 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.02-collections-and-big-o/" class="md-nav__link">
+      <a href="../3.02-clr-and-compilation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.2 Collections and Big-O
+    3.2 CLR and compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.03-managed-vs-unmanaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Managed vs unmanaged
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.04-garbage-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 Garbage collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.05-memory-leaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.5 Memory leaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.06-assemblies-nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Assemblies and NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.07-csproj-and-tfm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 csproj and target frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.08-dotnet-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.8 The .NET CLI
   
 
     
@@ -1534,7 +2310,7 @@
   <span class="md-ellipsis">
     
   
-    2.3 Concurrent collections
+    3.9 .NET Standard
   
 
     
@@ -1552,7 +2328,7 @@
   <span class="md-ellipsis">
     
   
-    2.3 Concurrent collections
+    3.9 .NET Standard
   
 
     
@@ -1589,6 +2365,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1596,6 +2383,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-it-was-invented-to-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem it was invented to solve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-is-mostly-obsolete-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is mostly obsolete now
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1612,10 +2427,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-types" class="md-nav__link">
+  <a href="#the-simple-version-which-version-to-pick" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The types
+        The simple version — which version to pick
       
     </span>
   </a>
@@ -1623,10 +2438,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#concurrentdictionary-the-important-one" class="md-nav__link">
+  <a href="#how-it-actually-works-contracts-and-type-forwarding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConcurrentDictionary — the important one
+        How it actually works — contracts and type forwarding
       
     </span>
   </a>
@@ -1634,10 +2449,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-factory-can-run-more-than-once" class="md-nav__link">
+  <a href="#the-compiles-but-throws-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ The factory can run more than once
+        ⚠️ The compiles-but-throws problem
       
     </span>
   </a>
@@ -1645,10 +2460,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockingcollectiont-producer-and-consumer" class="md-nav__link">
+  <a href="#the-deeper-detail-multi-targeting-is-usually-better" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BlockingCollection&lt;T&gt; — producer and consumer
+        The deeper detail — multi-targeting is usually better
       
     </span>
   </a>
@@ -1731,783 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.04-yield-and-iterators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.4 yield and iterators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.05-linq-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.5 LINQ basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.06-deferred-execution/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.6 Deferred execution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.07-expression-trees/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.7 Expression trees
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.08-linq-advanced-operators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.8 Advanced LINQ operators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.09-first-single-default/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.9 First vs Single
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.10-threads-vs-tasks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.10 Threads vs Tasks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.11-async-await-internals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.11 async/await internals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.12-task-valuetask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.12 Task vs ValueTask
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.13-async-deadlocks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.13 Async deadlocks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.14-cancellation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.14 CancellationToken
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.15-async-void/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.15 async void
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.16-async-exceptions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.16 Async exceptions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.17-async-streams/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.17 IAsyncEnumerable
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.18-thread-safety/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.18 Thread safety
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.19-parallel-programming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.19 Parallel programming
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3. .NET Runtime & Platform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    3. .NET Runtime & Platform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.01-dotnet-history/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.1 .NET history
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.02-clr-and-compilation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.2 CLR and compilation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.03-managed-vs-unmanaged/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.3 Managed vs unmanaged
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.04-garbage-collection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.4 Garbage collection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.05-memory-leaks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.5 Memory leaks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.06-assemblies-nuget/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.6 Assemblies and NuGet
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.07-csproj-and-tfm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.7 csproj and target frameworks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.08-dotnet-cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.8 The .NET CLI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.09-dotnet-standard/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.9 .NET Standard
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.10-release-cadence/" class="md-nav__link">
+      <a href="../3.10-release-cadence/" class="md-nav__link">
         
   
   
@@ -2758,6 +2797,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2765,6 +2815,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-it-was-invented-to-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem it was invented to solve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-is-mostly-obsolete-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is mostly obsolete now
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2781,10 +2859,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-types" class="md-nav__link">
+  <a href="#the-simple-version-which-version-to-pick" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The types
+        The simple version — which version to pick
       
     </span>
   </a>
@@ -2792,10 +2870,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#concurrentdictionary-the-important-one" class="md-nav__link">
+  <a href="#how-it-actually-works-contracts-and-type-forwarding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConcurrentDictionary — the important one
+        How it actually works — contracts and type forwarding
       
     </span>
   </a>
@@ -2803,10 +2881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-factory-can-run-more-than-once" class="md-nav__link">
+  <a href="#the-compiles-but-throws-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ The factory can run more than once
+        ⚠️ The compiles-but-throws problem
       
     </span>
   </a>
@@ -2814,10 +2892,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockingcollectiont-producer-and-consumer" class="md-nav__link">
+  <a href="#the-deeper-detail-multi-targeting-is-usually-better" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BlockingCollection&lt;T&gt; — producer and consumer
+        The deeper detail — multi-targeting is usually better
       
     </span>
   </a>
@@ -2904,247 +2982,281 @@
   
 
 
-<h1 id="23-concurrent-collections">2.3 — Concurrent Collections<a class="headerlink" href="#23-concurrent-collections" title="Permanent link">&para;</a></h1>
+<h1 id="39-net-standard">3.9 — .NET Standard<a class="headerlink" href="#39-net-standard" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#2-collections-linq-and-async">2. Collections, LINQ and Async</a>
-<strong>Prev:</strong> <a href="../2.02-collections-and-big-o/">2.2 Collections and Big-O</a> · <strong>Next:</strong> <a href="../2.04-yield-and-iterators/">2.4 yield and iterators</a></p>
+<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
+<strong>Prev:</strong> <a href="../3.08-dotnet-cli/">3.8 The .NET CLI</a> · <strong>Next:</strong> <a href="../3.10-release-cadence/">3.10 Release cadence</a></p>
 </blockquote>
-<p><strong>Markers:</strong> ⭐ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
+<p><strong>Markers:</strong> — · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p><strong>.NET Standard</strong> is a list of APIs that several different .NET platforms all promised to
+provide. A library targeting it could run on .NET Framework, .NET Core, Xamarin and Mono
+without being rebuilt for each.</p>
 <ul>
-<li>The normal collections (<code>List</code>, <code>Dictionary</code>) are <strong>not safe</strong> when several threads write to them at once. They can corrupt themselves or hang forever.</li>
-<li><code>ConcurrentDictionary&lt;K,V&gt;</code> is the one you will actually use. In ASP.NET Core, every request runs on its own thread, so any shared collection needs this.</li>
-<li><strong>Thread-safe on each operation is not the same as thread-safe overall.</strong> Two safe calls in a row can still race.</li>
+<li>It is <strong>not a runtime</strong>. Nothing "runs on .NET Standard" — it is a contract, not a platform.</li>
+<li>It solved a real problem in the split years, and <strong>the unification in .NET 5 made it mostly obsolete</strong>.</li>
+<li>Today you only target it if you must support <strong>.NET Framework</strong> consumers.</li>
 </ul>
 <hr />
-<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<p>In a web application, many requests are handled <strong>at the same time</strong>, on different threads.
-If they all touch the same <code>Dictionary</code>, they are all reaching into the same object at once.</p>
-<p>Why is that dangerous? Because operations that look like one step are really several. Adding
-to a <code>Dictionary</code> might mean: work out the slot, check if it is full, resize the internal
-array, copy everything across, write the value. If a second thread interrupts halfway
-through, it sees a half-rebuilt structure.</p>
-<p>A picture: <strong>two people editing the same paper address book at the same time.</strong> One is
-midway through copying every entry onto a bigger sheet because the old one filled up. The
-other writes a new entry onto the old sheet. That entry vanishes. Or worse, the book ends
-up with a page pointing at itself and anyone reading it walks in circles forever.</p>
-<p>That last one is real. A corrupted <code>Dictionary</code> in .NET Framework could put a thread into an
-<strong>infinite loop</strong>, pinning a CPU core at 100% until the process was restarted.</p>
-<p>The <code>System.Collections.Concurrent</code> namespace has replacements that handle this properly.</p>
-<hr />
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="the-types">The types<a class="headerlink" href="#the-types" title="Permanent link">&para;</a></h3>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concurrent type</th>
-<th>Replaces</th>
-<th>Use it for</th>
+<th>Term</th>
+<th>What it is</th>
+<th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>ConcurrentDictionary&lt;K,V&gt;</code></td>
-<td><code>Dictionary&lt;K,V&gt;</code></td>
-<td>Shared lookups. <strong>By far the most used.</strong></td>
+<td><strong>.NET Standard</strong></td>
+<td><em>a specification</em></td>
+<td>A list of APIs that multiple .NET platforms all agree to implement. Not a runtime.</td>
 </tr>
 <tr>
-<td><code>ConcurrentQueue&lt;T&gt;</code></td>
-<td><code>Queue&lt;T&gt;</code></td>
-<td>Work items processed oldest-first</td>
+<td><strong><code>netstandard2.0</code></strong></td>
+<td><em>a TFM</em></td>
+<td>The most useful version. The last one .NET Framework supports.</td>
 </tr>
 <tr>
-<td><code>ConcurrentStack&lt;T&gt;</code></td>
-<td><code>Stack&lt;T&gt;</code></td>
-<td>Work items processed newest-first</td>
+<td><strong><code>netstandard2.1</code></strong></td>
+<td><em>a TFM</em></td>
+<td>A later version .NET Framework <strong>never</strong> supported. Usually the wrong choice.</td>
 </tr>
 <tr>
-<td><code>ConcurrentBag&lt;T&gt;</code></td>
-<td><code>List&lt;T&gt;</code> (unordered)</td>
-<td>Many threads adding, order irrelevant</td>
+<td><strong>Implementation</strong></td>
+<td><em>an actual platform</em></td>
+<td>.NET Framework, .NET Core, Mono, Xamarin — the things that provide the APIs.</td>
 </tr>
 <tr>
-<td><code>BlockingCollection&lt;T&gt;</code></td>
-<td>—</td>
-<td>Producer/consumer with a size limit</td>
+<td><strong>Contract assembly</strong></td>
+<td><em>a reference-only <code>.dll</code></em></td>
+<td>Has the API shapes but no working code. What you compile against when targeting Standard.</td>
+</tr>
+<tr>
+<td><strong><code>PlatformNotSupportedException</code></strong></td>
+<td>an <strong>exception type</strong></td>
+<td>Thrown when an API exists in the contract but is not implemented on the platform you are running on.</td>
+</tr>
+<tr>
+<td><strong>Type forwarding</strong></td>
+<td><em>a linking mechanism</em></td>
+<td>Lets a type declared in the contract resolve to the real one in the running platform.</td>
 </tr>
 </tbody>
 </table>
-<p>There is deliberately <strong>no <code>ConcurrentList&lt;T&gt;</code></strong>. A list is about position, and positions
-stop being meaningful when other threads are inserting and removing underneath you. If you
-need a shared ordered list, either lock around it or use <code>ImmutableList&lt;T&gt;</code>.</p>
-<h3 id="concurrentdictionary-the-important-one"><code>ConcurrentDictionary</code> — the important one<a class="headerlink" href="#concurrentdictionary-the-important-one" title="Permanent link">&para;</a></h3>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">_cache</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">                       </span><span class="c1">// safe</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">_cache</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">found</span><span class="p">);</span><span class="w">   </span><span class="c1">// safe</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">_cache</span><span class="p">.</span><span class="n">TryRemove</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">removed</span><span class="p">);</span><span class="w">   </span><span class="c1">// safe</span>
-</span></code></pre></div>
-<p>The methods that make it genuinely useful are the combined ones:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// GetOrAdd — if the key exists return it, otherwise create, store and return it.</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// The whole check-and-add is ONE atomic operation.</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">LoadUserFromDatabase</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// AddOrUpdate — insert if new, otherwise compute a new value from the old one</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">_cache</span><span class="p">.</span><span class="n">AddOrUpdate</span><span class="p">(</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">addValue</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                        </span><span class="c1">// if not present, store 1</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">updateValueFactory</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">old</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// if present, add 1 to it</span>
-</span></code></pre></div>
-<p>Without <code>GetOrAdd</code>, you would write this — and it is broken:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// BROKEN even with a ConcurrentDictionary</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">_cache</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">         </span><span class="c1">// thread A: not there</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span><span class="w">                                    </span><span class="c1">// thread B: also not there</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">_cache</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Load</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">           </span><span class="c1">// BOTH load. Both write. Wasted work,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span><span class="w">                                    </span><span class="c1">// and possibly two different objects.</span>
-</span></code></pre></div>
-<p>Each individual call is thread-safe. The <strong>sequence</strong> is not. This is the single most
-important idea in this note.</p>
-<h3 id="the-factory-can-run-more-than-once">⚠️ The factory can run more than once<a class="headerlink" href="#the-factory-can-run-more-than-once" title="Permanent link">&para;</a></h3>
-<p><code>GetOrAdd</code> is atomic in what it <em>stores</em> — only one value ever wins. But the factory
-function you pass in <strong>is not locked</strong>, and can be executed by several threads at the same
-time:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Loading...&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// this CAN print twice for the same key</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">LoadFromDatabase</span><span class="p">(</span><span class="n">key</span><span class="p">);</span><span class="w">       </span><span class="c1">// only one result is kept</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">});</span>
-</span></code></pre></div>
-<p>That is a deliberate design choice — holding a lock while running arbitrary user code is how
-you get deadlocks. But it means:</p>
+<hr />
+<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem-it-was-invented-to-solve">The problem it was invented to solve<a class="headerlink" href="#the-problem-it-was-invented-to-solve" title="Permanent link">&para;</a></h3>
+<p>Rewind to around 2016. There were several separate .NET platforms, and they were genuinely
+different products:</p>
 <ul>
-<li>If the factory is <strong>expensive</strong>, you may pay for it several times.</li>
-<li>If the factory has <strong>side effects</strong> (writes a file, sends an email), those happen more
-  than once.</li>
+<li><strong>.NET Framework</strong> — Windows</li>
+<li><strong>.NET Core</strong> — cross-platform servers</li>
+<li><strong>Xamarin</strong> — iOS and Android</li>
+<li><strong>Mono</strong> — Linux and Unity</li>
+<li><strong>UWP</strong> — Windows Store apps</li>
 </ul>
-<p>The fix when it matters is to store a <code>Lazy&lt;T&gt;</code>, because <code>Lazy</code> guarantees its factory runs
-only once:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_cache</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">LoadFromDatabase</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Value</span><span class="p">;</span><span class="w">      </span><span class="c1">// only the winning Lazy is ever evaluated</span>
+<p>If you wrote a library, which one did you build for? Building for all of them meant five
+builds, five test runs and five sets of quirks.</p>
+<p><strong>.NET Standard</strong> was the answer: an agreed list of APIs that all of them promised to provide.
+Target the list rather than any one platform, and your single library works on all of them.</p>
+<p>A picture: <strong>a plug standard rather than a specific socket.</strong> You do not build one kettle for
+UK sockets, one for EU, one for US. You agree a shape, everyone supports it, and one kettle
+works everywhere.</p>
+<h3 id="why-it-is-mostly-obsolete-now">Why it is mostly obsolete now<a class="headerlink" href="#why-it-is-mostly-obsolete-now" title="Permanent link">&para;</a></h3>
+<p>The reason is simple: <strong>the platforms merged</strong>.</p>
+<p>.NET 5 unified .NET Core, Mono and Xamarin into one product
+(<a href="../3.01-dotnet-history/">3.1</a>). When there is only one platform, there is nothing to
+standardise between.</p>
+<p>Microsoft's own guidance now is:</p>
+<blockquote>
+<p><strong><code>net10.0</code> for anything new. <code>netstandard2.0</code> only if you must support .NET Framework.</strong></p>
+</blockquote>
+<p>.NET Standard is frozen at 2.1 and will never gain a new version. It exists purely for
+backwards compatibility.</p>
+<hr />
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="the-simple-version-which-version-to-pick">The simple version — which version to pick<a class="headerlink" href="#the-simple-version-which-version-to-pick" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Supported by</th>
+<th>Use it?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>netstandard2.0</code></td>
+<td>.NET Framework 4.6.1+, .NET Core 2.0+, Mono, Xamarin</td>
+<td>✅ <strong>The only one worth targeting</strong>, if you need Framework consumers</td>
+</tr>
+<tr>
+<td><code>netstandard2.1</code></td>
+<td>.NET Core 3.0+, Mono, Xamarin — <strong>not .NET Framework</strong></td>
+<td>❌ Almost never. See below.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>netstandard2.1</code> is the trap.</strong> It looks like the newer, better option. But .NET Framework
+never supported it, which removes the entire reason to target Standard in the first place. If
+your consumers are all on modern .NET, target <code>net10.0</code> directly and get the full API surface.
+So <code>netstandard2.1</code> occupies a niche that barely exists.</p>
+<p><strong>The decision comes down to one question:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Do I need .NET Framework consumers?
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Yes → netstandard2.0
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└── No  → net10.0 (or whichever current version)
 </span></code></pre></div>
-<h3 id="blockingcollectiont-producer-and-consumer"><code>BlockingCollection&lt;T&gt;</code> — producer and consumer<a class="headerlink" href="#blockingcollectiont-producer-and-consumer" title="Permanent link">&para;</a></h3>
-<p>Useful when one part of your code produces work and another consumes it, and you want the
-producer to slow down if the consumer falls behind:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockingCollection</span><span class="o">&lt;</span><span class="n">Job</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boundedCapacity</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Producer — blocks if there are already 100 waiting</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">GetJobs</span><span class="p">())</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">job</span><span class="p">);</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="n">CompleteAdding</span><span class="p">();</span><span class="w">      </span><span class="c1">// signals &quot;no more coming&quot;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">});</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">// Consumer — blocks until an item arrives, exits when adding is complete</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">{</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="n">GetConsumingEnumerable</span><span class="p">())</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="n">Process</span><span class="p">(</span><span class="n">job</span><span class="p">);</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">});</span>
+<h3 id="how-it-actually-works-contracts-and-type-forwarding">How it actually works — contracts and type forwarding<a class="headerlink" href="#how-it-actually-works-contracts-and-type-forwarding" title="Permanent link">&para;</a></h3>
+<p>When you compile against <code>netstandard2.0</code>, you are not compiling against real code. You are
+compiling against a <strong>contract assembly</strong> — a <code>.dll</code> containing the API <em>shapes</em> with no
+implementations.</p>
+<p>At runtime, on whichever platform you land, <strong>type forwarding</strong> redirects each type to the
+platform's real implementation. So <code>System.String</code> in the contract resolves to .NET
+Framework's <code>String</code> on Framework, and .NET 10's <code>String</code> on .NET 10.</p>
+<p>That is why one build genuinely works everywhere: the contract is stable and each platform
+supplies the real thing.</p>
+<h3 id="the-compiles-but-throws-problem">⚠️ The compiles-but-throws problem<a class="headerlink" href="#the-compiles-but-throws-problem" title="Permanent link">&para;</a></h3>
+<p>Because the contract lists APIs the <em>majority</em> of platforms support, some entries are not
+actually implemented everywhere. Those compile fine and throw at runtime:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Compiles against netstandard2.0.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Throws PlatformNotSupportedException on some platforms.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RSACryptoServiceProvider</span><span class="p">();</span>
 </span></code></pre></div>
-<p>The capacity limit is the point. Without it, a fast producer builds an unbounded queue in
-memory until the process runs out.</p>
-<p><strong>In modern ASP.NET Core, prefer <code>System.Threading.Channels</code></strong> for this. It does the same
-job with proper async support, so consumers <code>await</code> instead of blocking a thread. See
-<a href="../21-advanced-features/21.01-background-services.md">21.1</a>.</p>
+<p>This is the practical weakness of the approach. The contract promises more than every
+implementation delivers, and you only discover the gap on the platform where it fails.</p>
+<p>The mitigation is straightforward: <strong>test on every platform you claim to support.</strong> A library
+that says it targets <code>netstandard2.0</code> and has only ever been run on .NET 10 has not really been
+verified.</p>
+<h3 id="the-deeper-detail-multi-targeting-is-usually-better">The deeper detail — multi-targeting is usually better<a class="headerlink" href="#the-deeper-detail-multi-targeting-is-usually-better" title="Permanent link">&para;</a></h3>
+<p>If you need both Framework consumers and modern APIs, multi-targeting beats .NET Standard:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;TargetFrameworks&gt;</span>net10.0;netstandard2.0<span class="nt">&lt;/TargetFrameworks&gt;</span>
+</span></code></pre></div>
+<p>This builds twice. The <code>net10.0</code> build gets the <strong>full modern API surface</strong> — <code>Span&lt;T&gt;</code>,
+<code>IAsyncEnumerable&lt;T&gt;</code>, everything. The <code>netstandard2.0</code> build gets the smaller shared set for
+Framework consumers. NuGet gives each consumer the right one automatically.</p>
+<p>Compare with targeting <code>netstandard2.0</code> alone, where <strong>everybody</strong> — including your modern .NET
+consumers — is limited to the 2015-era API surface.</p>
+<p>Where the two builds differ, use conditional compilation
+(<a href="../3.07-csproj-and-tfm/">3.7</a>):</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Contains</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">#if NETSTANDARD2_0</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="k">value</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">              </span><span class="c1">// no char overload back then</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cp">#else</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="k">value</span><span class="p">);</span><span class="w">                   </span><span class="c1">// modern, faster</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cp">#endif</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>netstandard2.0</code> also misses a lot that you can partly recover with packages:</p>
+<table>
+<thead>
+<tr>
+<th>Missing from <code>netstandard2.0</code></th>
+<th>Polyfill package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Span&lt;T&gt;</code>, <code>Memory&lt;T&gt;</code></td>
+<td><code>System.Memory</code></td>
+</tr>
+<tr>
+<td><code>IAsyncEnumerable&lt;T&gt;</code></td>
+<td><code>Microsoft.Bcl.AsyncInterfaces</code></td>
+</tr>
+<tr>
+<td><code>System.Text.Json</code></td>
+<td><code>System.Text.Json</code></td>
+</tr>
+<tr>
+<td>Nullable annotations</td>
+<td><code>Nullable</code> (build-time only)</td>
+</tr>
+</tbody>
+</table>
+<p>Those close much of the gap, at the cost of extra dependencies your consumers inherit.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>The realistic ASP.NET Core case — a shared in-memory cache in a singleton service:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">ExchangeRateService</span><span class="p">(</span><span class="n">IHttpClientFactory</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c1">// Singleton service, so this dictionary is shared by EVERY request</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="c1">// happening at the same time. It MUST be concurrent.</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ConcurrentDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">_rates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetRateAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currency</span><span class="p">)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_rates</span><span class="p">.</span><span class="n">GetOrAdd</span><span class="p">(</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="n">currency</span><span class="p">,</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="n">key</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">FetchRateAsync</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">).</span><span class="n">Value</span><span class="p">;</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FetchRateAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currency</span><span class="p">)</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">CreateClient</span><span class="p">(</span><span class="s">&quot;rates&quot;</span><span class="p">);</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">GetFromJsonAsync</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="p">(</span><span class="s">$&quot;/rate/{currency}&quot;</span><span class="p">);</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="p">}</span>
+<p>A library supporting both worlds properly:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;TargetFrameworks&gt;</span>net10.0;netstandard2.0<span class="nt">&lt;/TargetFrameworks&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;LangVersion&gt;</span>latest<span class="nt">&lt;/LangVersion&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="cm">&lt;!-- Only the old target needs these polyfills --&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&lt;ItemGroup</span><span class="w"> </span><span class="na">Condition=</span><span class="s">&quot;&#39;$(TargetFramework)&#39; == &#39;netstandard2.0&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Text.Json&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Microsoft.Bcl.AsyncInterfaces&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Nullable&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;1.3.1&quot;</span><span class="w"> </span><span class="na">PrivateAssets=</span><span class="s">&quot;all&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="nt">&lt;/Project&gt;</span>
 </span></code></pre></div>
-<p>Why <code>Lazy&lt;Task&lt;decimal&gt;&gt;</code> and not just <code>Task&lt;decimal&gt;</code>? Because without <code>Lazy</code>, fifty
-simultaneous requests for the same currency could each start their own HTTP call before any
-of them finished. With <code>Lazy</code>, only one call is ever made and the other forty-nine <code>await</code>
-the same task. That pattern is called <strong>stampede protection</strong> —
-<a href="../19-caching-performance/19.04-hybridcache.md">19.4</a> covers it properly.</p>
-<p><strong>But in a real ASP.NET Core app, reach for <code>IMemoryCache</code> first.</strong> It gives you expiry,
-size limits and eviction, which a raw <code>ConcurrentDictionary</code> does not — a dictionary that
-only ever grows is a memory leak. See <a href="../19-caching-performance/19.02-memory-cache.md">19.2</a>.</p>
+<p>Note <code>LangVersion=latest</code>. <strong>The C# language version is independent of the target framework</strong>,
+so you can use modern syntax like records and pattern matching even when targeting
+<code>netstandard2.0</code> — as long as the feature does not need a runtime type that is missing. Records
+work; <code>Span&lt;T&gt;</code> does not without the polyfill.</p>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why can't you just use a <code>Dictionary</code> in a multi-threaded application?</strong></p>
-<p>Because its operations are not atomic. Adding an item can involve resizing the internal
-array and copying everything into it, and if another thread reads or writes partway through
-that, it sees an inconsistent structure. In the worst case the internal links become
-circular and a reading thread spins forever at 100% CPU. In ASP.NET Core this matters
-constantly, because requests are handled concurrently on different threads, so anything
-stored in a singleton is shared across all of them.</p>
-<p><strong>Q: What does <code>GetOrAdd</code> do, and what is the catch?</strong></p>
-<p>It returns the existing value for a key, or creates one with the factory you supply, stores
-it and returns that — as a single atomic operation, so you avoid the classic check-then-add
-race. The catch is that only the <em>storing</em> is atomic. The factory itself is not locked, so
-several threads can run it simultaneously for the same key even though only one result is
-kept. If the factory is expensive or has side effects, you wrap the value in a <code>Lazy&lt;T&gt;</code>,
-because <code>Lazy</code> does guarantee its factory runs once.</p>
-<p><strong>Q: Is a <code>ConcurrentDictionary</code> enough to make my code thread-safe?</strong></p>
-<p>No, and this is the important distinction. Each individual method on it is thread-safe, but
-a <em>sequence</em> of calls is not. Writing <code>if (!dict.ContainsKey(k)) dict[k] = value</code> is still
-racy, because another thread can insert between the check and the write. That is exactly why
-the combined methods like <code>GetOrAdd</code> and <code>AddOrUpdate</code> exist — they collapse the sequence
-into one atomic step.</p>
-<p><strong>Q: Why is there no <code>ConcurrentList&lt;T&gt;</code>?</strong></p>
-<p>Because a list is defined by position, and position is meaningless once other threads can
-insert and remove concurrently — index 5 could refer to a different item by the time you use
-it, and an index that was valid when you checked could be out of range a moment later. There
-is no sensible way to make that safe. If you need shared ordered data, you either lock
-around a normal list or use an immutable collection where every change produces a new
-version.</p>
+<p><strong>Q: What is .NET Standard?</strong></p>
+<p>A specification listing APIs that several .NET platforms all agreed to implement. It is not a
+runtime — nothing runs on .NET Standard. It existed because around 2016 there were several
+separate .NET platforms, and a library author otherwise had to build separately for each.
+Targeting the standard meant one build that worked on .NET Framework, .NET Core, Xamarin and
+Mono alike.</p>
+<p><strong>Q: Is it still relevant?</strong></p>
+<p>Mostly not. It solved a fragmentation problem, and .NET 5 removed the fragmentation by
+unifying those platforms into one product. It is frozen at 2.1 and will never gain another
+version. The one remaining reason to target <code>netstandard2.0</code> is if you publish a library that
+must still be consumable from .NET Framework, since that is the last version Framework
+supports. For anything else you target the current .NET directly and get the full API surface.</p>
+<p><strong>Q: Why would you target <code>netstandard2.0</code> rather than <code>netstandard2.1</code>?</strong></p>
+<p>Because .NET Framework supports 2.0 and never supported 2.1. Supporting Framework consumers is
+essentially the only remaining reason to target Standard at all, so 2.1 removes the point of
+the exercise. If all your consumers are on modern .NET you should target <code>net10.0</code> directly
+rather than 2.1, because you get the full API surface. That leaves 2.1 covering a niche that
+barely exists in practice.</p>
+<p><strong>Q: If you need to support both Framework and modern .NET, what would you do?</strong></p>
+<p>Multi-target rather than targeting .NET Standard alone. With
+<code>&lt;TargetFrameworks&gt;net10.0;netstandard2.0&lt;/TargetFrameworks&gt;</code> the modern build gets the
+complete current API surface while the Standard build serves Framework consumers, and NuGet
+hands each consumer the right one. Targeting <code>netstandard2.0</code> on its own would restrict
+everybody — including your modern consumers — to a 2015-era API surface. Where the two builds
+genuinely differ you bridge it with conditional compilation.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Thread-safe operations do not make thread-safe logic.</strong> Check-then-act across two calls
-  is still a race, even on a concurrent collection.</li>
-<li><strong>The <code>GetOrAdd</code> factory can run several times.</strong> Only one result is stored, but the work
-  may be done more than once. Wrap in <code>Lazy&lt;T&gt;</code> if that matters.</li>
-<li><strong>Concurrent collections are slower for single-threaded use.</strong> They pay for
-  synchronisation you are not using. Do not use them "just in case".</li>
-<li><strong><code>Count</code> on a concurrent collection is a snapshot and may be stale</strong> the instant you read
-  it. Never use it for a decision that must be exact.</li>
-<li><strong>Enumerating a concurrent collection gives you a moment-in-time view.</strong> Items may be
-  added or removed while you loop; you will not see a consistent snapshot.</li>
-<li><strong>A <code>ConcurrentDictionary</code> that only grows is a memory leak.</strong> It has no eviction. Use
-  <code>IMemoryCache</code> for anything cache-shaped.</li>
-<li><strong><code>ConcurrentBag</code> is optimised for the same thread adding and removing.</strong> If one thread
-  produces and another consumes, <code>ConcurrentQueue</code> is usually faster.</li>
+<li><strong>"It's a runtime."</strong> It is a specification. Nothing executes on .NET Standard.</li>
+<li><strong>Targeting <code>netstandard2.1</code></strong> gets you the worst of both — no Framework support, and a
+  smaller API surface than targeting modern .NET.</li>
+<li><strong>Some APIs compile but throw <code>PlatformNotSupportedException</code>.</strong> The contract promises more
+  than every implementation delivers.</li>
+<li><strong>Targeting Standard alone limits your modern consumers too</strong>, not just the old ones.</li>
+<li><strong>It is frozen.</strong> No version after 2.1 will ever ship.</li>
+<li><strong>The C# language version is independent of the target.</strong> You can use modern syntax on
+  <code>netstandard2.0</code>, provided the feature does not need a missing runtime type.</li>
+<li><strong>Polyfill packages become your consumers' dependencies too.</strong> Adding <code>System.Memory</code> puts it
+  in everyone's dependency tree.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../2.02-collections-and-big-o/">2.2 Collections and Big-O</a> — the non-thread-safe originals</li>
-<li><a href="../2.18-thread-safety/">2.18 Thread safety</a> — <code>lock</code>, <code>Interlocked</code> and the alternatives</li>
-<li><a href="../../01-csharp-fundamentals/1.05-static/">1.5 static</a> — why static mutable state needs this</li>
-<li><a href="../../06-dependency-injection/6.03-service-lifetimes/">6.3 Service lifetimes</a> — singletons are shared across requests</li>
-<li><a href="../19-caching-performance/19.02-memory-cache.md">19.2 IMemoryCache</a> — the right tool for caching</li>
-<li><a href="../21-advanced-features/21.01-background-services.md">21.1 Background services</a> — Channels instead of <code>BlockingCollection</code></li>
+<li><a href="../3.01-dotnet-history/">3.1 .NET history</a> — the fragmentation this solved</li>
+<li><a href="../3.07-csproj-and-tfm/">3.7 csproj and target frameworks</a> — multi-targeting and conditionals</li>
+<li><a href="../3.06-assemblies-nuget/">3.6 Assemblies and NuGet</a> — how consumers get the right build</li>
+<li><a href="../3.10-release-cadence/">3.10 Release cadence</a> — which version to target now</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/dotnet/standard/collections/thread-safe/">Microsoft Learn — Thread-safe collections</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">Microsoft Learn — ConcurrentDictionary&lt;TKey,TValue&gt;</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/net-standard">Microsoft Learn — .NET Standard</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/library-guidance/cross-platform-targeting">Microsoft Learn — Cross-platform targeting</a></li>
 </ul>
 
 
@@ -3181,7 +3293,7 @@ version.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../2.02-collections-and-big-o/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2.2 Collections and Big-O">
+          <a href="../3.08-dotnet-cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.8 The .NET CLI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3191,20 +3303,20 @@ version.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                2.2 Collections and Big-O
+                3.8 The .NET CLI
               </div>
             </div>
           </a>
         
         
           
-          <a href="../2.04-yield-and-iterators/" class="md-footer__link md-footer__link--next" aria-label="Next: 2.4 yield and iterators">
+          <a href="../3.10-release-cadence/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.10 Release cadence (LTS vs STS)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2.4 yield and iterators
+                3.10 Release cadence (LTS vs STS)
               </div>
             </div>
             <div class="md-footer__button md-icon">

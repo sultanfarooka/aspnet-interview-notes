@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.04-garbage-collection/">
       
       
-        <link rel="prev" href="../3.02-clr-and-compilation/">
+        <link rel="prev" href="../3.03-managed-vs-unmanaged/">
       
       
-        <link rel="next" href="../../06-dependency-injection/6.03-service-lifetimes/">
+        <link rel="next" href="../3.05-memory-leaks/">
       
       
         
@@ -2009,6 +2009,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2027,7 +2041,7 @@
   <span class="md-ellipsis">
     
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
     
@@ -2043,7 +2057,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
           </label>
@@ -2092,6 +2106,34 @@
     
   
     3.2 CLR and compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.03-managed-vs-unmanaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Managed vs unmanaged
   
 
     
@@ -2245,10 +2287,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-simple-version-the-three-steps" class="md-nav__link">
+  <a href="#the-simple-version-the-three-phases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The simple version — the three steps
+        The simple version — the three phases
       
     </span>
   </a>
@@ -2380,6 +2422,174 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.05-memory-leaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.5 Memory leaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.06-assemblies-nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Assemblies and NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.07-csproj-and-tfm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 csproj and target frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.08-dotnet-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.8 The .NET CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.09-dotnet-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.9 .NET Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.10-release-cadence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.10 Release cadence (LTS vs STS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2677,10 +2887,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-simple-version-the-three-steps" class="md-nav__link">
+  <a href="#the-simple-version-the-three-phases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The simple version — the three steps
+        The simple version — the three phases
       
     </span>
   </a>
@@ -2831,15 +3041,15 @@
 <h1 id="34-garbage-collection">3.4 — Garbage Collection<a class="headerlink" href="#34-garbage-collection" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
-<strong>Prev:</strong> <a href="3.03-managed-vs-unmanaged.md">3.3 Managed vs unmanaged</a> · <strong>Next:</strong> <a href="3.05-memory-leaks.md">3.5 Memory leaks</a></p>
+<strong>Prev:</strong> <a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a> · <strong>Next:</strong> <a href="../3.05-memory-leaks/">3.5 Memory leaks</a></p>
 </blockquote>
 <p><strong>Markers:</strong> 🔥 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p><strong>Garbage collection</strong> is .NET automatically finding objects that nothing is using any more,
+<p><strong>Garbage collection</strong> is .NET automatically finding objects that nothing is using any more
 and freeing the memory they occupied. You never write "delete this object" in C#.</p>
 <ul>
-<li>It decides what is still in use by <strong>starting from known roots and following every reference</strong>. Anything it cannot reach is garbage.</li>
+<li>It works out what is still in use by <strong>starting from known roots and following every reference</strong>. Anything it cannot reach is garbage.</li>
 <li>It sorts objects into <strong>three generations</strong> by age, and mostly only cleans the youngest — because most objects die young.</li>
 <li>It manages <strong>memory only</strong>. Files, sockets and database connections still need <code>IDisposable</code>.</li>
 </ul>
@@ -2862,7 +3072,7 @@ and freeing the memory they occupied. You never write "delete this object" in C#
 <tr>
 <td><strong>Stack</strong></td>
 <td><em>a region of memory</em></td>
-<td>Where local variables live. Cleaned up automatically when a method returns — the GC is not involved.</td>
+<td>Where local variables live. Cleared automatically when a method returns — the GC is not involved.</td>
 </tr>
 <tr>
 <td><strong>Garbage collector (GC)</strong></td>
@@ -2872,7 +3082,7 @@ and freeing the memory they occupied. You never write "delete this object" in C#
 <tr>
 <td><strong>Root</strong></td>
 <td><em>a starting point for the search</em></td>
-<td>A place the GC knows is definitely live: local variables of running methods, <code>static</code> fields, CPU registers.</td>
+<td>Somewhere the GC knows is definitely live: local variables of running methods, <code>static</code> fields, CPU registers.</td>
 </tr>
 <tr>
 <td><strong>Reachable</strong></td>
@@ -2887,7 +3097,7 @@ and freeing the memory they occupied. You never write "delete this object" in C#
 <tr>
 <td><strong>Mark / Sweep / Compact</strong></td>
 <td><em>the three phases of a collection</em></td>
-<td>Mark what is reachable → free what is not → slide survivors together to remove gaps.</td>
+<td>Mark what is reachable → free what is not → slide survivors together to close the gaps.</td>
 </tr>
 <tr>
 <td><strong>Generation</strong></td>
@@ -2912,7 +3122,7 @@ and freeing the memory they occupied. You never write "delete this object" in C#
 <tr>
 <td><strong>Fragmentation</strong></td>
 <td><em>a memory problem</em></td>
-<td>Free space exists but is split into small scattered gaps, so a large request still fails.</td>
+<td>Free space exists but is split into scattered gaps, so a large request still fails.</td>
 </tr>
 <tr>
 <td><strong><code>GC.Collect()</code></strong></td>
@@ -2934,23 +3144,23 @@ and freeing the memory they occupied. You never write "delete this object" in C#
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
 <h3 id="start-here-what-problem-does-this-solve">Start here: what problem does this solve?<a class="headerlink" href="#start-here-what-problem-does-this-solve" title="Permanent link">&para;</a></h3>
-<p>In older languages like C, you asked for memory and then had to give it back yourself:</p>
+<p>In older languages like C, you asked for memory and had to give it back yourself:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span><span class="w">   </span><span class="c1">// ask for memory</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w">                  </span><span class="c1">// you MUST return it</span>
 </span></code></pre></div>
-<p>Two things go wrong constantly with that. <strong>Forget to free</strong> and the memory is lost forever —
-a memory leak. <strong>Free it twice</strong>, or use it after freeing, and the program corrupts itself or
-crashes. Whole categories of security vulnerability come from exactly this.</p>
-<p>.NET removes the problem by tracking it for you. You create objects and simply stop using
-them. The <strong>garbage collector</strong> notices and reclaims the memory.</p>
+<p>Two things go wrong constantly. <strong>Forget to free</strong> and the memory is lost forever — a leak.
+<strong>Free it twice, or use it after freeing</strong>, and the program corrupts itself or crashes. Whole
+categories of security vulnerability come from exactly this.</p>
+<p>.NET removes the problem by tracking it for you. You create objects and stop using them. The
+<strong>garbage collector</strong> notices and reclaims the memory.</p>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w">   </span><span class="c1">// ask for memory</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// ...and that is it. Nothing to free.</span>
 </span></code></pre></div>
 <h3 id="the-key-question-how-does-it-know-what-is-garbage">The key question: how does it know what is garbage?<a class="headerlink" href="#the-key-question-how-does-it-know-what-is-garbage" title="Permanent link">&para;</a></h3>
-<p>This is the part worth understanding properly, because the rest follows from it.</p>
-<p>The GC does <strong>not</strong> count how many things point at an object. Instead it does something
-simpler and more reliable.</p>
-<p>It starts from a set of places it knows are definitely "live" — these are called <strong>roots</strong>:</p>
+<p>This is the part worth understanding properly, because everything else follows from it.</p>
+<p>The GC does <strong>not</strong> count how many things point at an object. It does something simpler and
+more reliable.</p>
+<p>It starts from places it knows are definitely live — the <strong>roots</strong>:</p>
 <ul>
 <li>Local variables in methods currently running</li>
 <li>Static fields</li>
@@ -2959,10 +3169,10 @@ simpler and more reliable.</p>
 <p>Then it <strong>follows every reference</strong> from those roots, and from whatever they point to, and so
 on. Everything it can reach is in use. <strong>Everything it cannot reach is garbage.</strong></p>
 <p>A picture: <strong>a room full of objects, with strings tying some of them to hooks on the wall.</strong>
-The hooks are the roots. Anything you can trace back to a hook, by following strings, is being
-kept. Anything with no path back to a hook — even if it is tied to other objects — is rubbish
-and gets swept away.</p>
-<p>That last part matters. Two objects pointing at each other but with no path from a root are
+The hooks are the roots. Anything you can trace back to a hook by following strings is kept.
+Anything with no path back to a hook — even if it is tied to other objects — is rubbish and
+gets swept away.</p>
+<p>That last part matters. Two objects pointing at each other with no path from a root are
 <strong>both</strong> garbage. This is why .NET has no problem with circular references, whereas
 reference-counting systems do.</p>
 <pre class="mermaid"><code>flowchart LR
@@ -2975,33 +3185,32 @@ reference-counting systems do.</p>
 
     style E fill:#f99,stroke:#900
     style F fill:#f99,stroke:#900</code></pre>
-<p>The two red objects point at each other, but nothing points at them from a root. Both are
+<p>The two red objects point at each other, but nothing reaches them from a root. Both are
 collected.</p>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="the-simple-version-the-three-steps">The simple version — the three steps<a class="headerlink" href="#the-simple-version-the-three-steps" title="Permanent link">&para;</a></h3>
+<h3 id="the-simple-version-the-three-phases">The simple version — the three phases<a class="headerlink" href="#the-simple-version-the-three-phases" title="Permanent link">&para;</a></h3>
 <p>When a collection runs, the GC does three things:</p>
 <ol>
-<li><strong>Mark.</strong> Start at the roots, follow every reference, and mark everything reachable.</li>
-<li><strong>Sweep.</strong> Everything not marked is garbage. Its memory is now free.</li>
-<li><strong>Compact.</strong> Slide the surviving objects together so free space is one continuous block
-   rather than scattered gaps.</li>
+<li><strong>Mark.</strong> Start at the roots, follow every reference, mark everything reachable.</li>
+<li><strong>Sweep.</strong> Everything unmarked is garbage. Its memory is now free.</li>
+<li><strong>Compact.</strong> Slide the survivors together so free space is one continuous block rather than
+   scattered gaps.</li>
 </ol>
-<p>That third step is worth noting. Because objects get moved, <strong>the address of an object can
-change during its life</strong>. That is fine in normal C#, but it is exactly why you need <code>fixed</code>
-and pinning when passing a pointer to non-.NET code — see
-<a href="3.03-managed-vs-unmanaged.md">3.3</a>.</p>
+<p>That third phase has a consequence worth knowing: <strong>objects move</strong>, so an object's address is
+not stable. That is fine in normal C#, and it is exactly why you need <code>fixed</code> and pinning when
+handing a pointer to native code — see <a href="../3.03-managed-vs-unmanaged/">3.3</a>.</p>
 <p>Compaction also makes allocation extremely fast. Because free memory is one continuous block,
-allocating a new object is just moving a pointer forward. It is close to free.</p>
+allocating is just moving a pointer forward. It is close to free.</p>
 <h3 id="how-it-actually-works-generations">How it actually works — generations<a class="headerlink" href="#how-it-actually-works-generations" title="Permanent link">&para;</a></h3>
-<p>Here is the observation everything is built on:</p>
+<p>Everything is built on one observation:</p>
 <blockquote>
 <p><strong>Most objects die very young.</strong> A string built inside a method, a DTO created for one
-request, the result of a LINQ query — the vast majority become garbage almost immediately.
-A small minority live for the whole application.</p>
+request, the result of a LINQ query — the vast majority become garbage almost immediately. A
+small minority live for the whole application.</p>
 </blockquote>
-<p>Scanning every object every time would be wasteful, since most of the old ones are still
-alive. So the GC splits the heap into three <strong>generations</strong> by age:</p>
+<p>Scanning every object every time would be wasteful, since most old ones are still alive. So
+the GC splits the heap into three <strong>generations</strong> by age:</p>
 <table>
 <thead>
 <tr>
@@ -3031,24 +3240,24 @@ alive. So the GC splits the heap into three <strong>generations</strong> by age:
 <p>The rules are simple:</p>
 <ul>
 <li>Every new object starts in <strong>Gen 0</strong>.</li>
-<li>If it survives a collection, it is <strong>promoted</strong> to the next generation.</li>
-<li>Collecting Gen 0 only looks at Gen 0. It is quick — often under a millisecond.</li>
-<li>Collecting Gen 2 examines <strong>everything</strong>, including Gen 0 and Gen 1. This is called a
-  <strong>full collection</strong> and it is the expensive one.</li>
+<li>Survive a collection and you are <strong>promoted</strong> to the next generation.</li>
+<li>A Gen 0 collection looks only at Gen 0. Often under a millisecond.</li>
+<li>A Gen 2 collection examines <strong>everything</strong>, including Gen 0 and Gen 1. This is a <strong>full
+  collection</strong> and it is the expensive one.</li>
 </ul>
 <pre class="mermaid"><code>flowchart LR
     N["new object"] --&gt; G0["Gen 0&lt;br/&gt;collected often&lt;br/&gt;very fast"]
     G0 --&gt;|"survived"| G1["Gen 1&lt;br/&gt;collected sometimes"]
     G1 --&gt;|"survived again"| G2["Gen 2&lt;br/&gt;collected rarely&lt;br/&gt;expensive"]
     G0 -.-&gt;|"most objects&lt;br/&gt;die here"| X["freed"]</code></pre>
-<p>So the design deliberately makes the common case — short-lived objects — almost free, and
-accepts that the rare case is slow.</p>
-<p><strong>Why this matters for your code:</strong> an object that survives long enough to reach Gen 2 is
-costly to clean up later. Caching things "just in case" pushes objects into Gen 2 and makes
-your full collections slower and more frequent.</p>
+<p>So the design makes the common case — short-lived objects — almost free, and accepts that the
+rare case is slow.</p>
+<p><strong>Why this matters for your code:</strong> an object that survives into Gen 2 is expensive to clean up
+later. Caching things "just in case" pushes objects into Gen 2 and makes your full collections
+slower and more frequent.</p>
 <h3 id="the-large-object-heap">The Large Object Heap<a class="headerlink" href="#the-large-object-heap" title="Permanent link">&para;</a></h3>
 <p>Objects of <strong>85,000 bytes or more</strong> go somewhere separate: the <strong>Large Object Heap</strong>, or LOH.
-Typically these are big arrays, large strings, or buffers.</p>
+Usually big arrays, large strings, or buffers.</p>
 <p>The LOH has two special properties:</p>
 <ul>
 <li>It is collected only during a <strong>Gen 2</strong> collection, so large objects hang around longer.</li>
@@ -3058,9 +3267,9 @@ Typically these are big arrays, large strings, or buffers.</p>
 large arrays. You end up with free gaps scattered between live objects. Ask for a 500 KB array
 and, even with 2 MB free in total, there may be no single 500 KB gap — so the process asks the
 OS for more memory.</p>
-<p>The result is an application whose memory keeps climbing even though it is not really leaking.
-A classic culprit is repeatedly resizing large buffers.</p>
-<p><strong>The fix is not to force compaction</strong> — that is available but very expensive:</p>
+<p>The result is an application whose memory keeps climbing even though nothing is really leaking.
+Repeatedly resizing large buffers is a classic cause.</p>
+<p><strong>The fix is not to force compaction</strong> — that exists but is very expensive:</p>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// A last resort. Causes a long pause. Not for normal code.</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">GCSettings</span><span class="p">.</span><span class="n">LargeObjectHeapCompactionMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GCLargeObjectHeapCompactionMode</span><span class="p">.</span><span class="n">CompactOnce</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">GC</span><span class="p">.</span><span class="n">Collect</span><span class="p">();</span>
@@ -3070,7 +3279,7 @@ allocating them at all with <code>Span&lt;T&gt;</code> — see
 <a href="../../01-csharp-fundamentals/1.25-span-memory/">1.25</a> and
 <a href="../19-caching-performance/19.13-allocations.md">19.13</a>.</p>
 <h3 id="the-deeper-detail-gc-modes">The deeper detail — GC modes<a class="headerlink" href="#the-deeper-detail-gc-modes" title="Permanent link">&para;</a></h3>
-<p>The GC has two settings that matter in production, and interviewers do ask about them.</p>
+<p>Two settings matter in production, and interviewers do ask.</p>
 <p><strong>Workstation vs Server GC</strong></p>
 <table>
 <thead>
@@ -3089,7 +3298,7 @@ allocating them at all with <code>Span&lt;T&gt;</code> — see
 <tr>
 <td>GC threads</td>
 <td>One</td>
-<td>One per core, running in parallel</td>
+<td>One per core, in parallel</td>
 </tr>
 <tr>
 <td>Optimised for</td>
@@ -3103,23 +3312,21 @@ allocating them at all with <code>Span&lt;T&gt;</code> — see
 </tr>
 </tbody>
 </table>
-<p>Server GC gives each core its own heap and its own collection thread, so collections finish
-much faster on a multi-core machine. The trade-off is higher memory use, since there are
-several heaps.</p>
+<p>Server GC gives each core its own heap and collection thread, so collections finish much
+faster on multi-core hardware. The cost is higher memory use, since there are several heaps.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;ServerGarbageCollection&gt;</span>true<span class="nt">&lt;/ServerGarbageCollection&gt;</span>
 </span></code></pre></div>
-<p>⚠️ <strong>This is a real container gotcha.</strong> Server GC assumes it can use the whole machine. In a
-container limited to one core with a small memory cap, having several heaps wastes memory and
-can trigger the container's memory limit — which the orchestrator handles by killing the
-container. If you run small containers, test with Workstation GC:</p>
+<p>⚠️ <strong>This is a real container gotcha.</strong> Server GC assumes it owns the machine. In a container
+limited to one core with a tight memory cap, several heaps waste memory and can push you past
+the limit — which the orchestrator handles by killing the container. If you run small
+containers, test with Workstation GC:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;ServerGarbageCollection&gt;</span>false<span class="nt">&lt;/ServerGarbageCollection&gt;</span>
 </span></code></pre></div>
-<p>Modern .NET is much better at reading container limits automatically, and .NET 9 enabled
-<strong>DATAS</strong> by default, which dynamically adapts the number of heaps to the actual load. But it
-is still worth checking if you see containers being killed for memory.</p>
+<p>Modern .NET reads container limits much better than it used to, and .NET 9 enabled <strong>DATAS</strong>
+by default, which adapts the number of heaps to actual load. Still worth checking if
+containers are being killed for memory.</p>
 <p><strong>Concurrent / background GC</strong> lets most of a Gen 2 collection run on a background thread
-while your application keeps working, so the pause is much shorter. It is on by default and
-you rarely need to change it.</p>
+while your app keeps working, so the pause is much shorter. On by default; rarely changed.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
 <h3 id="do-not-call-gccollect">Do not call <code>GC.Collect()</code><a class="headerlink" href="#do-not-call-gccollect" title="Permanent link">&para;</a></h3>
@@ -3129,21 +3336,21 @@ you rarely need to change it.</p>
 <p>The GC has far better information than you do about when collecting is worthwhile. Forcing it
 usually:</p>
 <ul>
-<li>causes a <strong>full Gen 2 collection</strong>, the most expensive kind</li>
+<li>triggers a <strong>full Gen 2 collection</strong>, the most expensive kind</li>
 <li><strong>promotes objects</strong> that would otherwise have died cheaply in Gen 0</li>
 <li>pauses all your threads for no benefit</li>
 </ul>
-<p>The only defensible uses are in a benchmark harness or immediately after deliberately
-releasing a very large cache. If you find yourself reaching for it to fix a memory problem,
-the problem is a reference being held somewhere — see <a href="3.05-memory-leaks.md">3.5</a>.</p>
+<p>The only defensible uses are in a benchmark harness, or immediately after deliberately
+dropping something very large. If you are reaching for it to fix a memory problem, the problem
+is a reference being held somewhere — see <a href="../3.05-memory-leaks/">3.5</a>.</p>
 <h3 id="what-you-should-actually-do">What you should actually do<a class="headerlink" href="#what-you-should-actually-do" title="Permanent link">&para;</a></h3>
 <p>The GC handles <strong>memory</strong>. It does not handle <strong>file handles, sockets or database
-connections</strong> — those need <code>IDisposable</code>:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// The GC will eventually free the object&#39;s memory,</span>
+connections</strong>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// The GC will eventually free this object&#39;s memory,</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// but the file stays LOCKED until Dispose runs.</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">await</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
 </span></code></pre></div>
-<p>That distinction is the practical takeaway of this note, and it is covered properly in
+<p>That distinction is the practical takeaway — see
 <a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</p>
 <p>Reducing GC pressure, in order of usefulness:</p>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// 1. Do not allocate in a loop when you can build once</span>
@@ -3154,7 +3361,7 @@ connections</strong> — those need <code>IDisposable</code>:</p>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* use it */</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ArrayPool</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Return</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// 3. Avoid the allocation entirely for slicing</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// 3. Avoid the allocation entirely when slicing</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">ReadOnlySpan</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">AsSpan</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// no new string</span>
 </span></code></pre></div>
 <hr />
@@ -3162,68 +3369,67 @@ connections</strong> — those need <code>IDisposable</code>:</p>
 <p><strong>Q: How does the garbage collector know an object can be freed?</strong></p>
 <p>It uses reachability, not reference counting. It starts from a set of roots — local variables
 in running methods, static fields and CPU registers — and follows every reference from there,
-marking everything it can reach. Anything not marked is unreachable and therefore garbage. An
+marking everything it can reach. Anything unmarked is unreachable and therefore garbage. An
 important consequence is that circular references are not a problem: two objects pointing at
 each other with no path from a root are both collected, whereas a reference-counting system
 would leak them.</p>
 <p><strong>Q: What are generations and why do they exist?</strong></p>
 <p>The heap is divided into three generations by age. New objects go into Gen 0, and anything
-surviving a collection is promoted to the next generation. The design rests on the
-observation that most objects die very young — temporary strings, DTOs, LINQ results. So
-collecting only Gen 0 catches the vast majority of garbage while examining a small fraction
-of the heap, which makes it very fast. Gen 2 collections examine everything and are
-expensive, so the GC does them rarely. The practical implication is that keeping objects
-alive longer than necessary pushes them into Gen 2 and makes your expensive collections more
-frequent.</p>
+surviving a collection is promoted upward. The design rests on the observation that most
+objects die very young — temporary strings, DTOs, LINQ results. So collecting only Gen 0
+catches the vast majority of garbage while examining a small fraction of the heap, which makes
+it very fast. Gen 2 collections examine everything and are expensive, so the GC does them
+rarely. The practical implication is that keeping objects alive longer than necessary pushes
+them into Gen 2 and makes your expensive collections more frequent.</p>
 <p><strong>Q: What is the Large Object Heap and why does it cause problems?</strong></p>
-<p>Objects of 85,000 bytes or more — usually big arrays or strings — are allocated on a separate
-heap. It is only collected as part of a Gen 2 collection, so large objects survive longer, and
-it is not compacted by default because moving very large objects is costly. Not compacting
-means fragmentation: after allocating and releasing many differently-sized large objects, you
-can have plenty of free memory in total but no single contiguous block big enough for the next
-request, so the process grows. The symptom is memory climbing steadily without an actual leak.
-The fix is to stop churning large objects — pool buffers with <code>ArrayPool&lt;T&gt;</code> rather than
-allocating fresh ones.</p>
+<p>Objects of 85,000 bytes or more — usually large arrays or strings — go on a separate heap. It
+is collected only as part of a Gen 2 collection, so large objects survive longer, and it is not
+compacted by default because moving very large objects is costly. Not compacting means
+fragmentation: after allocating and releasing many differently-sized large objects you can have
+plenty of free memory in total but no single contiguous block big enough for the next request,
+so the process grows. The symptom is memory climbing steadily without an actual leak. The fix
+is to stop churning large objects — pool buffers with <code>ArrayPool&lt;T&gt;</code> rather than allocating
+fresh ones.</p>
 <p><strong>Q: What is the difference between Workstation and Server GC?</strong></p>
-<p>Workstation GC uses a single heap and a single collection thread, favouring low latency and
-low memory. Server GC creates one heap and one collection thread per CPU core, so collections
-run in parallel and finish much faster on multi-core hardware — at the cost of higher memory
-use. Server GC is the default for ASP.NET Core because throughput matters more there. The
-thing to watch is containers: Server GC assumes it owns the machine, so in a small container
-with a tight memory limit the multiple heaps can push you over the limit and get the container
-killed. Modern .NET reads container limits much better, and .NET 9 turned on DATAS which
-adapts heap count dynamically, but it is still worth testing.</p>
+<p>Workstation GC uses a single heap and a single collection thread, favouring low latency and low
+memory. Server GC creates one heap and one collection thread per CPU core, so collections run
+in parallel and finish much faster on multi-core hardware, at the cost of higher memory use.
+Server GC is the default for ASP.NET Core because throughput matters more there. The thing to
+watch is containers — Server GC assumes it owns the machine, so in a small container with a
+tight memory limit the multiple heaps can push you over and get the container killed. Modern
+.NET reads container limits much better, and .NET 9 turned on DATAS which adapts heap count
+dynamically, but it is still worth testing.</p>
 <p><strong>Q: Should you ever call <code>GC.Collect()</code>?</strong></p>
 <p>Almost never. The runtime has far better information about when collecting is worthwhile, and
 forcing it triggers a full Gen 2 collection — the most expensive kind — while also promoting
 objects that would otherwise have been collected cheaply in Gen 0. The only reasonable uses
-are in benchmarking, where you want a known starting state, or immediately after deliberately
-dropping something very large. If someone is calling it to fix a memory problem, the real
-issue is something holding a reference, and forcing collections will not help because the
-object is still reachable.</p>
+are benchmarking, where you want a known starting state, and immediately after deliberately
+dropping something very large. If someone is calling it to fix a memory problem, the real issue
+is something holding a reference, and forcing collections cannot help because the object is
+still reachable.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>"The GC handles all cleanup."</strong> It handles <strong>memory only</strong>. File handles, sockets and
-  database connections need <code>IDisposable</code>.</li>
+<li><strong>"The GC handles all cleanup."</strong> It handles <strong>memory only</strong>. Files, sockets and connections
+  need <code>IDisposable</code>.</li>
 <li><strong>Calling <code>GC.Collect()</code> to fix memory usage.</strong> If an object is still referenced, no amount
-  of collecting will free it.</li>
-<li><strong>Forcing collection promotes objects</strong>, making the situation worse rather than better.</li>
+  of collecting frees it.</li>
+<li><strong>Forcing collection promotes objects</strong>, making things worse rather than better.</li>
 <li><strong>Objects move during compaction.</strong> An object's address is not stable, which is why pinning
-  is needed for interop.</li>
-<li><strong>The LOH threshold is 85,000 bytes</strong>, which is smaller than people expect — an array of
-  about 21,000 <code>int</code>s already qualifies.</li>
+  exists for interop.</li>
+<li><strong>The LOH threshold is 85,000 bytes</strong> — smaller than people expect. An array of about 21,000
+  <code>int</code>s already qualifies.</li>
 <li><strong>Server GC in a small container can get you OOM-killed.</strong> More heaps means more memory.</li>
 <li><strong>A finalizer makes an object survive an extra collection.</strong> Never add one unless you truly
   need it — see <a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</li>
 <li><strong>"No memory leaks in .NET" is false.</strong> You cannot leak by forgetting to free, but you can
-  very easily leak by holding a reference. See <a href="3.05-memory-leaks.md">3.5</a>.</li>
+  very easily leak by holding a reference. See <a href="../3.05-memory-leaks/">3.5</a>.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="3.05-memory-leaks.md">3.5 Memory leaks</a> — how to leak in a managed language</li>
-<li><a href="3.03-managed-vs-unmanaged.md">3.3 Managed vs unmanaged</a> — pinning and why objects move</li>
+<li><a href="../3.05-memory-leaks/">3.5 Memory leaks</a> — how to leak in a managed language</li>
+<li><a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a> — pinning and why objects move</li>
 <li><a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21 IDisposable</a> — what the GC does not do</li>
 <li><a href="../../01-csharp-fundamentals/1.01-value-vs-reference-types/">1.1 Stack vs heap</a> — what lives where</li>
 <li><a href="../../01-csharp-fundamentals/1.25-span-memory/">1.25 Span and Memory</a> — avoiding allocation</li>
@@ -3272,7 +3478,7 @@ object is still reachable.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../3.02-clr-and-compilation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.2 CLR and compilation">
+          <a href="../3.03-managed-vs-unmanaged/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.3 Managed vs unmanaged">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3282,20 +3488,20 @@ object is still reachable.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                3.2 CLR and compilation
+                3.3 Managed vs unmanaged
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../06-dependency-injection/6.03-service-lifetimes/" class="md-footer__link md-footer__link--next" aria-label="Next: 6.3 Service lifetimes">
+          <a href="../3.05-memory-leaks/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.5 Memory leaks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                6.3 Service lifetimes
+                3.5 Memory leaks
               </div>
             </div>
             <div class="md-footer__button md-icon">

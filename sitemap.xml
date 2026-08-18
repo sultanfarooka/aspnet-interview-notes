@@ -217,7 +217,35 @@
          <lastmod>2026-08-18</lastmod>
     </url>
     <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.03-managed-vs-unmanaged/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.04-garbage-collection/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.05-memory-leaks/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.06-assemblies-nuget/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.07-csproj-and-tfm/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.08-dotnet-cli/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.09-dotnet-standard/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.10-release-cadence/</loc>
          <lastmod>2026-08-18</lastmod>
     </url>
     <url>

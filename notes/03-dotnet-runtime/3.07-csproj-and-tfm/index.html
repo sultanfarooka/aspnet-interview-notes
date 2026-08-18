@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.02-clr-and-compilation/">
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.07-csproj-and-tfm/">
       
       
-        <link rel="prev" href="../3.01-dotnet-history/">
+        <link rel="prev" href="../3.06-assemblies-nuget/">
       
       
-        <link rel="next" href="../3.03-managed-vs-unmanaged/">
+        <link rel="next" href="../3.08-dotnet-cli/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>3.2 CLR and compilation - ASP.NET Core Interview Notes</title>
+        <title>3.7 csproj and target frameworks - ASP.NET Core Interview Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#32-clr-cts-cls-il-jit-aot-readytorun" class="md-skip">
+        <a href="#37-sdk-style-csproj-target-frameworks-multi-targeting" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2 CLR and compilation
+              3.7 csproj and target frameworks
             
           </span>
         </div>
@@ -2095,37 +2095,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3.2 CLR and compilation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.02-clr-and-compilation/" class="md-nav__link">
         
   
   
@@ -2141,203 +2114,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definitions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The concept
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The concept">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-one-story-that-explains-all-seven-acronyms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The one story that explains all seven acronyms
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-bother-with-two-stages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why bother with two stages?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-simple-version-what-il-looks-like" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The simple version — what IL looks like
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cts-and-cls-the-two-people-mix-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CTS and CLS — the two people mix up
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-it-actually-works-jit-and-tiered-compilation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How it actually works — JIT and tiered compilation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-deeper-detail-aot-and-readytorun" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The deeper detail — AOT and ReadyToRun
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Traps ⚠️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2459,10 +2235,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../3.07-csproj-and-tfm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 csproj and target frameworks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2478,6 +2281,214 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-file-got-so-much-shorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the file got so much shorter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-tfm-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a TFM actually is
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simple-version-the-properties-you-will-actually-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The simple version — the properties you will actually set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-usings-where-did-the-using-lines-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit usings — where did the using lines go?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-actually-works-multi-targeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it actually works — multi-targeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deeper-detail-sharing-settings-across-a-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The deeper detail — sharing settings across a solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rids-and-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIDs and publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traps ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2820,10 +2831,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-one-story-that-explains-all-seven-acronyms" class="md-nav__link">
+  <a href="#why-the-file-got-so-much-shorter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The one story that explains all seven acronyms
+        Why the file got so much shorter
       
     </span>
   </a>
@@ -2831,10 +2842,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-bother-with-two-stages" class="md-nav__link">
+  <a href="#what-a-tfm-actually-is" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why bother with two stages?
+        What a TFM actually is
       
     </span>
   </a>
@@ -2859,10 +2870,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-simple-version-what-il-looks-like" class="md-nav__link">
+  <a href="#the-simple-version-the-properties-you-will-actually-set" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The simple version — what IL looks like
+        The simple version — the properties you will actually set
       
     </span>
   </a>
@@ -2870,10 +2881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cts-and-cls-the-two-people-mix-up" class="md-nav__link">
+  <a href="#implicit-usings-where-did-the-using-lines-go" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CTS and CLS — the two people mix up
+        Implicit usings — where did the using lines go?
       
     </span>
   </a>
@@ -2881,10 +2892,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-it-actually-works-jit-and-tiered-compilation" class="md-nav__link">
+  <a href="#how-it-actually-works-multi-targeting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How it actually works — JIT and tiered compilation
+        How it actually works — multi-targeting
       
     </span>
   </a>
@@ -2892,10 +2903,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-deeper-detail-aot-and-readytorun" class="md-nav__link">
+  <a href="#the-deeper-detail-sharing-settings-across-a-solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The deeper detail — AOT and ReadyToRun
+        The deeper detail — sharing settings across a solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rids-and-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIDs and publishing
       
     </span>
   </a>
@@ -2982,21 +3004,21 @@
   
 
 
-<h1 id="32-clr-cts-cls-il-jit-aot-readytorun">3.2 — CLR, CTS, CLS, IL, JIT, AOT, ReadyToRun<a class="headerlink" href="#32-clr-cts-cls-il-jit-aot-readytorun" title="Permanent link">&para;</a></h1>
+<h1 id="37-sdk-style-csproj-target-frameworks-multi-targeting">3.7 — SDK-Style .csproj, Target Frameworks, Multi-Targeting<a class="headerlink" href="#37-sdk-style-csproj-target-frameworks-multi-targeting" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
-<strong>Prev:</strong> <a href="../3.01-dotnet-history/">3.1 .NET history</a> · <strong>Next:</strong> <a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a></p>
+<strong>Prev:</strong> <a href="../3.06-assemblies-nuget/">3.6 Assemblies and NuGet</a> · <strong>Next:</strong> <a href="../3.08-dotnet-cli/">3.8 The .NET CLI</a></p>
 </blockquote>
-<p><strong>Markers:</strong> ⭐ 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
+<p><strong>Markers:</strong> ⭐ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p>C# is compiled in <strong>two stages</strong>. First your source becomes <strong>IL</strong>, a CPU-independent middle
-language — that is what goes in the <code>.dll</code>. Then, while the app runs, the <strong>CLR</strong> turns that
-IL into real machine code for the actual processor.</p>
+<p>The <strong><code>.csproj</code></strong> file is your project's build instructions. Modern .NET uses the
+<strong>SDK-style</strong> format, which is short because it assumes sensible defaults instead of listing
+every file.</p>
 <ul>
-<li>The second stage happens <strong>one method at a time, as each is first called</strong>. That is <strong>JIT</strong>.</li>
-<li><strong>AOT</strong> and <strong>ReadyToRun</strong> move that second stage to build time, trading flexibility for startup speed.</li>
-<li><strong>CTS</strong> and <strong>CLS</strong> are the rules that let C#, VB.NET and F# share compiled code.</li>
+<li><strong><code>&lt;TargetFramework&gt;</code></strong> says which .NET you build against. <code>net10.0</code> is a <strong>TFM</strong> — Target Framework Moniker.</li>
+<li>Files are included <strong>automatically</strong> by pattern. You do not list them.</li>
+<li><strong>Multi-targeting</strong> builds one project for several frameworks at once, which is how libraries support both old and new .NET.</li>
 </ul>
 <hr />
 <h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
@@ -3010,293 +3032,381 @@ IL into real machine code for the actual processor.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Roslyn</strong></td>
-<td><em>the C# compiler</em></td>
-<td>What runs when you press Build. Turns <code>.cs</code> files into IL.</td>
+<td><strong><code>.csproj</code></strong></td>
+<td><em>an XML file</em></td>
+<td>The build definition for one project: what to target, what to reference, how to package.</td>
 </tr>
 <tr>
-<td><strong>IL</strong></td>
-<td><em>a language</em></td>
-<td>Intermediate Language. A simple instruction set <strong>not tied to any CPU</strong>. Your <code>.dll</code> contains this, not machine code.</td>
+<td><strong>SDK-style project</strong></td>
+<td><em>the modern <code>.csproj</code> format</em></td>
+<td>Starts with <code>&lt;Project Sdk="..."&gt;</code>. Short, because everything sensible is a default.</td>
 </tr>
 <tr>
-<td><strong>Assembly</strong></td>
-<td><em>a file</em></td>
-<td>The <code>.dll</code> or <code>.exe</code> Roslyn produces. Holds IL plus metadata describing every type inside.</td>
+<td><strong>MSBuild</strong></td>
+<td><em>the build engine</em></td>
+<td>Reads the <code>.csproj</code> and runs the build. The <code>dotnet build</code> command drives it.</td>
 </tr>
 <tr>
-<td><strong>Metadata</strong></td>
-<td><em>data inside the assembly</em></td>
-<td>A description of every type, method and field. Reflection reads this.</td>
+<td><strong>TFM</strong></td>
+<td><em>a short code string</em></td>
+<td>Target Framework Moniker. <code>net10.0</code>, <code>net48</code>, <code>netstandard2.0</code>. Says what you build against.</td>
 </tr>
 <tr>
-<td><strong>CLR</strong></td>
-<td><em>the runtime engine</em></td>
-<td>Common Language Runtime. Runs your code — JIT compilation, memory, garbage collection, exceptions.</td>
+<td><strong><code>&lt;TargetFramework&gt;</code></strong></td>
+<td><em>a property, singular</em></td>
+<td>One TFM. The normal case.</td>
 </tr>
 <tr>
-<td><strong>JIT</strong></td>
-<td><em>a compilation step</em></td>
-<td>Just-In-Time. The CLR turning IL into machine code <strong>the moment a method is first called</strong>, then caching it.</td>
+<td><strong><code>&lt;TargetFrameworks&gt;</code></strong></td>
+<td><em>a property, plural</em></td>
+<td>Several TFMs, semicolon-separated. Triggers multi-targeting.</td>
 </tr>
 <tr>
-<td><strong>Tiered compilation</strong></td>
-<td><em>a JIT strategy</em></td>
-<td>Compile fast first for quick startup, then recompile hot methods with full optimisation.</td>
+<td><strong>Multi-targeting</strong></td>
+<td><em>a build mode</em></td>
+<td>Building the same source once per TFM, producing several assemblies.</td>
 </tr>
 <tr>
-<td><strong>Managed code</strong></td>
-<td><em>code the CLR runs</em></td>
-<td>Your C#. The CLR handles its memory and safety.</td>
+<td><strong>RID</strong></td>
+<td><em>a short code string</em></td>
+<td>Runtime Identifier. Names an OS and CPU: <code>win-x64</code>, <code>linux-musl-arm64</code>.</td>
 </tr>
 <tr>
-<td><strong>CTS</strong></td>
-<td><em>a specification</em></td>
-<td>Common Type System. The shared rules for what a <em>type</em> is across all .NET languages.</td>
+<td><strong><code>&lt;PropertyGroup&gt;</code></strong></td>
+<td><em>an XML element</em></td>
+<td>Holds settings — single values like the target framework or version.</td>
 </tr>
 <tr>
-<td><strong>CLS</strong></td>
-<td><em>a specification</em></td>
-<td>Common Language Specification. A <strong>subset</strong> of CTS containing only what every .NET language supports.</td>
+<td><strong><code>&lt;ItemGroup&gt;</code></strong></td>
+<td><em>an XML element</em></td>
+<td>Holds lists — references, files, package dependencies.</td>
 </tr>
 <tr>
-<td><strong>AOT</strong></td>
-<td><em>a compilation step</em></td>
-<td>Ahead-Of-Time. Compiling straight to native machine code at <strong>build</strong> time, leaving no IL and no JIT.</td>
+<td><strong>Implicit usings</strong></td>
+<td><em>a build feature</em></td>
+<td>The SDK adds common <code>using</code> lines automatically based on project type.</td>
 </tr>
 <tr>
-<td><strong>ReadyToRun (R2R)</strong></td>
-<td><em>a compilation step</em></td>
-<td>A middle ground. Pre-compiles to machine code but <strong>keeps the IL</strong> as a fallback.</td>
+<td><strong><code>Directory.Build.props</code></strong></td>
+<td><em>a shared file</em></td>
+<td>Settings applied to every project in a folder tree. Avoids repetition.</td>
 </tr>
 <tr>
-<td><strong>Trimming</strong></td>
-<td><em>a build step</em></td>
-<td>Removing unused code to shrink output. Used with AOT, and the reason reflection breaks there.</td>
+<td><strong>Conditional compilation</strong></td>
+<td><em>a compiler feature</em></td>
+<td><code>#if NET10_0_OR_GREATER</code> — include code only for certain targets.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<h3 id="the-one-story-that-explains-all-seven-acronyms">The one story that explains all seven acronyms<a class="headerlink" href="#the-one-story-that-explains-all-seven-acronyms" title="Permanent link">&para;</a></h3>
-<p>A CPU only understands machine code, and machine code differs by processor. An Intel laptop
-and an ARM phone speak different languages.</p>
-<p>Most older languages compile straight to machine code. That works, but it means one build per
-CPU type, decided when you build.</p>
-<p>.NET does something different. It compiles in <strong>two stages</strong>:</p>
-<pre class="mermaid"><code>flowchart LR
-    A["Your C# code&lt;br/&gt;Program.cs"] --&gt;|"Roslyn compiler&lt;br/&gt;at BUILD time"| B["IL&lt;br/&gt;MyApp.dll"]
-    B --&gt;|"JIT compiler&lt;br/&gt;at RUN time"| C["Machine code&lt;br/&gt;for THIS computer"]</code></pre>
-<p><strong>Stage one, when you build.</strong> Roslyn turns your C# into <strong>IL</strong> — a simple, CPU-independent
-instruction set. Your <code>.dll</code> contains IL, not machine code.</p>
-<p><strong>Stage two, when you run.</strong> The <strong>CLR</strong> reads that IL and converts it to machine code for
-whatever CPU it finds. It does this <strong>just in time</strong>, hence <strong>JIT</strong>.</p>
-<p>Every acronym in this note is a piece of that story.</p>
-<h3 id="why-bother-with-two-stages">Why bother with two stages?<a class="headerlink" href="#why-bother-with-two-stages" title="Permanent link">&para;</a></h3>
-<p>Three real benefits:</p>
-<ol>
-<li><strong>One build runs anywhere.</strong> The same <code>.dll</code> works on Windows, Linux, x64 and ARM, because
-   the machine-specific step waits until the machine is known.</li>
-<li><strong>The JIT knows things the build machine could not.</strong> It sees the actual CPU and can use
-   instructions specific to it.</li>
-<li><strong>It improves while running.</strong> The runtime notices which methods are hot and recompiles
-   them with heavier optimisation. This is why a .NET service often gets faster in its first
-   minute of traffic.</li>
-</ol>
-<p>The cost is startup time. The first call to every method pays for its compilation.</p>
-<hr />
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="the-simple-version-what-il-looks-like">The simple version — what IL looks like<a class="headerlink" href="#the-simple-version-what-il-looks-like" title="Permanent link">&para;</a></h3>
-<p>This C#:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<h3 id="why-the-file-got-so-much-shorter">Why the file got so much shorter<a class="headerlink" href="#why-the-file-got-so-much-shorter" title="Permanent link">&para;</a></h3>
+<p>An old .NET Framework <code>.csproj</code> was hundreds of lines. It listed <strong>every single source file</strong>
+by name:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">&lt;!-- The OLD format — every file listed explicitly --&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Program.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Models\Order.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Models\Customer.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Services\OrderService.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="cm">&lt;!-- ...and on, and on --&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;/ItemGroup&gt;</span>
 </span></code></pre></div>
-<p>becomes roughly this IL:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ldarg.1        // load the first argument
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ldarg.2        // load the second argument
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>add            // add them
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ret            // return the result
+<p>This caused constant pain. Adding a file meant editing the project. Two developers adding
+files at once caused a merge conflict in XML. Renaming a folder broke everything.</p>
+<p>The <strong>SDK-style</strong> format replaced it. Here is a complete, working modern project file:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk.Web&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">&lt;/Project&gt;</span>
 </span></code></pre></div>
-<p>Simple, readable, tied to no CPU. Tools like ILSpy or <a href="https://sharplab.io">sharplab.io</a> let
-you inspect this for any code you write — genuinely useful for seeing what the compiler does
-with <code>async</code>, <code>yield</code> and records.</p>
-<p>This is also why decompilers exist. A <code>.dll</code> full of IL plus metadata can be turned back into
-readable C#, which is why commercial software often ships obfuscated.</p>
-<h3 id="cts-and-cls-the-two-people-mix-up">CTS and CLS — the two people mix up<a class="headerlink" href="#cts-and-cls-the-two-people-mix-up" title="Permanent link">&para;</a></h3>
-<p>These exist because .NET was designed for <strong>several languages</strong>. VB.NET and F# compile to the
-same IL and can use each other's libraries. For that, they must agree on some things.</p>
-<p><strong>CTS — Common Type System</strong> defines what a type <em>is</em>. Every type derives from <code>object</code>, there
-are value types and reference types, interfaces work a certain way. It is the shared model.</p>
-<p><strong>CLS — Common Language Specification</strong> is a <em>subset</em> of CTS: the features <strong>every</strong> .NET
-language is guaranteed to support.</p>
-<p>Why a subset? Because languages differ. C# is case-sensitive, so this is legal:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Process</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">process</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// legal C#, but NOT CLS-compliant</span>
-</span></code></pre></div>
-<p>VB.NET is case-insensitive. It cannot tell those apart, so it could never use your library
-properly.</p>
-<p>If you publish a library other .NET languages might consume, ask the compiler to check:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[assembly: CLSCompliant(true)]</span><span class="w">     </span><span class="c1">// warns about anything outside the safe subset</span>
-</span></code></pre></div>
-<p>If your library is only ever used from C#, you can ignore CLS entirely.</p>
-<p><strong>The memory aid:</strong> <em>CTS is the full rulebook. CLS is the part every language agreed to follow.</em></p>
-<h3 id="how-it-actually-works-jit-and-tiered-compilation">How it actually works — JIT and tiered compilation<a class="headerlink" href="#how-it-actually-works-jit-and-tiered-compilation" title="Permanent link">&para;</a></h3>
-<p>The JIT does not compile your program at startup. It compiles <strong>one method, the first time
-that method is called</strong>, then caches the result. A method you never call is never compiled.</p>
-<p>Modern .NET adds <strong>tiered compilation</strong>:</p>
-<ul>
-<li><strong>Tier 0</strong> — first run: compile <em>quickly</em> with few optimisations. Startup stays fast.</li>
-<li><strong>Tier 1</strong> — if a method is called many times, recompile it in the background with full
-  optimisation and swap it in.</li>
-</ul>
-<p>So the app starts fast and gets faster as the hot paths reveal themselves.</p>
-<p>This matters practically: <strong>benchmarks must warm up first.</strong> Measuring the first few calls
-measures Tier 0 code plus the compilation itself, not your real throughput. BenchmarkDotNet
-handles that automatically, which is one reason to use it over a stopwatch — see
-<a href="../19-caching-performance/19.14-benchmarking-load-testing.md">19.14</a>.</p>
-<h3 id="the-deeper-detail-aot-and-readytorun">The deeper detail — AOT and ReadyToRun<a class="headerlink" href="#the-deeper-detail-aot-and-readytorun" title="Permanent link">&para;</a></h3>
-<p>JIT costs startup time. For a serverless function that runs for 200 milliseconds, a large
-fraction of its life is compilation.</p>
-<p>Two options move that work earlier.</p>
-<p><strong>ReadyToRun (R2R)</strong> pre-compiles IL to machine code at publish time but <strong>keeps the IL too</strong>.
-If the pre-compiled version cannot be used, the JIT compiles normally. Faster startup, bigger
-file, everything still works everywhere.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;PublishReadyToRun&gt;</span>true<span class="nt">&lt;/PublishReadyToRun&gt;</span>
-</span></code></pre></div>
-<p><strong>Native AOT</strong> goes all the way — a real native executable, with <strong>no IL and no JIT at all</strong>.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;PublishAot&gt;</span>true<span class="nt">&lt;/PublishAot&gt;</span>
-</span></code></pre></div>
-<p>The gains are dramatic: startup in single-digit milliseconds, much lower memory, a
-self-contained binary needing no installed runtime. What you give up:</p>
-<ul>
-<li><strong>Reflection over types the compiler could not see.</strong> Trimming removes unused code, and
-  anything reached only by reflection looks unused. See
-  <a href="../../01-csharp-fundamentals/1.23-attributes-reflection/">1.23</a>.</li>
-<li><strong>Runtime code generation.</strong> <code>Expression.Compile()</code> and <code>Reflection.Emit</code> do not work,
-  ruling out some ORMs and serializers.</li>
-<li><strong>One build per platform.</strong> A Linux x64 build runs only on Linux x64.</li>
-</ul>
-<p>This is a large part of why source generators became popular — they do at build time what
-reflection used to do at runtime, which keeps AOT working. See
-<a href="../21-advanced-features/21.10-native-aot.md">21.10</a>.</p>
+<p>That is the whole thing. Every <code>.cs</code> file in the folder and below is included automatically by
+a wildcard pattern the SDK supplies. <strong>You never list files again.</strong></p>
+<p>The <code>Sdk</code> attribute at the top says which set of defaults to use:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>JIT</th>
-<th>ReadyToRun</th>
-<th>Native AOT</th>
+<th>SDK</th>
+<th>For</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Startup</td>
-<td>Slowest</td>
-<td>Faster</td>
-<td>Fastest</td>
+<td><code>Microsoft.NET.Sdk</code></td>
+<td>Class libraries, console apps</td>
 </tr>
 <tr>
-<td>Peak speed</td>
-<td>Best</td>
-<td>Best</td>
-<td>Slightly lower</td>
+<td><code>Microsoft.NET.Sdk.Web</code></td>
+<td>ASP.NET Core apps</td>
 </tr>
 <tr>
-<td>File size</td>
-<td>Smallest</td>
-<td>Larger</td>
-<td>Largest</td>
+<td><code>Microsoft.NET.Sdk.Razor</code></td>
+<td>Razor class libraries</td>
 </tr>
 <tr>
-<td>Reflection</td>
-<td>Full</td>
-<td>Full</td>
-<td><strong>Limited</strong></td>
-</tr>
-<tr>
-<td>Build per platform</td>
-<td>No</td>
-<td>Partly</td>
-<td><strong>Yes</strong></td>
+<td><code>Microsoft.NET.Sdk.Worker</code></td>
+<td>Background service apps</td>
 </tr>
 </tbody>
 </table>
+<h3 id="what-a-tfm-actually-is">What a TFM actually is<a class="headerlink" href="#what-a-tfm-actually-is" title="Permanent link">&para;</a></h3>
+<p>A <strong>Target Framework Moniker</strong> is just a short code saying which .NET you are building
+against. It determines which APIs the compiler will let you use.</p>
+<table>
+<thead>
+<tr>
+<th>TFM</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>net10.0</code></td>
+<td>.NET 10, cross-platform</td>
+</tr>
+<tr>
+<td><code>net8.0</code></td>
+<td>.NET 8, cross-platform</td>
+</tr>
+<tr>
+<td><code>net48</code></td>
+<td>.NET Framework 4.8, Windows only</td>
+</tr>
+<tr>
+<td><code>netstandard2.0</code></td>
+<td>The old shared-API bridge (<a href="../3.09-dotnet-standard/">3.9</a>)</td>
+</tr>
+<tr>
+<td><code>net10.0-windows</code></td>
+<td>.NET 10 <strong>plus Windows-only APIs</strong> — needed for WPF or WinForms</td>
+</tr>
+</tbody>
+</table>
+<p>That last form is worth knowing. The suffix unlocks platform-specific APIs, and it means the
+resulting assembly only runs on that platform.</p>
+<hr />
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="the-simple-version-the-properties-you-will-actually-set">The simple version — the properties you will actually set<a class="headerlink" href="#the-simple-version-the-properties-you-will-actually-set" title="Permanent link">&para;</a></h3>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk.Web&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="cm">&lt;!-- Turn on nullable reference type warnings — see 1.15 --&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="cm">&lt;!-- Add common usings automatically, so files start at the namespace --&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="cm">&lt;!-- Treat warnings as errors. Worth doing in CI. --&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&lt;TreatWarningsAsErrors&gt;</span>true<span class="nt">&lt;/TreatWarningsAsErrors&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="cm">&lt;!-- Produce the XML docs file so consumers get IntelliSense --&gt;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nt">&lt;GenerateDocumentationFile&gt;</span>true<span class="nt">&lt;/GenerateDocumentationFile&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="cm">&lt;!-- Required for pointers — see 3.3 --&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nt">&lt;AllowUnsafeBlocks&gt;</span>false<span class="nt">&lt;/AllowUnsafeBlocks&gt;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Serilog.AspNetCore&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nt">&lt;ProjectReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;../MyApp.Core/MyApp.Core.csproj&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="nt">&lt;/Project&gt;</span>
+</span></code></pre></div>
+<p><strong><code>&lt;PropertyGroup&gt;</code> holds single settings. <code>&lt;ItemGroup&gt;</code> holds lists.</strong> That is the only
+structural rule you need.</p>
+<h3 id="implicit-usings-where-did-the-using-lines-go">Implicit usings — where did the <code>using</code> lines go?<a class="headerlink" href="#implicit-usings-where-did-the-using-lines-go" title="Permanent link">&para;</a></h3>
+<p>With <code>&lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;</code>, the SDK adds a standard set of <code>using</code>
+directives to every file, chosen by project type. A web project gets things like:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">global</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">global</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">global</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">global</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">global</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Builder</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// ...and more</span>
+</span></code></pre></div>
+<p>This is why a modern file often starts straight at the namespace declaration with no <code>using</code>
+block. You can add your own project-wide ones:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;Using</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;MyApp.Common.Extensions&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;Using</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Text.Json&quot;</span><span class="w"> </span><span class="na">Alias=</span><span class="s">&quot;Json&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/ItemGroup&gt;</span>
+</span></code></pre></div>
+<p>⚠️ <strong>The downside is discoverability.</strong> When a type resolves and you cannot see why, the
+<code>using</code> is not in the file you are reading. That is worth knowing when someone new joins the
+project and cannot work out where something came from.</p>
+<h3 id="how-it-actually-works-multi-targeting">How it actually works — multi-targeting<a class="headerlink" href="#how-it-actually-works-multi-targeting" title="Permanent link">&para;</a></h3>
+<p>A <strong>library</strong> often needs to support several .NET versions. Multi-targeting builds it once per
+target:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;TargetFrameworks&gt;</span>net10.0;net8.0;netstandard2.0<span class="nt">&lt;/TargetFrameworks&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></code></pre></div>
+<p>Note the <strong>plural</strong> element name. That single change produces three separate assemblies, and
+<code>dotnet pack</code> puts all three in one NuGet package. Consumers automatically get the one
+matching their project.</p>
+<p>Since each build sees a different set of APIs, you need <strong>conditional compilation</strong> where they
+differ:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ReadOnlySpan</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#if NET8_0_OR_GREATER</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="c1">// Available on modern .NET only</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Concat</span><span class="p">(</span><span class="s">&quot;Value: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cp">#else</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="c1">// netstandard2.0 fallback</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="cp">#endif</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The SDK defines these symbols for you: <code>NET10_0</code>, <code>NET8_0_OR_GREATER</code>, <code>NETSTANDARD2_0</code>,
+<code>NETFRAMEWORK</code> and so on. <strong>Prefer the <code>_OR_GREATER</code> forms</strong> — <code>#if NET8_0</code> is false when you
+later add <code>net10.0</code>, which produces a very confusing regression.</p>
+<p>You can also vary references per target:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;ItemGroup</span><span class="w"> </span><span class="na">Condition=</span><span class="s">&quot;&#39;$(TargetFramework)&#39; == &#39;netstandard2.0&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="cm">&lt;!-- Only the old target needs this polyfill package --&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Text.Json&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">&lt;/ItemGroup&gt;</span>
+</span></code></pre></div>
+<p><strong>Only multi-target when you actually need to.</strong> It multiplies build time and testing effort.
+An application should target exactly one framework — multi-targeting is for libraries with
+consumers you do not control.</p>
+<h3 id="the-deeper-detail-sharing-settings-across-a-solution">The deeper detail — sharing settings across a solution<a class="headerlink" href="#the-deeper-detail-sharing-settings-across-a-solution" title="Permanent link">&para;</a></h3>
+<p>Repeating the same properties in fifteen project files is a maintenance problem. Two files
+solve it.</p>
+<p><strong><code>Directory.Build.props</code></strong> at the solution root applies to every project beneath it:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;Project&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;TreatWarningsAsErrors&gt;</span>true<span class="nt">&lt;/TreatWarningsAsErrors&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&lt;LangVersion&gt;</span>latest<span class="nt">&lt;/LangVersion&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nt">&lt;/Project&gt;</span>
+</span></code></pre></div>
+<p>Individual projects then only carry what makes them different.</p>
+<p><strong><code>Directory.Packages.props</code></strong> centralises package versions so they cannot drift apart:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;Project&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;ManagePackageVersionsCentrally&gt;</span>true<span class="nt">&lt;/ManagePackageVersionsCentrally&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">&lt;PackageVersion</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Serilog.AspNetCore&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">&lt;PackageVersion</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;FluentValidation&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;11.9.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nt">&lt;/Project&gt;</span>
+</span></code></pre></div>
+<p>Projects then reference without a version:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Serilog.AspNetCore&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>This directly prevents the diamond dependency problem from
+<a href="../3.06-assemblies-nuget/">3.6</a> within your own solution, and it is worth setting up on
+anything with more than about three projects.</p>
+<h3 id="rids-and-publishing">RIDs and publishing<a class="headerlink" href="#rids-and-publishing" title="Permanent link">&para;</a></h3>
+<p>A <strong>Runtime Identifier</strong> names a specific OS and CPU. You need one when publishing something
+self-contained:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-r<span class="w"> </span>linux-x64<span class="w"> </span>--self-contained
+</span></code></pre></div>
+<p>Common values: <code>win-x64</code>, <code>linux-x64</code>, <code>linux-musl-x64</code> (Alpine), <code>osx-arm64</code>.</p>
+<p>⚠️ <strong><code>linux-musl-x64</code> is the Alpine one.</strong> Building <code>linux-x64</code> and running it in an Alpine
+container fails at startup with a confusing missing-library error, because Alpine uses musl
+rather than glibc. This catches people out regularly — see
+<a href="../24-devops-hosting/24.03-dockerfile.md">24.3</a>.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>Publishing with each strategy:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Normal — IL only, JIT at runtime. Needs .NET installed on the target.</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># ReadyToRun — pre-compiled, IL kept as a fallback</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-r<span class="w"> </span>linux-x64<span class="w"> </span>-p:PublishReadyToRun<span class="o">=</span><span class="nb">true</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Native AOT — a real native binary, no runtime needed</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>dotnet<span class="w"> </span>publish<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-r<span class="w"> </span>linux-x64<span class="w"> </span>-p:PublishAot<span class="o">=</span><span class="nb">true</span>
+<p>A realistic library that supports both modern .NET and .NET Framework consumers:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&lt;TargetFrameworks&gt;</span>net10.0;netstandard2.0<span class="nt">&lt;/TargetFrameworks&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">&lt;PackageId&gt;</span>MyCompany.Orders<span class="nt">&lt;/PackageId&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="nt">&lt;Version&gt;</span>2.1.0<span class="nt">&lt;/Version&gt;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nt">&lt;GenerateDocumentationFile&gt;</span>true<span class="nt">&lt;/GenerateDocumentationFile&gt;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="nt">&lt;PackageLicenseExpression&gt;</span>MIT<span class="nt">&lt;/PackageLicenseExpression&gt;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">  </span><span class="cm">&lt;!-- netstandard2.0 predates nullable annotations, so it needs a shim --&gt;</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">  </span><span class="nt">&lt;ItemGroup</span><span class="w"> </span><span class="na">Condition=</span><span class="s">&quot;&#39;$(TargetFramework)&#39; == &#39;netstandard2.0&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Nullable&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;1.3.1&quot;</span><span class="w"> </span><span class="na">PrivateAssets=</span><span class="s">&quot;all&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Text.Json&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;8.0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="nt">&lt;/Project&gt;</span>
 </span></code></pre></div>
-<p>Turning off tiered compilation, which you would only do while measuring:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;TieredCompilation&gt;</span>false<span class="nt">&lt;/TieredCompilation&gt;</span>
-</span></code></pre></div>
+<p><code>PrivateAssets="all"</code> means that package is used to build this library but <strong>not</strong> passed on to
+whoever consumes it — right for build-time helpers and analysers.</p>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What happens when you compile and run a C# program?</strong></p>
-<p>Two stages. At build time the C# compiler turns your source into IL, an intermediate language
-not tied to any CPU, and that is what goes into the <code>.dll</code>. At run time the CLR compiles that
-IL into machine code for the actual processor, one method at a time as each is first called —
-JIT compilation. The benefit is that a single build runs on any platform and the JIT can
-optimise for the specific CPU. The cost is that the first call to each method pays for its
-compilation, which is why startup is slower than a natively compiled language.</p>
-<p><strong>Q: What is the difference between CTS and CLS?</strong></p>
-<p>CTS, the Common Type System, is the shared model of what a type is across all .NET languages —
-value types versus reference types, everything deriving from <code>object</code>, how interfaces work.
-CLS, the Common Language Specification, is a subset of that: the features every .NET language
-is guaranteed to support. The subset exists because languages differ — C# is case-sensitive
-and permits two methods differing only by case, but VB.NET is case-insensitive and could never
-call them. So CTS is the full rulebook and CLS is the part everyone agreed to follow. It only
-matters if you publish a library for other .NET languages.</p>
-<p><strong>Q: What is tiered compilation?</strong></p>
-<p>The JIT compiles a method twice with different priorities. The first time it runs, the method
-is compiled quickly with minimal optimisation, keeping startup fast. If the runtime then sees
-that method called frequently, it recompiles it in the background with full optimisation and
-swaps it in. So the app starts quickly and gets faster as the hot paths emerge. It matters
-practically when benchmarking, because measuring the first calls measures unoptimised code
-plus the compilation cost rather than real steady-state performance.</p>
-<p><strong>Q: What is Native AOT, and what does it cost?</strong></p>
-<p>Native AOT compiles all the way to a native executable at build time, with no IL and no JIT.
-Startup drops to a few milliseconds, memory falls, and you get a self-contained binary needing
-no installed runtime — very attractive for serverless and short-lived containers. The
-trade-off is that dynamic behaviour breaks: reflection over types the compiler could not see,
-<code>Expression.Compile</code>, and <code>Reflection.Emit</code>. That rules out some serializers and ORMs. You
-also build separately per platform. It is a large part of why .NET has moved towards source
-generators.</p>
+<p><strong>Q: What is the difference between the old and SDK-style project formats?</strong></p>
+<p>The old format listed every source file explicitly, which made project files hundreds of lines
+long and caused merge conflicts whenever two people added files. SDK-style projects include
+files automatically by wildcard, so a complete modern project file can be six lines. The <code>Sdk</code>
+attribute at the top selects a set of defaults appropriate to the project type — web, library,
+worker. The practical difference day to day is that you almost never edit the project file
+except to add a package or change a property.</p>
+<p><strong>Q: What is a TFM?</strong></p>
+<p>A Target Framework Moniker — a short code in the project file saying which .NET version you
+build against, like <code>net10.0</code> or <code>net48</code>. It controls which APIs the compiler allows. There is
+also a platform-suffixed form such as <code>net10.0-windows</code>, which unlocks Windows-only APIs for
+things like WinForms and means the output only runs on Windows.</p>
+<p><strong>Q: What is multi-targeting and when would you use it?</strong></p>
+<p>Building one project against several target frameworks at once, using the plural
+<code>&lt;TargetFrameworks&gt;</code> property. The compiler runs once per target, producing several assemblies
+that <code>dotnet pack</code> bundles into a single NuGet package, and consumers automatically get the
+one matching their project. You need it for libraries that must support both modern .NET and
+older consumers. Where the APIs differ you use conditional compilation with symbols like
+<code>NET8_0_OR_GREATER</code>. Applications should target exactly one framework — multi-targeting costs
+build time and testing effort, so it is only worth it when you do not control your consumers.</p>
+<p><strong>Q: How do you avoid repeating settings across many projects?</strong></p>
+<p><code>Directory.Build.props</code> at the solution root, which MSBuild applies to every project beneath
+it — so target framework, nullable settings and language version live in one place. For
+package versions there is <code>Directory.Packages.props</code> with central package management, where
+projects reference a package without a version and the version is declared once. That also
+prevents the situation where two projects in the same solution drift onto different versions of
+the same dependency.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>"C# compiles to machine code."</strong> It compiles to IL. Machine code comes later, from the JIT.</li>
-<li><strong>The <code>.dll</code> contains IL, not machine code.</strong> That is why decompilers work and obfuscators
-  exist.</li>
-<li><strong>Confusing CTS and CLS.</strong> CTS is the whole type system; CLS is the smaller safe subset.</li>
-<li><strong>Benchmarking without warm-up measures Tier 0 code</strong>, not real performance.</li>
-<li><strong>Native AOT silently breaks reflection.</strong> It compiles fine, then fails at runtime with a
-  missing type — often not until production.</li>
-<li><strong>ReadyToRun does not remove the JIT</strong>, it just gives it less to do. AOT removes it entirely.</li>
-<li><strong>AOT builds are platform-specific</strong>, unlike normal .NET output.</li>
+<li><strong><code>&lt;TargetFramework&gt;</code> versus <code>&lt;TargetFrameworks&gt;</code>.</strong> One letter changes single-target into
+  multi-target, and the error if you get it wrong is unhelpful.</li>
+<li><strong><code>#if NET8_0</code> breaks when you add a newer target.</strong> Use <code>NET8_0_OR_GREATER</code>.</li>
+<li><strong>Implicit usings hide where types come from.</strong> The <code>using</code> is not in the file you are
+  reading.</li>
+<li><strong>Multi-targeting multiplies your test matrix.</strong> Only do it for libraries that need it.</li>
+<li><strong><code>linux-x64</code> does not run on Alpine.</strong> Alpine needs <code>linux-musl-x64</code>.</li>
+<li><strong>Files are included by wildcard</strong>, so a stray <code>.cs</code> file anywhere under the project folder
+  gets compiled — including in a <code>backup</code> folder someone left behind.</li>
+<li><strong>Forgetting <code>PrivateAssets="all"</code></strong> on build-time packages leaks them to your consumers.</li>
+<li><strong>Changing the TFM can silently change behaviour</strong>, because the SDK applies different
+  defaults per version.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../3.01-dotnet-history/">3.1 .NET history</a> — which runtime you are on</li>
-<li><a href="../3.03-managed-vs-unmanaged/">3.3 Managed vs unmanaged</a> — what "managed" means</li>
-<li><a href="../3.04-garbage-collection/">3.4 Garbage collection</a> — the CLR's other main job</li>
-<li><a href="../3.06-assemblies-nuget/">3.6 Assemblies</a> — what is inside a <code>.dll</code></li>
-<li><a href="../../01-csharp-fundamentals/1.23-attributes-reflection/">1.23 Reflection</a> — why AOT restricts it</li>
-<li><a href="../21-advanced-features/21.10-native-aot.md">21.10 Native AOT</a> — using it in ASP.NET Core</li>
-<li><a href="../19-caching-performance/19.14-benchmarking-load-testing.md">19.14 Benchmarking</a> — why warm-up matters</li>
+<li><a href="../3.01-dotnet-history/">3.1 .NET history</a> — which TFM to target</li>
+<li><a href="../3.06-assemblies-nuget/">3.6 Assemblies and NuGet</a> — references and version conflicts</li>
+<li><a href="../3.08-dotnet-cli/">3.8 The .NET CLI</a> — the commands that read this file</li>
+<li><a href="../3.09-dotnet-standard/">3.9 .NET Standard</a> — the <code>netstandard2.0</code> target</li>
+<li><a href="../../01-csharp-fundamentals/1.15-nullability/">1.15 Nullability</a> — the <code>&lt;Nullable&gt;</code> setting</li>
+<li><a href="../../01-csharp-fundamentals/1.26-modern-csharp-versions/">1.26 Global usings</a> — implicit usings</li>
+<li><a href="../24-devops-hosting/24.03-dockerfile.md">24.3 Dockerfile</a> — RIDs and Alpine</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/dotnet/standard/components">Microsoft Learn — .NET architectural components</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/standard/managed-execution-process">Microsoft Learn — Managed execution process</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/core/runtime-config/compilation">Microsoft Learn — Tiered compilation</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/core/project-sdk/overview">Microsoft Learn — Project file overview</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/frameworks">Microsoft Learn — Target frameworks</a></li>
+<li><a href="https://learn.microsoft.com/nuget/consume-packages/central-package-management">Microsoft Learn — Central package management</a></li>
 </ul>
 
 
@@ -3333,7 +3443,7 @@ generators.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../3.01-dotnet-history/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.1 .NET history">
+          <a href="../3.06-assemblies-nuget/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.6 Assemblies and NuGet">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3343,20 +3453,20 @@ generators.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                3.1 .NET history
+                3.6 Assemblies and NuGet
               </div>
             </div>
           </a>
         
         
           
-          <a href="../3.03-managed-vs-unmanaged/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.3 Managed vs unmanaged">
+          <a href="../3.08-dotnet-cli/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.8 The .NET CLI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                3.3 Managed vs unmanaged
+                3.8 The .NET CLI
               </div>
             </div>
             <div class="md-footer__button md-icon">

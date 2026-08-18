@@ -524,6 +524,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#net-runtime-and-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .NET runtime and platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2177,6 +2188,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2195,7 +2220,7 @@
   <span class="md-ellipsis">
     
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
     
@@ -2211,7 +2236,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    3. .NET Runtime (in progress)
+    3. .NET Runtime & Platform
   
 
           </label>
@@ -2280,6 +2305,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.03-managed-vs-unmanaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Managed vs unmanaged
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../notes/03-dotnet-runtime/3.04-garbage-collection/" class="md-nav__link">
         
   
@@ -2288,6 +2341,174 @@
     
   
     3.4 Garbage collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.05-memory-leaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.5 Memory leaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.06-assemblies-nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Assemblies and NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.07-csproj-and-tfm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 csproj and target frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.08-dotnet-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.8 The .NET CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.09-dotnet-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.9 .NET Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/03-dotnet-runtime/3.10-release-cadence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.10 Release cadence (LTS vs STS)
   
 
     
@@ -2564,6 +2785,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#net-runtime-and-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .NET runtime and platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2806,6 +3038,133 @@ whole point of the question.</p>
 <td>"The InMemory provider is fine for testing"</td>
 <td>It doesn't enforce relational constraints, transactions, or SQL translation — tests pass that production fails. Use SQLite in-memory or Testcontainers.</td>
 <td><a href="notes/13-entity-framework-core/13.20-testing-data-access.md">13.20</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="net-runtime-and-platform">.NET runtime and platform<a class="headerlink" href="#net-runtime-and-platform" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>⚠️ The plausible answer</th>
+<th>✅ What's actually true</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>".NET 4.8 is just an older .NET 8"</td>
+<td><strong>Unrelated products.</strong> 4.8 is the final Windows-only Framework; 8 is the modern cross-platform one. The close numbers are why version 4 was skipped.</td>
+<td><a href="../notes/03-dotnet-runtime/3.01-dotnet-history/">3.1</a></td>
+</tr>
+<tr>
+<td>"The name 'Core' was dropped everywhere"</td>
+<td>The runtime dropped it; <strong>ASP.NET Core kept it</strong>. ASP.NET Core 10 runs on .NET 10.</td>
+<td><a href="../notes/03-dotnet-runtime/3.01-dotnet-history/">3.1</a></td>
+</tr>
+<tr>
+<td>"C# compiles to machine code"</td>
+<td>It compiles to <strong>IL</strong>. Machine code is produced later by the JIT, per method, on first call.</td>
+<td><a href="../notes/03-dotnet-runtime/3.02-clr-and-compilation/">3.2</a></td>
+</tr>
+<tr>
+<td>"CTS and CLS are the same thing"</td>
+<td>CTS is the <strong>full</strong> type system. CLS is the <strong>subset</strong> every .NET language supports — which is why C# allows <code>Process()</code> and <code>process()</code> but that isn't CLS-compliant.</td>
+<td><a href="../notes/03-dotnet-runtime/3.02-clr-and-compilation/">3.2</a></td>
+</tr>
+<tr>
+<td>"Benchmark the first few calls"</td>
+<td>Those measure <strong>Tier 0</strong> unoptimised code plus the compilation itself. You must warm up first.</td>
+<td><a href="../notes/03-dotnet-runtime/3.02-clr-and-compilation/">3.2</a></td>
+</tr>
+<tr>
+<td>"Native AOT is just a faster build"</td>
+<td>It <strong>silently breaks reflection</strong>, <code>Expression.Compile</code> and <code>Reflection.Emit</code>. Compiles fine, fails at runtime.</td>
+<td><a href="../notes/03-dotnet-runtime/3.02-clr-and-compilation/">3.2</a></td>
+</tr>
+<tr>
+<td>"The GC frees everything eventually"</td>
+<td>It frees <strong>memory</strong>. File handles, sockets and DB connections need <code>Dispose</code> — the GC has no idea what they are.</td>
+<td><a href="../notes/03-dotnet-runtime/3.03-managed-vs-unmanaged/">3.3</a></td>
+</tr>
+<tr>
+<td>"You can take a pointer to a managed array"</td>
+<td>Not without <code>fixed</code>. The GC <strong>moves objects</strong> during compaction and cannot update a raw pointer.</td>
+<td><a href="../notes/03-dotnet-runtime/3.03-managed-vs-unmanaged/">3.3</a></td>
+</tr>
+<tr>
+<td>"The GC counts references"</td>
+<td>It uses <strong>reachability from roots</strong>, not counting. That's why circular references are collected fine.</td>
+<td><a href="../notes/03-dotnet-runtime/3.04-garbage-collection/">3.4</a></td>
+</tr>
+<tr>
+<td>"<code>GC.Collect()</code> will fix my memory usage"</td>
+<td>If the object is still reachable, no collection frees it. Forcing one triggers an expensive <strong>Gen 2</strong> pass and <strong>promotes</strong> objects that would have died cheaply.</td>
+<td><a href="../notes/03-dotnet-runtime/3.04-garbage-collection/">3.4</a></td>
+</tr>
+<tr>
+<td>"Large objects are handled like any other"</td>
+<td>≥ <strong>85,000 bytes</strong> go to the LOH, collected only on Gen 2 and <strong>not compacted</strong> — so memory climbs from fragmentation with no actual leak.</td>
+<td><a href="../notes/03-dotnet-runtime/3.04-garbage-collection/">3.4</a></td>
+</tr>
+<tr>
+<td>"Server GC is strictly better"</td>
+<td>It uses <strong>one heap per core</strong>. In a small container that extra memory can breach the limit and get you OOM-killed.</td>
+<td><a href="../notes/03-dotnet-runtime/3.04-garbage-collection/">3.4</a></td>
+</tr>
+<tr>
+<td>"You can't leak memory in .NET"</td>
+<td>You can't forget to free — but you can <strong>keep a reference</strong>, which the GC must honour. Static collections, unremoved event handlers, captured closures.</td>
+<td><a href="../notes/03-dotnet-runtime/3.05-memory-leaks/">3.5</a></td>
+</tr>
+<tr>
+<td>"One memory dump will show the leak"</td>
+<td>One dump shows what's <strong>large</strong>. Two dumps minutes apart show what's <strong>growing</strong>, which is what you need. Then <code>gcroot</code> to find what holds it.</td>
+<td><a href="../notes/03-dotnet-runtime/3.05-memory-leaks/">3.5</a></td>
+</tr>
+<tr>
+<td>"<code>IMemoryCache</code> can't leak, it has eviction"</td>
+<td>Without an explicit <strong><code>SizeLimit</code></strong> it only evicts under memory pressure, which may arrive too late.</td>
+<td><a href="../notes/03-dotnet-runtime/3.05-memory-leaks/">3.5</a></td>
+</tr>
+<tr>
+<td>"Copy the DLL into the output folder and it'll load"</td>
+<td>The runtime resolves from <strong><code>deps.json</code></strong>, not by scanning folders. Not listed there = <code>FileNotFoundException</code>.</td>
+<td><a href="../notes/03-dotnet-runtime/3.06-assemblies-nuget/">3.6</a></td>
+</tr>
+<tr>
+<td>"Version conflicts fail the build"</td>
+<td>They fail at <strong>runtime</strong> with <code>MethodNotFoundException</code>. .NET picks the highest version and hopes it's compatible.</td>
+<td><a href="../notes/03-dotnet-runtime/3.06-assemblies-nuget/">3.6</a></td>
+</tr>
+<tr>
+<td>"<code>#if NET8_0</code> covers .NET 8 and later"</td>
+<td>It's <strong>false</strong> once you add a <code>net10.0</code> target. Use <code>NET8_0_OR_GREATER</code>.</td>
+<td><a href="../notes/03-dotnet-runtime/3.07-csproj-and-tfm/">3.7</a></td>
+</tr>
+<tr>
+<td>"<code>linux-x64</code> runs in any Linux container"</td>
+<td><strong>Not Alpine.</strong> Alpine uses musl, so it needs <code>linux-musl-x64</code>. Fails at startup with a confusing missing-library error.</td>
+<td><a href="../notes/03-dotnet-runtime/3.07-csproj-and-tfm/">3.7</a></td>
+</tr>
+<tr>
+<td>"<code>dotnet build</code> output is deployable"</td>
+<td>It isn't. <code>publish</code> gathers all dependencies plus <code>deps.json</code> and <code>runtimeconfig.json</code>. Build output may start, then fail on an uncopied package.</td>
+<td><a href="../notes/03-dotnet-runtime/3.08-dotnet-cli/">3.8</a></td>
+</tr>
+<tr>
+<td>"<code>netstandard2.1</code> is the better .NET Standard"</td>
+<td>.NET Framework <strong>never supported it</strong>, which removes the only reason to target Standard. Target <code>net10.0</code> instead.</td>
+<td><a href="../notes/03-dotnet-runtime/3.09-dotnet-standard/">3.9</a></td>
+</tr>
+<tr>
+<td>"STS releases are previews"</td>
+<td>They're <strong>full production releases</strong>. The only difference is 18 months of support versus 3 years.</td>
+<td><a href="../notes/03-dotnet-runtime/3.10-release-cadence/">3.10</a></td>
+</tr>
+<tr>
+<td>"A newer .NET is always supported longer"</td>
+<td>.NET 7 (STS) went <strong>out of support before</strong> .NET 6 (LTS), despite shipping a year later.</td>
+<td><a href="../notes/03-dotnet-runtime/3.10-release-cadence/">3.10</a></td>
 </tr>
 </tbody>
 </table>
