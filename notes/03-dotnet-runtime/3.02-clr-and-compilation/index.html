@@ -2155,6 +2155,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2576,6 +2587,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2758,11 +2780,88 @@
 <p><strong>Markers:</strong> ⭐ 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p>C# is compiled in <strong>two stages</strong>. First your source becomes <strong>IL</strong>, a CPU-independent middle
+language, and that is what goes in the <code>.dll</code>. Then, while the app runs, the <strong>CLR</strong> turns
+that IL into real machine code for the actual processor.</p>
 <ul>
-<li>Your C# is <strong>not</strong> compiled straight to machine code. It is compiled to a middle language called <strong>IL</strong>.</li>
-<li>When you run the app, the <strong>CLR</strong> turns that IL into real machine code, one method at a time, as each is first needed. That step is called <strong>JIT</strong>.</li>
-<li>The other acronyms are small ideas around that: <strong>CTS</strong> (the type rules), <strong>CLS</strong> (the shared subset), <strong>AOT</strong> and <strong>ReadyToRun</strong> (doing the JIT work early).</li>
+<li>The second stage happens <strong>one method at a time, as each is first called</strong>. That is <strong>JIT</strong>.</li>
+<li><strong>AOT</strong> and <strong>ReadyToRun</strong> move that second stage to build time, trading flexibility for startup speed.</li>
+<li><strong>CTS</strong> and <strong>CLS</strong> are the rules that let C#, VB.NET and F# share the same compiled code.</li>
 </ul>
+<hr />
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Roslyn</strong></td>
+<td><em>the C# compiler</em></td>
+<td>The thing that runs when you press Build. Turns <code>.cs</code> files into IL.</td>
+</tr>
+<tr>
+<td><strong>IL</strong></td>
+<td><em>a language</em></td>
+<td>Intermediate Language. A simple instruction set that is <strong>not tied to any CPU</strong>. Your <code>.dll</code> contains this, not machine code.</td>
+</tr>
+<tr>
+<td><strong>Assembly</strong></td>
+<td><em>a file</em></td>
+<td>The <code>.dll</code> or <code>.exe</code> Roslyn produces. Contains IL plus metadata describing every type in it.</td>
+</tr>
+<tr>
+<td><strong>CLR</strong></td>
+<td><em>the runtime engine</em></td>
+<td>Common Language Runtime. The program that runs your code. It does JIT compilation, memory allocation, garbage collection and exception handling.</td>
+</tr>
+<tr>
+<td><strong>JIT</strong></td>
+<td><em>a compilation step</em></td>
+<td>Just-In-Time. The CLR converting IL into machine code <strong>at the moment a method is first called</strong>, then caching the result.</td>
+</tr>
+<tr>
+<td><strong>Tiered compilation</strong></td>
+<td><em>a JIT strategy</em></td>
+<td>Compile quickly first for fast startup, then recompile hot methods with full optimisation in the background.</td>
+</tr>
+<tr>
+<td><strong>Managed code</strong></td>
+<td><em>code the CLR runs</em></td>
+<td>Your C#. The CLR handles its memory and safety.</td>
+</tr>
+<tr>
+<td><strong>CTS</strong></td>
+<td><em>a specification</em></td>
+<td>Common Type System. The shared rules for what a <em>type</em> is across all .NET languages.</td>
+</tr>
+<tr>
+<td><strong>CLS</strong></td>
+<td><em>a specification</em></td>
+<td>Common Language Specification. A <strong>subset</strong> of CTS containing only features every .NET language supports.</td>
+</tr>
+<tr>
+<td><strong>AOT</strong></td>
+<td><em>a compilation step</em></td>
+<td>Ahead-Of-Time. Compiling all the way to native machine code at <strong>build</strong> time, with no IL and no JIT left.</td>
+</tr>
+<tr>
+<td><strong>ReadyToRun (R2R)</strong></td>
+<td><em>a compilation step</em></td>
+<td>A middle ground. Pre-compiles to machine code but <strong>keeps the IL</strong> as a fallback.</td>
+</tr>
+<tr>
+<td><strong>Trimming</strong></td>
+<td><em>a build step</em></td>
+<td>Removing unused code to shrink the output. Used with AOT, and the reason reflection breaks there.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The memory aid:</strong> <em>CTS is the full rulebook. CLS is the part every language agreed to follow.</em></p>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
 <h3 id="the-one-story-that-explains-all-seven-acronyms">The one story that explains all seven acronyms<a class="headerlink" href="#the-one-story-that-explains-all-seven-acronyms" title="Permanent link">&para;</a></h3>

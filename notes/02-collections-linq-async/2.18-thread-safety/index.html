@@ -2009,6 +2009,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2581,6 +2592,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2768,12 +2790,90 @@
 <p><strong>Markers:</strong> ⭐ ⚠️ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p><strong>Thread safety</strong> means your code still gives the right answer when several threads run it at
+the same time. Nothing in C# is thread-safe automatically — you have to make it so.</p>
 <ul>
-<li><strong><code>lock</code></strong> is the default tool. Simple, fast, and covers most cases — but <strong>you cannot <code>await</code> inside it</strong>.</li>
+<li><strong><code>lock</code></strong> is the default tool. Simple, fast, covers most cases — but <strong>you cannot <code>await</code> inside it</strong>.</li>
 <li><strong><code>SemaphoreSlim</code></strong> is the async-friendly alternative, because it has <code>WaitAsync</code>.</li>
-<li><strong><code>Interlocked</code></strong> does simple numeric operations atomically with no lock at all — much faster when it fits.</li>
+<li><strong><code>Interlocked</code></strong> updates a single number atomically with no lock at all — much faster when it fits.</li>
 <li>The real answer in ASP.NET Core is usually <strong>do not share mutable state at all.</strong></li>
 </ul>
+<hr />
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<p>Every term this note uses, and — importantly — <strong>what kind of C# thing each one actually is.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is in C#</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thread safe</strong></td>
+<td><em>a property of your code</em></td>
+<td>Several threads can run it at once and the result is still correct.</td>
+</tr>
+<tr>
+<td><strong>Race condition</strong></td>
+<td><em>a bug, not an API</em></td>
+<td>The result depends on which thread happens to win. Works in testing, fails under load.</td>
+</tr>
+<tr>
+<td><strong>Atomic</strong></td>
+<td><em>a property of an operation</em></td>
+<td>It cannot be interrupted halfway. Other threads see it as either <strong>not started</strong> or <strong>completely done</strong> — never partly done.</td>
+</tr>
+<tr>
+<td><strong>Critical section</strong></td>
+<td><em>a block of code</em></td>
+<td>Code that only one thread may be inside at a time.</td>
+</tr>
+<tr>
+<td><strong>Mutual exclusion</strong></td>
+<td><em>a guarantee</em></td>
+<td>The rule that enforces a critical section: one in, everyone else waits.</td>
+</tr>
+<tr>
+<td><strong><code>lock</code></strong></td>
+<td>a <strong>C# keyword</strong></td>
+<td>Marks a critical section. <code>lock (x) { ... }</code> compiles into <code>Monitor.Enter(x)</code> and <code>Monitor.Exit(x)</code> wrapped in a <code>try/finally</code>.</td>
+</tr>
+<tr>
+<td><strong><code>Monitor</code></strong></td>
+<td>a <strong>static class</strong> in <code>System.Threading</code></td>
+<td>What <code>lock</code> actually calls underneath. You rarely write it by hand.</td>
+</tr>
+<tr>
+<td><strong><code>SemaphoreSlim</code></strong></td>
+<td>a <strong>class you create with <code>new</code></strong></td>
+<td>Holds a count of permits. Lets N threads through and makes the rest wait. Uniquely, it has an <strong>async</strong> wait (<code>WaitAsync</code>).</td>
+</tr>
+<tr>
+<td><strong><code>Interlocked</code></strong></td>
+<td>a <strong>static class</strong> in <code>System.Threading</code></td>
+<td>Methods that read-modify-write a number as <strong>one single CPU instruction</strong>, so no lock is needed.</td>
+</tr>
+<tr>
+<td><strong><code>volatile</code></strong></td>
+<td>a <strong>field modifier</strong>, like <code>readonly</code></td>
+<td>Tells the compiler and CPU never to cache this field in a register. Every read goes to real memory.</td>
+</tr>
+<tr>
+<td><strong>Thread affinity</strong></td>
+<td><em>a property of a lock</em></td>
+<td>The lock must be released by the <strong>same thread</strong> that took it. This is exactly why <code>await</code> inside <code>lock</code> is banned.</td>
+</tr>
+<tr>
+<td><strong>Deadlock</strong></td>
+<td><em>a bug</em></td>
+<td>Two threads each holding a lock the other one needs. Neither can ever continue.</td>
+</tr>
+</tbody>
+</table>
+<p>The three you will actually type are <code>lock</code>, <code>SemaphoreSlim</code> and <code>Interlocked</code>. <code>volatile</code>
+is included because it gets asked about, not because you should use it.</p>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
 <p><code>count++</code> looks like one instruction. It is three:</p>

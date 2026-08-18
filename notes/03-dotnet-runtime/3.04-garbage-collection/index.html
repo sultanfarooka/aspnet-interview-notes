@@ -2183,6 +2183,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2604,6 +2615,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2814,11 +2836,101 @@
 <p><strong>Markers:</strong> 🔥 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p><strong>Garbage collection</strong> is .NET automatically finding objects that nothing is using any more,
+and freeing the memory they occupied. You never write "delete this object" in C#.</p>
 <ul>
-<li>The GC automatically frees objects <strong>nobody is using any more</strong>. You never write "delete this".</li>
-<li>It decides what is in use by <strong>starting from known roots and following every reference</strong>. Anything it cannot reach is garbage.</li>
-<li>It sorts objects into <strong>three generations</strong> based on age, and mostly only cleans the youngest one — because most objects die young.</li>
+<li>It decides what is still in use by <strong>starting from known roots and following every reference</strong>. Anything it cannot reach is garbage.</li>
+<li>It sorts objects into <strong>three generations</strong> by age, and mostly only cleans the youngest — because most objects die young.</li>
+<li>It manages <strong>memory only</strong>. Files, sockets and database connections still need <code>IDisposable</code>.</li>
 </ul>
+<hr />
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is in .NET</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heap</strong></td>
+<td><em>a region of memory</em></td>
+<td>Where all reference-type objects live. Managed by the GC.</td>
+</tr>
+<tr>
+<td><strong>Stack</strong></td>
+<td><em>a region of memory</em></td>
+<td>Where local variables live. Cleaned up automatically when a method returns — the GC is not involved.</td>
+</tr>
+<tr>
+<td><strong>Garbage collector (GC)</strong></td>
+<td><em>part of the CLR</em></td>
+<td>The component that finds and frees unreachable objects.</td>
+</tr>
+<tr>
+<td><strong>Root</strong></td>
+<td><em>a starting point for the search</em></td>
+<td>A place the GC knows is definitely live: local variables of running methods, <code>static</code> fields, CPU registers.</td>
+</tr>
+<tr>
+<td><strong>Reachable</strong></td>
+<td><em>a property of an object</em></td>
+<td>The GC can get to it by following references from a root. Reachable = keep.</td>
+</tr>
+<tr>
+<td><strong>Garbage</strong></td>
+<td><em>a property of an object</em></td>
+<td><strong>Not</strong> reachable from any root. Nothing can ever use it again, so its memory is freed.</td>
+</tr>
+<tr>
+<td><strong>Mark / Sweep / Compact</strong></td>
+<td><em>the three phases of a collection</em></td>
+<td>Mark what is reachable → free what is not → slide survivors together to remove gaps.</td>
+</tr>
+<tr>
+<td><strong>Generation</strong></td>
+<td><em>an age bucket on the heap</em></td>
+<td>Gen 0 (new), Gen 1 (survived once), Gen 2 (survived twice or more).</td>
+</tr>
+<tr>
+<td><strong>Promotion</strong></td>
+<td><em>what happens to a survivor</em></td>
+<td>An object that survives a collection moves up to the next generation.</td>
+</tr>
+<tr>
+<td><strong>Collection</strong></td>
+<td><em>one run of the GC</em></td>
+<td>A "Gen 0 collection" checks only Gen 0. A "Gen 2 collection" checks <strong>everything</strong> and is the expensive one.</td>
+</tr>
+<tr>
+<td><strong>LOH</strong></td>
+<td><em>a separate heap</em></td>
+<td>Large Object Heap. Anything <strong>85,000 bytes or larger</strong> goes here. Not compacted by default.</td>
+</tr>
+<tr>
+<td><strong>Fragmentation</strong></td>
+<td><em>a memory problem</em></td>
+<td>Free space exists but is split into small scattered gaps, so a large request still fails.</td>
+</tr>
+<tr>
+<td><strong><code>GC.Collect()</code></strong></td>
+<td>a <strong>static method</strong></td>
+<td>Forces a collection immediately. Almost always the wrong thing to call.</td>
+</tr>
+<tr>
+<td><strong>Finalizer</strong></td>
+<td>a <strong>method</strong>, written <code>~ClassName()</code></td>
+<td>Runs before an object's memory is reclaimed. Makes the object survive an extra collection, so avoid it.</td>
+</tr>
+<tr>
+<td><strong>Server GC / Workstation GC</strong></td>
+<td><em>two configuration modes</em></td>
+<td>Server GC uses one heap per CPU core for speed. Workstation GC uses one heap, for lower memory.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
 <h3 id="start-here-what-problem-does-this-solve">Start here: what problem does this solve?<a class="headerlink" href="#start-here-what-problem-does-this-solve" title="Permanent link">&para;</a></h3>

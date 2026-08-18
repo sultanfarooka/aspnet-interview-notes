@@ -2127,6 +2127,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2576,6 +2587,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2758,11 +2780,81 @@
 <p><strong>Markers:</strong> 🔥 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p>There have been <strong>three generations of .NET</strong>: Framework (2002, Windows only), Core (2016,
+the cross-platform rewrite), and .NET 5+ (2020, where the names merged back into one).</p>
 <ul>
-<li>There have been <strong>three versions of .NET</strong>. Framework (old, Windows only), Core (the rewrite), and .NET 5+ (the two joined back together).</li>
-<li><strong>.NET Framework 4.8 is the last one ever.</strong> It still gets security fixes. It gets no new features.</li>
-<li>Today there is just <strong>one .NET</strong>. If someone says ".NET 8" or ".NET 10", they mean the modern one.</li>
+<li><strong>.NET Framework 4.8 is the final version, forever.</strong> Security fixes only. No new features.</li>
+<li>Today there is just <strong>one .NET</strong>. ".NET 8" or ".NET 10" always means the modern one.</li>
+<li><strong>.NET 4.8 and .NET 8 are unrelated products.</strong> The similar numbers are an accident of history.</li>
 </ul>
+<hr />
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Runtime</strong></td>
+<td><em>a program</em></td>
+<td>The engine that executes your compiled code. Also called the CLR — see <a href="../3.02-clr-and-compilation/">3.2</a>.</td>
+</tr>
+<tr>
+<td><strong>SDK</strong></td>
+<td><em>a toolkit</em></td>
+<td>What you install to <strong>build</strong> code: compiler, <code>dotnet</code> CLI, build system. Includes a runtime.</td>
+</tr>
+<tr>
+<td><strong>Class library</strong></td>
+<td><em>a set of types</em></td>
+<td>The built-in types you use every day — <code>List&lt;T&gt;</code>, <code>String</code>, <code>HttpClient</code>.</td>
+</tr>
+<tr>
+<td><strong>.NET Framework</strong></td>
+<td><em>the original product (2002)</em></td>
+<td>Windows only. Installed <strong>into</strong> Windows, so one shared copy per machine. Ended at 4.8.</td>
+</tr>
+<tr>
+<td><strong>.NET Core</strong></td>
+<td><em>the rewrite (2016)</em></td>
+<td>Cross-platform, open source, much faster. Ships <strong>with your app</strong>. Ended at 3.1.</td>
+</tr>
+<tr>
+<td><strong>.NET 5+</strong></td>
+<td><em>the unified product (2020)</em></td>
+<td>.NET Core, renamed. The current one. Versions 5, 6, 7, 8, 9, 10.</td>
+</tr>
+<tr>
+<td><strong>TFM</strong></td>
+<td><em>a short code in your <code>.csproj</code></em></td>
+<td>Target Framework Moniker. Says which .NET you build against — <code>net10.0</code>, <code>net48</code>.</td>
+</tr>
+<tr>
+<td><strong>Side-by-side</strong></td>
+<td><em>an installation model</em></td>
+<td>Several runtime versions installed at once, each app using its own. Impossible with Framework.</td>
+</tr>
+<tr>
+<td><strong>Self-contained</strong></td>
+<td><em>a publish mode</em></td>
+<td>Your app ships <strong>with</strong> its runtime, so the target machine needs nothing installed.</td>
+</tr>
+<tr>
+<td><strong>LTS / STS</strong></td>
+<td><em>support lengths</em></td>
+<td>Long-Term Support (3 years, even numbers) vs Standard-Term Support (18 months, odd numbers). See <a href="3.10-release-cadence.md">3.10</a>.</td>
+</tr>
+<tr>
+<td><strong>ASP.NET Core</strong></td>
+<td><em>the web framework</em></td>
+<td>Confusingly <strong>kept</strong> the word "Core" after the rename. ASP.NET Core 10 runs on .NET 10.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
 <h3 id="first-what-is-net">First, what is ".NET"?<a class="headerlink" href="#first-what-is-net" title="Permanent link">&para;</a></h3>
