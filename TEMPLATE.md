@@ -25,13 +25,36 @@
 
 ## TL;DR
 
-Three bullets, maximum. This is what you read the morning of the interview — if you only
-ever re-read one part of this file, it's this part. Write it *last*, after the rest of
-the note exists, so it summarizes rather than promises.
+**Open with one sentence that DEFINES the topic**, in plain English. Not what it's good
+for — what it *is*. Then three bullets maximum.
+
+This is what you read the morning of the interview. Write it *last*, after the rest of the
+note exists, so it summarizes rather than promises.
 
 - Point one.
 - Point two.
 - Point three.
+
+---
+
+## Definitions
+
+**Required section.** Every term and API the note uses, defined before it is used.
+
+The critical column is the middle one: say **what kind of C# thing each term is** — a
+keyword, a class, a static class, a field modifier, an interface, a build setting, or just
+a concept with no code behind it. A reader who doesn't know whether `lock` is a keyword or
+a class cannot follow anything else.
+
+| Term | What it is in C# | What it means |
+|---|---|---|
+| **SomeThing** | a **C# keyword** | One plain sentence. What it does, not when to use it. |
+| **SomeClass** | a **class you create with `new`** | One plain sentence. |
+| **Some.Static** | a **static class** in `System.Whatever` | One plain sentence. |
+| **someConcept** | *a property / a bug / a strategy* | Use italics for things that aren't code. |
+
+Keep each definition to one sentence. Say when to use it later, in "How it works" — not
+here. Mixing definition and advice is what makes a definition feel vague.
 
 ---
 
