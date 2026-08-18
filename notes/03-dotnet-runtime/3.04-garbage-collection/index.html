@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.09-polymorphism/">
+        <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.04-garbage-collection/">
       
       
-        <link rel="prev" href="../1.08-interfaces/">
+        <link rel="prev" href="../3.02-clr-and-compilation/">
       
       
-        <link rel="next" href="../1.10-generics/">
+        <link rel="next" href="../../06-dependency-injection/6.03-service-lifetimes/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>1.9 Polymorphism - ASP.NET Core Interview Notes</title>
+        <title>3.4 Garbage collection - ASP.NET Core Interview Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#19-polymorphism" class="md-skip">
+        <a href="#34-garbage-collection" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.9 Polymorphism
+              3.4 Garbage collection
             
           </span>
         </div>
@@ -534,10 +534,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -597,11 +595,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -622,7 +620,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -640,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.01-value-vs-reference-types/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.01-value-vs-reference-types/" class="md-nav__link">
         
   
   
@@ -668,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.02-struct-class-record/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.02-struct-class-record/" class="md-nav__link">
         
   
   
@@ -696,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.03-strings-and-stringbuilder/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.03-strings-and-stringbuilder/" class="md-nav__link">
         
   
   
@@ -724,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.04-access-modifiers/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.04-access-modifiers/" class="md-nav__link">
         
   
   
@@ -752,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.05-static/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.05-static/" class="md-nav__link">
         
   
   
@@ -780,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.06-const-readonly-init-required/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.06-const-readonly-init-required/" class="md-nav__link">
         
   
   
@@ -808,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.07-inheritance/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.07-inheritance/" class="md-nav__link">
         
   
   
@@ -836,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.08-interfaces/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.08-interfaces/" class="md-nav__link">
         
   
   
@@ -861,37 +859,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1.9 Polymorphism
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01-csharp-fundamentals/1.09-polymorphism/" class="md-nav__link">
         
   
   
@@ -907,153 +878,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The concept
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compile-time-polymorphism-overloading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Compile-time polymorphism (overloading)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtime-polymorphism-overriding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime polymorphism (overriding)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interfaces-give-you-polymorphism-too" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interfaces give you polymorphism too
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Traps ⚠️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1066,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.10-generics/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.10-generics/" class="md-nav__link">
         
   
   
@@ -1094,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.11-delegates/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.11-delegates/" class="md-nav__link">
         
   
   
@@ -1122,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.12-events/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.12-events/" class="md-nav__link">
         
   
   
@@ -1150,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.13-lambdas-closures/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.13-lambdas-closures/" class="md-nav__link">
         
   
   
@@ -1178,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.14-extension-methods/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.14-extension-methods/" class="md-nav__link">
         
   
   
@@ -1206,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.15-nullability/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.15-nullability/" class="md-nav__link">
         
   
   
@@ -1234,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.16-null-operators/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.16-null-operators/" class="md-nav__link">
         
   
   
@@ -1262,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.17-pattern-matching/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.17-pattern-matching/" class="md-nav__link">
         
   
   
@@ -1290,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.18-tuples-ref-out-in/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.18-tuples-ref-out-in/" class="md-nav__link">
         
   
   
@@ -1318,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.19-indexers-operators/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.19-indexers-operators/" class="md-nav__link">
         
   
   
@@ -1346,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.20-exceptions/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.20-exceptions/" class="md-nav__link">
         
   
   
@@ -1374,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.21-idisposable/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.21-idisposable/" class="md-nav__link">
         
   
   
@@ -1402,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.22-anonymous-dynamic-var/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.22-anonymous-dynamic-var/" class="md-nav__link">
         
   
   
@@ -1430,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.23-attributes-reflection/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.23-attributes-reflection/" class="md-nav__link">
         
   
   
@@ -1458,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.24-partial-local-functions/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.24-partial-local-functions/" class="md-nav__link">
         
   
   
@@ -1486,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.25-span-memory/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.25-span-memory/" class="md-nav__link">
         
   
   
@@ -1514,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.26-modern-csharp-versions/" class="md-nav__link">
+      <a href="../../01-csharp-fundamentals/1.26-modern-csharp-versions/" class="md-nav__link">
         
   
   
@@ -2172,8 +1996,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2187,11 +2013,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -2212,7 +2038,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2230,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.01-dotnet-history/" class="md-nav__link">
+      <a href="../3.01-dotnet-history/" class="md-nav__link">
         
   
   
@@ -2258,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.02-clr-and-compilation/" class="md-nav__link">
+      <a href="../3.02-clr-and-compilation/" class="md-nav__link">
         
   
   
@@ -2283,10 +2109,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../03-dotnet-runtime/3.04-garbage-collection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 Garbage collection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2302,6 +2155,220 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-here-what-problem-does-this-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start here: what problem does this solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-question-how-does-it-know-what-is-garbage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The key question: how does it know what is garbage?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simple-version-the-three-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The simple version — the three steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-actually-works-generations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it actually works — generations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-large-object-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Large Object Heap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deeper-detail-gc-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The deeper detail — GC modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-call-gccollect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not call GC.Collect()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-should-actually-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you should actually do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traps ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2545,6 +2612,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-here-what-problem-does-this-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start here: what problem does this solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-question-how-does-it-know-what-is-garbage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The key question: how does it know what is garbage?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2560,10 +2655,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#compile-time-polymorphism-overloading" class="md-nav__link">
+  <a href="#the-simple-version-the-three-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compile-time polymorphism (overloading)
+        The simple version — the three steps
       
     </span>
   </a>
@@ -2571,10 +2666,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#runtime-polymorphism-overriding" class="md-nav__link">
+  <a href="#how-it-actually-works-generations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runtime polymorphism (overriding)
+        How it actually works — generations
       
     </span>
   </a>
@@ -2582,10 +2677,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#interfaces-give-you-polymorphism-too" class="md-nav__link">
+  <a href="#the-large-object-heap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interfaces give you polymorphism too
+        The Large Object Heap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deeper-detail-gc-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The deeper detail — GC modes
       
     </span>
   </a>
@@ -2605,6 +2711,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-call-gccollect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not call GC.Collect()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-should-actually-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you should actually do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2672,205 +2806,324 @@
   
 
 
-<h1 id="19-polymorphism">1.9 — Polymorphism<a class="headerlink" href="#19-polymorphism" title="Permanent link">&para;</a></h1>
+<h1 id="34-garbage-collection">3.4 — Garbage Collection<a class="headerlink" href="#34-garbage-collection" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#1-c-language-fundamentals">1. C# Language Fundamentals</a>
-<strong>Prev:</strong> <a href="../1.08-interfaces/">1.8 Interfaces</a> · <strong>Next:</strong> <a href="../1.10-generics/">1.10 Generics</a></p>
+<p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#3-net-runtime-and-platform">3. .NET Runtime and Platform</a>
+<strong>Prev:</strong> <a href="3.03-managed-vs-unmanaged.md">3.3 Managed vs unmanaged</a> · <strong>Next:</strong> <a href="3.05-memory-leaks.md">3.5 Memory leaks</a></p>
 </blockquote>
-<p><strong>Markers:</strong> ⭐ · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
+<p><strong>Markers:</strong> 🔥 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Polymorphism means <strong>one name, many behaviours</strong>.</li>
-<li><strong>Compile-time</strong> polymorphism = method overloading. The compiler picks based on the arguments you passed.</li>
-<li><strong>Runtime</strong> polymorphism = method overriding. The runtime picks based on what the object actually is.</li>
+<li>The GC automatically frees objects <strong>nobody is using any more</strong>. You never write "delete this".</li>
+<li>It decides what is in use by <strong>starting from known roots and following every reference</strong>. Anything it cannot reach is garbage.</li>
+<li>It sorts objects into <strong>three generations</strong> based on age, and mostly only cleans the youngest one — because most objects die young.</li>
 </ul>
 <hr />
 <h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<p>The word comes from Greek: <em>poly</em> = many, <em>morph</em> = shape. "Many shapes."</p>
-<p>In practice it means you can write one piece of code that works correctly with many
-different types, without knowing in advance which one it will get.</p>
-<p>A simple picture: think of the word "draw". You can draw a circle, draw a square, draw a
-triangle. Same instruction, different result depending on what you are drawing. You do not
-need a separate word for each shape.</p>
-<p>C# gives you two flavours, and interviewers usually want you to name both.</p>
+<h3 id="start-here-what-problem-does-this-solve">Start here: what problem does this solve?<a class="headerlink" href="#start-here-what-problem-does-this-solve" title="Permanent link">&para;</a></h3>
+<p>In older languages like C, you asked for memory and then had to give it back yourself:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span><span class="w">   </span><span class="c1">// ask for memory</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w">                  </span><span class="c1">// you MUST return it</span>
+</span></code></pre></div>
+<p>Two things go wrong constantly with that. <strong>Forget to free</strong> and the memory is lost forever —
+a memory leak. <strong>Free it twice</strong>, or use it after freeing, and the program corrupts itself or
+crashes. Whole categories of security vulnerability come from exactly this.</p>
+<p>.NET removes the problem by tracking it for you. You create objects and simply stop using
+them. The <strong>garbage collector</strong> notices and reclaims the memory.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w">   </span><span class="c1">// ask for memory</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// ...and that is it. Nothing to free.</span>
+</span></code></pre></div>
+<h3 id="the-key-question-how-does-it-know-what-is-garbage">The key question: how does it know what is garbage?<a class="headerlink" href="#the-key-question-how-does-it-know-what-is-garbage" title="Permanent link">&para;</a></h3>
+<p>This is the part worth understanding properly, because the rest follows from it.</p>
+<p>The GC does <strong>not</strong> count how many things point at an object. Instead it does something
+simpler and more reliable.</p>
+<p>It starts from a set of places it knows are definitely "live" — these are called <strong>roots</strong>:</p>
+<ul>
+<li>Local variables in methods currently running</li>
+<li>Static fields</li>
+<li>CPU registers</li>
+</ul>
+<p>Then it <strong>follows every reference</strong> from those roots, and from whatever they point to, and so
+on. Everything it can reach is in use. <strong>Everything it cannot reach is garbage.</strong></p>
+<p>A picture: <strong>a room full of objects, with strings tying some of them to hooks on the wall.</strong>
+The hooks are the roots. Anything you can trace back to a hook, by following strings, is being
+kept. Anything with no path back to a hook — even if it is tied to other objects — is rubbish
+and gets swept away.</p>
+<p>That last part matters. Two objects pointing at each other but with no path from a root are
+<strong>both</strong> garbage. This is why .NET has no problem with circular references, whereas
+reference-counting systems do.</p>
+<pre class="mermaid"><code>flowchart LR
+    R1["ROOT&lt;br/&gt;local variable"] --&gt; A["Order"]
+    A --&gt; B["Customer"]
+    A --&gt; C["List of lines"]
+    R2["ROOT&lt;br/&gt;static field"] --&gt; D["Cache"]
+
+    E["Old Order"] &lt;--&gt; F["Old Customer"]
+
+    style E fill:#f99,stroke:#900
+    style F fill:#f99,stroke:#900</code></pre>
+<p>The two red objects point at each other, but nothing points at them from a root. Both are
+collected.</p>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="compile-time-polymorphism-overloading">Compile-time polymorphism (overloading)<a class="headerlink" href="#compile-time-polymorphism-overloading" title="Permanent link">&para;</a></h3>
-<p>Several methods share a name but take different parameters. The compiler works out which
-one you meant by looking at the arguments at the call site.</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Calculator</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">calc</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">        </span><span class="c1">// picks the first — two ints</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">calc</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">);</span><span class="w">    </span><span class="c1">// picks the second — two doubles</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">calc</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">     </span><span class="c1">// picks the third — three ints</span>
+<h3 id="the-simple-version-the-three-steps">The simple version — the three steps<a class="headerlink" href="#the-simple-version-the-three-steps" title="Permanent link">&para;</a></h3>
+<p>When a collection runs, the GC does three things:</p>
+<ol>
+<li><strong>Mark.</strong> Start at the roots, follow every reference, and mark everything reachable.</li>
+<li><strong>Sweep.</strong> Everything not marked is garbage. Its memory is now free.</li>
+<li><strong>Compact.</strong> Slide the surviving objects together so free space is one continuous block
+   rather than scattered gaps.</li>
+</ol>
+<p>That third step is worth noting. Because objects get moved, <strong>the address of an object can
+change during its life</strong>. That is fine in normal C#, but it is exactly why you need <code>fixed</code>
+and pinning when passing a pointer to non-.NET code — see
+<a href="3.03-managed-vs-unmanaged.md">3.3</a>.</p>
+<p>Compaction also makes allocation extremely fast. Because free memory is one continuous block,
+allocating a new object is just moving a pointer forward. It is close to free.</p>
+<h3 id="how-it-actually-works-generations">How it actually works — generations<a class="headerlink" href="#how-it-actually-works-generations" title="Permanent link">&para;</a></h3>
+<p>Here is the observation everything is built on:</p>
+<blockquote>
+<p><strong>Most objects die very young.</strong> A string built inside a method, a DTO created for one
+request, the result of a LINQ query — the vast majority become garbage almost immediately.
+A small minority live for the whole application.</p>
+</blockquote>
+<p>Scanning every object every time would be wasteful, since most of the old ones are still
+alive. So the GC splits the heap into three <strong>generations</strong> by age:</p>
+<table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>Holds</th>
+<th>Collected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gen 0</strong></td>
+<td>Brand new objects</td>
+<td>Very often, very fast</td>
+</tr>
+<tr>
+<td><strong>Gen 1</strong></td>
+<td>Objects that survived one collection</td>
+<td>Less often</td>
+</tr>
+<tr>
+<td><strong>Gen 2</strong></td>
+<td>Objects that survived twice or more</td>
+<td>Rarely, and it is expensive</td>
+</tr>
+</tbody>
+</table>
+<p>The rules are simple:</p>
+<ul>
+<li>Every new object starts in <strong>Gen 0</strong>.</li>
+<li>If it survives a collection, it is <strong>promoted</strong> to the next generation.</li>
+<li>Collecting Gen 0 only looks at Gen 0. It is quick — often under a millisecond.</li>
+<li>Collecting Gen 2 examines <strong>everything</strong>, including Gen 0 and Gen 1. This is called a
+  <strong>full collection</strong> and it is the expensive one.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    N["new object"] --&gt; G0["Gen 0&lt;br/&gt;collected often&lt;br/&gt;very fast"]
+    G0 --&gt;|"survived"| G1["Gen 1&lt;br/&gt;collected sometimes"]
+    G1 --&gt;|"survived again"| G2["Gen 2&lt;br/&gt;collected rarely&lt;br/&gt;expensive"]
+    G0 -.-&gt;|"most objects&lt;br/&gt;die here"| X["freed"]</code></pre>
+<p>So the design deliberately makes the common case — short-lived objects — almost free, and
+accepts that the rare case is slow.</p>
+<p><strong>Why this matters for your code:</strong> an object that survives long enough to reach Gen 2 is
+costly to clean up later. Caching things "just in case" pushes objects into Gen 2 and makes
+your full collections slower and more frequent.</p>
+<h3 id="the-large-object-heap">The Large Object Heap<a class="headerlink" href="#the-large-object-heap" title="Permanent link">&para;</a></h3>
+<p>Objects of <strong>85,000 bytes or more</strong> go somewhere separate: the <strong>Large Object Heap</strong>, or LOH.
+Typically these are big arrays, large strings, or buffers.</p>
+<p>The LOH has two special properties:</p>
+<ul>
+<li>It is collected only during a <strong>Gen 2</strong> collection, so large objects hang around longer.</li>
+<li>It is <strong>not compacted by default</strong>, because moving an 800 KB object is expensive.</li>
+</ul>
+<p>Not compacting causes <strong>fragmentation</strong>. Imagine allocating and freeing many differently-sized
+large arrays. You end up with free gaps scattered between live objects. Ask for a 500 KB array
+and, even with 2 MB free in total, there may be no single 500 KB gap — so the process asks the
+OS for more memory.</p>
+<p>The result is an application whose memory keeps climbing even though it is not really leaking.
+A classic culprit is repeatedly resizing large buffers.</p>
+<p><strong>The fix is not to force compaction</strong> — that is available but very expensive:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// A last resort. Causes a long pause. Not for normal code.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">GCSettings</span><span class="p">.</span><span class="n">LargeObjectHeapCompactionMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GCLargeObjectHeapCompactionMode</span><span class="p">.</span><span class="n">CompactOnce</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">GC</span><span class="p">.</span><span class="n">Collect</span><span class="p">();</span>
 </span></code></pre></div>
-<p>This is decided <strong>before the program ever runs</strong>. By the time the code executes, the
-decision is already baked in. That is why it is called compile-time (or "static")
-polymorphism.</p>
-<p>What counts as a different overload: the number of parameters, their types, or their order.</p>
-<p><strong>What does NOT count: the return type.</strong> This is a common exam-style question:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// ERROR. You cannot overload on return type alone.</span>
+<p>The real fix is to stop churning large objects. Reuse buffers with <code>ArrayPool&lt;T&gt;</code>, or avoid
+allocating them at all with <code>Span&lt;T&gt;</code> — see
+<a href="../../01-csharp-fundamentals/1.25-span-memory/">1.25</a> and
+<a href="../19-caching-performance/19.13-allocations.md">19.13</a>.</p>
+<h3 id="the-deeper-detail-gc-modes">The deeper detail — GC modes<a class="headerlink" href="#the-deeper-detail-gc-modes" title="Permanent link">&para;</a></h3>
+<p>The GC has two settings that matter in production, and interviewers do ask about them.</p>
+<p><strong>Workstation vs Server GC</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Workstation</th>
+<th>Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heaps</td>
+<td>One</td>
+<td>One per CPU core</td>
+</tr>
+<tr>
+<td>GC threads</td>
+<td>One</td>
+<td>One per core, running in parallel</td>
+</tr>
+<tr>
+<td>Optimised for</td>
+<td>Low latency, low memory</td>
+<td>Maximum throughput</td>
+</tr>
+<tr>
+<td>Default for</td>
+<td>Desktop apps</td>
+<td><strong>ASP.NET Core</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Server GC gives each core its own heap and its own collection thread, so collections finish
+much faster on a multi-core machine. The trade-off is higher memory use, since there are
+several heaps.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;ServerGarbageCollection&gt;</span>true<span class="nt">&lt;/ServerGarbageCollection&gt;</span>
 </span></code></pre></div>
-<p>The reason is simple — if you write <code>GetValue();</code> on its own line and ignore the result,
-the compiler would have no way to know which one you meant.</p>
-<p>Operator overloading is also compile-time polymorphism. See
-<a href="../1.19-indexers-operators/">1.19</a>.</p>
-<h3 id="runtime-polymorphism-overriding">Runtime polymorphism (overriding)<a class="headerlink" href="#runtime-polymorphism-overriding" title="Permanent link">&para;</a></h3>
-<p>This is the more important kind. A base class declares a <code>virtual</code> method, derived classes
-<code>override</code> it, and the runtime picks the right version based on <strong>what the object actually
-is</strong>.</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Shape</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">Area</span><span class="p">();</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Shape</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">{</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">Area</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Shape</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">{</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">Area</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+<p>⚠️ <strong>This is a real container gotcha.</strong> Server GC assumes it can use the whole machine. In a
+container limited to one core with a small memory cap, having several heaps wastes memory and
+can trigger the container's memory limit — which the orchestrator handles by killing the
+container. If you run small containers, test with Workstation GC:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;ServerGarbageCollection&gt;</span>false<span class="nt">&lt;/ServerGarbageCollection&gt;</span>
 </span></code></pre></div>
-<p>Now the payoff:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Shape</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shapes</span><span class="w"> </span><span class="o">=</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">[</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">    new Circle(1),</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">    new Rectangle(2, 3),</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="na">    new Circle(5)</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">]</span><span class="p">;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shapes</span><span class="p">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Area</span><span class="p">());</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">// Each s.Area() call runs the RIGHT version automatically.</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">// This loop has no idea circles or rectangles exist.</span>
-</span></code></pre></div>
-<p>Look at that last line closely. The code says <code>s.Area()</code> where <code>s</code> is just a <code>Shape</code>. It
-does not check the type. It does not have an <code>if</code> or a <code>switch</code>. Yet each object runs its
-own correct calculation.</p>
-<p><strong>And this is the real benefit:</strong> if you add a <code>Triangle</code> class tomorrow, this loop keeps
-working with no changes at all. That is polymorphism paying for itself.</p>
-<p>Compare with what you would otherwise write:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// The version WITHOUT polymorphism — every new shape means editing this</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">shapes</span><span class="p">)</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Circle</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Radius</span><span class="p">;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="c1">// ...and you must remember to come back here for every new shape</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>A long chain of type checks like this is a strong hint that polymorphism is the better
-answer. This is also what the open/closed principle in SOLID is about — see
-<a href="../22-architecture-patterns/22.01-solid.md">22.1</a>.</p>
-<h3 id="interfaces-give-you-polymorphism-too">Interfaces give you polymorphism too<a class="headerlink" href="#interfaces-give-you-polymorphism-too" title="Permanent link">&para;</a></h3>
-<p>You do not need inheritance. An interface works just as well:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentMethod</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="n">PayAsync</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CreditCard</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentMethod</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PayPal</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentMethod</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">// Works with any payment method, present or future</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Checkout</span><span class="p">(</span><span class="n">IPaymentMethod</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="n">PayAsync</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
-</span></code></pre></div>
-<p>This is usually the preferred approach in modern C#, because it does not force your types
-into an inheritance hierarchy.</p>
+<p>Modern .NET is much better at reading container limits automatically, and .NET 9 enabled
+<strong>DATAS</strong> by default, which dynamically adapts the number of heaps to the actual load. But it
+is still worth checking if you see containers being killed for memory.</p>
+<p><strong>Concurrent / background GC</strong> lets most of a Gen 2 collection run on a background thread
+while your application keeps working, so the pause is much shorter. It is on by default and
+you rarely need to change it.</p>
 <hr />
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>Putting both kinds together:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Notifier</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c1">// Runtime polymorphism — each subclass sends differently</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="c1">// Compile-time polymorphism — three convenient ways to call it</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SendAsync</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SendAsync</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">)));</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">EmailNotifier</span><span class="p">(</span><span class="n">IEmailSender</span><span class="w"> </span><span class="n">sender</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Notifier</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">{</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sender</span><span class="p">.</span><span class="n">SendAsync</span><span class="p">(</span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Notification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p">}</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">SmsNotifier</span><span class="p">(</span><span class="n">ISmsGateway</span><span class="w"> </span><span class="n">gateway</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Notifier</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">{</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">gateway</span><span class="p">.</span><span class="n">SendTextAsync</span><span class="p">(</span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="p">}</span>
+<h3 id="do-not-call-gccollect">Do not call <code>GC.Collect()</code><a class="headerlink" href="#do-not-call-gccollect" title="Permanent link">&para;</a></h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">GC</span><span class="p">.</span><span class="n">Collect</span><span class="p">();</span><span class="w">                      </span><span class="c1">// almost always wrong</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">GC</span><span class="p">.</span><span class="n">WaitForPendingFinalizers</span><span class="p">();</span>
 </span></code></pre></div>
-<p>Now calling code just holds a <code>Notifier</code> and calls <code>SendAsync</code>. It does not know or care
-whether an email or a text message goes out.</p>
+<p>The GC has far better information than you do about when collecting is worthwhile. Forcing it
+usually:</p>
+<ul>
+<li>causes a <strong>full Gen 2 collection</strong>, the most expensive kind</li>
+<li><strong>promotes objects</strong> that would otherwise have died cheaply in Gen 0</li>
+<li>pauses all your threads for no benefit</li>
+</ul>
+<p>The only defensible uses are in a benchmark harness or immediately after deliberately
+releasing a very large cache. If you find yourself reaching for it to fix a memory problem,
+the problem is a reference being held somewhere — see <a href="3.05-memory-leaks.md">3.5</a>.</p>
+<h3 id="what-you-should-actually-do">What you should actually do<a class="headerlink" href="#what-you-should-actually-do" title="Permanent link">&para;</a></h3>
+<p>The GC handles <strong>memory</strong>. It does not handle <strong>file handles, sockets or database
+connections</strong> — those need <code>IDisposable</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// The GC will eventually free the object&#39;s memory,</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// but the file stays LOCKED until Dispose runs.</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">await</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</span></code></pre></div>
+<p>That distinction is the practical takeaway of this note, and it is covered properly in
+<a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</p>
+<p>Reducing GC pressure, in order of usefulness:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// 1. Do not allocate in a loop when you can build once</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span><span class="w">          </span><span class="c1">// not string concatenation</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">// 2. Reuse large buffers instead of allocating new ones</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kt">var</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayPool</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Rent</span><span class="p">(</span><span class="mi">4096</span><span class="p">);</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* use it */</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ArrayPool</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Return</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// 3. Avoid the allocation entirely for slicing</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">ReadOnlySpan</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">AsSpan</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// no new string</span>
+</span></code></pre></div>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is polymorphism?</strong></p>
-<p>It means one name can behave in different ways depending on the context. C# has two forms.
-Compile-time polymorphism is method overloading — several methods share a name but take
-different parameters, and the compiler picks the right one from the arguments. Runtime
-polymorphism is method overriding — a base class declares a virtual method, derived classes
-override it, and the runtime picks the version matching the actual object. The second one
-is the important one, because it lets you write code that works with types that did not
-exist when you wrote it.</p>
-<p><strong>Q: What is the difference between overloading and overriding?</strong></p>
-<p>Overloading is several methods with the same name in the same class, differing by their
-parameters, resolved by the compiler before the program runs. Overriding is a derived class
-replacing a virtual method from its base class, resolved by the runtime based on the actual
-object. So overloading is about convenience at the call site, and overriding is about
-substituting behaviour.</p>
-<p><strong>Q: Can you overload a method by changing only the return type?</strong></p>
-<p>No. If you called the method and ignored its result, the compiler would have no information
-to decide which one you meant. Overloads have to differ by the number, types, or order of
-their parameters.</p>
-<p><strong>Q: How does polymorphism help in real code?</strong></p>
-<p>It lets you write code that works with future types. If I have a list of shapes and call
-<code>Area()</code> on each one, I never have to touch that loop again when someone adds a new shape.
-Without it, you end up with a growing chain of type checks that has to be updated in every
-place whenever a new type appears — and eventually someone forgets one. That is exactly
-what the open/closed principle is warning about.</p>
+<p><strong>Q: How does the garbage collector know an object can be freed?</strong></p>
+<p>It uses reachability, not reference counting. It starts from a set of roots — local variables
+in running methods, static fields and CPU registers — and follows every reference from there,
+marking everything it can reach. Anything not marked is unreachable and therefore garbage. An
+important consequence is that circular references are not a problem: two objects pointing at
+each other with no path from a root are both collected, whereas a reference-counting system
+would leak them.</p>
+<p><strong>Q: What are generations and why do they exist?</strong></p>
+<p>The heap is divided into three generations by age. New objects go into Gen 0, and anything
+surviving a collection is promoted to the next generation. The design rests on the
+observation that most objects die very young — temporary strings, DTOs, LINQ results. So
+collecting only Gen 0 catches the vast majority of garbage while examining a small fraction
+of the heap, which makes it very fast. Gen 2 collections examine everything and are
+expensive, so the GC does them rarely. The practical implication is that keeping objects
+alive longer than necessary pushes them into Gen 2 and makes your expensive collections more
+frequent.</p>
+<p><strong>Q: What is the Large Object Heap and why does it cause problems?</strong></p>
+<p>Objects of 85,000 bytes or more — usually big arrays or strings — are allocated on a separate
+heap. It is only collected as part of a Gen 2 collection, so large objects survive longer, and
+it is not compacted by default because moving very large objects is costly. Not compacting
+means fragmentation: after allocating and releasing many differently-sized large objects, you
+can have plenty of free memory in total but no single contiguous block big enough for the next
+request, so the process grows. The symptom is memory climbing steadily without an actual leak.
+The fix is to stop churning large objects — pool buffers with <code>ArrayPool&lt;T&gt;</code> rather than
+allocating fresh ones.</p>
+<p><strong>Q: What is the difference between Workstation and Server GC?</strong></p>
+<p>Workstation GC uses a single heap and a single collection thread, favouring low latency and
+low memory. Server GC creates one heap and one collection thread per CPU core, so collections
+run in parallel and finish much faster on multi-core hardware — at the cost of higher memory
+use. Server GC is the default for ASP.NET Core because throughput matters more there. The
+thing to watch is containers: Server GC assumes it owns the machine, so in a small container
+with a tight memory limit the multiple heaps can push you over the limit and get the container
+killed. Modern .NET reads container limits much better, and .NET 9 turned on DATAS which
+adapts heap count dynamically, but it is still worth testing.</p>
+<p><strong>Q: Should you ever call <code>GC.Collect()</code>?</strong></p>
+<p>Almost never. The runtime has far better information about when collecting is worthwhile, and
+forcing it triggers a full Gen 2 collection — the most expensive kind — while also promoting
+objects that would otherwise have been collected cheaply in Gen 0. The only reasonable uses
+are in benchmarking, where you want a known starting state, or immediately after deliberately
+dropping something very large. If someone is calling it to fix a memory problem, the real
+issue is something holding a reference, and forcing collections will not help because the
+object is still reachable.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><code>new</code> does not give you polymorphism.</strong> It hides the base method, and which version
-  runs depends on the variable's declared type, not the object. See
-  <a href="../1.07-inheritance/">1.7</a>.</li>
-<li><strong>A method must be <code>virtual</code> or <code>abstract</code> to be overridden.</strong> Marking it <code>override</code> in
-  the derived class is not enough on its own.</li>
-<li><strong>Overload resolution can surprise you.</strong> When you pass a <code>null</code>, or a type that could
-  convert to several parameter types, the compiler picks by rules that are not always
-  obvious. Cast explicitly when it is ambiguous.</li>
-<li><strong>Long <code>if (x is TypeA) ... else if (x is TypeB)</code> chains</strong> usually mean polymorphism was
-  the better design.</li>
-<li><strong>Polymorphism is not free at runtime.</strong> A virtual call costs a lookup. It is almost
-  never worth worrying about, but it is why <code>sealed</code> can help in genuinely hot code.</li>
+<li><strong>"The GC handles all cleanup."</strong> It handles <strong>memory only</strong>. File handles, sockets and
+  database connections need <code>IDisposable</code>.</li>
+<li><strong>Calling <code>GC.Collect()</code> to fix memory usage.</strong> If an object is still referenced, no amount
+  of collecting will free it.</li>
+<li><strong>Forcing collection promotes objects</strong>, making the situation worse rather than better.</li>
+<li><strong>Objects move during compaction.</strong> An object's address is not stable, which is why pinning
+  is needed for interop.</li>
+<li><strong>The LOH threshold is 85,000 bytes</strong>, which is smaller than people expect — an array of
+  about 21,000 <code>int</code>s already qualifies.</li>
+<li><strong>Server GC in a small container can get you OOM-killed.</strong> More heaps means more memory.</li>
+<li><strong>A finalizer makes an object survive an extra collection.</strong> Never add one unless you truly
+  need it — see <a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21</a>.</li>
+<li><strong>"No memory leaks in .NET" is false.</strong> You cannot leak by forgetting to free, but you can
+  very easily leak by holding a reference. See <a href="3.05-memory-leaks.md">3.5</a>.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../1.07-inheritance/">1.7 Inheritance</a> — <code>virtual</code>, <code>override</code> and the <code>new</code> trap</li>
-<li><a href="../1.08-interfaces/">1.8 Interfaces</a> — polymorphism without inheritance</li>
-<li><a href="../1.17-pattern-matching/">1.17 Pattern matching</a> — when type checking IS the right answer</li>
-<li><a href="../1.19-indexers-operators/">1.19 Operator overloading</a> — another form of compile-time polymorphism</li>
-<li><a href="../22-architecture-patterns/22.01-solid.md">22.1 SOLID</a> — open/closed and Liskov substitution</li>
-<li><a href="../22-architecture-patterns/22.05-behavioural-patterns.md">22.5 Strategy pattern</a> — polymorphism as a design pattern</li>
+<li><a href="3.05-memory-leaks.md">3.5 Memory leaks</a> — how to leak in a managed language</li>
+<li><a href="3.03-managed-vs-unmanaged.md">3.3 Managed vs unmanaged</a> — pinning and why objects move</li>
+<li><a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21 IDisposable</a> — what the GC does not do</li>
+<li><a href="../../01-csharp-fundamentals/1.01-value-vs-reference-types/">1.1 Stack vs heap</a> — what lives where</li>
+<li><a href="../../01-csharp-fundamentals/1.25-span-memory/">1.25 Span and Memory</a> — avoiding allocation</li>
+<li><a href="../19-caching-performance/19.13-allocations.md">19.13 Reducing allocations</a> — pooling in practice</li>
+<li><a href="../18-logging-monitoring/18.09-production-debugging.md">18.9 Production debugging</a> — diagnosing GC problems</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/dotnet/csharp/fundamentals/object-oriented/polymorphism">Microsoft Learn — Polymorphism</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/garbage-collection/fundamentals">Microsoft Learn — Fundamentals of garbage collection</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/garbage-collection/workstation-server-gc">Microsoft Learn — Workstation and server GC</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/standard/garbage-collection/large-object-heap">Microsoft Learn — Large object heap</a></li>
 </ul>
 
 
@@ -2907,7 +3160,7 @@ what the open/closed principle is warning about.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../1.08-interfaces/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.8 Interfaces">
+          <a href="../3.02-clr-and-compilation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3.2 CLR and compilation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2917,20 +3170,20 @@ what the open/closed principle is warning about.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                1.8 Interfaces
+                3.2 CLR and compilation
               </div>
             </div>
           </a>
         
         
           
-          <a href="../1.10-generics/" class="md-footer__link md-footer__link--next" aria-label="Next: 1.10 Generics">
+          <a href="../../06-dependency-injection/6.03-service-lifetimes/" class="md-footer__link md-footer__link--next" aria-label="Next: 6.3 Service lifetimes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1.10 Generics
+                6.3 Service lifetimes
               </div>
             </div>
             <div class="md-footer__button md-icon">

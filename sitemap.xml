@@ -2,222 +2,234 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/CHEATSHEET/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/DIAGRAMS/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/GLOSSARY/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/ROADMAP/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/TRAPS/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/VERSIONS/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.01-value-vs-reference-types/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.02-struct-class-record/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.03-strings-and-stringbuilder/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.04-access-modifiers/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.05-static/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.06-const-readonly-init-required/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.07-inheritance/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.08-interfaces/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.09-polymorphism/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.10-generics/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.11-delegates/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.12-events/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.13-lambdas-closures/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.14-extension-methods/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.15-nullability/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.16-null-operators/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.17-pattern-matching/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.18-tuples-ref-out-in/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.19-indexers-operators/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.20-exceptions/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.21-idisposable/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.22-anonymous-dynamic-var/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.23-attributes-reflection/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.24-partial-local-functions/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.25-span-memory/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/01-csharp-fundamentals/1.26-modern-csharp-versions/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.01-collection-interfaces/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.02-collections-and-big-o/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.03-concurrent-collections/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.04-yield-and-iterators/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.05-linq-basics/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.06-deferred-execution/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.07-expression-trees/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.08-linq-advanced-operators/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.09-first-single-default/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.10-threads-vs-tasks/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.11-async-await-internals/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.12-task-valuetask/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.13-async-deadlocks/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.14-cancellation/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.15-async-void/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.16-async-exceptions/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.17-async-streams/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.18-thread-safety/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/02-collections-linq-async/2.19-parallel-programming/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.01-dotnet-history/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.02-clr-and-compilation/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/03-dotnet-runtime/3.04-garbage-collection/</loc>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/notes/06-dependency-injection/6.03-service-lifetimes/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/practice/QUESTION-BANK/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
     <url>
          <loc>https://sultanfarooka.github.io/aspnet-interview-notes/practice/system-design/</loc>
-         <lastmod>2026-08-13</lastmod>
+         <lastmod>2026-08-18</lastmod>
     </url>
 </urlset>
