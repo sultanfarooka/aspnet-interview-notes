@@ -64,10 +64,31 @@
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |
 |---|---|---|
-| "Middleware order doesn't really matter" | `UseAuthorization` before `UseAuthentication` means `User` is never populated — the app silently 401s or, worse, silently allows. | [5.2](notes/05-middleware-pipeline/5.02-middleware-order.md) |
-| "I can inject a scoped service into middleware's constructor" | Conventional middleware is a **singleton**. Scoped services go in the `InvokeAsync` parameters, or use `IMiddleware` factory-based middleware. | [5.6](notes/05-middleware-pipeline/5.06-imiddleware-factory.md) |
-| "I can read the request body in middleware and the controller still gets it" | The body is a forward-only stream and is consumed. You need `EnableBuffering()` and to rewind it. | [5.9](notes/05-middleware-pipeline/5.09-request-body-buffering.md) |
-| "Modify the response after `await next()`" | By then the response may already be sent. Headers can't be changed once the response has started — use `OnStarting`. | [5.8](notes/05-middleware-pipeline/5.08-httpcontext.md) |
+| "Middleware order doesn't really matter" | `UseAuthorization` before `UseAuthentication` means `User` is never populated — the app silently 401s on everything, **with no error**. | [5.2](notes/05-middleware-pipeline/5.02-middleware-order.md) |
+| "The pipeline is a list of steps" | It's **nested** — each middleware wraps the rest, like try/finally. That's why `await next()` returns and lets you inspect the response. | [5.1](notes/05-middleware-pipeline/5.01-what-is-middleware.md) |
+| "`await next()` hands off and finishes" | It runs the **entire remaining pipeline** and waits. When it returns, the response already exists. | [5.1](notes/05-middleware-pipeline/5.01-what-is-middleware.md) |
+| "My CORS policy is wrong" | Often it's **ordering**. `UseCors` after `UseAuthentication` means the unauthenticated `OPTIONS` preflight is 401'd before CORS can answer. | [5.2](notes/05-middleware-pipeline/5.02-middleware-order.md) |
+| "`Map` and `UseWhen` are interchangeable" | `Map` is a **dead end** — the branch never rejoins, so `MapControllers` below never runs and every route 404s. `UseWhen` rejoins. | [5.3](notes/05-middleware-pipeline/5.03-use-run-map.md) |
+| "`app.Run(...)` starts the app" | `app.Run()` with no args does. `app.Run(handler)` adds **terminal middleware** — nothing after it ever executes. | [5.3](notes/05-middleware-pipeline/5.03-use-run-map.md) |
+| "I can resolve a service once and capture it in my inline middleware" | That pins **one instance for the app's lifetime**. Resolve from `context.RequestServices` inside the lambda. | [5.4](notes/05-middleware-pipeline/5.04-inline-middleware.md) |
+| "I can inject a scoped service into middleware's constructor" | Conventional middleware is a **singleton**, created once. Scoped services go in the `InvokeAsync` parameters, or use `IMiddleware`. | [5.5](notes/05-middleware-pipeline/5.05-conventional-middleware.md) |
+| "`IOptions<T>` and `IOptionsSnapshot<T>` are both fine in a middleware constructor" | `IOptions<T>` is singleton and fine. **`IOptionsSnapshot<T>` is scoped** and must go in `InvokeAsync`. | [5.5](notes/05-middleware-pipeline/5.05-conventional-middleware.md) |
+| "`IMiddleware` works like conventional middleware" | It must be **registered in DI yourself**, or you get "No service for type..." on the first request. | [5.6](notes/05-middleware-pipeline/5.06-imiddleware-factory.md) |
+| "Returning early from middleware is enough" | Without setting a status code you send an **empty HTTP 200** — no error, nothing to debug from. | [5.7](notes/05-middleware-pipeline/5.07-short-circuiting.md) |
+| "Short-circuiting skips everything" | Only what's **below**. Middleware above already called `next` and still runs its "after" half — which is why logging keeps working. | [5.7](notes/05-middleware-pipeline/5.07-short-circuiting.md) |
+| "I can keep a reference to `HttpContext`" | It's **pooled and reused** after the response. A stored reference can end up pointing at **another user's request**. | [5.8](notes/05-middleware-pipeline/5.08-httpcontext.md) |
+| "Modify the response after `await next()`" | Headers are on the wire once the response has started. Use `OnStarting`, registered **before** `next`. | [5.8](notes/05-middleware-pipeline/5.08-httpcontext.md) |
+| "I can read the request body in middleware and the controller still gets it" | The body is forward-only and gets consumed — the action's model is **null**. Needs `EnableBuffering()` **and** `Body.Position = 0`. | [5.9](notes/05-middleware-pipeline/5.09-request-body-buffering.md) |
+| "`EnableBuffering()` is enough" | It only makes rewinding **possible**. Forgetting `Position = 0` gives the exact same symptom as not buffering. | [5.9](notes/05-middleware-pipeline/5.09-request-body-buffering.md) |
+| "`UseHsts()` is a good default everywhere" | In development it can lock you out of `http://localhost` for **months**, across every project on that port. Production only. | [5.10](notes/05-middleware-pipeline/5.10-builtin-middleware.md) |
+| "A 404 returns a JSON error body" | A bare 404 from routing has an **empty body** unless you add `UseStatusCodePages()`. | [5.11](notes/05-middleware-pipeline/5.11-exception-middleware.md) |
+| "Returning `ex.Message` to the client is helpful" | Exception messages routinely contain **table names, file paths and connection details**. Log the detail, return a trace ID. | [5.11](notes/05-middleware-pipeline/5.11-exception-middleware.md) |
+| "Registering `IExceptionHandler` is enough" | Nothing runs without **`app.UseExceptionHandler()`**. No warning — exceptions just go unhandled. | [5.12](notes/05-middleware-pipeline/5.12-iexceptionhandler.md) |
+| "Handler registration order doesn't matter" | They run in order until one returns `true`. A catch-all registered **first** makes every later handler unreachable. | [5.12](notes/05-middleware-pipeline/5.12-iexceptionhandler.md) |
+| "I'll validate the request model in middleware" | **Model binding hasn't run yet.** Reading the body yourself also breaks binding downstream. Use a filter. | [5.13](notes/05-middleware-pipeline/5.13-middleware-vs-filters.md) |
+| "I'll log requests in an action filter" | Filters only run when a route **matched** — so you silently miss every 404, static file and rate-limited request. | [5.13](notes/05-middleware-pipeline/5.13-middleware-vs-filters.md) |
+| "Logging the request is harmless" | Headers carry `Authorization` and `Cookie`; query strings carry API keys and reset tokens. Log `Path`, **not** `QueryString`. | [5.14](notes/05-middleware-pipeline/5.14-logging-middleware.md) |
+| "Log everything at Information" | Then the level conveys nothing and you can't alert. And EF Core at Information logs **every SQL statement**. | [5.14](notes/05-middleware-pipeline/5.14-logging-middleware.md) |
 
 ## EF Core
 

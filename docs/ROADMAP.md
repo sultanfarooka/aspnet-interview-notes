@@ -111,20 +111,20 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 5. Middleware and the Request Pipeline
 
-- [ ] **5.1** [What middleware is; the pipeline model](notes/05-middleware-pipeline/5.01-what-is-middleware.md) 🔥 🎯
-- [ ] **5.2** [Middleware order — and the canonical ordering](notes/05-middleware-pipeline/5.02-middleware-order.md) 🔥 ⚠️ 🎯
-- [ ] **5.3** [`Use` vs `Run` vs `Map` vs `MapWhen` vs `UseWhen`](notes/05-middleware-pipeline/5.03-use-run-map.md) 🔥 💻
-- [ ] **5.4** [Inline custom middleware](notes/05-middleware-pipeline/5.04-inline-middleware.md) ⭐ 💻
-- [ ] **5.5** [Conventional middleware class with `InvokeAsync`](notes/05-middleware-pipeline/5.05-conventional-middleware.md) 🔥 💻
-- [ ] **5.6** [Factory-based middleware (`IMiddleware`) and scoped services](notes/05-middleware-pipeline/5.06-imiddleware-factory.md) ⭐ ⚠️
-- [ ] **5.7** [Short-circuiting and terminal middleware](notes/05-middleware-pipeline/5.07-short-circuiting.md) ⭐
-- [ ] **5.8** [`HttpContext` — Request, Response, Items, Features, User](notes/05-middleware-pipeline/5.08-httpcontext.md) 🔥
-- [ ] **5.9** [Reading and rewinding the request body (`EnableBuffering`)](notes/05-middleware-pipeline/5.09-request-body-buffering.md) ⚠️ 💻
-- [ ] **5.10** [Tour of the built-in middleware](notes/05-middleware-pipeline/5.10-builtin-middleware.md) ⭐
-- [ ] **5.11** [Global exception-handling middleware](notes/05-middleware-pipeline/5.11-exception-middleware.md) 🔥 💻
-- [ ] **5.12** [`IExceptionHandler` (.NET 8+) vs developer exception page](notes/05-middleware-pipeline/5.12-iexceptionhandler.md) ⭐ 💻
-- [ ] **5.13** [Middleware vs filters — when to use which](notes/05-middleware-pipeline/5.13-middleware-vs-filters.md) 🔥 🎯
-- [ ] **5.14** [Request/response logging middleware and its pitfalls](notes/05-middleware-pipeline/5.14-logging-middleware.md) ⭐ ⚠️
+- [x] **5.1** [What middleware is; the pipeline model](notes/05-middleware-pipeline/5.01-what-is-middleware.md) 🔥 🎯
+- [x] **5.2** [Middleware order — and the canonical ordering](notes/05-middleware-pipeline/5.02-middleware-order.md) 🔥 ⚠️ 🎯
+- [x] **5.3** [`Use` vs `Run` vs `Map` vs `MapWhen` vs `UseWhen`](notes/05-middleware-pipeline/5.03-use-run-map.md) 🔥 💻
+- [x] **5.4** [Inline custom middleware](notes/05-middleware-pipeline/5.04-inline-middleware.md) ⭐ 💻
+- [x] **5.5** [Conventional middleware class with `InvokeAsync`](notes/05-middleware-pipeline/5.05-conventional-middleware.md) 🔥 💻
+- [x] **5.6** [Factory-based middleware (`IMiddleware`) and scoped services](notes/05-middleware-pipeline/5.06-imiddleware-factory.md) ⭐ ⚠️
+- [x] **5.7** [Short-circuiting and terminal middleware](notes/05-middleware-pipeline/5.07-short-circuiting.md) ⭐
+- [x] **5.8** [`HttpContext` — Request, Response, Items, Features, User](notes/05-middleware-pipeline/5.08-httpcontext.md) 🔥
+- [x] **5.9** [Reading and rewinding the request body (`EnableBuffering`)](notes/05-middleware-pipeline/5.09-request-body-buffering.md) ⚠️ 💻
+- [x] **5.10** [Tour of the built-in middleware](notes/05-middleware-pipeline/5.10-builtin-middleware.md) ⭐
+- [x] **5.11** [Global exception-handling middleware](notes/05-middleware-pipeline/5.11-exception-middleware.md) 🔥 💻
+- [x] **5.12** [`IExceptionHandler` (.NET 8+) vs developer exception page](notes/05-middleware-pipeline/5.12-iexceptionhandler.md) ⭐ 💻
+- [x] **5.13** [Middleware vs filters — when to use which](notes/05-middleware-pipeline/5.13-middleware-vs-filters.md) 🔥 🎯
+- [x] **5.14** [Request/response logging middleware and its pitfalls](notes/05-middleware-pipeline/5.14-logging-middleware.md) ⭐ ⚠️
 
 ## 6. Dependency Injection
 
