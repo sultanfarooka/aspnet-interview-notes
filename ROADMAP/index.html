@@ -2803,6 +2803,32 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2821,7 +2847,7 @@
   <span class="md-ellipsis">
     
   
-    6. Dependency Injection
+    5. Middleware & Pipeline
   
 
     
@@ -2834,6 +2860,456 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Middleware & Pipeline
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.01-what-is-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 What middleware is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.02-middleware-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Middleware order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.03-use-run-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 Use, Run, Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.04-inline-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 Inline middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.05-conventional-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5 Conventional middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.06-imiddleware-factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6 IMiddleware factory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.07-short-circuiting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7 Short-circuiting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.08-httpcontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.8 HttpContext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.09-request-body-buffering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.9 Request body buffering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.10-builtin-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.10 Built-in middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.11-exception-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.11 Exception middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.12-iexceptionhandler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.12 IExceptionHandler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.13-middleware-vs-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.13 Middleware vs filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.14-logging-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.14 Logging middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2901,7 +3377,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2923,14 +3399,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3165,20 +3641,20 @@ Links below are pre-wired — they will be dead until the corresponding note is 
 </ul>
 <h2 id="5-middleware-and-the-request-pipeline">5. Middleware and the Request Pipeline<a class="headerlink" href="#5-middleware-and-the-request-pipeline" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] <strong>5.1</strong> <a href="notes/05-middleware-pipeline/5.01-what-is-middleware.md">What middleware is; the pipeline model</a> 🔥 🎯</li>
-<li>[ ] <strong>5.2</strong> <a href="notes/05-middleware-pipeline/5.02-middleware-order.md">Middleware order — and the canonical ordering</a> 🔥 ⚠️ 🎯</li>
-<li>[ ] <strong>5.3</strong> <a href="notes/05-middleware-pipeline/5.03-use-run-map.md"><code>Use</code> vs <code>Run</code> vs <code>Map</code> vs <code>MapWhen</code> vs <code>UseWhen</code></a> 🔥 💻</li>
-<li>[ ] <strong>5.4</strong> <a href="notes/05-middleware-pipeline/5.04-inline-middleware.md">Inline custom middleware</a> ⭐ 💻</li>
-<li>[ ] <strong>5.5</strong> <a href="notes/05-middleware-pipeline/5.05-conventional-middleware.md">Conventional middleware class with <code>InvokeAsync</code></a> 🔥 💻</li>
-<li>[ ] <strong>5.6</strong> <a href="notes/05-middleware-pipeline/5.06-imiddleware-factory.md">Factory-based middleware (<code>IMiddleware</code>) and scoped services</a> ⭐ ⚠️</li>
-<li>[ ] <strong>5.7</strong> <a href="notes/05-middleware-pipeline/5.07-short-circuiting.md">Short-circuiting and terminal middleware</a> ⭐</li>
-<li>[ ] <strong>5.8</strong> <a href="notes/05-middleware-pipeline/5.08-httpcontext.md"><code>HttpContext</code> — Request, Response, Items, Features, User</a> 🔥</li>
-<li>[ ] <strong>5.9</strong> <a href="notes/05-middleware-pipeline/5.09-request-body-buffering.md">Reading and rewinding the request body (<code>EnableBuffering</code>)</a> ⚠️ 💻</li>
-<li>[ ] <strong>5.10</strong> <a href="notes/05-middleware-pipeline/5.10-builtin-middleware.md">Tour of the built-in middleware</a> ⭐</li>
-<li>[ ] <strong>5.11</strong> <a href="notes/05-middleware-pipeline/5.11-exception-middleware.md">Global exception-handling middleware</a> 🔥 💻</li>
-<li>[ ] <strong>5.12</strong> <a href="notes/05-middleware-pipeline/5.12-iexceptionhandler.md"><code>IExceptionHandler</code> (.NET 8+) vs developer exception page</a> ⭐ 💻</li>
-<li>[ ] <strong>5.13</strong> <a href="notes/05-middleware-pipeline/5.13-middleware-vs-filters.md">Middleware vs filters — when to use which</a> 🔥 🎯</li>
-<li>[ ] <strong>5.14</strong> <a href="notes/05-middleware-pipeline/5.14-logging-middleware.md">Request/response logging middleware and its pitfalls</a> ⭐ ⚠️</li>
+<li>[x] <strong>5.1</strong> <a href="../notes/05-middleware-pipeline/5.01-what-is-middleware/">What middleware is; the pipeline model</a> 🔥 🎯</li>
+<li>[x] <strong>5.2</strong> <a href="../notes/05-middleware-pipeline/5.02-middleware-order/">Middleware order — and the canonical ordering</a> 🔥 ⚠️ 🎯</li>
+<li>[x] <strong>5.3</strong> <a href="../notes/05-middleware-pipeline/5.03-use-run-map/"><code>Use</code> vs <code>Run</code> vs <code>Map</code> vs <code>MapWhen</code> vs <code>UseWhen</code></a> 🔥 💻</li>
+<li>[x] <strong>5.4</strong> <a href="../notes/05-middleware-pipeline/5.04-inline-middleware/">Inline custom middleware</a> ⭐ 💻</li>
+<li>[x] <strong>5.5</strong> <a href="../notes/05-middleware-pipeline/5.05-conventional-middleware/">Conventional middleware class with <code>InvokeAsync</code></a> 🔥 💻</li>
+<li>[x] <strong>5.6</strong> <a href="../notes/05-middleware-pipeline/5.06-imiddleware-factory/">Factory-based middleware (<code>IMiddleware</code>) and scoped services</a> ⭐ ⚠️</li>
+<li>[x] <strong>5.7</strong> <a href="../notes/05-middleware-pipeline/5.07-short-circuiting/">Short-circuiting and terminal middleware</a> ⭐</li>
+<li>[x] <strong>5.8</strong> <a href="../notes/05-middleware-pipeline/5.08-httpcontext/"><code>HttpContext</code> — Request, Response, Items, Features, User</a> 🔥</li>
+<li>[x] <strong>5.9</strong> <a href="../notes/05-middleware-pipeline/5.09-request-body-buffering/">Reading and rewinding the request body (<code>EnableBuffering</code>)</a> ⚠️ 💻</li>
+<li>[x] <strong>5.10</strong> <a href="../notes/05-middleware-pipeline/5.10-builtin-middleware/">Tour of the built-in middleware</a> ⭐</li>
+<li>[x] <strong>5.11</strong> <a href="../notes/05-middleware-pipeline/5.11-exception-middleware/">Global exception-handling middleware</a> 🔥 💻</li>
+<li>[x] <strong>5.12</strong> <a href="../notes/05-middleware-pipeline/5.12-iexceptionhandler/"><code>IExceptionHandler</code> (.NET 8+) vs developer exception page</a> ⭐ 💻</li>
+<li>[x] <strong>5.13</strong> <a href="../notes/05-middleware-pipeline/5.13-middleware-vs-filters/">Middleware vs filters — when to use which</a> 🔥 🎯</li>
+<li>[x] <strong>5.14</strong> <a href="../notes/05-middleware-pipeline/5.14-logging-middleware/">Request/response logging middleware and its pitfalls</a> ⭐ ⚠️</li>
 </ul>
 <h2 id="6-dependency-injection">6. Dependency Injection<a class="headerlink" href="#6-dependency-injection" title="Permanent link">&para;</a></h2>
 <ul>

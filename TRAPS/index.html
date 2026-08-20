@@ -2937,6 +2937,32 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2955,7 +2981,7 @@
   <span class="md-ellipsis">
     
   
-    6. Dependency Injection
+    5. Middleware & Pipeline
   
 
     
@@ -2968,6 +2994,456 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Middleware & Pipeline
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.01-what-is-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 What middleware is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.02-middleware-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Middleware order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.03-use-run-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 Use, Run, Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.04-inline-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 Inline middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.05-conventional-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5 Conventional middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.06-imiddleware-factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6 IMiddleware factory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.07-short-circuiting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7 Short-circuiting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.08-httpcontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.8 HttpContext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.09-request-body-buffering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.9 Request body buffering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.10-builtin-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.10 Built-in middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.11-exception-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.11 Exception middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.12-iexceptionhandler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.12 IExceptionHandler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.13-middleware-vs-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.13 Middleware vs filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/05-middleware-pipeline/5.14-logging-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.14 Logging middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3035,7 +3511,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3057,14 +3533,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3519,23 +3995,128 @@ whole point of the question.</p>
 <tbody>
 <tr>
 <td>"Middleware order doesn't really matter"</td>
-<td><code>UseAuthorization</code> before <code>UseAuthentication</code> means <code>User</code> is never populated — the app silently 401s or, worse, silently allows.</td>
-<td><a href="notes/05-middleware-pipeline/5.02-middleware-order.md">5.2</a></td>
+<td><code>UseAuthorization</code> before <code>UseAuthentication</code> means <code>User</code> is never populated — the app silently 401s on everything, <strong>with no error</strong>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.02-middleware-order/">5.2</a></td>
+</tr>
+<tr>
+<td>"The pipeline is a list of steps"</td>
+<td>It's <strong>nested</strong> — each middleware wraps the rest, like try/finally. That's why <code>await next()</code> returns and lets you inspect the response.</td>
+<td><a href="../notes/05-middleware-pipeline/5.01-what-is-middleware/">5.1</a></td>
+</tr>
+<tr>
+<td>"<code>await next()</code> hands off and finishes"</td>
+<td>It runs the <strong>entire remaining pipeline</strong> and waits. When it returns, the response already exists.</td>
+<td><a href="../notes/05-middleware-pipeline/5.01-what-is-middleware/">5.1</a></td>
+</tr>
+<tr>
+<td>"My CORS policy is wrong"</td>
+<td>Often it's <strong>ordering</strong>. <code>UseCors</code> after <code>UseAuthentication</code> means the unauthenticated <code>OPTIONS</code> preflight is 401'd before CORS can answer.</td>
+<td><a href="../notes/05-middleware-pipeline/5.02-middleware-order/">5.2</a></td>
+</tr>
+<tr>
+<td>"<code>Map</code> and <code>UseWhen</code> are interchangeable"</td>
+<td><code>Map</code> is a <strong>dead end</strong> — the branch never rejoins, so <code>MapControllers</code> below never runs and every route 404s. <code>UseWhen</code> rejoins.</td>
+<td><a href="../notes/05-middleware-pipeline/5.03-use-run-map/">5.3</a></td>
+</tr>
+<tr>
+<td>"<code>app.Run(...)</code> starts the app"</td>
+<td><code>app.Run()</code> with no args does. <code>app.Run(handler)</code> adds <strong>terminal middleware</strong> — nothing after it ever executes.</td>
+<td><a href="../notes/05-middleware-pipeline/5.03-use-run-map/">5.3</a></td>
+</tr>
+<tr>
+<td>"I can resolve a service once and capture it in my inline middleware"</td>
+<td>That pins <strong>one instance for the app's lifetime</strong>. Resolve from <code>context.RequestServices</code> inside the lambda.</td>
+<td><a href="../notes/05-middleware-pipeline/5.04-inline-middleware/">5.4</a></td>
 </tr>
 <tr>
 <td>"I can inject a scoped service into middleware's constructor"</td>
-<td>Conventional middleware is a <strong>singleton</strong>. Scoped services go in the <code>InvokeAsync</code> parameters, or use <code>IMiddleware</code> factory-based middleware.</td>
-<td><a href="notes/05-middleware-pipeline/5.06-imiddleware-factory.md">5.6</a></td>
+<td>Conventional middleware is a <strong>singleton</strong>, created once. Scoped services go in the <code>InvokeAsync</code> parameters, or use <code>IMiddleware</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.05-conventional-middleware/">5.5</a></td>
 </tr>
 <tr>
-<td>"I can read the request body in middleware and the controller still gets it"</td>
-<td>The body is a forward-only stream and is consumed. You need <code>EnableBuffering()</code> and to rewind it.</td>
-<td><a href="notes/05-middleware-pipeline/5.09-request-body-buffering.md">5.9</a></td>
+<td>"<code>IOptions&lt;T&gt;</code> and <code>IOptionsSnapshot&lt;T&gt;</code> are both fine in a middleware constructor"</td>
+<td><code>IOptions&lt;T&gt;</code> is singleton and fine. <strong><code>IOptionsSnapshot&lt;T&gt;</code> is scoped</strong> and must go in <code>InvokeAsync</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.05-conventional-middleware/">5.5</a></td>
+</tr>
+<tr>
+<td>"<code>IMiddleware</code> works like conventional middleware"</td>
+<td>It must be <strong>registered in DI yourself</strong>, or you get "No service for type..." on the first request.</td>
+<td><a href="../notes/05-middleware-pipeline/5.06-imiddleware-factory/">5.6</a></td>
+</tr>
+<tr>
+<td>"Returning early from middleware is enough"</td>
+<td>Without setting a status code you send an <strong>empty HTTP 200</strong> — no error, nothing to debug from.</td>
+<td><a href="../notes/05-middleware-pipeline/5.07-short-circuiting/">5.7</a></td>
+</tr>
+<tr>
+<td>"Short-circuiting skips everything"</td>
+<td>Only what's <strong>below</strong>. Middleware above already called <code>next</code> and still runs its "after" half — which is why logging keeps working.</td>
+<td><a href="../notes/05-middleware-pipeline/5.07-short-circuiting/">5.7</a></td>
+</tr>
+<tr>
+<td>"I can keep a reference to <code>HttpContext</code>"</td>
+<td>It's <strong>pooled and reused</strong> after the response. A stored reference can end up pointing at <strong>another user's request</strong>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.08-httpcontext/">5.8</a></td>
 </tr>
 <tr>
 <td>"Modify the response after <code>await next()</code>"</td>
-<td>By then the response may already be sent. Headers can't be changed once the response has started — use <code>OnStarting</code>.</td>
-<td><a href="notes/05-middleware-pipeline/5.08-httpcontext.md">5.8</a></td>
+<td>Headers are on the wire once the response has started. Use <code>OnStarting</code>, registered <strong>before</strong> <code>next</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.08-httpcontext/">5.8</a></td>
+</tr>
+<tr>
+<td>"I can read the request body in middleware and the controller still gets it"</td>
+<td>The body is forward-only and gets consumed — the action's model is <strong>null</strong>. Needs <code>EnableBuffering()</code> <strong>and</strong> <code>Body.Position = 0</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.09-request-body-buffering/">5.9</a></td>
+</tr>
+<tr>
+<td>"<code>EnableBuffering()</code> is enough"</td>
+<td>It only makes rewinding <strong>possible</strong>. Forgetting <code>Position = 0</code> gives the exact same symptom as not buffering.</td>
+<td><a href="../notes/05-middleware-pipeline/5.09-request-body-buffering/">5.9</a></td>
+</tr>
+<tr>
+<td>"<code>UseHsts()</code> is a good default everywhere"</td>
+<td>In development it can lock you out of <code>http://localhost</code> for <strong>months</strong>, across every project on that port. Production only.</td>
+<td><a href="../notes/05-middleware-pipeline/5.10-builtin-middleware/">5.10</a></td>
+</tr>
+<tr>
+<td>"A 404 returns a JSON error body"</td>
+<td>A bare 404 from routing has an <strong>empty body</strong> unless you add <code>UseStatusCodePages()</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.11-exception-middleware/">5.11</a></td>
+</tr>
+<tr>
+<td>"Returning <code>ex.Message</code> to the client is helpful"</td>
+<td>Exception messages routinely contain <strong>table names, file paths and connection details</strong>. Log the detail, return a trace ID.</td>
+<td><a href="../notes/05-middleware-pipeline/5.11-exception-middleware/">5.11</a></td>
+</tr>
+<tr>
+<td>"Registering <code>IExceptionHandler</code> is enough"</td>
+<td>Nothing runs without <strong><code>app.UseExceptionHandler()</code></strong>. No warning — exceptions just go unhandled.</td>
+<td><a href="../notes/05-middleware-pipeline/5.12-iexceptionhandler/">5.12</a></td>
+</tr>
+<tr>
+<td>"Handler registration order doesn't matter"</td>
+<td>They run in order until one returns <code>true</code>. A catch-all registered <strong>first</strong> makes every later handler unreachable.</td>
+<td><a href="../notes/05-middleware-pipeline/5.12-iexceptionhandler/">5.12</a></td>
+</tr>
+<tr>
+<td>"I'll validate the request model in middleware"</td>
+<td><strong>Model binding hasn't run yet.</strong> Reading the body yourself also breaks binding downstream. Use a filter.</td>
+<td><a href="../notes/05-middleware-pipeline/5.13-middleware-vs-filters/">5.13</a></td>
+</tr>
+<tr>
+<td>"I'll log requests in an action filter"</td>
+<td>Filters only run when a route <strong>matched</strong> — so you silently miss every 404, static file and rate-limited request.</td>
+<td><a href="../notes/05-middleware-pipeline/5.13-middleware-vs-filters/">5.13</a></td>
+</tr>
+<tr>
+<td>"Logging the request is harmless"</td>
+<td>Headers carry <code>Authorization</code> and <code>Cookie</code>; query strings carry API keys and reset tokens. Log <code>Path</code>, <strong>not</strong> <code>QueryString</code>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.14-logging-middleware/">5.14</a></td>
+</tr>
+<tr>
+<td>"Log everything at Information"</td>
+<td>Then the level conveys nothing and you can't alert. And EF Core at Information logs <strong>every SQL statement</strong>.</td>
+<td><a href="../notes/05-middleware-pipeline/5.14-logging-middleware/">5.14</a></td>
 </tr>
 </tbody>
 </table>
