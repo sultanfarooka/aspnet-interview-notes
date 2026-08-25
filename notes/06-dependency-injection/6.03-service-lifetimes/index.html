@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://sultanfarooka.github.io/aspnet-interview-notes/notes/06-dependency-injection/6.03-service-lifetimes/">
       
       
-        <link rel="prev" href="../../05-middleware-pipeline/5.14-logging-middleware/">
+        <link rel="prev" href="../6.02-builtin-container/">
       
       
-        <link rel="next" href="../../../practice/QUESTION-BANK/">
+        <link rel="next" href="../6.04-captive-dependency/">
       
       
         
@@ -3223,6 +3223,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3262,6 +3286,62 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.01-ioc-and-di/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 IoC and DI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.02-builtin-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 The built-in container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -3341,6 +3421,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3348,6 +3439,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-one-question-a-lifetime-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one question a lifetime answers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-choosing-wrong-is-dangerous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why choosing wrong is dangerous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3360,6 +3479,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simple-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The simple version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeing-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seeing the difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rule-people-get-wrong-the-consumers-lifetime-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ The rule people get wrong: the consumer's lifetime wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-actually-works-what-a-scope-is-in-a-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it actually works — what a scope is in a web app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deeper-detail-choosing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The deeper detail — choosing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3370,6 +3550,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-background-service-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The background service case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3421,6 +3618,286 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.04-captive-dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 Captive dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.05-scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.06-registration-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Registration APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.07-multiple-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.7 Multiple implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.08-factories-open-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.8 Factories and open generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.09-injection-styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.9 Injection styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.10-disposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.10 Disposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.11-third-party-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.11 Third-party containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.12-di-and-testability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.12 DI and testability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.13-di-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.13 DI traps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3570,6 +4047,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-concept" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3577,6 +4065,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-one-question-a-lifetime-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one question a lifetime answers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-choosing-wrong-is-dangerous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why choosing wrong is dangerous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3589,6 +4105,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simple-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The simple version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeing-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seeing the difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rule-people-get-wrong-the-consumers-lifetime-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ The rule people get wrong: the consumer's lifetime wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-actually-works-what-a-scope-is-in-a-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it actually works — what a scope is in a web app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deeper-detail-choosing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The deeper detail — choosing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3599,6 +4176,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-background-service-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The background service case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3669,164 +4263,339 @@
 <h1 id="63-service-lifetimes-transient-scoped-singleton">6.3 — Service Lifetimes: Transient, Scoped, Singleton<a class="headerlink" href="#63-service-lifetimes-transient-scoped-singleton" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong><a href="../../../ROADMAP/">← Roadmap</a></strong> · <strong>Section:</strong> <a href="../../../ROADMAP/#6-dependency-injection">6. Dependency Injection</a>
-<strong>Prev:</strong> <a href="6.02-builtin-container.md">6.2 The built-in container</a> · <strong>Next:</strong> <a href="6.04-captive-dependency.md">6.4 Captive dependency</a></p>
+<strong>Prev:</strong> <a href="../6.02-builtin-container/">6.2 The built-in container</a> · <strong>Next:</strong> <a href="../6.04-captive-dependency/">6.4 Captive dependencies</a></p>
 </blockquote>
 <p><strong>Markers:</strong> 🔥 ⚠️ 🎯 · <strong>Confidence:</strong> 🔴 · <strong>Last reviewed:</strong> —</p>
 <hr />
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p>A <strong>lifetime</strong> answers one question: when someone asks for this service, does the container build
+a new one or hand back one it made earlier?</p>
 <ul>
-<li><strong>Transient</strong> = a new instance every time it's injected. <strong>Scoped</strong> = one per HTTP request. <strong>Singleton</strong> = one for the application's lifetime.</li>
-<li>The consumer's lifetime wins: a transient injected into a singleton effectively becomes a singleton.</li>
-<li><code>DbContext</code> is scoped. Registering it as a singleton is the classic wrong answer — it isn't thread-safe and its change tracker grows forever.</li>
+<li><strong>Transient</strong> — a new instance <strong>every time</strong> it is injected.</li>
+<li><strong>Scoped</strong> — <strong>one per scope</strong>, which in a web app means one per HTTP request.</li>
+<li><strong>Singleton</strong> — <strong>one for the entire application</strong>, shared by every request.</li>
 </ul>
+<p>The rule that catches people: <strong>the consumer's lifetime wins.</strong> A transient injected into a
+singleton lives as long as the singleton.</p>
 <hr />
-<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
-<p>Every service you register with the DI container has to answer one question: <em>when
-someone asks for this, do I hand back a fresh object or one I made earlier?</em></p>
-<p>That's the entire idea. The three lifetimes are three answers to it, and picking the
-wrong one produces bugs that don't show up until you have concurrent traffic — which is
-exactly why interviewers ask about it. It's a question where the wrong answer is
-invisible in development.</p>
-<hr />
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<p>The container tracks instances per <strong>scope</strong>. A scope is an <code>IServiceScope</code> — a container
-that lives for a bounded period and disposes everything it created when it ends.</p>
-<p>In ASP.NET Core, the framework creates a scope at the start of each HTTP request and
-disposes it when the response completes. That's why "scoped" and "per request" are used
-interchangeably in web apps — but they aren't the same thing, and that distinction is the
-follow-up question. A <code>BackgroundService</code> has no ambient scope, so scoped services must
-be resolved from a scope you create yourself.</p>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Lifetime</th>
-<th>Instance per</th>
-<th>Disposed when</th>
-<th>Thread safety needed</th>
+<th>Term</th>
+<th>What it is</th>
+<th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transient</td>
-<td>every resolution</td>
-<td>the owning scope ends</td>
-<td>no (usually)</td>
+<td><strong>Lifetime</strong></td>
+<td><em>a registration setting</em></td>
+<td>How long an instance lives and how often a new one is made.</td>
 </tr>
 <tr>
-<td>Scoped</td>
-<td>scope (= HTTP request)</td>
-<td>the request ends</td>
-<td>no</td>
+<td><strong>Transient</strong></td>
+<td><em>a lifetime</em></td>
+<td>A new instance for every injection. Never reused.</td>
 </tr>
 <tr>
-<td>Singleton</td>
-<td>application</td>
-<td>app shuts down</td>
-<td><strong>yes</strong></td>
+<td><strong>Scoped</strong></td>
+<td><em>a lifetime</em></td>
+<td>One instance per scope. In ASP.NET Core, one per HTTP request.</td>
+</tr>
+<tr>
+<td><strong>Singleton</strong></td>
+<td><em>a lifetime</em></td>
+<td>One instance for the whole application, created on first use.</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>an <strong><code>IServiceScope</code></strong></td>
+<td>A bounded container that disposes what it created when it ends. See <a href="../6.05-scopes/">6.5</a>.</td>
+</tr>
+<tr>
+<td><strong>Root scope</strong></td>
+<td><em>the application-level scope</em></td>
+<td><code>app.Services</code>. Lives for the whole app. Singletons live here.</td>
+</tr>
+<tr>
+<td><strong><code>AddTransient&lt;T&gt;</code></strong></td>
+<td>a <strong>method</strong></td>
+<td>Register with transient lifetime.</td>
+</tr>
+<tr>
+<td><strong><code>AddScoped&lt;T&gt;</code></strong></td>
+<td>a <strong>method</strong></td>
+<td>Register with scoped lifetime.</td>
+</tr>
+<tr>
+<td><strong><code>AddSingleton&lt;T&gt;</code></strong></td>
+<td>a <strong>method</strong></td>
+<td>Register with singleton lifetime.</td>
+</tr>
+<tr>
+<td><strong>Captive dependency</strong></td>
+<td><em>a bug</em></td>
+<td>A shorter-lived service captured by a longer-lived one. See <a href="../6.04-captive-dependency/">6.4</a>.</td>
+</tr>
+<tr>
+<td><strong><code>ValidateScopes</code></strong></td>
+<td><em>a container option</em></td>
+<td>Detects captive dependencies. <strong>Development-only by default.</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Singletons are shared across concurrent requests. That means any mutable state inside one
-must be thread-safe — and this is where most singleton bugs actually come from, not from
-the registration itself.</p>
 <hr />
-<h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<h2 id="the-concept">The concept<a class="headerlink" href="#the-concept" title="Permanent link">&para;</a></h2>
+<h3 id="the-one-question-a-lifetime-answers">The one question a lifetime answers<a class="headerlink" href="#the-one-question-a-lifetime-answers" title="Permanent link">&para;</a></h3>
+<p>Every registration has to answer: <strong>when someone asks for this, do I build a fresh one or reuse
+one I already have?</strong></p>
+<p>That is the whole idea. The three lifetimes are three answers.</p>
+<p>A picture: <strong>three ways a restaurant handles items.</strong></p>
+<ul>
+<li><strong>Transient is a paper napkin.</strong> Everyone gets a fresh one, every time. Cheap, disposable, no
+  sharing.</li>
+<li><strong>Scoped is the bill for a table.</strong> One per table, shared by everyone sitting at it, closed
+  when they leave. Two tables never share a bill.</li>
+<li><strong>Singleton is the espresso machine.</strong> One for the whole restaurant, used by everyone all day.
+  It had better be able to handle several orders at once.</li>
+</ul>
+<p>That last point is the crux of singleton — shared means concurrent.</p>
+<h3 id="why-choosing-wrong-is-dangerous">Why choosing wrong is dangerous<a class="headerlink" href="#why-choosing-wrong-is-dangerous" title="Permanent link">&para;</a></h3>
+<p>The reason interviewers ask is that <strong>the wrong lifetime produces bugs that do not appear in
+development</strong>.</p>
+<p>With one developer clicking through the app, requests happen one at a time. A <code>DbContext</code>
+registered as a singleton looks fine — there is never a second concurrent request to expose the
+problem.</p>
+<p>Under production load, fifty requests hit that shared <code>DbContext</code> simultaneously. It is not
+thread-safe, so its internal state corrupts, and its change tracker accumulates every entity it
+has ever seen (<a href="../../03-dotnet-runtime/3.05-memory-leaks/">3.5</a>).</p>
+<p><strong>The bug is invisible until the exact conditions you cannot easily reproduce.</strong></p>
+<hr />
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="the-simple-version">The simple version<a class="headerlink" href="#the-simple-version" title="Permanent link">&para;</a></h3>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">IEmailFormatter</span><span class="p">,</span><span class="w"> </span><span class="n">EmailFormatter</span><span class="o">&gt;</span><span class="p">();</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IOrderRepository</span><span class="p">,</span><span class="w"> </span><span class="n">OrderRepository</span><span class="o">&gt;</span><span class="p">();</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPricingCache</span><span class="p">,</span><span class="w"> </span><span class="n">PricingCache</span><span class="o">&gt;</span><span class="p">();</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// DbContext is registered scoped by default — this is AddScoped underneath.</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetConnectionString</span><span class="p">(</span><span class="s">&quot;Default&quot;</span><span class="p">)));</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPriceCache</span><span class="p">,</span><span class="w"> </span><span class="n">PriceCache</span><span class="o">&gt;</span><span class="p">();</span>
 </span></code></pre></div>
-<p>Proving the behaviour to yourself is worth doing once:</p>
+<table>
+<thead>
+<tr>
+<th>Lifetime</th>
+<th>New instance when</th>
+<th>Disposed when</th>
+<th>Needs thread safety?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transient</strong></td>
+<td>Every injection</td>
+<td>The owning scope ends</td>
+<td>Usually not</td>
+</tr>
+<tr>
+<td><strong>Scoped</strong></td>
+<td>Once per scope / request</td>
+<td>The request ends</td>
+<td>Not usually</td>
+</tr>
+<tr>
+<td><strong>Singleton</strong></td>
+<td>Once, on first use</td>
+<td>App shuts down</td>
+<td><strong>Yes</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="seeing-the-difference">Seeing the difference<a class="headerlink" href="#seeing-the-difference" title="Permanent link">&para;</a></h3>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">LifetimeDemo</span><span class="p">(</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">ITransientService</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ITransientService</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">IScopedService</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w">    </span><span class="n">IScopedService</span><span class="w"> </span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// a.Id != b.Id  — two separate instances</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">// c.Id == d.Id  — same instance within this request</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="c1">//                 but a different Id on the next request</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">IScopedService</span><span class="w">    </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">IScopedService</span><span class="w">    </span><span class="n">d</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">ISingletonService</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">ISingletonService</span><span class="w"> </span><span class="n">f</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">// Within ONE request:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="c1">//   a.Id != b.Id   — two separate instances</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">//   c.Id == d.Id   — same instance</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="c1">//   e.Id == f.Id   — same instance</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="c1">//</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="c1">// On the NEXT request:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">//   c.Id is DIFFERENT — new scope, new instance</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="c1">//   e.Id is THE SAME  — singletons survive</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Resolving a scoped service where no scope exists — a <code>BackgroundService</code>, a hosted
-service, or startup code:</p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">OrderCleanupService</span><span class="p">(</span><span class="n">IServiceScopeFactory</span><span class="w"> </span><span class="n">scopeFactory</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stoppingToken</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scopeFactory</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">();</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">();</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Orders</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">                </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">ExpiresAt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">)</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                </span><span class="p">.</span><span class="n">ExecuteDeleteAsync</span><span class="p">(</span><span class="n">stoppingToken</span><span class="p">);</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">);</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">}</span>
+<p>That table is the whole behaviour. Everything else is consequences of it.</p>
+<h3 id="the-rule-people-get-wrong-the-consumers-lifetime-wins">⚠️ The rule people get wrong: the consumer's lifetime wins<a class="headerlink" href="#the-rule-people-get-wrong-the-consumers-lifetime-wins" title="Permanent link">&para;</a></h3>
+<p>This is the part that separates a memorised answer from an understood one.</p>
+<p><strong>Lifetime describes how often the container <em>creates</em> an instance — not how long the result
+survives.</strong> Survival is decided by whoever holds the reference.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">IReportBuilder</span><span class="p">,</span><span class="w"> </span><span class="n">ReportBuilder</span><span class="o">&gt;</span><span class="p">();</span><span class="w">   </span><span class="c1">// &quot;transient&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ReportCache</span><span class="o">&gt;</span><span class="p">();</span><span class="w">                     </span><span class="c1">// holds one</span>
 </span></code></pre></div>
-<p>The scope must be created <strong>inside</strong> the loop, not outside it. A scope held for the life
-of the service is a singleton <code>DbContext</code> wearing a disguise.</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">ReportCache</span><span class="p">(</span><span class="n">IReportBuilder</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w">     </span><span class="c1">// singleton constructor</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1">// &#39;builder&#39; is resolved ONCE, when the singleton is created.</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// It now lives for the life of the application.</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">// &quot;Transient&quot; described how it was created, not how long it lasts.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>So a transient inside a singleton <strong>is effectively a singleton</strong>. The word describes the
+container's creation policy, not a guarantee about lifespan.</p>
+<p>This is the mechanism behind the captive dependency problem, which is important enough to have
+its own note — <a href="../6.04-captive-dependency/">6.4</a>.</p>
+<h3 id="how-it-actually-works-what-a-scope-is-in-a-web-app">How it actually works — what a scope is in a web app<a class="headerlink" href="#how-it-actually-works-what-a-scope-is-in-a-web-app" title="Permanent link">&para;</a></h3>
+<p>A <strong>scope</strong> is a bounded sub-container that disposes everything it created when it ends
+(<a href="../6.05-scopes/">6.5</a>).</p>
+<p>ASP.NET Core creates one scope <strong>per HTTP request</strong> and disposes it when the response completes.
+That is why "scoped" and "per request" are used interchangeably — but they are not the same
+thing, and the difference matters:</p>
+<pre class="mermaid"><code>flowchart TD
+    R["Root container (app lifetime)"] --&gt; S1["Singleton instances&lt;br/&gt;live here"]
+    R --&gt; Q1["Request 1 scope"]
+    R --&gt; Q2["Request 2 scope"]
+    Q1 --&gt; A1["Scoped instance A"]
+    Q1 --&gt; T1["Transient x2"]
+    Q2 --&gt; A2["Scoped instance B — different object"]
+    Q2 --&gt; T2["Transient x1"]</code></pre>
+<p><strong>Outside an HTTP request there is no ambient scope.</strong> A <code>BackgroundService</code>, a hosted service,
+or startup code in <code>Program.cs</code> has none — so resolving a scoped service directly throws, and you
+must create a scope yourself.</p>
+<h3 id="the-deeper-detail-choosing">The deeper detail — choosing<a class="headerlink" href="#the-deeper-detail-choosing" title="Permanent link">&para;</a></h3>
+<p><strong>Singleton</strong> when the service is stateless, or holds state that is genuinely meant to be shared
+and is thread-safe:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPriceCalculator</span><span class="p">,</span><span class="w"> </span><span class="n">PriceCalculator</span><span class="o">&gt;</span><span class="p">();</span><span class="w">     </span><span class="c1">// stateless</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IMemoryCache</span><span class="p">,</span><span class="w"> </span><span class="n">MemoryCache</span><span class="o">&gt;</span><span class="p">();</span><span class="w">             </span><span class="c1">// designed for sharing</span>
+</span></code></pre></div>
+<p><strong>Scoped</strong> for anything representing work on behalf of one request — a unit of work, the current
+user's context, a <code>DbContext</code>:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IOrderRepository</span><span class="p">,</span><span class="w"> </span><span class="n">OrderRepository</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">(...);</span><span class="w">      </span><span class="c1">// registers as SCOPED automatically</span>
+</span></code></pre></div>
+<p><strong>Transient</strong> for cheap, stateless helpers where sharing buys nothing:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">IEmailFormatter</span><span class="p">,</span><span class="w"> </span><span class="n">EmailFormatter</span><span class="o">&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+<p>⚠️ <strong>Scoped is the right default in a web application.</strong> It matches the natural unit of work,
+avoids thread-safety questions entirely, and cleans up automatically. Reach for singleton when
+you can justify it and transient when the object is genuinely trivial.</p>
+<p>⚠️ <strong>Transient is not free.</strong> Every injection allocates. A transient injected into ten services
+in one request is ten objects. For a class with no state that is fine; for anything holding a
+buffer or a connection it is waste.</p>
+<p>⚠️ <strong>And a subtlety about transient disposal:</strong> a transient implementing <code>IDisposable</code> is tracked
+by the scope that created it and disposed when that scope ends — <strong>not</strong> when you finish using
+it. In a long-lived scope, transient disposables accumulate
+(<a href="../6.10-disposal/">6.10</a>).</p>
+<hr />
+<h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<p>The realistic registration set for an API:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// SINGLETON — stateless or genuinely shared, and thread-safe</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IClock</span><span class="p">,</span><span class="w"> </span><span class="n">SystemClock</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPriceCalculator</span><span class="p">,</span><span class="w"> </span><span class="n">PriceCalculator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddMemoryCache</span><span class="p">();</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// SCOPED — per-request work. The default for most application services.</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetConnectionString</span><span class="p">(</span><span class="s">&quot;Default&quot;</span><span class="p">)));</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IOrderRepository</span><span class="p">,</span><span class="w"> </span><span class="n">EfOrderRepository</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IOrderService</span><span class="p">,</span><span class="w"> </span><span class="n">OrderService</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">ICurrentUser</span><span class="p">,</span><span class="w"> </span><span class="n">HttpCurrentUser</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">// TRANSIENT — cheap, stateless helpers</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">IEmailFormatter</span><span class="p">,</span><span class="w"> </span><span class="n">EmailFormatter</span><span class="o">&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="the-background-service-case">The background service case<a class="headerlink" href="#the-background-service-case" title="Permanent link">&para;</a></h3>
+<p>A <code>BackgroundService</code> is a singleton with no ambient scope, so this is the one place you create
+scopes by hand:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">OrderCleanupService</span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">IServiceScopeFactory</span><span class="w"> </span><span class="n">scopeFactory</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">ILogger</span><span class="o">&lt;</span><span class="n">OrderCleanupService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">{</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stoppingToken</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">            </span><span class="c1">// A FRESH scope per iteration — see the warning below</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scopeFactory</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">())</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">AppDbContext</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">                </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Orders</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">                    </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">ExpiresAt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">)</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">                    </span><span class="p">.</span><span class="n">ExecuteDeleteAsync</span><span class="p">(</span><span class="n">stoppingToken</span><span class="p">);</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">            </span><span class="c1">// scope disposed here — DbContext released</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">);</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>⚠️ <strong>The scope must be inside the loop.</strong> Creating it outside gives you one <code>DbContext</code> for the
+service's entire lifetime — which is a singleton <code>DbContext</code> wearing a disguise, with the change
+tracker growing on every iteration. See <a href="../21-advanced-features/21.02-scoped-in-background.md">21.2</a>.</p>
 <hr />
 <h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Explain the three service lifetimes in ASP.NET Core.</strong></p>
-<p>Transient gives you a new instance every time it's resolved, so it's for cheap stateless
-things. Scoped gives you one instance per scope, and in a web app the framework creates a
-scope per HTTP request — so it's one per request, which is what you want for a
-<code>DbContext</code> or anything representing a unit of work. Singleton gives you one instance for
-the whole application, which is right for caches and configuration, but it means the
-instance is shared across concurrent requests so any mutable state has to be thread-safe.</p>
-<p><strong>Q: What happens if you inject a scoped service into a singleton?</strong></p>
-<p>The singleton captures it on first construction and holds it forever, so a
-request-scoped object becomes application-scoped. With a <code>DbContext</code> that's genuinely
-bad: it isn't thread-safe, so concurrent requests corrupt its internal state, and its
-change tracker accumulates every entity it has ever seen, which is a memory leak. The
-container catches this at startup in development because scope validation is on by
-default there — but it's off in production, which is the part people miss. If a singleton
-genuinely needs a scoped service, inject <code>IServiceScopeFactory</code> and create a scope per
-operation.</p>
+<p><strong>Q: Explain the three service lifetimes.</strong></p>
+<p>Transient gives you a new instance every time it is injected, so it suits cheap stateless
+helpers. Scoped gives you one instance per scope, and in a web application the framework creates
+a scope per HTTP request — so it is one per request, which is what you want for a <code>DbContext</code> or
+anything representing a unit of work. Singleton gives you one instance for the whole application,
+which is right for caches and stateless calculators, but it means the instance is shared across
+concurrent requests, so any mutable state has to be thread-safe.</p>
 <p><strong>Q: Is a transient service ever effectively a singleton?</strong></p>
-<p>Yes, and this is the part that surprises people. Lifetime is a property of the object
-graph, not the registration. If a singleton takes a transient in its constructor, that
-transient is resolved once and lives as long as the singleton. "Transient" only describes
-how often the container <em>creates</em> one, not how long the result survives.</p>
-<p><strong>Q: Why is <code>DbContext</code> scoped rather than transient?</strong></p>
-<p>Because it's a unit of work. You want every repository and service handling a single
-request to share one context so change tracking and <code>SaveChanges</code> cover the whole
-operation atomically. Transient would give each consumer its own context and its own
-separate transaction, which defeats the point.</p>
+<p>Yes, and this is the part people miss. Lifetime is a property of the object graph, not just the
+registration. If a singleton takes a transient in its constructor, that transient is resolved
+once when the singleton is created and lives as long as it does. So "transient" describes how
+often the container <em>creates</em> an instance, not how long the result survives — survival is decided
+by whoever holds the reference. That is exactly the mechanism behind captive dependencies.</p>
+<p><strong>Q: Why is <code>DbContext</code> scoped rather than transient or singleton?</strong></p>
+<p>Because it represents a unit of work. Scoped means every repository and service handling one
+request shares the same context, so change tracking and <code>SaveChanges</code> cover the whole operation
+as one transaction. Transient would give each consumer its own context and its own separate
+transaction, defeating the purpose. Singleton would be worse — <code>DbContext</code> is not thread-safe, so
+concurrent requests would corrupt its internal state, and its change tracker would accumulate
+every entity it had ever loaded, which is a memory leak.</p>
+<p><strong>Q: What should you use as the default in a web application?</strong></p>
+<p>Scoped, for most application services. It matches the natural unit of work — one request — so
+thread safety stops being a question, and everything is cleaned up when the request ends. I would
+use singleton when the service is genuinely stateless or is designed for sharing and is
+thread-safe, and transient for trivial helpers where sharing buys nothing. Worth remembering that
+transient is not free either — each injection allocates, so a transient consumed by ten services
+in a request is ten objects.</p>
 <hr />
 <h2 id="traps">Traps ⚠️<a class="headerlink" href="#traps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>"Scoped means per class or per controller."</strong> It means per <em>scope</em>. In a web request
-  that's per request; outside one there is no ambient scope at all.</li>
-<li><strong>"The container will stop me registering this wrong."</strong> Scope validation is enabled in
-  the Development environment only. The same code can start cleanly in production and
-  fail under load.</li>
-<li><strong>"Singleton is faster, so prefer it."</strong> Only if the object is genuinely shareable and
-  thread-safe. Otherwise you've traded an allocation for a race condition.</li>
-<li><strong>"<code>AddSingleton(new Thing())</code> and <code>AddSingleton&lt;Thing&gt;()</code> are equivalent."</strong> They
-  aren't for disposal: the container disposes what it creates, so if you hand it an
-  instance you built, you own its lifetime.</li>
+<li><strong>"Scoped means one per class."</strong> It means one per <strong>scope</strong>. In a web request that is per
+  request; outside one there is no ambient scope at all.</li>
+<li><strong>The consumer's lifetime wins.</strong> A transient inside a singleton lives as long as the
+  singleton.</li>
+<li><strong>Injecting a scoped service into a singleton</strong> captures it forever
+  (<a href="../6.04-captive-dependency/">6.4</a>).</li>
+<li><strong><code>ValidateScopes</code> is Development-only by default</strong>, so the app can start cleanly in production
+  and fail under load.</li>
+<li><strong>Singletons are shared across concurrent requests</strong>, so mutable state needs thread safety
+  (<a href="../../02-collections-linq-async/2.18-thread-safety/">2.18</a>).</li>
+<li><strong>Transient disposables are held until the scope ends</strong>, not when you stop using them.</li>
+<li><strong>Creating a scope outside a background loop</strong> turns a scoped service into an application-lifetime
+  one.</li>
+<li><strong><code>AddDbContext</code> registers as scoped</strong> — you do not pick the lifetime, and overriding it is a
+  mistake.</li>
 </ul>
 <hr />
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="6.04-captive-dependency.md">6.4 The captive dependency problem</a> — what goes wrong in detail</li>
-<li><a href="6.05-scopes.md">6.5 Scopes and <code>IServiceScopeFactory</code></a> — creating scopes manually</li>
-<li><a href="6.10-disposal.md">6.10 Disposal</a> — who disposes what</li>
-<li><a href="../13-entity-framework-core/13.02-dbcontext.md">13.2 <code>DbContext</code> lifetime</a> — the canonical scoped service</li>
-<li><a href="../21-advanced-features/21.02-scoped-in-background.md">21.2 Scoped services in background services</a> — the most common real-world case</li>
+<li><a href="../6.04-captive-dependency/">6.4 Captive dependencies</a> — what goes wrong, in detail</li>
+<li><a href="../6.05-scopes/">6.5 Scopes</a> — creating them manually</li>
+<li><a href="../6.10-disposal/">6.10 Disposal</a> — who disposes what, and when</li>
+<li><a href="../6.13-di-traps/">6.13 DI traps</a> — the interview classics</li>
+<li><a href="../13-entity-framework-core/13.02-dbcontext.md">13.2 DbContext</a> — the canonical scoped service</li>
+<li><a href="../21-advanced-features/21.02-scoped-in-background.md">21.2 Scoped services in background services</a> — the common real case</li>
+<li><a href="../../02-collections-linq-async/2.18-thread-safety/">2.18 Thread safety</a> — why singletons need it</li>
 </ul>
 <hr />
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/aspnet/core/fundamentals/dependency-injection">Microsoft Learn — Dependency injection in ASP.NET Core</a></li>
-<li><a href="https://learn.microsoft.com/dotnet/core/extensions/dependency-injection-guidelines">Microsoft Learn — DI guidelines</a></li>
+<li><a href="https://learn.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes">Microsoft Learn — Service lifetimes</a></li>
+<li><a href="https://learn.microsoft.com/dotnet/core/extensions/dependency-injection-guidelines">Microsoft Learn — Dependency injection guidelines</a></li>
 </ul>
 
 
@@ -3863,7 +4632,7 @@ separate transaction, which defeats the point.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../05-middleware-pipeline/5.14-logging-middleware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5.14 Logging middleware">
+          <a href="../6.02-builtin-container/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6.2 The built-in container">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3873,20 +4642,20 @@ separate transaction, which defeats the point.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                5.14 Logging middleware
+                6.2 The built-in container
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../practice/QUESTION-BANK/" class="md-footer__link md-footer__link--next" aria-label="Next: Question Bank">
+          <a href="../6.04-captive-dependency/" class="md-footer__link md-footer__link--next" aria-label="Next: 6.4 Captive dependencies">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Question Bank
+                6.4 Captive dependencies
               </div>
             </div>
             <div class="md-footer__button md-icon">

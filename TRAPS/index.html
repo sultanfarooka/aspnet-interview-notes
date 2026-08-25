@@ -3413,6 +3413,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3460,6 +3484,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.01-ioc-and-di/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 IoC and DI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.02-builtin-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 The built-in container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../notes/06-dependency-injection/6.03-service-lifetimes/" class="md-nav__link">
         
   
@@ -3468,6 +3548,286 @@
     
   
     6.3 Service lifetimes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.04-captive-dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 Captive dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.05-scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.06-registration-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Registration APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.07-multiple-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.7 Multiple implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.08-factories-open-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.8 Factories and open generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.09-injection-styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.9 Injection styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.10-disposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.10 Disposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.11-third-party-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.11 Third-party containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.12-di-and-testability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.12 DI and testability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/06-dependency-injection/6.13-di-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.13 DI traps
   
 
     
@@ -3832,22 +4192,117 @@ whole point of the question.</p>
 <tr>
 <td>"Scoped means one instance per class"</td>
 <td>Scoped means one instance per <strong>scope</strong>, which in a web app is one per HTTP request. Background services have no ambient scope — you must create one.</td>
-<td><a href="notes/06-dependency-injection/6.05-scopes.md">6.5</a></td>
+<td><a href="../notes/06-dependency-injection/6.05-scopes/">6.5</a></td>
 </tr>
 <tr>
 <td>"Injecting a scoped service into a singleton is fine"</td>
-<td>The singleton captures that instance forever. Your <code>DbContext</code> becomes an app-lifetime object shared across all requests — non-thread-safe and leaking.</td>
-<td><a href="notes/06-dependency-injection/6.04-captive-dependency.md">6.4</a></td>
+<td>The singleton captures that instance forever. Your <code>DbContext</code> becomes an app-lifetime object shared across all requests — non-thread-safe, leaking, <strong>and returning stale cached entities</strong>.</td>
+<td><a href="../notes/06-dependency-injection/6.04-captive-dependency/">6.4</a></td>
 </tr>
 <tr>
 <td>"Transient services are always safe"</td>
-<td>A transient registered into a singleton lives as long as the singleton. Lifetime is determined by the <em>consumer</em>, not the registration.</td>
-<td><a href="notes/06-dependency-injection/6.04-captive-dependency.md">6.4</a></td>
+<td>A transient in a singleton lives as long as the singleton — and <strong><code>ValidateScopes</code> does not catch it</strong>, because that combination is technically legal.</td>
+<td><a href="../notes/06-dependency-injection/6.04-captive-dependency/">6.4</a></td>
+</tr>
+<tr>
+<td>"Scope validation protects me"</td>
+<td>It's <strong>Development-only by default</strong>. The environment that would catch the bug is the one you never deploy. Enable it everywhere.</td>
+<td><a href="../notes/06-dependency-injection/6.13-di-traps/">6.13</a></td>
+</tr>
+<tr>
+<td>"DI is the same as the Dependency Inversion Principle"</td>
+<td>DI is <em>how</em> you receive a dependency; dependency inversion is <em>what</em> you depend on. And IoC is the broader principle both sit under.</td>
+<td><a href="../notes/06-dependency-injection/6.01-ioc-and-di/">6.1</a></td>
+</tr>
+<tr>
+<td>"Every class should have an interface"</td>
+<td>An interface with one implementation and no test double is a file and an indirection buying nothing. Add it when you need to substitute.</td>
+<td><a href="../notes/06-dependency-injection/6.01-ioc-and-di/">6.1</a></td>
+</tr>
+<tr>
+<td>"Registering the same interface twice replaces the first"</td>
+<td>Both stay — the collection is a <strong>list</strong>. A single resolve gives the <strong>last</strong>; <code>IEnumerable&lt;T&gt;</code> gives all. Duplicates change behaviour silently.</td>
+<td><a href="../notes/06-dependency-injection/6.02-builtin-container/">6.2</a></td>
+</tr>
+<tr>
+<td>"<code>GetService</code> and <code>GetRequiredService</code> are interchangeable"</td>
+<td><code>GetService</code> returns <strong>null</strong>, so a missing registration surfaces later as a null reference somewhere unrelated.</td>
+<td><a href="../notes/06-dependency-injection/6.02-builtin-container/">6.2</a></td>
+</tr>
+<tr>
+<td>"Injecting <code>IServiceProvider</code> into a singleton lets me use scoped services"</td>
+<td>That's the <strong>root</strong> provider — the scoped service lives forever. Same bug, and validation misses it. Use <code>IServiceScopeFactory</code>.</td>
+<td><a href="../notes/06-dependency-injection/6.05-scopes/">6.5</a></td>
+</tr>
+<tr>
+<td>"I created a scope, so I'm fine"</td>
+<td>Not if it's <strong>outside</strong> the loop. One <code>DbContext</code> for the service's whole lifetime is the captive dependency relocated.</td>
+<td><a href="../notes/06-dependency-injection/6.05-scopes/">6.5</a></td>
+</tr>
+<tr>
+<td>"I can create a scope in my controller"</td>
+<td>The request <strong>already has one</strong>. A second scope means a second <code>DbContext</code> with its own change tracker and its own transaction.</td>
+<td><a href="../notes/06-dependency-injection/6.05-scopes/">6.5</a></td>
+</tr>
+<tr>
+<td>"<code>TryAdd</code> is just a safer <code>Add</code>"</td>
+<td>With several implementations it <strong>silently skips all but the first</strong>. Use <code>TryAddEnumerable</code>. And it needs a separate <code>using</code>.</td>
+<td><a href="../notes/06-dependency-injection/6.06-registration-apis/">6.6</a></td>
+</tr>
+<tr>
+<td>"Keyed services replace factories"</td>
+<td>Keys are fixed <strong>at registration</strong>. If the choice depends on runtime data like the current tenant, you still need a factory.</td>
+<td><a href="../notes/06-dependency-injection/6.06-registration-apis/">6.6</a></td>
+</tr>
+<tr>
+<td>"The order of <code>IEnumerable&lt;T&gt;</code> doesn't matter"</td>
+<td>It's registration order, and it usually <strong>should</strong> matter — cheap checks before ones hitting a database or an API. But it's implicit and easy to break.</td>
+<td><a href="../notes/06-dependency-injection/6.07-multiple-implementations/">6.7</a></td>
+</tr>
+<tr>
+<td>"A decorator is easy to register by hand"</td>
+<td>Register the inner service as the <strong>interface</strong> and the decorator resolves itself — infinite recursion. Register it as the concrete type.</td>
+<td><a href="../notes/06-dependency-injection/6.08-factories-open-generics/">6.8</a></td>
+</tr>
+<tr>
+<td>"A factory registration is checked at startup"</td>
+<td>It runs <strong>lazily</strong>, on first resolution. A config error inside surfaces on the first request that needs it, not at startup.</td>
+<td><a href="../notes/06-dependency-injection/6.08-factories-open-generics/">6.8</a></td>
+</tr>
+<tr>
+<td>"Ten constructor parameters? Inject <code>IServiceProvider</code>"</td>
+<td>That hides the smell rather than fixing it — and removes the only signal telling you the class does too much. Split it.</td>
+<td><a href="../notes/06-dependency-injection/6.09-injection-styles/">6.9</a></td>
 </tr>
 <tr>
 <td>"The container disposes everything I give it"</td>
-<td>It disposes instances <strong>it created</strong>. If you pass an already-constructed instance to <code>AddSingleton(instance)</code>, you own disposal.</td>
-<td><a href="notes/06-dependency-injection/6.10-disposal.md">6.10</a></td>
+<td>It disposes instances <strong>it created</strong>. Pass an already-constructed instance to <code>AddSingleton(instance)</code> and you own disposal.</td>
+<td><a href="../notes/06-dependency-injection/6.10-disposal/">6.10</a></td>
+</tr>
+<tr>
+<td>"I should dispose the <code>DbContext</code> I injected"</td>
+<td>You didn't create it. Disposing it breaks <strong>every other service in that request</strong> sharing the same scope.</td>
+<td><a href="../notes/06-dependency-injection/6.10-disposal/">6.10</a></td>
+</tr>
+<tr>
+<td>"A transient disposable is released when I finish with it"</td>
+<td>It's held by the <strong>scope</strong> until that scope ends. Resolving one in a loop means every instance stays open.</td>
+<td><a href="../notes/06-dependency-injection/6.10-disposal/">6.10</a></td>
+</tr>
+<tr>
+<td>"<code>IOptions&lt;T&gt;</code> and <code>IOptionsSnapshot&lt;T&gt;</code> are interchangeable"</td>
+<td><code>IOptions&lt;T&gt;</code> is singleton. <strong><code>IOptionsSnapshot&lt;T&gt;</code> is scoped</strong> — a captive dependency in a singleton constructor.</td>
+<td><a href="../notes/06-dependency-injection/6.13-di-traps/">6.13</a></td>
+</tr>
+<tr>
+<td>"<code>DateTime.UtcNow</code> is fine, DI handles the rest"</td>
+<td>Time-dependent logic is then untestable or flaky. Inject <strong><code>TimeProvider</code></strong> (.NET 8+) and use <code>FakeTimeProvider</code> in tests.</td>
+<td><a href="../notes/06-dependency-injection/6.12-di-and-testability/">6.12</a></td>
+</tr>
+<tr>
+<td>"Unit tests need the DI container"</td>
+<td>They don't. The container composes the <strong>application</strong>; a unit test just <code>new</code>s the class with fakes. Needing a container means it's an integration test.</td>
+<td><a href="../notes/06-dependency-injection/6.12-di-and-testability/">6.12</a></td>
 </tr>
 </tbody>
 </table>

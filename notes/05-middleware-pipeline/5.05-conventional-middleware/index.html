@@ -3464,6 +3464,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3511,6 +3535,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.01-ioc-and-di/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 IoC and DI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.02-builtin-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 The built-in container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../06-dependency-injection/6.03-service-lifetimes/" class="md-nav__link">
         
   
@@ -3519,6 +3599,286 @@
     
   
     6.3 Service lifetimes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.04-captive-dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 Captive dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.05-scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.06-registration-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Registration APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.07-multiple-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.7 Multiple implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.08-factories-open-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.8 Factories and open generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.09-injection-styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.9 Injection styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.10-disposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.10 Disposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.11-third-party-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.11 Third-party containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.12-di-and-testability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.12 DI and testability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.13-di-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.13 DI traps
   
 
     
@@ -4064,7 +4424,7 @@ forever</strong>:</p>
 <p>The middleware is built once, so <code>db</code> is resolved once and held for the application's lifetime.
 That <code>DbContext</code> is now shared by every concurrent request — it is not thread-safe, and its
 change tracker grows without limit. This is the <strong>captive dependency</strong> problem
-(<a href="../06-dependency-injection/6.04-captive-dependency.md">6.4</a>).</p>
+(<a href="../../06-dependency-injection/6.04-captive-dependency/">6.4</a>).</p>
 <p>In Development you usually get a startup exception, because scope validation is on. <strong>In
 production it is off by default</strong>, so the app starts and misbehaves under load — which is
 exactly why this bug reaches production.</p>
@@ -4240,7 +4600,7 @@ because the framework cannot decide which one you meant.</p>
 <li><a href="../5.04-inline-middleware/">5.4 Inline middleware</a> — the simpler alternative</li>
 <li><a href="../5.06-imiddleware-factory/">5.6 IMiddleware factory</a> — the per-request alternative</li>
 <li><a href="../5.08-httpcontext/">5.8 HttpContext</a> — <code>Items</code> and <code>OnStarting</code></li>
-<li><a href="../06-dependency-injection/6.04-captive-dependency.md">6.4 Captive dependencies</a> — the trap in detail</li>
+<li><a href="../../06-dependency-injection/6.04-captive-dependency/">6.4 Captive dependencies</a> — the trap in detail</li>
 <li><a href="../07-configuration-options/7.06-options-pattern.md">7.6 Options pattern</a> — <code>IOptions</code> vs <code>IOptionsSnapshot</code></li>
 <li><a href="../18-logging-monitoring/18.04-scopes-correlation-ids.md">18.4 Log scopes</a> — <code>BeginScope</code></li>
 <li><a href="../../02-collections-linq-async/2.18-thread-safety/">2.18 Thread safety</a> — shared mutable fields</li>

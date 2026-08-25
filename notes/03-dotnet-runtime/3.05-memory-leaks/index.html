@@ -3447,6 +3447,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3494,6 +3518,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.01-ioc-and-di/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 IoC and DI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.02-builtin-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 The built-in container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../06-dependency-injection/6.03-service-lifetimes/" class="md-nav__link">
         
   
@@ -3502,6 +3582,286 @@
     
   
     6.3 Service lifetimes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.04-captive-dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 Captive dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.05-scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.06-registration-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Registration APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.07-multiple-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.7 Multiple implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.08-factories-open-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.8 Factories and open generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.09-injection-styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.9 Injection styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.10-disposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.10 Disposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.11-third-party-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.11 Third-party containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.12-di-and-testability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.12 DI and testability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-dependency-injection/6.13-di-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.13 DI traps
   
 
     
@@ -4031,7 +4391,7 @@ that field.</p>
 <p>The singleton captures the first request's <code>DbContext</code> and holds it for the life of the
 application. That context's change tracker keeps every entity it has ever loaded, so it grows
 without limit. This is a leak <em>and</em> a correctness bug, since <code>DbContext</code> is not thread-safe.
-See <a href="../06-dependency-injection/6.04-captive-dependency.md">6.4</a>.</p>
+See <a href="../../06-dependency-injection/6.04-captive-dependency/">6.4</a>.</p>
 <p><strong>Creating <code>HttpClient</code> per request:</strong></p>
 <div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span><span class="w">     </span><span class="c1">// looks correct. Is not.</span>
 </span></code></pre></div>
@@ -4180,7 +4540,7 @@ policies rather than depending on GC timing.</p>
 <li><strong><code>IMemoryCache</code> without a <code>SizeLimit</code> can still grow indefinitely.</strong> It evicts on memory
   pressure, which may arrive too late.</li>
 <li><strong>Scoped services in singletons</strong> pin a request-lifetime object forever. See
-  <a href="../06-dependency-injection/6.04-captive-dependency.md">6.4</a>.</li>
+  <a href="../../06-dependency-injection/6.04-captive-dependency/">6.4</a>.</li>
 <li><strong>A <code>DbContext</code> held open accumulates every entity it has tracked.</strong> Use <code>AsNoTracking</code> for
   reads and short-lived contexts everywhere.</li>
 <li><strong><code>GC.Collect()</code> will not fix a leak.</strong> The object is still reachable, which is exactly the
@@ -4196,7 +4556,7 @@ policies rather than depending on GC timing.</p>
 <li><a href="../../01-csharp-fundamentals/1.12-events/">1.12 Events</a> — the subscription leak in detail</li>
 <li><a href="../../01-csharp-fundamentals/1.13-lambdas-closures/">1.13 Closures</a> — what a lambda retains</li>
 <li><a href="../../01-csharp-fundamentals/1.21-idisposable/">1.21 IDisposable</a> — releasing handles</li>
-<li><a href="../06-dependency-injection/6.04-captive-dependency.md">6.4 Captive dependencies</a> — the DI version</li>
+<li><a href="../../06-dependency-injection/6.04-captive-dependency/">6.4 Captive dependencies</a> — the DI version</li>
 <li><a href="../19-caching-performance/19.02-memory-cache.md">19.2 IMemoryCache</a> — bounded caching</li>
 <li><a href="../18-logging-monitoring/18.09-production-debugging.md">18.9 Production debugging</a> — the tooling</li>
 </ul>
