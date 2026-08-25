@@ -128,19 +128,19 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 6. Dependency Injection
 
-- [ ] **6.1** [Inversion of Control and Dependency Injection](notes/06-dependency-injection/6.01-ioc-and-di.md) 🔥 🎯
-- [ ] **6.2** [The built-in container, `IServiceCollection`, `IServiceProvider`](notes/06-dependency-injection/6.02-builtin-container.md) 🔥 💻
-- [ ] **6.3** [Service lifetimes — Transient, Scoped, Singleton](notes/06-dependency-injection/6.03-service-lifetimes.md) 🔥 ⚠️ 🎯
-- [ ] **6.4** [The captive dependency problem](notes/06-dependency-injection/6.04-captive-dependency.md) 🔥 ⚠️
-- [ ] **6.5** [What a scope is; creating manual scopes](notes/06-dependency-injection/6.05-scopes.md) 🔥 💻
-- [ ] **6.6** [`Add` vs `TryAdd` vs `TryAddEnumerable`; keyed services](notes/06-dependency-injection/6.06-registration-apis.md) ⭐
-- [ ] **6.7** [Multiple implementations and `IEnumerable<TService>`](notes/06-dependency-injection/6.07-multiple-implementations.md) ⭐ 💻
-- [ ] **6.8** [Factory registrations and open generics](notes/06-dependency-injection/6.08-factories-open-generics.md) ⭐
-- [ ] **6.9** [Constructor injection vs `[FromServices]` vs service locator](notes/06-dependency-injection/6.09-injection-styles.md) ⭐ ⚠️
-- [ ] **6.10** [Who disposes what — container-managed disposal](notes/06-dependency-injection/6.10-disposal.md) ⭐ ⚠️
-- [ ] **6.11** [Third-party containers — Autofac, Scrutor](notes/06-dependency-injection/6.11-third-party-containers.md) 🧠
-- [ ] **6.12** [Designing for testability through DI](notes/06-dependency-injection/6.12-di-and-testability.md) ⭐
-- [ ] **6.13** [Classic DI interview traps](notes/06-dependency-injection/6.13-di-traps.md) 🔥 ⚠️
+- [x] **6.1** [Inversion of Control and Dependency Injection](notes/06-dependency-injection/6.01-ioc-and-di.md) 🔥 🎯
+- [x] **6.2** [The built-in container, `IServiceCollection`, `IServiceProvider`](notes/06-dependency-injection/6.02-builtin-container.md) 🔥 💻
+- [x] **6.3** [Service lifetimes — Transient, Scoped, Singleton](notes/06-dependency-injection/6.03-service-lifetimes.md) 🔥 ⚠️ 🎯
+- [x] **6.4** [The captive dependency problem](notes/06-dependency-injection/6.04-captive-dependency.md) 🔥 ⚠️
+- [x] **6.5** [What a scope is; creating manual scopes](notes/06-dependency-injection/6.05-scopes.md) 🔥 💻
+- [x] **6.6** [`Add` vs `TryAdd` vs `TryAddEnumerable`; keyed services](notes/06-dependency-injection/6.06-registration-apis.md) ⭐
+- [x] **6.7** [Multiple implementations and `IEnumerable<TService>`](notes/06-dependency-injection/6.07-multiple-implementations.md) ⭐ 💻
+- [x] **6.8** [Factory registrations and open generics](notes/06-dependency-injection/6.08-factories-open-generics.md) ⭐
+- [x] **6.9** [Constructor injection vs `[FromServices]` vs service locator](notes/06-dependency-injection/6.09-injection-styles.md) ⭐ ⚠️
+- [x] **6.10** [Who disposes what — container-managed disposal](notes/06-dependency-injection/6.10-disposal.md) ⭐ ⚠️
+- [x] **6.11** [Third-party containers — Autofac, Scrutor](notes/06-dependency-injection/6.11-third-party-containers.md) 🧠
+- [x] **6.12** [Designing for testability through DI](notes/06-dependency-injection/6.12-di-and-testability.md) ⭐
+- [x] **6.13** [Classic DI interview traps](notes/06-dependency-injection/6.13-di-traps.md) 🔥 ⚠️
 
 ## 7. Configuration and Options
 
