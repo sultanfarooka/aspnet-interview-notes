@@ -148,6 +148,36 @@
 | "STS releases are previews" | They're **full production releases**. The only difference is 18 months of support versus 3 years. | [3.10](notes/03-dotnet-runtime/3.10-release-cadence.md) |
 | "A newer .NET is always supported longer" | .NET 7 (STS) went **out of support before** .NET 6 (LTS), despite shipping a year later. | [3.10](notes/03-dotnet-runtime/3.10-release-cadence.md) |
 
+## Configuration and options
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "I set it in `appsettings.json`, so that's the value" | **Later providers win.** An environment variable set by the hosting platform silently overrides it. `GetDebugView()` shows which provider supplied each value. | [7.1](notes/07-configuration-options/7.01-configuration-system.md) |
+| "`ConnectionStrings_Default` sets the connection string" | Nested keys need **double** underscores — `ConnectionStrings__Default`. A single one silently does nothing. | [7.1](notes/07-configuration-options/7.01-configuration-system.md) |
+| "Overriding an array in a later file replaces it" | Arrays are **indexed keys**, merged per index. A 1-item override of a 3-item list leaves items 2 and 3 in place — a real problem for CORS origins. | [7.2](notes/07-configuration-options/7.02-appsettings.md) |
+| "`appsettings.production.json` works fine" | File names are **case-sensitive on Linux**. It's silently ignored when the environment is `Production` — and works on Windows. | [7.2](notes/07-configuration-options/7.02-appsettings.md) |
+| "Only the active environment's JSON file is deployed" | **All of them ship** in the published output, including the Development one. "It's only for dev" is not protection. | [7.2](notes/07-configuration-options/7.02-appsettings.md) |
+| "User Secrets are encrypted" | They're **plain JSON** in your user profile. The protection is being outside source control, not being secure at rest. | [7.3](notes/07-configuration-options/7.03-env-args-usersecrets.md) |
+| "`CreateBuilder()` is fine without `args`" | That silently disables **command-line configuration** entirely. It compiles and runs. | [7.3](notes/07-configuration-options/7.03-env-args-usersecrets.md) |
+| "Environment variables are a fine place for production secrets" | They're visible to the whole process, appear in crash dumps, and the **developer exception page renders every one** into the browser. | [7.3](notes/07-configuration-options/7.03-env-args-usersecrets.md) |
+| "Key Vault secrets use `__` like environment variables" | **Double hyphen** — `Payments--ApiKey`. That's a *third* escape convention after `:` and `__`. | [7.4](notes/07-configuration-options/7.04-secret-providers.md) |
+| "Rotated secrets are picked up automatically" | Read **once at startup** unless you set a `ReloadInterval` — and even then `IOptions<T>` won't see the change. | [7.4](notes/07-configuration-options/7.04-secret-providers.md) |
+| "A missing config key throws" | It returns **null**, and `GetValue<int>` returns **0**. A missing batch size silently becomes zero. A *malformed* value does throw — inconsistently. | [7.5](notes/07-configuration-options/7.05-iconfiguration-api.md) |
+| "I'll null-check `GetSection`" | It **never returns null** — an absent section is an empty one. Use `Exists()` or `GetRequiredSection`. | [7.5](notes/07-configuration-options/7.05-iconfiguration-api.md) |
+| "`IOptionsSnapshot<T>` is the modern `IOptions<T>`" | It's **scoped**. In a singleton or conventional middleware that's a captive dependency — use `IOptionsMonitor<T>`. | [7.6](notes/07-configuration-options/7.06-options-pattern.md) |
+| "`CurrentValue` is safe to read repeatedly" | It re-reads **every access**, so two reads in one method can return different objects. Capture it once per operation. | [7.6](notes/07-configuration-options/7.06-options-pattern.md) |
+| "`required` on an options property is enforced" | The binder uses **reflection**, bypassing the compiler check. Use `[Required]` + `ValidateOnStart`. | [7.7](notes/07-configuration-options/7.07-binding-to-poco.md) |
+| "A typo in a config key will show up" | Silent in **both** directions — an unmatched key is ignored, an unmatched property keeps its default. | [7.7](notes/07-configuration-options/7.07-binding-to-poco.md) |
+| "Positional records bind to configuration" | No parameterless constructor, so they don't. Use a class with settable properties. | [7.7](notes/07-configuration-options/7.07-binding-to-poco.md) |
+| "`ValidateDataAnnotations()` fails the app at startup" | Validation is **lazy** — it runs on first `.Value` access. **`ValidateOnStart()`** is the line that matters. | [7.8](notes/07-configuration-options/7.08-options-validation.md) |
+| "`[Required]` catches a missing setting" | On a **string** it accepts `""` unless you set `AllowEmptyStrings = false`. On an **int** it's meaningless — use `[Range]`. | [7.8](notes/07-configuration-options/7.08-options-validation.md) |
+| "Config changes apply without a restart" | Only for `IOptionsMonitor`/`IOptionsSnapshot`. **`IOptions<T>`, connection strings, Kestrel endpoints and DI registrations are all fixed at startup.** | [7.9](notes/07-configuration-options/7.09-reload-on-change.md) |
+| "Environment variables reload with the rest" | **Never.** A process reads its environment once at start — an OS behaviour, not a framework one. So most deployments reload nothing. | [7.9](notes/07-configuration-options/7.09-reload-on-change.md) |
+| "`OnChange` fires once per edit" | Editors write in two steps, so it commonly fires **twice**. Debounce it, and dispose the subscription or it leaks. | [7.9](notes/07-configuration-options/7.09-reload-on-change.md) |
+| "A custom provider can inject `DbContext`" | Providers run **before DI exists**. And a throwing `Load()` stops the app booting — a config source that's also a runtime dependency is risky. | [7.10](notes/07-configuration-options/7.10-custom-provider.md) |
+| "`PercentageFilter` gives a 10% rollout" | It's evaluated **per call**, so one user gets different answers on refresh. Use `TargetingFilter` for a real rollout. | [7.11](notes/07-configuration-options/7.11-feature-flags.md) |
+| "A misspelled feature flag will error" | `IsEnabledAsync` returns **false** for an unknown flag, so the feature is silently off forever. Use constants. | [7.11](notes/07-configuration-options/7.11-feature-flags.md) |
+
 ## Security
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |

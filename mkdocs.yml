@@ -217,6 +217,18 @@ nav:
       - 6.11 Third-party containers: notes/06-dependency-injection/6.11-third-party-containers.md
       - 6.12 DI and testability: notes/06-dependency-injection/6.12-di-and-testability.md
       - 6.13 DI traps: notes/06-dependency-injection/6.13-di-traps.md
+  - 7. Configuration & Options:
+      - 7.1 The configuration system: notes/07-configuration-options/7.01-configuration-system.md
+      - 7.2 appsettings.json: notes/07-configuration-options/7.02-appsettings.md
+      - 7.3 Env vars, args, User Secrets: notes/07-configuration-options/7.03-env-args-usersecrets.md
+      - 7.4 Key Vault and secret stores: notes/07-configuration-options/7.04-secret-providers.md
+      - 7.5 The IConfiguration API: notes/07-configuration-options/7.05-iconfiguration-api.md
+      - 7.6 The options pattern: notes/07-configuration-options/7.06-options-pattern.md
+      - 7.7 Binding to POCOs: notes/07-configuration-options/7.07-binding-to-poco.md
+      - 7.8 Options validation: notes/07-configuration-options/7.08-options-validation.md
+      - 7.9 Reload on change: notes/07-configuration-options/7.09-reload-on-change.md
+      - 7.10 Custom providers: notes/07-configuration-options/7.10-custom-provider.md
+      - 7.11 Feature flags: notes/07-configuration-options/7.11-feature-flags.md
   - Practice:
       - Question Bank: practice/QUESTION-BANK.md
       - System Design: practice/system-design/README.md

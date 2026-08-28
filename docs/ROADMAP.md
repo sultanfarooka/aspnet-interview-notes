@@ -144,17 +144,17 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 7. Configuration and Options
 
-- [ ] **7.1** [The configuration system — providers and precedence](notes/07-configuration-options/7.01-configuration-system.md) 🔥 ⚠️
-- [ ] **7.2** [`appsettings.json` and environment overrides](notes/07-configuration-options/7.02-appsettings.md) 🔥
-- [ ] **7.3** [Environment variables, CLI args, User Secrets](notes/07-configuration-options/7.03-env-args-usersecrets.md) ⭐
-- [ ] **7.4** [Key Vault / Secrets Manager providers](notes/07-configuration-options/7.04-secret-providers.md) ⭐
-- [ ] **7.5** [`IConfiguration` API — sections, `GetValue`, connection strings](notes/07-configuration-options/7.05-iconfiguration-api.md) ⭐ 💻
-- [ ] **7.6** [`IOptions` vs `IOptionsSnapshot` vs `IOptionsMonitor`](notes/07-configuration-options/7.06-options-pattern.md) 🔥 ⚠️
-- [ ] **7.7** [Binding configuration to POCOs](notes/07-configuration-options/7.07-binding-to-poco.md) ⭐ 💻
-- [ ] **7.8** [Options validation and `ValidateOnStart`](notes/07-configuration-options/7.08-options-validation.md) ⭐ 💻
-- [ ] **7.9** [Reloadable configuration and its limits](notes/07-configuration-options/7.09-reload-on-change.md) ⚠️
-- [ ] **7.10** [Writing a custom configuration provider](notes/07-configuration-options/7.10-custom-provider.md) 🧠 💻
-- [ ] **7.11** [Feature flags and feature management](notes/07-configuration-options/7.11-feature-flags.md) ⭐
+- [x] **7.1** [The configuration system — providers and precedence](notes/07-configuration-options/7.01-configuration-system.md) 🔥 ⚠️
+- [x] **7.2** [`appsettings.json` and environment overrides](notes/07-configuration-options/7.02-appsettings.md) 🔥
+- [x] **7.3** [Environment variables, CLI args, User Secrets](notes/07-configuration-options/7.03-env-args-usersecrets.md) ⭐
+- [x] **7.4** [Key Vault / Secrets Manager providers](notes/07-configuration-options/7.04-secret-providers.md) ⭐
+- [x] **7.5** [`IConfiguration` API — sections, `GetValue`, connection strings](notes/07-configuration-options/7.05-iconfiguration-api.md) ⭐ 💻
+- [x] **7.6** [`IOptions` vs `IOptionsSnapshot` vs `IOptionsMonitor`](notes/07-configuration-options/7.06-options-pattern.md) 🔥 ⚠️
+- [x] **7.7** [Binding configuration to POCOs](notes/07-configuration-options/7.07-binding-to-poco.md) ⭐ 💻
+- [x] **7.8** [Options validation and `ValidateOnStart`](notes/07-configuration-options/7.08-options-validation.md) ⭐ 💻
+- [x] **7.9** [Reloadable configuration and its limits](notes/07-configuration-options/7.09-reload-on-change.md) ⚠️
+- [x] **7.10** [Writing a custom configuration provider](notes/07-configuration-options/7.10-custom-provider.md) 🧠 💻
+- [x] **7.11** [Feature flags and feature management](notes/07-configuration-options/7.11-feature-flags.md) ⭐
 
 ## 8. Routing
 
