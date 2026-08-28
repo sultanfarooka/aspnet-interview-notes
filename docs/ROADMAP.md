@@ -175,16 +175,16 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 9. MVC, Razor Pages and Views
 
-- [ ] **9.1** [The MVC pattern in ASP.NET Core](notes/09-mvc-razor-views/9.01-mvc-pattern.md) 🔥 🎯
-- [ ] **9.2** [`Controller` vs `ControllerBase`; action conventions](notes/09-mvc-razor-views/9.02-controllers.md) 🔥
-- [ ] **9.3** [`IActionResult` vs `ActionResult<T>`; result types](notes/09-mvc-razor-views/9.03-action-results.md) 🔥 💻
-- [ ] **9.4** [Razor syntax, layouts, `_ViewStart`, `_ViewImports`](notes/09-mvc-razor-views/9.04-razor-and-layouts.md) ⭐
-- [ ] **9.5** [Partial views, View Components, Tag Helpers vs HTML Helpers](notes/09-mvc-razor-views/9.05-partials-components-taghelpers.md) ⭐
-- [ ] **9.6** [ViewData vs ViewBag vs TempData](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) 🔥 ⚠️
-- [ ] **9.7** [Razor Pages and `PageModel`](notes/09-mvc-razor-views/9.07-razor-pages.md) ⭐ 💻
-- [ ] **9.8** [ViewModels vs entities; strongly-typed views](notes/09-mvc-razor-views/9.08-viewmodels.md) ⭐
-- [ ] **9.9** [Blazor overview — Server vs WASM vs Auto](notes/09-mvc-razor-views/9.09-blazor-overview.md) ⭐
-- [ ] **9.10** [Front-end integration, bundling, minification](notes/09-mvc-razor-views/9.10-frontend-integration.md)
+- [x] **9.1** [The MVC pattern in ASP.NET Core](notes/09-mvc-razor-views/9.01-mvc-pattern.md) 🔥 🎯
+- [x] **9.2** [`Controller` vs `ControllerBase`; action conventions](notes/09-mvc-razor-views/9.02-controllers.md) 🔥
+- [x] **9.3** [`IActionResult` vs `ActionResult<T>`; result types](notes/09-mvc-razor-views/9.03-action-results.md) 🔥 💻
+- [x] **9.4** [Razor syntax, layouts, `_ViewStart`, `_ViewImports`](notes/09-mvc-razor-views/9.04-razor-and-layouts.md) ⭐
+- [x] **9.5** [Partial views, View Components, Tag Helpers vs HTML Helpers](notes/09-mvc-razor-views/9.05-partials-components-taghelpers.md) ⭐
+- [x] **9.6** [ViewData vs ViewBag vs TempData](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) 🔥 ⚠️
+- [x] **9.7** [Razor Pages and `PageModel`](notes/09-mvc-razor-views/9.07-razor-pages.md) ⭐ 💻
+- [x] **9.8** [ViewModels vs entities; strongly-typed views](notes/09-mvc-razor-views/9.08-viewmodels.md) ⭐
+- [x] **9.9** [Blazor overview — Server vs WASM vs Auto](notes/09-mvc-razor-views/9.09-blazor-overview.md) ⭐
+- [x] **9.10** [Front-end integration, bundling, minification](notes/09-mvc-razor-views/9.10-frontend-integration.md)
 
 ## 10. Web API Design and REST
 

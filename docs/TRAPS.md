@@ -218,6 +218,40 @@
 | "A catch-all route is just a wildcard" | It captures `../` too. `files/{**path}` with `Path.Combine` serves your `appsettings.json`. Never build a file path from one. | [8.10](notes/08-routing/8.10-catchall-and-slugs.md) |
 | "Slug-only URLs are cleaner" | They **break on every rename**, including external links you don't control. Use ID + slug and redirect stale slugs to the canonical URL. | [8.10](notes/08-routing/8.10-catchall-and-slugs.md) |
 
+## MVC, Razor Pages and views
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "MVC means Model = my EF entity" | "Model" means three different things — the domain model, the ViewModel and the model binder's target. Passing an entity to a view is the fat-controller road. | [9.1](notes/09-mvc-razor-views/9.01-mvc-pattern.md) |
+| "Business logic in the controller is fine if it's short" | Short logic grows. The controller's job is HTTP: bind, delegate, choose a result. Logic there is untestable without a controller. | [9.1](notes/09-mvc-razor-views/9.01-mvc-pattern.md) |
+| "`Controller` and `ControllerBase` are interchangeable" | `ControllerBase` has no `View()` or `ViewBag` — it's for APIs. Inheriting `Controller` in an API drags in view machinery you never use. | [9.2](notes/09-mvc-razor-views/9.02-controllers.md) |
+| "Only methods with `[HttpGet]` are actions" | **Every public method** on a controller is an action by default. A public helper becomes a routable endpoint. Mark it `[NonAction]` or make it private. | [9.2](notes/09-mvc-razor-views/9.02-controllers.md) |
+| "A controller is a singleton I can cache state in" | It's created **per request** and disposed after. Instance state does not survive, and storing it there is a bug waiting for concurrency. | [9.2](notes/09-mvc-razor-views/9.02-controllers.md) |
+| "`return condition ? Ok(x) : NotFound();` compiles" | It **doesn't** with `ActionResult<T>` — the ternary can't pick a common type. Use `if`/`else` or cast one branch. | [9.3](notes/09-mvc-razor-views/9.03-action-results.md) |
+| "401 and 403 are both 'access denied'" | **401** = we don't know who you are (authenticate). **403** = we know, and you still can't. `Unauthorized()` on a logged-in user causes a redirect loop. | [9.3](notes/09-mvc-razor-views/9.03-action-results.md) |
+| "`IActionResult` and `ActionResult<T>` are the same" | `ActionResult<T>` declares the success type, so Swagger and the client know the shape without an extra `[ProducesResponseType]`. | [9.3](notes/09-mvc-razor-views/9.03-action-results.md) |
+| "Razor output needs manual HTML encoding" | `@value` encodes automatically. It's `@Html.Raw` that doesn't — and that's where the XSS is. | [9.4](notes/09-mvc-razor-views/9.04-razor-and-layouts.md) |
+| "`_ViewImports` and `_ViewStart` are the same kind of file" | `_ViewStart` runs **code** before each view (usually setting `Layout`). `_ViewImports` adds **directives** — `@using`, `@inject`, `@addTagHelper`. Neither replaces the other. | [9.4](notes/09-mvc-razor-views/9.04-razor-and-layouts.md) |
+| "Tag helpers work as soon as I install the package" | They need `@addTagHelper` in `_ViewImports`. Without it `asp-for` is just an unknown attribute rendered verbatim — silently. | [9.4](notes/09-mvc-razor-views/9.04-razor-and-layouts.md) |
+| "`Html.Partial` is the normal way to render a partial" | It's **synchronous over async work** and can deadlock. Use `<partial name="..." />` or `await Html.PartialAsync`. | [9.5](notes/09-mvc-razor-views/9.05-partials-components-taghelpers.md) |
+| "A partial view can fetch its own data" | A partial shares the parent's context and has no logic of its own. If it needs data, you want a **View Component**. | [9.5](notes/09-mvc-razor-views/9.05-partials-components-taghelpers.md) |
+| "ViewBag and ViewData are different storage" | **Same dictionary.** `ViewBag` is a `dynamic` wrapper over `ViewData`. Set one, read the other. | [9.6](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) |
+| "A `ViewBag` typo is a compile error" | It's `dynamic` — typos compile fine and silently render nothing. That's the whole argument for ViewModels. | [9.6](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) |
+| "TempData survives until I clear it" | It's **read-once**. Reading it marks it for deletion — so reading it in a layout means the view finds nothing. Use `Peek` to read without consuming. | [9.6](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) |
+| "TempData needs no configuration" | It needs a session or the cookie provider, and cookie TempData is size-limited and visible to the client. Don't put objects or secrets in it. | [9.6](notes/09-mvc-razor-views/9.06-viewdata-viewbag-tempdata.md) |
+| "Razor Pages is MVC with the controller removed" | It's page-based routing over the same infrastructure: `@page` turns the file into an endpoint and the `PageModel` holds the handlers. Filters, DI and model binding are identical. | [9.7](notes/09-mvc-razor-views/9.07-razor-pages.md) |
+| "`@page` is optional at the top of a Razor Page" | Without it the file isn't a page at all — it's treated as a view and the route never matches. | [9.7](notes/09-mvc-razor-views/9.07-razor-pages.md) |
+| "`[BindProperty]` binds on GET too" | It **doesn't**, by design. You need `[BindProperty(SupportsGet = true)]` — and that opens the property to query-string input. | [9.7](notes/09-mvc-razor-views/9.07-razor-pages.md) |
+| "Reusing the entity as the form model saves code" | It's **over-posting**: model binding fills every settable property from the request, including `IsAdmin`. Bind to an input model. | [9.8](notes/09-mvc-razor-views/9.08-viewmodels.md) |
+| "Passing an entity to the view is harmless" | The view touching an unloaded navigation fires a query **while rendering** — N+1 in the middle of the response. Project to a ViewModel in the query. | [9.8](notes/09-mvc-razor-views/9.08-viewmodels.md) |
+| "Blazor Server scales like a normal web app" | It holds a **circuit** — memory plus a live WebSocket — **per connected user**, and needs a SignalR backplane to run more than one instance. | [9.9](notes/09-mvc-razor-views/9.09-blazor-overview.md) |
+| "`OnInitializedAsync` runs once per page load" | With prerendering it runs **twice** — once server-side, once when interactivity connects. Two API calls, duplicated side effects. | [9.9](notes/09-mvc-razor-views/9.09-blazor-overview.md) |
+| "Blazor WebAssembly code is safe on the client" | The DLLs are downloaded and decompilable. No secrets, and every authorization check must be repeated on the server. | [9.9](notes/09-mvc-razor-views/9.09-blazor-overview.md) |
+| "Static files are protected by `[Authorize]` somewhere" | `UseStaticFiles` normally runs **before** authentication. Anything in `wwwroot` is public to anyone with the URL. | [9.10](notes/09-mvc-razor-views/9.10-frontend-integration.md) |
+| "Users will get the new CSS after a deploy" | Not if it's cached under the same URL. `asp-append-version="true"` appends a content hash so the URL changes when the file does. | [9.10](notes/09-mvc-razor-views/9.10-frontend-integration.md) |
+| "`MapFallbackToFile` can go anywhere" | Before `MapControllers` it **swallows the API routes** and returns HTML where the client expected JSON. | [9.10](notes/09-mvc-razor-views/9.10-frontend-integration.md) |
+| "`AllowAnyOrigin()` plus `AllowCredentials()` is a quick fix" | It **throws** — the CORS spec forbids the combination. Name the origins explicitly. | [9.10](notes/09-mvc-razor-views/9.10-frontend-integration.md) |
+
 ## Web API
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |
