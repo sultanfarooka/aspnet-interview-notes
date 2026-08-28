@@ -229,6 +229,17 @@ nav:
       - 7.9 Reload on change: notes/07-configuration-options/7.09-reload-on-change.md
       - 7.10 Custom providers: notes/07-configuration-options/7.10-custom-provider.md
       - 7.11 Feature flags: notes/07-configuration-options/7.11-feature-flags.md
+  - 8. Routing:
+      - 8.1 Endpoint routing: notes/08-routing/8.01-endpoint-routing.md
+      - 8.2 UseRouting and UseEndpoints: notes/08-routing/8.02-userouting-useendpoints.md
+      - 8.3 Conventional vs attribute routing: notes/08-routing/8.03-conventional-vs-attribute.md
+      - 8.4 Route templates: notes/08-routing/8.04-route-templates.md
+      - 8.5 Route constraints: notes/08-routing/8.05-route-constraints.md
+      - 8.6 Link generation: notes/08-routing/8.06-link-generation.md
+      - 8.7 Endpoint precedence: notes/08-routing/8.07-endpoint-precedence.md
+      - 8.8 Areas: notes/08-routing/8.08-areas.md
+      - 8.9 Route groups: notes/08-routing/8.09-route-groups.md
+      - 8.10 Catch-all routes and slugs: notes/08-routing/8.10-catchall-and-slugs.md
   - Practice:
       - Question Bank: practice/QUESTION-BANK.md
       - System Design: practice/system-design/README.md

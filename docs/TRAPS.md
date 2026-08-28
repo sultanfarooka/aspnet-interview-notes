@@ -190,6 +190,34 @@
 | "EF Core makes SQL injection impossible" | Only for LINQ. `FromSqlRaw`, `ExecuteSqlRaw`, and dynamic SQL are all still injectable. | [17.2](notes/17-application-security/17.02-sql-injection.md) |
 | "Auth works locally, so it works in the farm" | Data Protection keys are per-machine by default. Two servers means cookies and antiforgery tokens issued by one are rejected by the other. | [17.6](notes/17-application-security/17.06-data-protection.md) |
 
+## Routing
+
+| ⚠️ The plausible answer | ✅ What's actually true | Topic |
+|---|---|---|
+| "Routing runs my controller" | It only **matches**. Execution happens at the end of the pipeline — that gap is where authentication and authorization run. | [8.1](notes/08-routing/8.01-endpoint-routing.md) |
+| "I can read the route values in any middleware" | `GetEndpoint()` and `RouteValues` are **empty before `UseRouting`**. Middleware above it sees nothing. | [8.1](notes/08-routing/8.01-endpoint-routing.md) |
+| "I need to call `UseRouting` myself" | `WebApplication` inserts it automatically. You only add it explicitly to place middleware **after** the match — and doing so disables auto-insertion. | [8.2](notes/08-routing/8.02-userouting-useendpoints.md) |
+| "My CORS policy is broken" | Often it's ordering: `UseCors` after `UseAuthentication` means the unauthenticated `OPTIONS` preflight is 401'd before CORS can answer. | [8.2](notes/08-routing/8.02-userouting-useendpoints.md) |
+| "Adding `[Route]` to one action is harmless" | That action becomes **invisible to conventional routing** — its old URL now 404s. | [8.3](notes/08-routing/8.03-conventional-vs-attribute.md) |
+| "`[ApiController]` works without a route attribute" | It **throws at startup**. Attribute routing is mandatory, deliberately — deriving public URLs from method names means renaming one changes your API. | [8.3](notes/08-routing/8.03-conventional-vs-attribute.md) |
+| "`{id?}` and `{id=1}` are the same" | With `?` a missing int becomes **0**. With `=1` you get 1. Prefer defaults for numbers. | [8.4](notes/08-routing/8.04-route-templates.md) |
+| "I can put an optional parameter anywhere" | It must be **last**. Segments match positionally, so anything after an optional is unreachable. | [8.4](notes/08-routing/8.04-route-templates.md) |
+| "`page` is a fine route parameter name" | It's **reserved** by Razor Pages, along with `controller`, `action`, `area` and `handler`. Use `pageNumber` or the query string. | [8.4](notes/08-routing/8.04-route-templates.md) |
+| "I can match on the query string in a template" | Templates match the **path only**. `[HttpGet("orders?status={status}")]` doesn't work — use `[FromQuery]`. | [8.4](notes/08-routing/8.04-route-templates.md) |
+| "Route constraints validate input" | A failed constraint gives a **bare 404**, not a 400 with a message. They disambiguate routes; validation belongs in the action. | [8.5](notes/08-routing/8.05-route-constraints.md) |
+| "`:datetime` is a safe constraint" | It parses using the **current culture**, so the same URL means different dates on different servers. | [8.5](notes/08-routing/8.05-route-constraints.md) |
+| "Link generation throws if it fails" | It returns **null**, silently — constraints run during generation too. Interpolating that into an email gives a missing link and no error. | [8.6](notes/08-routing/8.06-link-generation.md) |
+| "`Url.Action` uses only the values I pass" | It reuses **ambient route values** from the current request, so an area or version you didn't mention leaks into the URL. `LinkGenerator` doesn't. | [8.6](notes/08-routing/8.06-link-generation.md) |
+| "The first matching route wins" | For **attribute** routes it's the **most specific**, compared segment by segment — registration order is irrelevant. For **conventional** routes it *is* registration order. Opposite rules. | [8.7](notes/08-routing/8.07-endpoint-precedence.md) |
+| "An ambiguous route fails at startup" | `AmbiguousMatchException` is thrown **per request**. The app starts fine and one URL returns 500. | [8.7](notes/08-routing/8.07-endpoint-precedence.md) |
+| "A URL that matches no action returns 404" | If the **template** matches but the HTTP method doesn't, you get **405 Method Not Allowed**. | [8.7](notes/08-routing/8.07-endpoint-precedence.md) |
+| "`asp-area` can be omitted to leave the area" | Omitting it **inherits** the current area. You need `asp-area=""` — an empty string — to clear it. | [8.8](notes/08-routing/8.08-areas.md) |
+| "Attribute routing means I can drop `[Area]`" | **View discovery** still depends on it. Without it Razor looks in `Views/` instead of `Areas/{Area}/Views/`. | [8.8](notes/08-routing/8.08-areas.md) |
+| "An endpoint in a group can be made public by adding it after" | Group authorization applies to **everything** in it. Use `AllowAnonymous` — which wins regardless of order — or better, a sibling group. | [8.9](notes/08-routing/8.09-route-groups.md) |
+| "`MapFallbackToFile` is safe in an API" | A mistyped API URL then returns **HTML with a 200**, and the client tries to parse a web page. Use `{*path:nonfile}`. | [8.10](notes/08-routing/8.10-catchall-and-slugs.md) |
+| "A catch-all route is just a wildcard" | It captures `../` too. `files/{**path}` with `Path.Combine` serves your `appsettings.json`. Never build a file path from one. | [8.10](notes/08-routing/8.10-catchall-and-slugs.md) |
+| "Slug-only URLs are cleaner" | They **break on every rename**, including external links you don't control. Use ID + slug and redirect stale slugs to the canonical URL. | [8.10](notes/08-routing/8.10-catchall-and-slugs.md) |
+
 ## Web API
 
 | ⚠️ The plausible answer | ✅ What's actually true | Topic |

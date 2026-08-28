@@ -158,16 +158,16 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 8. Routing
 
-- [ ] **8.1** [Endpoint routing fundamentals](notes/08-routing/8.01-endpoint-routing.md) 🔥 🎯
-- [ ] **8.2** [`UseRouting` and `UseEndpoints` — what happens between them](notes/08-routing/8.02-userouting-useendpoints.md) 🔥 ⚠️
-- [ ] **8.3** [Conventional vs attribute routing](notes/08-routing/8.03-conventional-vs-attribute.md) 🔥 💻
-- [ ] **8.4** [Route templates, parameters, optionals, defaults](notes/08-routing/8.04-route-templates.md) ⭐ 💻
-- [ ] **8.5** [Route constraints, including custom ones](notes/08-routing/8.05-route-constraints.md) ⭐ 💻
-- [ ] **8.6** [Route tokens, named routes, link generation](notes/08-routing/8.06-link-generation.md) ⭐
-- [ ] **8.7** [Endpoint selection and precedence — how ties break](notes/08-routing/8.07-endpoint-precedence.md) ⭐ ⚠️
-- [ ] **8.8** [Areas](notes/08-routing/8.08-areas.md)
-- [ ] **8.9** [Route groups (`MapGroup`)](notes/08-routing/8.09-route-groups.md) ⭐ 💻
-- [ ] **8.10** [Catch-all routes, slugs, SEO-friendly URLs](notes/08-routing/8.10-catchall-and-slugs.md)
+- [x] **8.1** [Endpoint routing fundamentals](notes/08-routing/8.01-endpoint-routing.md) 🔥 🎯
+- [x] **8.2** [`UseRouting` and `UseEndpoints` — what happens between them](notes/08-routing/8.02-userouting-useendpoints.md) 🔥 ⚠️
+- [x] **8.3** [Conventional vs attribute routing](notes/08-routing/8.03-conventional-vs-attribute.md) 🔥 💻
+- [x] **8.4** [Route templates, parameters, optionals, defaults](notes/08-routing/8.04-route-templates.md) ⭐ 💻
+- [x] **8.5** [Route constraints, including custom ones](notes/08-routing/8.05-route-constraints.md) ⭐ 💻
+- [x] **8.6** [Route tokens, named routes, link generation](notes/08-routing/8.06-link-generation.md) ⭐
+- [x] **8.7** [Endpoint selection and precedence — how ties break](notes/08-routing/8.07-endpoint-precedence.md) ⭐ ⚠️
+- [x] **8.8** [Areas](notes/08-routing/8.08-areas.md)
+- [x] **8.9** [Route groups (`MapGroup`)](notes/08-routing/8.09-route-groups.md) ⭐ 💻
+- [x] **8.10** [Catch-all routes, slugs, SEO-friendly URLs](notes/08-routing/8.10-catchall-and-slugs.md)
 
 ---
 
