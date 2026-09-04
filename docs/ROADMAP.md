@@ -188,20 +188,20 @@ Checkboxes track **"notes written and read."** Track your *recall confidence* se
 
 ## 10. Web API Design and REST
 
-- [ ] **10.1** [REST principles — resources, statelessness, uniform interface](notes/10-web-api-rest/10.01-rest-principles.md) 🔥 🎯
-- [ ] **10.2** [HTTP verbs; idempotency and safety](notes/10-web-api-rest/10.02-http-verbs-idempotency.md) 🔥 ⚠️
-- [ ] **10.3** [HTTP status codes that actually get asked about](notes/10-web-api-rest/10.03-status-codes.md) 🔥
-- [ ] **10.4** [`[ApiController]` — what it changes](notes/10-web-api-rest/10.04-apicontroller-attribute.md) 🔥 ⚠️
-- [ ] **10.5** [Content negotiation and JSON serialization](notes/10-web-api-rest/10.05-content-negotiation-json.md) 🔥 ⚠️
-- [ ] **10.6** [API versioning strategies](notes/10-web-api-rest/10.06-api-versioning.md) ⭐ 💻
-- [ ] **10.7** [Pagination, filtering, sorting conventions](notes/10-web-api-rest/10.07-pagination-filtering.md) ⭐ 💻
-- [ ] **10.8** [`ProblemDetails` / RFC 7807 and consistent error contracts](notes/10-web-api-rest/10.08-problem-details.md) ⭐ 💻
-- [ ] **10.9** [OpenAPI / Swagger — Swashbuckle, NSwag, built-in OpenAPI](notes/10-web-api-rest/10.09-openapi-swagger.md) ⭐
-- [ ] **10.10** [CORS — preflight, policies, common misconfigurations](notes/10-web-api-rest/10.10-cors.md) 🔥 ⚠️ 🎯
-- [ ] **10.11** [DTOs vs entities; mapping approaches](notes/10-web-api-rest/10.11-dtos-and-mapping.md) 🔥
-- [ ] **10.12** [Minimal APIs — syntax, filters, when to choose them](notes/10-web-api-rest/10.12-minimal-apis.md) ⭐ 💻
-- [ ] **10.13** [Idempotency keys, `ETag`, `If-Match`](notes/10-web-api-rest/10.13-idempotency-etags.md) 🧠
-- [ ] **10.14** [REST vs gRPC vs GraphQL vs SOAP](notes/10-web-api-rest/10.14-rest-vs-grpc-vs-graphql.md) ⭐ 🎯
+- [x] **10.1** [REST principles — resources, statelessness, uniform interface](notes/10-web-api-rest/10.01-rest-principles.md) 🔥 🎯
+- [x] **10.2** [HTTP verbs; idempotency and safety](notes/10-web-api-rest/10.02-http-verbs-idempotency.md) 🔥 ⚠️
+- [x] **10.3** [HTTP status codes that actually get asked about](notes/10-web-api-rest/10.03-status-codes.md) 🔥
+- [x] **10.4** [`[ApiController]` — what it changes](notes/10-web-api-rest/10.04-apicontroller-attribute.md) 🔥 ⚠️
+- [x] **10.5** [Content negotiation and JSON serialization](notes/10-web-api-rest/10.05-content-negotiation-json.md) 🔥 ⚠️
+- [x] **10.6** [API versioning strategies](notes/10-web-api-rest/10.06-api-versioning.md) ⭐ 💻
+- [x] **10.7** [Pagination, filtering, sorting conventions](notes/10-web-api-rest/10.07-pagination-filtering.md) ⭐ 💻
+- [x] **10.8** [`ProblemDetails` / RFC 7807 and consistent error contracts](notes/10-web-api-rest/10.08-problem-details.md) ⭐ 💻
+- [x] **10.9** [OpenAPI / Swagger — Swashbuckle, NSwag, built-in OpenAPI](notes/10-web-api-rest/10.09-openapi-swagger.md) ⭐
+- [x] **10.10** [CORS — preflight, policies, common misconfigurations](notes/10-web-api-rest/10.10-cors.md) 🔥 ⚠️ 🎯
+- [x] **10.11** [DTOs vs entities; mapping approaches](notes/10-web-api-rest/10.11-dtos-and-mapping.md) 🔥
+- [x] **10.12** [Minimal APIs — syntax, filters, when to choose them](notes/10-web-api-rest/10.12-minimal-apis.md) ⭐ 💻
+- [x] **10.13** [Idempotency keys, `ETag`, `If-Match`](notes/10-web-api-rest/10.13-idempotency-etags.md) 🧠
+- [x] **10.14** [REST vs gRPC vs GraphQL vs SOAP](notes/10-web-api-rest/10.14-rest-vs-grpc-vs-graphql.md) ⭐ 🎯
 
 ## 11. Model Binding and Validation
 
